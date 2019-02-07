@@ -1,0 +1,19 @@
+% !TEX root = ../thesis.tex
+
+\chapter{Preliminaries}
+This is an introduction...
+
+\section{Markov decision processes}
+A Markov Decision Processes (MDP) is a way to model the interaction between an agent, which is the learner and the decision maker, and a partially observable environment. When the agent performs an action, the environment responds presenting a new state to the agent and rewarding the agent with a certain numerical value called \emph{immediate reward}. The objective of the agent is to maximize over time the  \emph{cumulative reward}, which is the cumulated sum of the immediate rewards obtained after each action undertaken by the agent. Evidently, sometimes it is more profitable to sacrifice immediate reward in order to reach a higher cumulative reward in the long term. This mechanism pushes the agent to take into account the future in its current decisions. 
+
+Hence, MDPs are a powerful tool capable of modelling many challenges that we encounter in life, science and engineering. Take, for example, a hungry newborn infant in his mother's arms. Through various attempts, the infant moves around its arms, head and mouth looking for food. In this ways, he changes its state until the moment he eventually receives a positive reward, the mother's milk. Little by little, the baby will learn the precise sequence of actions and states that rewards him with milk.
+
+Formally, a discrete-time continuous MDP \cite{puterman2014markov} is a tuple $\Task = \langle\Sspace,\Aspace,\Tran,\Rew,\gamma,\init\rangle$, where:
+
+\begin{itemize}
+\item $\Sspace\in\Reals^{d_{\Sspace}}$ is the $d_{\Sspace}$-dimensional continuous state space, i.e. the set of all possible observable states of the environment;
+\item $\Aspace\in\Reals^{d_{\Aspace}}$ is the $d_{\Aspace}$-dimensional action space, i.e. the set of all the possible actions that the agent can perform. Sometimes, not all the actions are performable in all states. In such cases, we can define the set $\Aspace(s)$ for all $s \in \Sspace$, s.a.  $\Aspace = \bigcup_{s \in \Sspace} \Aspace(s)$ 
+
+\end{itemize}
+
+$\Sspace\in\Reals^{d_{\Sspace}}$ is the state space; $\Aspace\in\Reals^{d_{\Aspace}}$ is the action space; $\Tran:\Sspace\times\Aspace\to\Delta(\Sspace)$ is a Markovian transition kernel, such that, for each time $h$, the next state is drawn as $s_{h+1}\sim\Tran(\cdot|s_h,a_h)$ that depends only on the current state and action; $\Rew:\Sspace\times\Aspace\to[-\Rmax,\Rmax]$ is a bounded reward signal, such that the next reward $r_{h+1} = \Rew(s_h,a_h)$ is a function of the current state and action, and $\Rmax>0$ is the maximum reward; $\gamma\in(0,1]$ is a discount factor; $\init\in\Delta(\Sspace)$ is the initial state distribution, such that the initial state is drawn as $s_0\sim\mu$. The agent's behaviour is modelled as a parametric policy $\pi_{\vtheta}:\Sspace\to\Delta(\Aspace)$, such that the current action is drawn as $a_h\sim\pi_{\vtheta}(\cdot|s_h)$, depending on the current state, where $\vtheta\in\Theta\subseteq\Reals^m$ are the policy parameters. Deterministic policies represent a special case where $\pi_{\vtheta}$ is a Dirac delta function. With abuse of notation, we write $a_h=\pi_{\vtheta}(s_h)$ in this case. In practice, we consider finite trajectories of length $H$, the task's horizon.

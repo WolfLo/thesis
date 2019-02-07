@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: acm.bst
+Database file #1: Bibliography/bibliography.bib
+Warning--empty journal in lattimore2018bandit
+Warning--empty publisher in mcbook_2013
+Warning--empty publisher in mcbook
+Warning--empty booktitle in yupure
+You've used 80 entries,
+            2253 wiz_defined-function locations,
+            949 strings with 18147 characters,
+and the built_in function-call counts, 32102 in all, are:
+= -- 3140
+> -- 1394
+< -- 0
++ -- 570
+- -- 487
+* -- 2354
+:= -- 4799
+add.period$ -- 233
+call.type$ -- 80
+change.case$ -- 464
+chr.to.int$ -- 0
+cite$ -- 84
+duplicate$ -- 1377
+empty$ -- 2674
+format.name$ -- 487
+if$ -- 6968
+int.to.chr$ -- 0
+int.to.str$ -- 80
+missing$ -- 80
+newline$ -- 394
+num.names$ -- 172
+pop$ -- 631
+preamble$ -- 1
+purify$ -- 397
+quote$ -- 0
+skip$ -- 993
+stack$ -- 0
+substring$ -- 2255
+swap$ -- 493
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 298
+warning$ -- 4
+while$ -- 314
+width$ -- 82
+write$ -- 797
+(There were 4 warnings)

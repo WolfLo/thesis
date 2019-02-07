@@ -1,0 +1,76 @@
+\documentclass[12pt, a4paper, oneside]{book}  % openany
+
+%Custom packages and macros
+\usepackage{Style/thesis}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+% COVER PAGE
+%----------------------------------------------------------------------------------------
+
+%\pagestyle{empty}
+%\input{Cover/cover}
+
+%----------------------------------------------------------------------------------------
+% ABSTRACT
+%---------------------------------------------------------------------------------------
+
+%% Set page numbers of the introduction to roman
+% \frontmatter
+% \pagestyle{fancy}
+% \include{Abstract/abstract}
+
+%----------------------------------------------------------------------------------------
+% ACKNOWLEDGMENTS
+---------------------------------------------------------------------------------------
+
+% \include{Acknowledgements/acknowledgements}
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents{} % Write out the Table of Contents
+
+% \listoffigures % Write out the List of Figures
+% \addcontentsline{toc}{chapter}{List of Figures}
+
+% \listoftables % Write out the List of Tables
+
+% \listofalgorithms
+% \addcontentsline{toc}{chapter}{List of Algorithms}
+
+% \printglossaries
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter
+
+%\input{Chapters/1_introduction}
+\input{Chapters/2_preliminaries}
+%\input{Chapters/3_manifold_learning}
+%\input{Chapters/4_semantic_embeddings}
+%\input{Chapters/5_exploring_embeddings}
+%\input{Chapters/6_results}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+% \begin{appendices}
+% \input{Appendix/A_Implementation}
+% \end{appendices}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\backmatter
+\nocite{*}
+\bibliographystyle{acm}
+\bibliography{Bibliography/bibliography}
+
+\end{document}
