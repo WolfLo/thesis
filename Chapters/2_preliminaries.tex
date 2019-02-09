@@ -3,27 +3,84 @@
 \chapter{Preliminaries}
 This is an introduction...
 
-\section{Markov decision processes}
-A Markov Decision Processes (MDP) is a way to model the interaction between an agent, which is the learner and the decision maker, and a partially observable environment. When the agent performs an action $a$, the environment responds presenting a new state $s$ to the agent and rewarding the agent with a certain scalar signal called \emph{immediate reward}. Importantly, the environment dynamics of a MDP are \emph{stationary}: they do not depend upon time. Moreover, the current state $s_{h+1}$ at time $h$ must depend only on the previous state $s_{h}$ and action   $a_{h}$. This property, called Markovian Property, entails that the agent is somehow pushed to forget the states and actions of the past. However, there is another mechanism of MDPs which encourages the agent to take into account the long term consequences of its choices. In fact, the objective of the agent is to maximize over time the  \emph{cumulative reward}, which is the cumulated sum of the immediate rewards obtained after each action undertaken by the agent. Evidently, sometimes it is more profitable to sacrifice immediate reward in order to reach a higher cumulative reward in the long term. This mechanism pushes the agent to take into account the future in its current decisions. 
+\section{Markov Decision Processes}
+A \gls{MDP} is a way to model the interaction between an agent, which is the learner and the decision maker, and an environment. When the agent performs an action $a$, the environment responds presenting a new state $s$ to the agent and rewarding the agent with a certain scalar signal called \emph{immediate reward}. Importantly, the environment dynamics of a \gls{MDP} are \emph{stationary}: they do not depend upon time. Moreover, the current state $s_{h+1}$ at time step $h$ must depend only on the previous state $s_{h}$ and action   $a_{h}$. This property, called Markovian Property, entails that the agent is somehow pushed to forget the states and actions of the past. However, there is another mechanism of \gls{MDP}s which encourages the agent to take into account the long term consequences of its choices. In fact, the objective of the agent is to maximize over time the  \emph{cumulative reward} or \emph{return}, which is the cumulated sum of the immediate rewards obtained after each action undertaken by the agent. Evidently, sometimes it is more profitable to sacrifice immediate reward in order to reach a higher cumulative reward in the long term. This mechanism pushes the agent to take into account the future in its current decisions. 
 
-Hence, MDPs are a powerful tool capable of modelling many challenges that we encounter in life, science and engineering. Take, for example, a hungry newborn infant in his mother's arms. Through various attempts, the infant moves around its arms, head and mouth looking for food. In this ways, he changes its state until the moment he eventually receives a positive reward, the mother's milk. Little by little, the baby will learn the precise sequence of actions and states that rewards him with milk.
+Hence, \gls{MDP}s are a powerful tool capable of modelling many challenges that we encounter in life, science and engineering. Take, for example, a hungry newborn infant in his mother's arms. Through various attempts, the infant moves around its arms, head and mouth looking for food. In this ways, he changes its state until the moment he eventually receives a positive reward, the mother's milk. Little by little, the baby will learn the precise sequence of actions and states that rewards him with milk.
 
-Formally, a discrete-time continuous MDP \cite{puterman2014markov} is a tuple $\Task = \langle\Sspace,\Aspace,\Tran,\Rew,\gamma,\init\rangle$, where:
+\begin{figure}
+\tikzset{
+>=stealth',
+  normalchain/.style={
+    rectangle, 
+    % fill=black!10,
+    draw=black, thick,
+   	minimum height=3em, 
+    minimum width=15em,
+    text width=15em,
+    text centered, 
+    on chain},
+  greychain/.style={
+    rectangle, 
+    % fill=black!10,
+    draw=black, thick,
+   	minimum height=3em, 
+    minimum width=15em,
+    text width=15em,
+    text centered, 
+    on chain,
+    fill=blue!20},
+  line/.style={draw, thick, <-},
+  L/.style ={draw, black, -{Stealth[scale=3,length=3,width=2]}},
+  T/.style = {draw, black, rounded corners,
+                     to path={-| (\tikztotarget)},
+                     -{Stealth[scale=3,length=3,width=2]}},
+}
+\begin{tikzpicture}
+  [node distance=.8cm,
+  start chain=going below,]
+     \node [normalchain, join] (szero) {$h=1$ and sample $s_0\sim\mu$};
+     \node [greychain, join] (sh) {Observe state $s_h$};
+     \node [greychain, join] (ah) {Choose action $a_h\in\Aspace$};
+     \begin{scope}[start branch=hoejre,]
+      \node (increment) [normalchain, on chain=going right] {Increment $h$};
+     \end{scope}
+     \node [greychain, join] (rh) {Receive reward $r_h = \Rew(a_h, s_h)$};
+     \begin{scope}[start branch=hoejre,]
+      \node (update) [normalchain, on chain=going right] {Update $s_{h+1}\sim\Tran(\cdot|s_h,a_h)$};
+     \end{scope}
+  % Now that we have finished the main figure let us add some "after-drawings"
+  \draw
+  	(szero) edge[L] (sh)
+  	(sh) edge[L] (ah)
+  	(ah) edge[L] (rh)
+  	(rh) edge[L] (update)
+  	(update) edge[L] (increment)
+  	(increment) edge[L] (sh)
+  			;
+  %% First, let us connect (finans) with (disk). We want it to have
+  %% square corners.
+  %\draw[|-,-|,->, thick,] (rh.east) |(0,-1em)-| (update.west);
+  %\draw[arrow] (rh) -- (update)
+  % Now, let us add some braches. 
+  %% No. 2
+\end{tikzpicture}
+\caption{Interaction protocol for Markov decision processes} \label{fig:MDP}
+\end{figure}
+
+Formally, a discrete-time continuous \gls{MDP} \cite{puterman2014markov, sutton2018reinforcement} is a tuple $\Task = \langle\Sspace,\Aspace,\Tran,\Rew,\gamma,\init\rangle$, where:
 
 \begin{itemize}
-\item $\Sspace\in\Reals^{d_{\Sspace}}$ is the $d_{\Sspace}$-dimensional continuous \emph{state space}, i.e. the set of all possible observable states of the environment;
-\item $\Aspace\in\Reals^{d_{\Aspace}}$ is the $d_{\Aspace}$-dimensional continuous \emph{action space}, i.e. the set of all the possible actions that the agent can perform. Sometimes, not all the actions are performable in all states. In such cases, we can define the set $\Aspace(s)$ for all $s \in \Sspace$, s.a.  $\Aspace = \bigcup_{s \in \Sspace} \Aspace(s)$ 
-\item  $\Tran:\Sspace\times\Aspace\to\Delta(\Sspace)$ is a function called \emph{transition model} such that, for every $s\in\Sspace$ and $a\in\Aspace$, it assigns a probability measure $\Tran(\cdot|s,a)$ over $\Sspace$. Its corresponding probability density function is $P(\cdot|s,a)$.
-\item $\Rew:\Sspace\times\Aspace\to[-\Rmax,\Rmax]$ is a bounded \emph{reward} function such that $\Rew(a, s)$ is the expected reward given $s\in\Sspace$ and $a\in\Aspace$. $\Rmax$ is the maximum absolute reward that the agent can receive.
+\item $\Sspace\in\Reals^{d_{\Sspace}}$ is the $d_{\Sspace}$-dimensional continuous \emph{state space}, \ie the set of all possible observable states of the environment;
+\item $\Aspace\in\Reals^{d_{\Aspace}}$ is the $d_{\Aspace}$-dimensional continuous \emph{action space}, \ie the set of all the possible actions that the agent can perform. Sometimes, not all the actions are performable in all states. In such cases, we can define the set $\Aspace(s)$ for all $s \in \Sspace$, s.a  $\Aspace = \bigcup_{s \in \Sspace} \Aspace(s)$;
+\item  $\Tran:\Sspace\times\Aspace\to\Delta(\Sspace)$ is a function called \emph{transition model} such that, for every $s\in\Sspace$ and $a\in\Aspace$, it assigns a probability measure $\Tran(\cdot|s,a)$ over $\Sspace$. Its corresponding probability density function is $P(\cdot|s,a)$;
+\item $\Rew:\Sspace\times\Aspace\to[-\Rmax,\Rmax]$ is a bounded \emph{reward} function such that, every time the agent chooses action $a\in\Aspace$ in state $s\in\Sspace$, it receives a reward $r = \Rew(a, s)$. $\Rmax$ is the maximum absolute reward that the agent can receive;
 \item $\gamma\in(0,1]$ is a discount factor to apply to future rewards;
 \item $\init\in\Delta(\Sspace)$ is the initial state distribution, such that the initial state is drawn as $s_0\sim\mu$.
 \end{itemize}
 
-\todo[inline]{aggiungi grafico bandits pagina 451}
-
 In the more general case, the state space $\Sspace$ and the action space $\Aspace$, which are the sensor and actuator possibilities of the agent, respectively, can be both continuous and discrete, finite or infinite. In what follows, we will focus on the continuous case because it is the most relevant to our work.
 
-The time is typically modelled as a discrete sequence of decision steps represented by the natural numbers: $\mathcal{H} = \{0, 1, \dots, H\}$, where $H\in\mathcal{N}$ is the episode \emph{horizon}, which can be either finite of infinite $H = \infty$. A \emph{trajectory} is a sequence of states and actions $\tau=\{s_0,a_0,s_1,a_1,\dots,s_{H-1},a_{H-1}\}$.
+The time is typically modelled as a discrete sequence of decision steps represented by the natural numbers: $\mathcal{H} = \{0, 1, \dots, H\}$, where $H\in\Naturals$ is the \emph{horizon} of a given task, which can be either infinite $H = \infty$ or finite. The agent-environment interaction ends when either the horizon is reached or a \emph{terminal state} is reached. Tasks that always end in a finite amount of steps (an \emph{episode}) are called \emph{episodic}. A \emph{trajectory} is the sequence of states and actions $\tau=\{s_0,a_0,s_1,a_1,\dots,s_{H-1},a_{H-1}\}$ up to the last time step of the episode.
 
-
-\todo[inline]{The agent's behaviour is modelled as a policy $\pi:\Sspace\to\Delta(\Aspace)$, such that the current action is drawn as $a_h\sim\pi(\cdot|s_h)$, depending on the current state.} 
+The core of a \gls{MDP} agent is the \emph{policy} $\pi$, a mapping from perceived states of the environment to possible actions. A policy can also take as input the past history of set and actions, but in our work we only consider \emph{memoryless policies}. Such mappings can be deterministic $\pi:\Sspace\to\Aspace$ or stochastic $\pi:\Sspace\to\Delta(\Aspace)$, such that the current action is drawn as $a_h\sim\pi(\cdot|s_h)$. Note that the memoryless property of policies does not imply that the agent cannot take into account what it has seen before when making an action choice. In fact, the agent has multiple ways to leverage its experience and learn through time, as we will see later on. 
