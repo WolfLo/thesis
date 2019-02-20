@@ -1,9 +1,11 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2018.10.15)  18 FEB 2019 20:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  19 FEB 2019 21:40
+entering extended mode
  restricted \write18 enabled.
+ %&-line parsing enabled.
 **thesis.tex
 (./thesis.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 1 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
@@ -27,10 +29,312 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2015/12/03 v1.1r UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+01E02 (decimal 7682)
+   defining Unicode char U+01E03 (decimal 7683)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
 
-) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
@@ -62,88 +366,6 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/02/24 3.9q The Babel package
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def
-\l@dumylang=\language1
-\l@nohyphenation=\language2
-\l@romansh=\language3
-\l@swissgerman=\language4
-\l@uppersorbian=\language5
-\l@assamese=\language6
-\l@icelandic=\language7
-\l@monogreek=\language8
-\l@tamil=\language9
-\l@gujarati=\language10
-\l@serbianc=\language11
-\l@indonesian=\language12
-\l@latin=\language13
-\l@bulgarian=\language14
-\l@kurmanji=\language15
-\l@ngerman-x-2014-05-21=\language16
-\l@interlingua=\language17
-\l@greek=\language18
-\l@irish=\language19
-\l@czech=\language20
-\l@serbian=\language21
-\l@armenian=\language22
-\l@turkish=\language23
-\l@arabic=\language24
-\l@ukenglish=\language25
-\l@estonian=\language26
-\l@french=\language27
-\l@sanskrit=\language28
-\l@german-x-2014-05-21=\language29
-\l@german=\language30
-\l@ethiopic=\language31
-\l@marathi=\language32
-\l@malayalam=\language33
-\l@mongolian=\language34
-\l@panjabi=\language35
-\l@mongolianlmc=\language36
-\l@hungarian=\language37
-\l@telugu=\language38
-\l@turkmen=\language39
-\l@occitan=\language40
-\l@polish=\language41
-\l@kannada=\language42
-\l@ngerman=\language43
-\l@slovenian=\language44
-\l@croatian=\language45
-\l@catalan=\language46
-\l@pinyin=\language47
-\l@finnish=\language48
-\l@classiclatin=\language49
-\l@portuguese=\language50
-\l@dutch=\language51
-\l@coptic=\language52
-\l@danish=\language53
-\l@bokmal=\language54
-\l@hindi=\language55
-\l@russian=\language56
-\l@oriya=\language57
-\l@ukrainian=\language58
-\l@thai=\language59
-\l@bengali=\language60
-\l@welsh=\language61
-\l@ibycus=\language62
-\l@nynorsk=\language63
-\l@italian=\language64
-\l@friulan=\language65
-\l@romanian=\language66
-\l@slovak=\language67
-\l@afrikaans=\language68
-\l@ancientgreek=\language69
-\l@spanish=\language70
-\l@georgian=\language71
-\l@galician=\language72
-\l@usenglishmax=\language73
-\l@latvian=\language74
-\l@lithuanian=\language75
-\l@farsi=\language76
-\l@piedmontese=\language77
-\l@basque=\language78
-\l@swedish=\language79
-\l@esperanto=\language80
-)
 (/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2015/03/26 v1.3n Italian support from the babel system
 
@@ -151,22 +373,18 @@ Language: italian 2015/03/26 v1.3n Italian support from the babel system
 File: babel.def 2016/02/24 3.9q Babel common definitions
 \babel@savecnt=\count89
 \U@D=\dimen103
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def))
+)
 \it@lettering=\count90
 \it@doublequoteactive=\count91
 \it@ISOcompliance=\count92
-
-(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-it.tex
-UTF-8 Italian hyphenation patterns
-(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-it.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-
-it.tex))) (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2012/08/20 v3.3p English support from the babel system
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
-)) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count93
 )
@@ -310,8 +528,13 @@ Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX detected.
-)))
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))
 Package thm-kv Info: kvsetkeys patch (v1.16 or later) on input line 156.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thm-autoref.sty
@@ -420,16 +643,16 @@ Package: changebar 2005/09/18 v3.5c Indicate changes with marginal bars
 \cb@even@right=\dimen135
 \cb@writexy=\write3
 \cb@readxy=\read1
+\openout3 = `thesis.cb2'.
 
-\openout3 = thesis.cb2
 \changebarwidth=\skip58
 \deletebarwidth=\skip59
 \changebarsep=\skip60
 \c@changebargrey=\count123
 \cb@write=\write4
 \cb@read=\read2
+\openout4 = `thesis.cb'.
 
-\openout4 = thesis.cb
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
@@ -762,6 +985,7 @@ Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
+
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
@@ -774,18 +998,15 @@ Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package hobsub Info: Skipping package `etexcmds' (already loaded).
 Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-Package: luatex-loader 2010/03/09 v0.4 Lua module loader (HO)
-
-(/usr/share/texlive/texmf-dist/scripts/oberdiek/oberdiek.luatex.lua)
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO)
-
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks49
 Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO)
-
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
 Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
 Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
 )
@@ -810,6 +1031,8 @@ Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count158
 
@@ -857,19 +1080,19 @@ File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
-2.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
 )
 \Hy@SectionHShift=\skip63
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
-Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environ
-ment
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks50
+\@float@every@algorithm=\toks49
 \c@algorithm=\count166
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
@@ -900,8 +1123,8 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks51
-\XKV@tempa@toks=\toks52
+\XKV@toks=\toks50
+\XKV@tempa@toks=\toks51
 )
 \XKV@depth=\count174
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
@@ -939,7 +1162,7 @@ LaTeX Info: Redefining \bm on input line 207.
 \WF@size=\dimen269
 \c@WF@wrappedlines=\count179
 \WF@box=\box43
-\WF@everypar=\toks53
+\WF@everypar=\toks52
 Package: wrapfig 2003/01/31  v 3.6
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
@@ -951,19 +1174,19 @@ Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
 \rotFPtop=\skip70
 \rotFPbot=\skip71
 \rot@float@box=\box44
-\rot@mess@toks=\toks54
+\rot@mess@toks=\toks53
 )
 (/usr/share/texlive/texmf-dist/tex/latex/emptypage/emptypage.sty
-Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty p
-ages
+Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty 
+pages
 )
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2016/01/24 v4.21 (NLCT)
 
 (/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2015/12/17 v2.02 (NLCT)
-\@glsmfirst=\toks55
-\@glsmrest=\toks56
+\@glsmfirst=\toks54
+\@glsmrest=\toks55
 )
 (/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
@@ -1029,7 +1252,7 @@ Package: fp-upn 1996/10/21
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
 )))
-\@dtl@toks=\toks57
+\@dtl@toks=\toks56
 \@dtl@tmpcount=\count193
 \dtl@tmplength=\skip72
 \dtl@sortresult=\count194
@@ -1060,12 +1283,12 @@ ldf
 File: glossaries-italian.ldf 2014/11/23 v1.0
 )
 \gls@level=\count266
-\@gls@tmpb=\toks58
+\@gls@tmpb=\toks57
 \gls@tmplen=\skip73
-\glskeylisttok=\toks59
-\glslabeltok=\toks60
-\glsshorttok=\toks61
-\glslongtok=\toks62
+\glskeylisttok=\toks58
+\glslabeltok=\toks59
+\glsshorttok=\toks60
+\glslongtok=\toks61
 
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.st
 y
@@ -1092,7 +1315,7 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LT@rows=\count269
 \c@LT@tables=\count270
 \c@LT@chunks=\count271
-\LT@p@ftn=\toks63
+\LT@p@ftn=\toks62
 )
 \glsdescwidth=\skip79
 \glspagelistwidth=\skip80
@@ -1144,7 +1367,7 @@ Package: csquotes 2016/01/31 v5.1g context-sensitive quotations (JAW)
 \csq@qlevel=\count279
 \csq@maxlvl=\count280
 \csq@tshold=\count281
-\csq@ltx@everypar=\toks64
+\csq@ltx@everypar=\toks63
 
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2016/01/31 v5.1g csquotes generic definitions (JAW)
@@ -1158,6 +1381,8 @@ File: csquotes.cfg
 (/usr/share/texlive/texmf-dist/tex/latex/lgreek/lgreek.sty
 \vwl=\count282
 \acct=\count283
+Now handling font encoding LG ...
+... no UTF-8 mapping file for font encoding LG
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
@@ -1203,29 +1428,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 )
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
-\MT@toks=\toks65
+\MT@toks=\toks64
 \MT@count=\count284
 LaTeX Info: Redefining \textls on input line 766.
 \MT@outer@kern=\dimen282
 LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
 \MT@listname@count=\count285
 
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-luatex.def
-File: microtype-luatex.def 2013/05/23 v2.5a Definitions specific to luatex (RS)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
 
-(/usr/share/texlive/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
-Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
-
-(/usr/share/texlive/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
-Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
-\@catcodetablestackcnt=\count286
-)
-\CatcodeTableOther=\catcodetable5
-\CatcodeTableExpl=\catcodetable6
-)
-Lua module: microtype 2013/05/15 2.5 microtype module.
-LaTeX Info: Redefining \lsstyle on input line 644.
-LaTeX Info: Redefining \lslig on input line 644.
+LaTeX Info: Redefining \lsstyle on input line 915.
+LaTeX Info: Redefining \lslig on input line 915.
 \MT@outer@space=\skip85
 )
 Package microtype Info: Loading configuration file microtype.cfg.
@@ -1292,6 +1506,7 @@ LaTeX Font Info:    Redeclaring math symbol \smile on input line 171.
 LaTeX Font Info:    Redeclaring math symbol \frown on input line 172.
 LaTeX Font Info:    Redeclaring math symbol \leftthreetimes on input line 174.
 LaTeX Font Info:    Redeclaring math symbol \rightthreetimes on input line 175.
+
 LaTeX Font Info:    Redeclaring math symbol \pitchfork on input line 176.
 LaTeX Font Info:    Redeclaring math symbol \nVDash on input line 182.
 LaTeX Font Info:    Redeclaring math symbol \Vvdash on input line 184.
@@ -1352,22 +1567,25 @@ LaTeX Font Info:    Redeclaring math symbol \sqsubseteq on input line 380.
 LaTeX Font Info:    Redeclaring math symbol \sqsupseteq on input line 381.
 LaTeX Font Info:    Redeclaring math symbol \triangleleft on input line 407.
 LaTeX Font Info:    Redeclaring math symbol \vartriangleleft on input line 408.
-LaTeX Font Info:    Redeclaring math symbol \triangleright on input line 409.
-LaTeX Font Info:    Redeclaring math symbol \vartriangleright on input line 410.
 
+LaTeX Font Info:    Redeclaring math symbol \triangleright on input line 409.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleright on input line 410
+.
 LaTeX Font Info:    Redeclaring math symbol \ntriangleleft on input line 411.
 LaTeX Font Info:    Redeclaring math symbol \ntriangleright on input line 412.
 LaTeX Font Info:    Redeclaring math symbol \trianglelefteq on input line 413.
 LaTeX Font Info:    Redeclaring math symbol \trianglerighteq on input line 414.
-LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 415.
-LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 416.
 
-LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 427
+LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 415.
+
+LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 416
 .
-LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 428
-.
-LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 42
-9.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 42
+7.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 42
+8.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 4
+29.
 LaTeX Font Info:    Redeclaring math symbol \nless on input line 437.
 LaTeX Font Info:    Redeclaring math symbol \ngtr on input line 438.
 LaTeX Font Info:    Redeclaring math symbol \leq on input line 439.
@@ -1434,33 +1652,39 @@ LaTeX Font Info:    Redeclaring math symbol \leftrightarrow on input line 550.
 LaTeX Font Info:    Redeclaring math symbol \nleftarrow on input line 552.
 LaTeX Font Info:    Redeclaring math symbol \nrightarrow on input line 553.
 LaTeX Font Info:    Redeclaring math symbol \nleftrightarrow on input line 554.
+
 LaTeX Font Info:    Redeclaring math symbol \mapstochar on input line 557.
 LaTeX Font Info:    Redeclaring math symbol \leftharpoonup on input line 560.
 LaTeX Font Info:    Redeclaring math symbol \rightharpoonup on input line 561.
 LaTeX Font Info:    Redeclaring math symbol \leftharpoondown on input line 562.
-LaTeX Font Info:    Redeclaring math symbol \rightharpoondown on input line 563.
 
+LaTeX Font Info:    Redeclaring math symbol \rightharpoondown on input line 563
+.
 LaTeX Font Info:    Redeclaring math symbol \upharpoonleft on input line 564.
 LaTeX Font Info:    Redeclaring math symbol \downharpoonleft on input line 565.
+
 LaTeX Font Info:    Redeclaring math symbol \upharpoonright on input line 566.
 LaTeX Font Info:    Redeclaring math symbol \restriction on input line 567.
-LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 568.
-
-LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 569
+LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 568
 .
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 56
+9.
 LaTeX Font Info:    Redeclaring math symbol \Leftarrow on input line 575.
 LaTeX Font Info:    Redeclaring math symbol \Rightarrow on input line 576.
 LaTeX Font Info:    Redeclaring math symbol \Leftrightarrow on input line 579.
 LaTeX Font Info:    Redeclaring math symbol \nLeftarrow on input line 581.
 LaTeX Font Info:    Redeclaring math symbol \nRightarrow on input line 582.
 LaTeX Font Info:    Redeclaring math symbol \nLeftrightarrow on input line 583.
-LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 593.
-LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 594.
 
+LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 593.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 594
+.
 LaTeX Font Info:    Redeclaring math symbol \upuparrows on input line 595.
 LaTeX Font Info:    Redeclaring math symbol \downdownarrows on input line 596.
 LaTeX Font Info:    Redeclaring math symbol \leftrightarrows on input line 597.
+
 LaTeX Font Info:    Redeclaring math symbol \rightleftarrows on input line 598.
+
 LaTeX Font Info:    Redeclaring math symbol \rhook on input line 612.
 LaTeX Font Info:    Redeclaring math symbol \lhook on input line 613.
 LaTeX Font Info:    Redeclaring math symbol \diagup on input line 614.
@@ -1471,12 +1695,15 @@ LaTeX Font Info:    Redeclaring math symbol \looparrowleft on input line 624.
 LaTeX Font Info:    Redeclaring math symbol \looparrowright on input line 626.
 LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 631.
 LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 633.
-LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 641.
-LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 642.
 
+LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 641.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 642
+.
 LaTeX Font Info:    Redeclaring math symbol \rightsquigarrow on input line 645.
-LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 6
-46.
+
+LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 
+646.
 LaTeX Font Info:    Redeclaring math symbol \oplus on input line 658.
 LaTeX Font Info:    Redeclaring math symbol \ominus on input line 659.
 LaTeX Font Info:    Redeclaring math symbol \otimes on input line 661.
@@ -1486,10 +1713,10 @@ LaTeX Font Info:    Redeclaring math symbol \boxplus on input line 683.
 LaTeX Font Info:    Redeclaring math symbol \boxminus on input line 684.
 LaTeX Font Info:    Redeclaring math symbol \boxtimes on input line 686.
 LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 688.
-\mayacnter=\count287
-\mayacnta=\count288
-\mayacntb=\count289
-\mayacntc=\count290
+\mayacnter=\count286
+\mayacnta=\count287
+\mayacntb=\count288
+\mayacntc=\count289
 \mayawidth=\dimen283
 LaTeX Font Info:    Redeclaring math symbol \intop on input line 753.
 LaTeX Font Info:    Redeclaring math symbol \ointop on input line 760.
@@ -1525,7 +1752,7 @@ Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks66
+\@enLab=\toks65
 )
 (/usr/share/texlive/texmf-dist/tex/latex/units/nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
@@ -1534,21 +1761,21 @@ Package: nicefrac 1998/08/04 v0.9b Nice fractions
 \L@UnitsRaiseScriptstyle=\skip88
 )
 
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is usel
-ess on input line 59.
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 59.
 
 
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is usel
-ess on input line 61.
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 61.
 
-\c@theorem=\count291
-\c@lemmma=\count292
-\c@proposition=\count293
-\c@corollary=\count294
-\c@definition=\count295
-\c@example=\count296
-\c@remark=\count297
-\c@note=\count298
+\c@theorem=\count290
+\c@lemmma=\count291
+\c@proposition=\count292
+\c@corollary=\count293
+\c@definition=\count294
+\c@example=\count295
+\c@remark=\count296
+\c@note=\count297
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
@@ -1558,12 +1785,13 @@ File: tikzlibraryautomata.code.tex 2008/07/14 v3.0.1a (rcs-revision 1.3)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.multipart.code.tex
-File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
-
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
+
 \pgfnodepartlowerbox=\box50
 \pgfnodeparttwobox=\box51
 \pgfnodepartthreebox=\box52
@@ -1616,12 +1844,13 @@ File: tikzlibrarychains.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.6)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.geometric.code.tex
-File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
-
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.code.tex
@@ -1632,7 +1861,7 @@ e.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen291
 \pgfdecoratedinputsegmentremainingdistance=\dimen292
 \pgf@decorate@distancetomove=\dimen293
-\pgf@decorate@repeatstate=\count299
+\pgf@decorate@repeatstate=\count298
 \pgfdecorationsegmentamplitude=\dimen294
 \pgfdecorationsegmentlength=\dimen295
 )
@@ -1685,14 +1914,14 @@ File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
 Package hyperref Info: Option `colorlinks' set `true' on input line 175.
  (./Glossary/Glossary.tex)
 \glswrite=\write6
-\glo@acronym@filetok=\toks67
+\glo@acronym@filetok=\toks66
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
  (./thesis.aux)
-\openout1 = thesis.aux
+\openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
@@ -1722,17 +1951,17 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count300
+\scratchcounter=\count299
 \scratchdimen=\dimen296
 \scratchbox=\box71
-\nofMPsegments=\count301
-\nofMParguments=\count302
-\everyMPshowfont=\toks68
-\MPscratchCnt=\count303
+\nofMPsegments=\count300
+\nofMParguments=\count301
+\everyMPshowfont=\toks67
+\MPscratchCnt=\count302
 \MPscratchDim=\dimen297
-\MPnumerator=\count304
-\makeMPintoPDFobject=\count305
-\everyMPtoPDFconversion=\toks69
+\MPnumerator=\count303
+\makeMPintoPDFobject=\count304
+\everyMPtoPDFconversion=\toks68
 )
 LaTeX Info: Redefining \it@ocap on input line 6.
 LaTeX Info: Redefining \it@ccap on input line 6.
@@ -1778,12 +2007,13 @@ Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.tif,.jpeg,.PNG,.PDF,.JPG,.JPEG,.eps]
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
@@ -1799,7 +2029,7 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count306
+\c@lstlisting=\count305
 \AtBeginShipoutBox=\box72
 Package hyperref Info: Link coloring ON on input line 6.
 
@@ -1809,7 +2039,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count307
+\c@section@level=\count306
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
@@ -1817,8 +2047,8 @@ LaTeX Info: Redefining \nameref on input line 6.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write7
+\openout7 = `thesis.out'.
 
-\openout7 = thesis.out
 LaTeX Info: Redefining \microtypecontext on input line 6.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
@@ -1827,57 +2057,44 @@ Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
 Package microtype Info: No adjustment of tracking.
-Package microtype Info: No adjustment of spacing.
-Package microtype Info: No adjustment of kerning.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
-RS)
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
+\openout6 = `thesis.ist'.
 
-\openout6 = thesis.ist
-] (./thesis.toc)
-\tf@toc=\write8
+] (./thesis.toc
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 3.
 
-\openout8 = thesis.toc
- [2
-
-]
-(./Chapters/2_preliminaries.tex
-Chapter 1.
-
-LaTeX Warning: Citation `lai1985asymptotically' on page 1 undefined on input lin
-e 7.
-
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on in
-put line 9.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 10.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 10.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 3.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 10.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 3.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 10.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 3.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 10.
+(Font)              <12> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 10.
+(Font)              <8> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 10.
-LaTeX Font Info:    Try loading font information for U+msa on input line 10.
+(Font)              <6> on input line 3.
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1885,7 +2102,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 10.
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1893,58 +2110,54 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 10.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 10.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 10.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 10.
-LuaTeX warning (ext4): destination with the same identifier (name{page.1}) has b
-een already used, duplicate ignored
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
+)
+\tf@toc=\write8
+\openout8 = `thesis.toc'.
+
+ [2
+
+]
+(./Chapters/2_preliminaries.tex
+Chapter 1.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
+nput line 9.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
-\relax 
+                   \relax 
 l.13 \item $
-          \Rew:\mathcal{X}\to\Delta([-\Rmax,\Rmax])$ is an unknown function ...
+            \Rew:\mathcal{X}\to\Delta([-\Rmax,\Rmax])$ is an unknown functio...
 [1
 
 
-]
-
-LaTeX Warning: Citation `lattimore2019bandit' on page 2 undefined on input line 
-35.
-
-LuaTeX warning (ext4): destination with the same identifier (name{page.2}) has b
-een already used, duplicate ignored
+]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
+ been already used, duplicate ignored
 <to be read again> 
-\relax 
+                   \relax 
 l.36 
-    [2]
-
-LaTeX Warning: Citation `lattimore2019bandit' on page 3 undefined on input line 
-41.
-
-[3]
+      [2] [3]
 LaTeX Font Info:    Try loading font information for U+dsrom on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on inp
-ut line 50.
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input
- line 66.
-
-
-LaTeX Warning: Citation `lattimore2019bandit' on page 4 undefined on input line 
-66.
-
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 50.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
+t line 66.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 71.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1954,95 +2167,144 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 71.
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 71.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 71.
 
 
-LaTeX Warning: Citation `agrawal1995continuum' on page 4 undefined on input line
- 72.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 71.
 
-
-LaTeX Warning: Citation `magureanu2014lipschitz' on page 4 undefined on input li
-ne 72.
-
-
-LaTeX Warning: Citation `bubeck2011x' on page 4 undefined on input line 72.
-
-[4] [5
-Missing character: There is no ’ (U+2019) in font ec-lmr12!
-]
-
-LaTeX Warning: Citation `puterman2014markov' on page 6 undefined on input line 1
-42.
-
-
-LaTeX Warning: Citation `sutton2018reinforcement' on page 6 undefined on input l
-ine 142.
-
-[6]
+[4] [5] [6]
 Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
 [7]
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input 
-line 166.
-
-
-LaTeX Warning: Citation `sutton2000policy' on page 8 undefined on input line 176
-.
-
-[8] [9]
-
-LaTeX Warning: Citation `baird1993advantage' on page 10 undefined on input line 
-229.
-
-
-LaTeX Warning: Citation `sutton2018reinforcement' on page 10 undefined on input 
-line 238.
-
-[10]
-
-LaTeX Warning: Citation `puterman2014markov' on page 11 undefined on input line 
-249.
-
-
-LaTeX Warning: Citation `sutton2018reinforcement' on page 11 undefined on input 
-line 254.
-
-[11
-Missing character: There is no ’ (U+2019) in font ec-lmr12!
-]
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
+ line 166.
+ [8] [9] [10] [11]
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 261.
+
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 261.
+ [12] [13]
+[14] <Images/ps_taxonomy.png, id=320, 1804.7425pt x 757.83125pt>
+File: Images/ps_taxonomy.png Graphic file (type png)
+
+<use Images/ps_taxonomy.png>
+Package pdftex.def Info: Images/ps_taxonomy.png used on input line 302.
+(pdftex.def)             Requested size: 406.87569pt x 170.85158pt.
+ [15 <./Images/ps_taxonomy.png>]
+
+LaTeX Warning: Reference `PSproblem' on page 16 undefined on input line 321.
+
+[16pdfTeX warning (ext4): destination with the same identifier (name{equation.1
+.4.21}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.355 
+      ] [17]
+
+LaTeX Warning: Citation `glynn1990likelihood' on page 18 undefined on input lin
+e 406.
+
+[18]
+Overfull \hbox (19.18996pt too wide) in paragraph at lines 408--410
+\T1/lmr/m/n/12 (-20) of fi-nite in-cre-ments. The idea is to per-form mul-ti-pl
+e per-tur-ba-tions $\OT1/lmr/m/n/12 (-20) ^^A\OML/cmm/b/it/12 ^^R[]\OML/lmm/m/i
+t/12 ; \OT1/lmr/m/n/12 (-20) ^^A\OML/cmm/b/it/12 ^^R[]\OML/lmm/m/it/12 ; [] ; \
+OT1/lmr/m/n/12 (-20) ^^A\OML/cmm/b/it/12 ^^R[]$
+ []
+
+) [19] (./thesis.bbl
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/12'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (0.55756pt too wide) in paragraph at lines 27--32
+\T1/lmr/m/it/12 (-20) Processing, ICASSP'98 (Cat. No. 98CH36181) \T1/lmr/m/n/12
+ (-20) (1998), vol. 2, IEEE, pp. 1213--
+ []
+
+[20
 
 
-LaTeX Warning: Citation `sutton1991dyna' on page 12 undefined on input line 261.
+]
+LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 112.
+ [21] [22] [23] [24] [25] [26] [27] [28]) [29]
+
+Package glossaries Warning: No \printglossary or \printglossaries found.
+(Remove \makeglossaries if you don't want any glossaries.)
+This document will not have a glossary.
+
+\openout6 = `thesis.acn'.
+
+Package glossaries Info: Writing glossary file thesis.acn on input line 76.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 76.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 76.
+(./thesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 76.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 76.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 12ABCB93D9E0FBA5C64B35C5D83FABA4;1145.
 
 
+LaTeX Warning: There were undefined references.
 
-LaTeX Warning: Citation `kupcsik2013data' on page 12 undefined on input line 261
-.
+ ) 
+Here is how much of TeX's memory you used:
+ 33480 strings out of 493029
+ 624202 string characters out of 6136234
+ 812347 words of memory out of 7999999
+ 35736 multiletter control sequences out of 15000+600000
+ 101702 words of font info for 246 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 62i,14n,77p,1946b,954s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{glo:PG} has been referenced but does not exist, r
+eplaced by a fixed one
 
+pdfTeX warning (dest): name{glo:PS} has been referenced but does not exist, rep
+laced by a fixed one
 
-LaTeX Warning: Citation `watkins1989learning' on page 12 undefined on input line
- 262.
+pdfTeX warning (dest): name{glo:RL} has been referenced but does not exist, rep
+laced by a fixed one
 
+pdfTeX warning (dest): name{glo:MDP} has been referenced but does not exist, re
+placed by a fixed one
 
-LaTeX Warning: Citation `rummery1994line' on page 12 undefined on input line 262
-.
+pdfTeX warning (dest): name{glo:MAB} has been referenced but does not exist, re
+placed by a fixed one
 
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/sha
+re/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doub
+lestroke/dsrom12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (31 pages, 467157 bytes).
+PDF statistics:
+ 630 PDF objects out of 1000 (max. 8388607)
+ 566 compressed objects within 6 object streams
+ 205 named destinations out of 1000 (max. 500000)
+ 26266 words of extra memory for PDF output out of 29859 (max. 10000000)
 
-LaTeX Warning: Citation `williams1992simple' on page 12 undefined on input line 
-262.
-
-
-LaTeX Warning: Citation

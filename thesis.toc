@@ -1,0 +1,18 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Preliminaries}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Multi Armed Bandits}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Exploration and exploitation}{3}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Stochastic Bandits With Finitely Many Arms}{3}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}$\mathcal {X}$-armed bandits}{5}{subsection.1.1.3}
+\contentsline {section}{\numberline {1.2}Markov Decision Processes}{5}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Policies}{7}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Performance}{8}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Value functions}{9}{subsection.1.2.3}
+\contentsline {section}{\numberline {1.3}Reinforcement Learning}{10}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Problem formulation}{11}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Taxonomy}{12}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}Policy Search}{14}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Overview}{14}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Policy gradient}{15}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Policy gradient estimation}{18}{subsection.1.4.3}
+\contentsline {chapter}{Bibliography}{20}{chapter*.4}

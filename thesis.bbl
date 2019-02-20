@@ -18,6 +18,18 @@
   multi-armed bandit problem.
 \newblock {\em Advances in Applied Probability 27}, 4 (1995), 1054--1078.
 
+\bibitem{amari1998natural2}
+{\sc Amari, S.-I.}
+\newblock Natural gradient works efficiently in learning.
+\newblock {\em Neural computation 10}, 2 (1998), 251--276.
+
+\bibitem{amari1998natural1}
+{\sc Amari, S.-I., and Douglas, S.~C.}
+\newblock Why natural gradient?
+\newblock In {\em Proceedings of the 1998 IEEE International Conference on
+  Acoustics, Speech and Signal Processing, ICASSP'98 (Cat. No. 98CH36181)\/}
+  (1998), vol.~2, IEEE, pp.~1213--1216.
+
 \bibitem{antos2008fitted}
 {\sc Antos, A., Szepesv{\'a}ri, C., and Munos, R.}
 \newblock Fitted q-iteration in continuous action-space mdps.

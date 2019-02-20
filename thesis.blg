@@ -3,48 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: acm.bst
 Database file #1: Bibliography/bibliography.bib
+Warning--I didn't find a database entry for "glynn1990likelihood"
 Warning--empty publisher in mcbook_2013
 Warning--empty publisher in mcbook
 Warning--empty booktitle in yupure
-You've used 95 entries,
+You've used 97 entries,
             2253 wiz_defined-function locations,
-            1027 strings with 20422 characters,
-and the built_in function-call counts, 36904 in all, are:
-= -- 3618
-> -- 1594
+            1040 strings with 20772 characters,
+and the built_in function-call counts, 37687 in all, are:
+= -- 3702
+> -- 1613
 < -- 0
-+ -- 655
-- -- 555
-* -- 2732
-:= -- 5582
-add.period$ -- 280
-call.type$ -- 95
-change.case$ -- 542
++ -- 663
+- -- 561
+* -- 2789
+:= -- 5692
+add.period$ -- 286
+call.type$ -- 97
+change.case$ -- 551
 chr.to.int$ -- 0
-cite$ -- 98
-duplicate$ -- 1548
-empty$ -- 3077
-format.name$ -- 555
-if$ -- 7961
+cite$ -- 100
+duplicate$ -- 1582
+empty$ -- 3149
+format.name$ -- 561
+if$ -- 8137
 int.to.chr$ -- 0
-int.to.str$ -- 95
-missing$ -- 94
-newline$ -- 470
-num.names$ -- 202
-pop$ -- 704
+int.to.str$ -- 97
+missing$ -- 96
+newline$ -- 480
+num.names$ -- 206
+pop$ -- 713
 preamble$ -- 1
-purify$ -- 461
+purify$ -- 468
 quote$ -- 0
-skip$ -- 1094
+skip$ -- 1122
 stack$ -- 0
-substring$ -- 2584
-swap$ -- 533
+substring$ -- 2659
+swap$ -- 547
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 356
+type$ -- 364
 warning$ -- 3
-while$ -- 366
-width$ -- 97
-write$ -- 952
-(There were 3 warnings)
+while$ -- 375
+width$ -- 99
+write$ -- 974
+(There were 4 warnings)

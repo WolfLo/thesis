@@ -53,7 +53,7 @@ where $T_i(t)= \sum_{s=1}^{t}\mathds{1}_{\{x_s=i\}}$ is the number of times up t
 	\State {\bfseries Input:} $m\in\Naturals$
 	\For{$t=1,\dots,T$} 
 		\State Choose arm \begin{equation*} x_t = \begin{cases}i, &\text{if $(t$ mod $K)+1=i$ and $t\leq mK$} \\ \arg\max\wh{\mu}_i(mK), &\text{if } t>mK\end{cases} \end{equation*}
-	\EndFor 
+	\EndFor
 	\end{algorithmic}
 \end{algorithm}
 
@@ -115,7 +115,7 @@ Hence, \gls{MDP}s are a powerful tool capable of modelling many challenges that 
      \begin{scope}[start branch=hoejre,]
       \node (increment) [normalchain, on chain=going right] {Increment $h$};
      \end{scope}
-     \node [greychain, join] (rh) {Receive reward $r_h = \Rew(a_h, s_h)$};
+     \node [greychain, join] (rh) {Receive reward $r_h \sim \Rew(\cdot |a_h, s_h)$};
      \begin{scope}[start branch=hoejre,]
       \node (update) [normalchain, on chain=going right] {Update $s_{h+1}\sim\Tran(\cdot|s_h,a_h)$};
      \end{scope}
@@ -143,15 +143,15 @@ A continuous \gls{MDP} \cite{puterman2014markov, sutton2018reinforcement} is a t
 
 \begin{enumerate}
 \item $\Sspace\in\Reals^{d_{\Sspace}}$ is the $d_{\Sspace}$-dimensional \emph{state space}, \ie the set of all possible observable states of the environment;
-\item $\Aspace\in\Reals^{d_{\Aspace}}$ is the $d_{\Aspace}$-dimensional \emph{action space}, \ie the set of all the possible actions that the agent can perform. Sometimes, not all the actions are performable in all states. In such cases, we can define the set $\Aspace(s)$ for all $s \in \Sspace$, s.a  $\Aspace = \bigcup_{s \in \Sspace} \Aspace(s)$;
-\item  $\Tran:\Sspace\times\Aspace\to\Delta(\Sspace)$ is a function called \emph{transition model} such that, for every $s\in\Sspace$ and $a\in\Aspace$, it assigns a probability measure $\Tran(\cdot|s,a)$ over $\Sspace$. Its corresponding probability density function is $P(\cdot|s,a)$;
-\item $\Rew:\Sspace\times\Aspace\to[-\Rmax,\Rmax]$ is a bounded \emph{reward} function such that, every time the agent chooses action $a\in\Aspace$ in state $s\in\Sspace$, it receives a reward $r = \Rew(a, s)$. $\Rmax$ is the maximum absolute reward that the agent can receive;
+\item $\Aspace\in\Reals^{d_{\Aspace}}$ is the $d_{\Aspace}$-dimensional \emph{action space}, \ie the set of all the possible actions that the agent can perform. Sometimes, not all the actions are performable in all states. In such cases, we can define the set $\Aspace(s)$ for all $s \in \Sspace$, s.a  $\Aspace = \bigcup_{s \in \Sspace} \Aspace(s)$.
+\item  $\Tran:\Sspace\times\Aspace\to\Delta(\Sspace)$ is a function called \emph{transition model} such that, for every $s\in\Sspace$ and $a\in\Aspace$, it assigns a probability measure $\Tran(\cdot|s,a)$ over $\Sspace$. In general, we denote with $\Delta(\mathcal{X})$ the set of probability measures over a measurable state $\mathcal{X}$; The corresponding probability density function is $P(\cdot|s,a)$; 
+\item $\Rew:\Sspace\times\Aspace\to\Delta[-\Rmax,\Rmax]$ is a bounded \emph{reward} function such that, every time the agent chooses action $a\in\Aspace$ in state $s\in\Sspace$, it assigns a probability measure $\Rew(\cdot|s,a)$ over $[-\Rmax,\Rmax]$. With little abuse of notation, we will denote $\Rew(a, s)$ the expected return. $\Rmax$ is the maximum absolute reward that the agent can receive;
 \item $\gamma\in(0,1]$ is a discount factor to apply to future rewards. From an economical point of view, it accounts for the fact that an agent might be more interested in a pay-off obtained in the near future rather than a pay-off obtained far in the future. From a statistical point of view the discount factor is related to the probability that the process continues for another epoch.
 \item $\init\in\Delta(\Sspace)$ is the initial state distribution, such that the initial state is drawn as $s_0\sim\mu$.
 \end{enumerate}
 \end{definition}
 
-In the more general case, the state space $\Sspace$ and the action space $\Aspace$, which are the sensor and actuator possibilities of the agent, respectively, can be both continuous and discrete, finite or infinite. In what follows, we will focus on the continuous case because it is the most relevant to our work. The time is typically modelled as a discrete sequence of decision steps represented by the natural numbers: $\mathcal{H} = \{0, 1, \dots, H\}$, where $H\in\Naturals$ is the \emph{horizon} of a given task, which can be either infinite $H = \infty$ or finite. The agent-environment interaction ends when either the horizon is reached or a \emph{terminal state} is reached, \ie a state from which no other state can be reached. Tasks are called \emph{episodic} when there exists a terminal state. After having reached a terminal state, usually all the rewards are considered to be zero. A \emph{trajectory} is the sequence of states, actions and rewards $r_{h+1}=\Rew(a_h, s_h)$ up to the last time step of the episode: $\tau=\{s_h,a_h,r_{h+1}\}_{h=0}^{H-1}$ . \\
+In the more general case, the state space $\Sspace$ and the action space $\Aspace$, which are the sensor and actuator possibilities of the agent, respectively, can be both continuous and discrete, finite or infinite. In what follows, we will focus on the continuous case because it is the most relevant to our work. The time is typically modelled as a discrete sequence of decision steps represented by the natural numbers: $\mathcal{H} = \{0, 1, \dots, H\}$, where $H\in\Naturals$ is the \emph{horizon} of a given task, which can be either infinite $H = \infty$ or finite. The agent-environment interaction ends when either the horizon is reached or a \emph{terminal state} is reached, \ie a state from which no other state can be reached. Tasks are called \emph{episodic} when there exists a terminal state. After having reached a terminal state, usually all the rewards are considered to be zero. A \emph{trajectory} is the sequence of states, actions and rewards $r_{h+1}\sim\Rew(\cdot|a_h, s_h)$ up to the last time step of the episode: $\tau=\{s_h,a_h,r_{h+1}\}_{h=0}^{H-1}$ . \\
 
 \subsection{Policies}
 The core of a \gls{MDP} agent is the \emph{policy} $\pi$, a mapping from perceived states of the environment to possible actions. 
@@ -163,7 +163,7 @@ A policy is a stochastic function $\pi:\Sspace\to\Delta(\Aspace)$, such that the
 Hence, deterministic policies $\pi:\Sspace\to\Aspace$, such that the current action is prescribed as $a=\pi(s)$, are a particular case. As for bandits, in the most general case a policy takes as input the past history of states and actions, but in our work we only consider \emph{memoryless policies}. In fact, as we will see we can always find an optimal policy that depends only on the current state. Moreover, we assumed that the agent's policy is stationary.
 
 \begin{remark}
-Note that we are adopting different notations for time steps in bandits and \gls{MDP}s, $t$ and $h$ respectively. The reason is that we can think of a full \gls{MDP} episode  performed with policy $\pi$ as a unique decision epoch $t$ of a bandit. In other words, one could consider a bandit in which, at iteration $t$, the \emph{bandit agent} pulls a policy $\pi$. The \emph{\gls{MDP} agent} perform a trajectory by interacting with its environment according to policy $\pi$. Then, the bandit agent obtains a reward $r_t=\sum_{h=0}^{H}r_h$. This is the modelling approach that we will adopt in our work. For all details see \color{red}{IternalRef}.
+Note that we are adopting different notations for time steps in bandits and \gls{MDP}s, $t$ and $h$ respectively. The reason is that we can think of a full \gls{MDP} episode  performed with policy $\pi$ as a unique decision epoch $t$ of a bandit. In other words, one could consider a bandit in which, at iteration $t$, the \emph{bandit agent} pulls a policy $\pi$. The \emph{\gls{MDP} agent} perform a trajectory by interacting with its environment according to policy $\pi$. Then, the bandit agent obtains a reward $r_t=\sum_{h=0}^{H}r_h$. This is the modelling approach that we will adopt in our work. For all details see \textcolor{red}{IternalRef}.
 \end{remark}
 
 \subsection{Performance}
@@ -197,7 +197,7 @@ In the \emph{average reward formulation} policies are ranked according to their 
 \begin{align}
 J(\pi)
 &=  \lim_{n\to\inf}\frac{1}{n}\Exp\left[\sum_{h=1}^{n}r_h\mid\pi\right]  \nonumber\\
-& = \int_{\Sspace}d^{\pi}(s)\int_{\Aspace}\pi(a|s)\Tran(s, a)dads,
+& = \int_{\Sspace}d^{\pi}(s)\int_{\Aspace}\pi(a|s)\Rew(s, a)dads,
 \end{align}
 
 where $d^{\pi}(s) = \lim_{n\to\inf} Pr(s_h=s\mid s_0\sim\mu,\pi)$. In this work, we mostly adopt the first formulation of the performance utility function on episodic tasks, \ie tasks with an absorbing state.
@@ -208,7 +208,7 @@ From the start state formulation of performance we can derive the value associat
 \begin{align}
 V^{\pi}(s)
 &=  \Exp[\nu\mid s_0=s,\pi]\\
-&=  \int_{\Aspace}\pi(a|s)\left(\Rew(s,a)+\gamma\int_{\Sspace}\Tran(s'|s, a)V^{\pi}(s')ds'\right)da \label{eq:BellmanV},
+&=  \int_{\Aspace}\pi(a|s)\left(\Rew(s,a)+\gamma\int_{\Sspace}P(s'|s, a)V^{\pi}(s')ds'\right)da \label{eq:BellmanV},
 \end{align}
 
 which allows to re write the performance as:
@@ -223,7 +223,7 @@ Equation \ref{eq:BellmanV} is known as \emph{Bellman's equation} of the state va
 \begin{align}
 Q^{\pi}(s,a)
 &=  \Exp[\nu\mid s_0=s,a_0=a,\pi] \nonumber \\
-&=  \Rew(s,a) + \gamma\int_{\Sspace}\Tran(s'|s, a)\int_{\Aspace}\pi(a'|s')Q^{\pi}(s', a')da'ds' \label{eq:BellmanQ},
+&=  \Rew(s,a) + \gamma\int_{\Sspace}P(s'|s, a)\int_{\Aspace}\pi(a'|s')Q^{\pi}(s', a')da'ds' \label{eq:BellmanQ},
 \end{align}
 
 The difference between the two value functions is known as advantage function \cite{baird1993advantage}:
@@ -305,7 +305,7 @@ A Variety of technique have been proposed in literature to solve the problem \re
 
 
 
-\section{Policy gradient}
+\subsection{Policy gradient}
 In the context of model-free \gls{PG}, the agent's behaviour is modelled as a differentiable parametric policy $\pi_{\vtheta}:\Sspace\to\Delta(\Aspace)$, independent of time (\emph{stationary}), such that the current action is drawn as $a_h\sim\pi_{\vtheta}(\cdot|s_h)=\pi(\cdot|s_h, \vtheta)$, where $\vtheta\in\Theta\subseteq\Reals^m$ are the policy parameters. The most simple parametrization one could think of is the linear one, where the policy only depends linearly on the policy parameters and the action is drawn deterministically:
 
 \begin{align}
@@ -327,29 +327,37 @@ In some cases, the covariance matrix can be learned as well and the parameters s
 This new optimization problem can be solved by resorting to gradient ascent on the policy parameters, which is guaranteed to converge to a local optimum at least:
 
 \begin{align}
-\vtheta^{h+1} \leftarrow \vtheta^h+\alpha\boldsymbol{G(\vtheta^h)}\nabla_{\vtheta}J(\vtheta),
+\vtheta^{t+1} \leftarrow \vtheta^t+\alpha\boldsymbol{G}^{-1}(\vtheta^t)\nabla_{\vtheta}J(\vtheta^t), \label{eq:paramsupdate}
 \end{align}
 
-where $\alpha\geq 0$ is the \emph{learning rate} or \emph{step size}. The quantity $\nabla_{\vtheta}J(\vtheta)$ denotes the \emph{policy gradient} \gls{PG} which gives the name to this method. Its expression is derived in \cite{sutton2000policy}.
+where $\alpha\geq 0$ is the \emph{learning rate} or \emph{step size}, and $\boldsymbol{G}(\vtheta)$ is a positive definite matrix. The quantity $\nabla_{\vtheta}J(\vtheta)$ denotes the \emph{policy gradient} \gls{PG} which gives the name to this method. Its expression is derived in \cite{sutton2000policy}.
 
 \begin{theorem} \label{th:PGtheorem}
 \emph{Policy Gradient Theorem} Given a \gls{MDP} $\mathcal{M}$ and a  Markovian stationary stochastic parametric policy $\pi_{\vtheta}$ differentiable \wrt to $\vtheta$ for all state-action pairs $(s,a)\in(\Sspace,\Aspace)$, the gradient of the policy performance is given by:
 
-\begin{align}
+\begin{equation}
 \nabla_{\vtheta}J(\vtheta) 
-&= \int_{\Sspace}d^{\pi_{\vtheta}}(s)\int_{\Aspace}\nabla_{\vtheta}\pi_{\vtheta}(a|s)Q^{\pi_{\vtheta}}(s,a)dads \nonumber \\
-&= \myExpu{s\sim d^{\pi_{\vtheta}}, a\sim \pi_{\vtheta}(\cdot|s)}{\nabla_{\vtheta}\log\pi_{\vtheta}(a|s)Q^{\pi_{\vtheta}}(s,a)}  . \label{eq:PGtheorem}
-\end{align}
+= \int_{\Sspace}d^{\pi_{\vtheta}}(s)\int_{\Aspace}\nabla_{\vtheta}\pi_{\vtheta}(a|s)Q^{\pi_{\vtheta}}(s,a)dads \nonumber \label{eq:PGtheorem}
+\end{equation}
 \end{theorem}
 
-$\pi_{\vtheta}(s)$ is the stationary state distribution induced by policy $\pi_{\vtheta}$, as defined in equation \ref{eq:ssdistribution}. In practical applications it can be inconvenient or impossible to compute the Q-function. One solution is to leverage simple function approximators belonging to the class of \emph{compatible basis functions}, \ie functions of the form $f_{\vomega}=\vomega^{T}\nabla_{\vtheta}\log\pi_{\vtheta}(a|s)$. Such approximators can replace $Q^{\pi_{\vtheta}}(s,a)$ in equation \ref{eq:PGtheorem} for the calculation of the policy gradient as proven in \cite{sutton2000policy}.\\
+$\pi_{\vtheta}(s)$ is the stationary state distribution induced by policy $\pi_{\vtheta}$, as defined in equation \ref{eq:ssdistribution}. By applying a trivial differentiation rule, $\nabla\log f=\nabla f/f$, we can rewrite equation \ref{eq:PGtheorem} in a way that will turn out to be extremely useful:
+
+\begin{align}
+\nabla_{\vtheta}J(\vtheta) 
+&= \int_{\Sspace}d^{\pi_{\vtheta}}(s)\int_{\Aspace}\pi_{\vtheta}\nabla_{\vtheta}\log\pi_{\vtheta}(a|s)Q^{\pi_{\vtheta}}(s,a)dads \nonumber \\
+&= \myExpu{s\sim d^{\pi_{\vtheta}}, a\sim \pi_{\vtheta}(\cdot|s)}{\nabla_{\vtheta}\log\pi_{\vtheta}(a|s)Q^{\pi_{\vtheta}}(s,a)} . \label{eq:reinforcetrick} 
+\end{align}
+
+This rephrasing is know as REINFORCE trick \cite{williams1992simple} and gives the name to an algorithm which is a milestone of \gls{RL}.
+In practical applications it can be inconvenient or impossible to compute the Q-function. One solution is to leverage simple function approximators belonging to the class of \emph{compatible basis functions}, \ie functions of the form $f_{\vomega}=\vomega^{T}\nabla_{\vtheta}\log\pi_{\vtheta}(a|s)$. Such approximators can replace $Q^{\pi_{\vtheta}}(s,a)$ in equation \ref{eq:PGtheorem} for the calculation of the policy gradient as proven in \cite{sutton2000policy}.\\
 A second solution that prevent from calculating $Q^{\pi_{\vtheta}}(s,a)$ explicitly is to resort to a trajectory-based reformulation of equation \ref{eq:PGtheorem}. By rephrasing the expected performance under policy $\pi_{\vtheta}$ defined in equation \ref{eq:Jstartstate} as:
 
 \begin{align}
 J(\vtheta) = \Exp_{\tau\sim p_{\vtheta}}[\Rew(\tau)], 
 \end{align}
 
-where $p_{\vtheta}$ is the distribution over trajectories $\tau\in\mathcal{T}$ induced by the policy $\pi_{\vtheta}$, we can write: 
+where $p_{\vtheta}$ is the distribution over trajectories $\tau\in\mathcal{T}$ induced by the policy $\pi_{\vtheta}$, and $\Rew(\tau) = \sum_{h=0}^{H-1}\gamma^{h}r_{h+1}$, we can write: 
 
 \begin{align}
 \nabla_{\vtheta}J(\vtheta) = \int_{\mathcal{T}}\nabla_{\vtheta}p_{\vtheta}(\tau)\Rew(\tau)d\tau = \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\Rew(\tau)}
@@ -359,34 +367,54 @@ This formulation of the \gls{PG} turns out to be extremely practical. Not only b
 
 \begin{align}
 \log p_{\vtheta}(\tau) 
-&= \nabla_{\vtheta}\log\left( \mu(s_{\tau,0}\prod_{t=0}^{H-1}\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})\Tran(a_{\tau,h+1}|s_{\tau,h+1}))\right) \\
+&= \nabla_{\vtheta}\log\left( \mu(s_{\tau,0})\prod_{t=0}^{H-1}\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})P(a_{\tau,h+1}|s_{\tau,h+1})\right) \\
 &= \sum_{t=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h}), \; \forall \tau\in\mathcal{T}
 \end{align}
 
+At this point, the careful reader might have noticed that we have not yet discussed the meaning of the $\boldsymbol{G}(\vtheta)$ in the parameters update equation \ref{eq:paramsupdate}. Well, the choice of this matrix represent the direction we want to take when performing a gradient update. The two most common direction choices in the \gls{RL} literature are \emph{steepest gradient ascent} and \emph{natural gradient ascent}. In the first case, it is sufficient to set $\boldsymbol{G}(\vtheta)=\boldsymbol{I}$. However, this option might be ineffective in many cases \cite{amari1998natural1}:
 
+\begin{itemize}
+\item when there are large plateaus where the gradient is very small and does not point in the direction of the global optimum;
+\item when the performance function (or, in general, the loss function to optimize) is multimodal;
+\item when the gradient is not isotropic in magnitude \wrt any direction away from its maximum,creating troubles in the step size tuning.
+\end{itemize}
 
-%\todol{draw markov reward process example}
-%\todol{A MAB is formally equivalent to a one-step Markov Decision Process (MDP), with 3 arms MAB drawing} 
-%\begin{center}
-%\begin{tikzpicture}[->, >=stealth', auto, semithick, node distance=3cm]
-%\tikzstyle{every state}=[fill=white,draw=black,thick,text=black,scale=1]
-%\node[state]    (A)                     {$A$};
-%\node[state]    (B)[above right of=A]   {$B$};
-%\node[state]    (C)[below right of=A]   {$C$};
-%\node[state]    (D)[below right of=B]   {$D$};
-%\path
-%(A) edge[loop left]     node{$p^2$}         (A)
-%    edge[bend left]     node{$(1-p)^2$}     (B)
-%    edge[bend left,below]      node{$p(1-p)$}      (D)
-%    edge[bend right]    node{$p(1-p)$}      (C)
-%(B) edge                node{$1$}           (D)
-%(C) edge                node{$1$}           (D)
-%(D) edge[loop right]    node{$(1-q)^2$}     (D)
-%    edge[bend right,right]    node{$q(1-q)$}      (B)
-%    edge[bend left]     node{$q(1-q)$}      (C)
-%    edge[bend left,above]     node{$q^2$}         (A);
-%\node[above=0.5cm] (A){Patch G};
-%\draw[red] ($(D)+(-1.5,0)$) ellipse (2cm and 3.5cm)node[yshift=3cm]{Patch H};
-%\end{tikzpicture}
-%\end{center}
+In such cases, the \emph{natural gradient} as been empirically proven to have faster convergence and to avoid premature convergence to local maxima. In fact, natural gradient considers the parameter space as a Riemann manifold equipped with its own norm $\norm{\vtheta}^2_{\boldsymbol{G}(\vtheta)}=\vtheta^T\boldsymbol{G}(\vtheta)\vtheta$, which replaces the Euclidean norm, $\norm{\vtheta}^2_{\boldsymbol{I}}=\vtheta^T\vtheta$. In such manifold, $\boldsymbol{G}$ represents the local Riemann metric tensor, which, in the context of \gls{MDP}s is usually given by the \emph{Fisher Information Matrix}, \ie $\boldsymbol{G}(\vtheta)=\boldsymbol{F}(\vtheta)$:
+
+\begin{align}
+\boldsymbol{F}(\vtheta &= \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\nabla_{\vtheta}\log p_{\vtheta}(\tau)^T}.
+\end{align}
+
+For more details on the advantages of the natural gradient over the steepest ascent gradient we refer to \cite{amari1998natural1, amari1998natural2, peters2008reinforcement}. \\
+We are now ready to present the general setup for policy gradient methods, showed in Algorithm \textcolor{red}{InternalRef}.
+
+\begin{algorithm}[t]
+	\caption{Generic policy gradient algorithm}
+	\label{alg:PG}
+	\begin{algorithmic}[1]
+	\State Initialize policy parameters $\vtheta^0$
+	\For{$t=1,2,\dots,T_{max}$} 
+		\State Estimate $\boldsymbol{G}(\vtheta^t)$ with an estimator $\widehat{\boldsymbol{G}}(\vtheta^t)$
+		\State Estimate $\nabla_{\vtheta}J(\vtheta^t)$ with an estimator $\widehat{\nabla}_{\vtheta}J(\vtheta^t)$
+		\State Update the policy parameters $\vtheta^{t+1} \leftarrow \vtheta^t+\alpha\widehat{\boldsymbol{G}}^{-1}(\vtheta^t)\widehat{\nabla}_{\vtheta}J(\vtheta^t)$
+	\EndFor \\
+	\Return policy parameters $\vtheta^{T_{max}}$
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{Policy gradient estimation}
+As shown in the generic policy gradient algorithm, at each iteration an estimate of the policy gradient is required. Indeed, finding a good estimator is one of the main challenges of policy gradient methods. Since \emph{RL} aims at solving \gls{MDP}s  whose model is unknown to the agent, the sole mean to estimate the policy gradient is by leveraging on the experience collected, \ie the samples. Among several techniques proposed in the literature over the last years, the most prominent approaches to estimate the policy gradient from samples are \emph{Finite-Difference} and \emph{Likelihood Ratio} methods\cite{glynn1990likelihood}.
+
+\textbf{Finite differences}\\
+Finite difference methods aim at approximating the policy gradient as a quotient of finite increments. The idea is to perform multiple perturbations $\Delta\vtheta_1,\Delta\vtheta_2, \dots, \Delta\vtheta_N$ of the policy parameters. Then, with each set of perturbed parameters collect a number of sample trajectories in order to calculate $\Delta\hat{J}_i=J(\vtheta+\Delta\vtheta_i)-J(\vtheta)$. At this point, the policy gradient can be estimated by regression as:
+
+\begin{align}
+\widehat{\nabla}_{\vtheta}J(\vtheta)=(\boldsymbol{\Delta\Theta}^T\boldsymbol{\Delta\Theta})^{-1}\boldsymbol{\Delta\hat{J}},
+\end{align}
+
+where $\boldsymbol{\Delta\Theta}=[\Delta\vtheta_1, \Delta\vtheta_2, \dots, \Delta\vtheta_N]$ and $\boldsymbol{\Delta\hat{J}}=[\Delta\hat{J}_1,\Delta\hat{J}_2,\dots,\Delta\hat{J}_N]$. This method
+is easy to implement and very efficient when applied to deterministic tasks or pseudo-random number simulations. However, it becomes useless in real control tasks, where a large number of trajectories is required and noise slows down convergence. Moreover, the choice of the perturbation of the parameters is a very difficult problem which may cause instability. For these reasons, the likelihood-ratio method is largely preferred in real control tasks.
+
+\textbf{Likelihood ratio}\\
+This method blabla \ref{eq:reinforcetrick}
 
