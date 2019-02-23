@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  19 FEB 2019 21:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  23 FEB 2019 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1920,7 +1920,11 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (./thesis.aux)
+ (./thesis.aux
+
+LaTeX Warning: Label `eq:trajectoryPG' multiply defined.
+
+)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -1939,8 +1943,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for LG/cmr/m/n on input line 6.
 LaTeX Font Info:    Try loading font information for LG+cmr on input line 6.
-
-(/usr/share/texlive/texmf-dist/tex/latex/lgreek/LGcmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/lgreek/LGcmr.fd
 File: LGcmr.fd 1995/04/22 v2.3f Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 6.
@@ -2208,12 +2211,7 @@ LaTeX Warning: Reference `PSproblem' on page 16 undefined on input line 321.
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.355 
-      ] [17]
-
-LaTeX Warning: Citation `glynn1990likelihood' on page 18 undefined on input lin
-e 406.
-
-[18]
+      ] [17] [18]
 Overfull \hbox (19.18996pt too wide) in paragraph at lines 408--410
 \T1/lmr/m/n/12 (-20) of fi-nite in-cre-ments. The idea is to per-form mul-ti-pl
 e per-tur-ba-tions $\OT1/lmr/m/n/12 (-20) ^^A\OML/cmm/b/it/12 ^^R[]\OML/lmm/m/i
@@ -2221,7 +2219,11 @@ t/12 ; \OT1/lmr/m/n/12 (-20) ^^A\OML/cmm/b/it/12 ^^R[]\OML/lmm/m/it/12 ; [] ; \
 OT1/lmr/m/n/12 (-20) ^^A\OML/cmm/b/it/12 ^^R[]$
  []
 
-) [19] (./thesis.bbl
+
+LaTeX Warning: Reference `eq:logpolicyestimate' on page 19 undefined on input l
+ine 420.
+
+) [19] [20] (./thesis.bbl
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2231,13 +2233,13 @@ Overfull \hbox (0.55756pt too wide) in paragraph at lines 27--32
  (-20) (1998), vol. 2, IEEE, pp. 1213--
  []
 
-[20
+[21
 
 
 ]
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 112.
- [21] [22] [23] [24] [25] [26] [27] [28]) [29]
+ [22] [23] [24] [25] [26] [27] [28] [29]) [30]
 
 Package glossaries Warning: No \printglossary or \printglossaries found.
 (Remove \makeglossaries if you don't want any glossaries.)
@@ -2257,12 +2259,15 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 33480 strings out of 493029
- 624202 string characters out of 6136234
- 812347 words of memory out of 7999999
- 35736 multiletter control sequences out of 15000+600000
+ 33486 strings out of 493029
+ 624310 string characters out of 6136234
+ 812535 words of memory out of 7999999
+ 35739 multiletter control sequences out of 15000+600000
  101702 words of font info for 246 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,14n,77p,1946b,954s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2301,10 +2306,10 @@ re/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (31 pages, 467157 bytes).
+Output written on thesis.pdf (32 pages, 469080 bytes).
 PDF statistics:
- 630 PDF objects out of 1000 (max. 8388607)
- 566 compressed objects within 6 object streams
- 205 named destinations out of 1000 (max. 500000)
+ 640 PDF objects out of 1000 (max. 8388607)
+ 575 compressed objects within 6 object streams
+ 208 named destinations out of 1000 (max. 500000)
  26266 words of extra memory for PDF output out of 29859 (max. 10000000)
 

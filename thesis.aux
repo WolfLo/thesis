@@ -110,6 +110,8 @@
 \newlabel{eq:PGtheorem}{{1.21}{16}{}{equation.1.4.21}{}}
 \newlabel{eq:reinforcetrick}{{1.21}{16}{Policy gradient}{equation.1.4.21}{}}
 \citation{amari1998natural1}
+\newlabel{eq:trajectoryPG}{{1.23}{17}{Policy gradient}{equation.1.4.23}{}}
+\newlabel{eq:logpolicy estimate}{{1.25}{17}{Policy gradient}{equation.1.4.25}{}}
 \citation{amari1998natural1}
 \citation{amari1998natural2}
 \citation{peters2008reinforcement}
@@ -117,6 +119,8 @@
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1.2}{\ignorespaces Generic policy gradient algorithm\relax }}{18}{algorithm.1.2}}
 \newlabel{alg:PG}{{1.2}{18}{Generic policy gradient algorithm\relax }{algorithm.1.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.4.3}Policy gradient estimation}{18}{subsection.1.4.3}}
+\citation{williams1992simple}
+\newlabel{eq:trajectoryPG}{{1.28}{19}{Policy gradient estimation}{equation.1.4.28}{}}
 \citation{*}
 \bibstyle{acm}
 \bibdata{Bibliography/bibliography}
@@ -130,7 +134,7 @@
 \bibcite{auer2002using}{8}
 \bibcite{auer2002finite}{9}
 \bibcite{auer2007improved}{10}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{20}{chapter*.4}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{21}{chapter*.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{DBLP:conf/icml/2015}{11}
@@ -160,63 +164,64 @@
 \bibcite{DBLP:conf/icml/2018}{35}
 \bibcite{espeholt2018impala}{36}
 \bibcite{gil2013renyi}{37}
-\bibcite{grondman2012survey}{38}
-\bibcite{haarnoja2017reinforcement}{39}
-\bibcite{haarnoja2018soft}{40}
-\bibcite{hershey2007approximating}{41}
-\bibcite{houthooft2016vime}{42}
-\bibcite{ionides2008truncated}{43}
-\bibcite{jaksch2010near}{44}
-\bibcite{jin2018q}{45}
-\bibcite{DBLP:conf/colt/2010}{46}
-\bibcite{kallus2018instrument}{47}
-\bibcite{kaufmann2012thompson}{48}
-\bibcite{kearns2002near}{49}
-\bibcite{kleinberg2008multi}{50}
-\bibcite{kleinberg2013bandits}{51}
-\bibcite{kleinberg2005nearly}{52}
-\bibcite{kupcsik2013data}{53}
-\bibcite{lai1985asymptotically}{54}
-\bibcite{lakshmanan2015improved}{55}
-\bibcite{lange2012batch}{56}
-\bibcite{lattimore2014near}{57}
-\bibcite{lattimore2019bandit}{58}
-\bibcite{magureanu2014lipschitz}{59}
-\bibcite{DBLP:conf/aips/2012}{60}
-\bibcite{pmlr-v48-medina16}{61}
-\bibcite{mersereau2009structured}{62}
-\bibcite{metelli2018policy}{63}
-\bibcite{mnih2016asynchronous}{64}
-\bibcite{more1994line}{65}
-\bibcite{jungseul2018exploration}{66}
-\bibcite{ortner2012online}{67}
-\bibcite{osband2013more}{68}
-\bibcite{osband2016generalization}{69}
-\bibcite{owen_safe_2000}{70}
-\bibcite{mcbook_2013}{71}
-\bibcite{mcbook}{72}
-\bibcite{pandey2007multi}{73}
-\bibcite{peters2008reinforcement}{74}
-\bibcite{DBLP:conf/icml/2017}{75}
-\bibcite{puterman2014markov}{76}
-\bibcite{renyi1961measures}{77}
-\bibcite{robbins1985some}{78}
-\bibcite{rummery1994line}{79}
-\bibcite{saritacc2017combinatorial}{80}
-\bibcite{schulman2015trust}{81}
-\bibcite{sehnke2008policy}{82}
-\bibcite{silver2014deterministic}{83}
-\bibcite{srinivas2010gaussian}{84}
-\bibcite{strehl2009reinforcement}{85}
-\bibcite{sutton1988learning}{86}
-\bibcite{sutton1991dyna}{87}
-\bibcite{sutton2018reinforcement}{88}
-\bibcite{sutton2000policy}{89}
-\bibcite{thompson1933likelihood}{90}
-\bibcite{vakili2011deterministic}{91}
-\bibcite{veach_optimally_1995}{92}
-\bibcite{wang2018regional}{93}
-\bibcite{watkins1989learning}{94}
-\bibcite{weinstein2012bandit}{95}
-\bibcite{williams1992simple}{96}
-\bibcite{yupure}{97}
+\bibcite{glynn1990likelihood}{38}
+\bibcite{grondman2012survey}{39}
+\bibcite{haarnoja2017reinforcement}{40}
+\bibcite{haarnoja2018soft}{41}
+\bibcite{hershey2007approximating}{42}
+\bibcite{houthooft2016vime}{43}
+\bibcite{ionides2008truncated}{44}
+\bibcite{jaksch2010near}{45}
+\bibcite{jin2018q}{46}
+\bibcite{DBLP:conf/colt/2010}{47}
+\bibcite{kallus2018instrument}{48}
+\bibcite{kaufmann2012thompson}{49}
+\bibcite{kearns2002near}{50}
+\bibcite{kleinberg2008multi}{51}
+\bibcite{kleinberg2013bandits}{52}
+\bibcite{kleinberg2005nearly}{53}
+\bibcite{kupcsik2013data}{54}
+\bibcite{lai1985asymptotically}{55}
+\bibcite{lakshmanan2015improved}{56}
+\bibcite{lange2012batch}{57}
+\bibcite{lattimore2014near}{58}
+\bibcite{lattimore2019bandit}{59}
+\bibcite{magureanu2014lipschitz}{60}
+\bibcite{DBLP:conf/aips/2012}{61}
+\bibcite{pmlr-v48-medina16}{62}
+\bibcite{mersereau2009structured}{63}
+\bibcite{metelli2018policy}{64}
+\bibcite{mnih2016asynchronous}{65}
+\bibcite{more1994line}{66}
+\bibcite{jungseul2018exploration}{67}
+\bibcite{ortner2012online}{68}
+\bibcite{osband2013more}{69}
+\bibcite{osband2016generalization}{70}
+\bibcite{owen_safe_2000}{71}
+\bibcite{mcbook_2013}{72}
+\bibcite{mcbook}{73}
+\bibcite{pandey2007multi}{74}
+\bibcite{peters2008reinforcement}{75}
+\bibcite{DBLP:conf/icml/2017}{76}
+\bibcite{puterman2014markov}{77}
+\bibcite{renyi1961measures}{78}
+\bibcite{robbins1985some}{79}
+\bibcite{rummery1994line}{80}
+\bibcite{saritacc2017combinatorial}{81}
+\bibcite{schulman2015trust}{82}
+\bibcite{sehnke2008policy}{83}
+\bibcite{silver2014deterministic}{84}
+\bibcite{srinivas2010gaussian}{85}
+\bibcite{strehl2009reinforcement}{86}
+\bibcite{sutton1988learning}{87}
+\bibcite{sutton1991dyna}{88}
+\bibcite{sutton2018reinforcement}{89}
+\bibcite{sutton2000policy}{90}
+\bibcite{thompson1933likelihood}{91}
+\bibcite{vakili2011deterministic}{92}
+\bibcite{veach_optimally_1995}{93}
+\bibcite{wang2018regional}{94}
+\bibcite{watkins1989learning}{95}
+\bibcite{weinstein2012bandit}{96}
+\bibcite{williams1992simple}{97}
+\bibcite{yupure}{98}

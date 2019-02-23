@@ -224,6 +224,11 @@
   distributions.
 \newblock {\em Information Sciences 249\/} (2013), 124--131.
 
+\bibitem{glynn1990likelihood}
+{\sc Glynn, P.~W.}
+\newblock Likelihood ratio gradient estimation for stochastic systems.
+\newblock {\em Communications of the ACM 33}, 10 (1990), 75--84.
+
 \bibitem{grondman2012survey}
 {\sc Grondman, I., Busoniu, L., Lopes, G.~A., and Babuska, R.}
 \newblock A survey of actor-critic reinforcement learning: Standard and natural

@@ -360,15 +360,15 @@ J(\vtheta) = \Exp_{\tau\sim p_{\vtheta}}[\Rew(\tau)],
 where $p_{\vtheta}$ is the distribution over trajectories $\tau\in\mathcal{T}$ induced by the policy $\pi_{\vtheta}$, and $\Rew(\tau) = \sum_{h=0}^{H-1}\gamma^{h}r_{h+1}$, we can write: 
 
 \begin{align}
-\nabla_{\vtheta}J(\vtheta) = \int_{\mathcal{T}}\nabla_{\vtheta}p_{\vtheta}(\tau)\Rew(\tau)d\tau = \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\Rew(\tau)}
+\nabla_{\vtheta}J(\vtheta) = \int_{\mathcal{T}}\nabla_{\vtheta}p_{\vtheta}(\tau)\Rew(\tau)d\tau = \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\Rew(\tau)} \label{eq:trajectoryPG}
 \end{align}
 
 This formulation of the \gls{PG} turns out to be extremely practical. Not only because it prevents from the calculation of the Q-function, but also because it does not require any knowledge about the transition kernel of the \gls{MDP}. In fact, $\log p_{\vtheta}(\tau)$ can be easily derived from the sheer knowledge of the trajectory and definition of the policy:
 
 \begin{align}
-\log p_{\vtheta}(\tau) 
+\log \nabla_{\vtheta}p_{\vtheta}(\tau) 
 &= \nabla_{\vtheta}\log\left( \mu(s_{\tau,0})\prod_{t=0}^{H-1}\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})P(a_{\tau,h+1}|s_{\tau,h+1})\right) \\
-&= \sum_{t=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h}), \; \forall \tau\in\mathcal{T}
+&= \sum_{t=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h}), \; \forall \tau\in\mathcal{T} \label{eq:logpolicy estimate}
 \end{align}
 
 At this point, the careful reader might have noticed that we have not yet discussed the meaning of the $\boldsymbol{G}(\vtheta)$ in the parameters update equation \ref{eq:paramsupdate}. Well, the choice of this matrix represent the direction we want to take when performing a gradient update. The two most common direction choices in the \gls{RL} literature are \emph{steepest gradient ascent} and \emph{natural gradient ascent}. In the first case, it is sufficient to set $\boldsymbol{G}(\vtheta)=\boldsymbol{I}$. However, this option might be ineffective in many cases \cite{amari1998natural1}:
@@ -416,5 +416,11 @@ where $\boldsymbol{\Delta\Theta}=[\Delta\vtheta_1, \Delta\vtheta_2, \dots, \Delt
 is easy to implement and very efficient when applied to deterministic tasks or pseudo-random number simulations. However, it becomes useless in real control tasks, where a large number of trajectories is required and noise slows down convergence. Moreover, the choice of the perturbation of the parameters is a very difficult problem which may cause instability. For these reasons, the likelihood-ratio method is largely preferred in real control tasks.
 
 \textbf{Likelihood ratio}\\
-This method blabla \ref{eq:reinforcetrick}
+Likelihood ratio methods were among the first policy search methods
+introduced in the early 1990s by Williams \cite{williams1992simple}, and include the famous REINFORCE algorithm. These methods build upon the policy gradient formulation given by the second equation \ref{eq:trajectoryPG}, which, in the same way of equation \ref{eq:reinforcetrick}, has been rewritten by applying the so called \emph{REINFORCE trick}, also called \emph{likelihood ratio} trick. As we have seen in equation \ref{eq:logpolicyestimate}, the policy gradient (eq. \ref{eq:trajectoryPG}) can be approximated by using a sum over the sampled trajectories. In a similar way, we can estimate $\Rew(\tau)$ in a Monte-Carlo fashion. However, such estimates suffer of very large variance. The variance can be reduced by introducing a baseline $b$ for the trajectory reward $\Rew(\tau)$, \ie
 
+\begin{align}
+\nabla_{\vtheta}J(\vtheta) = \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\left(\Rew(\tau)-b\right)} \label{eq:trajectoryPG}
+\end{align}
+
+The estimator with baseline is still unbiased. This parameter can be chosen arbitrarily in order to minimize the variance. The variance-minimizing baseline is usually referred to as \emph{optimal baseline}.
