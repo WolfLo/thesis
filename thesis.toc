@@ -15,4 +15,5 @@
 \contentsline {subsection}{\numberline {1.4.1}Overview}{14}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Policy gradient}{15}{subsection.1.4.2}
 \contentsline {subsection}{\numberline {1.4.3}Policy gradient estimation}{18}{subsection.1.4.3}
-\contentsline {chapter}{Bibliography}{21}{chapter*.4}
+\contentsline {subsection}{\numberline {1.4.4}Algorithms}{20}{subsection.1.4.4}
+\contentsline {chapter}{Bibliography}{24}{chapter*.5}

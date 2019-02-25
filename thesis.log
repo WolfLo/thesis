@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  23 FEB 2019 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  25 FEB 2019 17:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1922,7 +1922,10 @@ Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
  (./thesis.aux
 
-LaTeX Warning: Label `eq:trajectoryPG' multiply defined.
+LaTeX Warning: Label `alg:REINFORCE' multiply defined.
+
+
+LaTeX Warning: Label `alg:PG' multiply defined.
 
 )
 \openout1 = `thesis.aux'.
@@ -2195,7 +2198,7 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 261.
  [12] [13]
-[14] <Images/ps_taxonomy.png, id=320, 1804.7425pt x 757.83125pt>
+[14] <Images/ps_taxonomy.png, id=325, 1804.7425pt x 757.83125pt>
 File: Images/ps_taxonomy.png Graphic file (type png)
 
 <use Images/ps_taxonomy.png>
@@ -2211,35 +2214,29 @@ LaTeX Warning: Reference `PSproblem' on page 16 undefined on input line 321.
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.355 
-      ] [17] [18]
-Overfull \hbox (19.18996pt too wide) in paragraph at lines 408--410
+      ] [17]
+Overfull \hbox (19.18996pt too wide) in paragraph at lines 412--414
 \T1/lmr/m/n/12 (-20) of fi-nite in-cre-ments. The idea is to per-form mul-ti-pl
 e per-tur-ba-tions $\OT1/lmr/m/n/12 (-20) ^^A\OML/cmm/b/it/12 ^^R[]\OML/lmm/m/i
 t/12 ; \OT1/lmr/m/n/12 (-20) ^^A\OML/cmm/b/it/12 ^^R[]\OML/lmm/m/it/12 ; [] ; \
 OT1/lmr/m/n/12 (-20) ^^A\OML/cmm/b/it/12 ^^R[]$
  []
 
-
-LaTeX Warning: Reference `eq:logpolicyestimate' on page 19 undefined on input l
-ine 420.
-
-) [19] [20] (./thesis.bbl
+[18] [19] [20] [21]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 513.
+) [22] [23] (./thesis.bbl
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
-
-Overfull \hbox (0.55756pt too wide) in paragraph at lines 27--32
-\T1/lmr/m/it/12 (-20) Processing, ICASSP'98 (Cat. No. 98CH36181) \T1/lmr/m/n/12
- (-20) (1998), vol. 2, IEEE, pp. 1213--
- []
-
-[21
+ [24
 
 
 ]
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 112.
- [22] [23] [24] [25] [26] [27] [28] [29]) [30]
+ [25] [26] [27] [28] [29]
+[30] [31] [32]) [33]
 
 Package glossaries Warning: No \printglossary or \printglossaries found.
 (Remove \makeglossaries if you don't want any glossaries.)
@@ -2247,14 +2244,14 @@ This document will not have a glossary.
 
 \openout6 = `thesis.acn'.
 
-Package glossaries Info: Writing glossary file thesis.acn on input line 76.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 76.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 76.
+Package glossaries Info: Writing glossary file thesis.acn on input line 72.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 76.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 76.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 12ABCB93D9E0FBA5C64B35C5D83FABA4;1145.
+(rerunfilecheck)             Checksum: 9A4A0EF46FB013F7DFFCFCF1A2EAF868;1209.
 
 
 LaTeX Warning: There were undefined references.
@@ -2264,15 +2261,21 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 33486 strings out of 493029
- 624310 string characters out of 6136234
- 812535 words of memory out of 7999999
- 35739 multiletter control sequences out of 15000+600000
- 101702 words of font info for 246 fonts, out of 8000000 for 9000
+ 33620 strings out of 493029
+ 626492 string characters out of 6136234
+ 819410 words of memory out of 7999999
+ 35862 multiletter control sequences out of 15000+600000
+ 107173 words of font info for 243 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,14n,77p,1946b,954s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{glo:PG} has been referenced but does not exist, r
-eplaced by a fixed one
+ 62i,14n,80p,1946b,954s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{glo:PGPE} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{glo:GPOMDP} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{glo:PG} has been referenced but does not exist, rep
+laced by a fixed one
 
 pdfTeX warning (dest): name{glo:PS} has been referenced but does not exist, rep
 laced by a fixed one
@@ -2287,29 +2290,31 @@ pdfTeX warning (dest): name{glo:MAB} has been referenced but does not exist, re
 placed by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
-s/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doub
-lestroke/dsrom12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/l
-mr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb
-></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (32 pages, 469080 bytes).
+s/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
+re/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
+lm-rm.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom12.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type
+1/matha12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/m
+atha6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (35 pages, 492211 bytes).
 PDF statistics:
- 640 PDF objects out of 1000 (max. 8388607)
- 575 compressed objects within 6 object streams
- 208 named destinations out of 1000 (max. 500000)
- 26266 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 709 PDF objects out of 1000 (max. 8388607)
+ 638 compressed objects within 7 object streams
+ 227 named destinations out of 1000 (max. 500000)
+ 27298 words of extra memory for PDF output out of 29859 (max. 10000000)
 

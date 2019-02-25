@@ -360,7 +360,9 @@ J(\vtheta) = \Exp_{\tau\sim p_{\vtheta}}[\Rew(\tau)],
 where $p_{\vtheta}$ is the distribution over trajectories $\tau\in\mathcal{T}$ induced by the policy $\pi_{\vtheta}$, and $\Rew(\tau) = \sum_{h=0}^{H-1}\gamma^{h}r_{h+1}$, we can write: 
 
 \begin{align}
-\nabla_{\vtheta}J(\vtheta) = \int_{\mathcal{T}}\nabla_{\vtheta}p_{\vtheta}(\tau)\Rew(\tau)d\tau = \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\Rew(\tau)} \label{eq:trajectoryPG}
+\nabla_{\vtheta}J(\vtheta) 
+&= \int_{\mathcal{T}}\nabla_{\vtheta}p_{\vtheta}(\tau)\Rew(\tau)d\tau \\
+&= \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\Rew(\tau)} \label{eq:trajectoryPG}
 \end{align}
 
 This formulation of the \gls{PG} turns out to be extremely practical. Not only because it prevents from the calculation of the Q-function, but also because it does not require any knowledge about the transition kernel of the \gls{MDP}. In fact, $\log p_{\vtheta}(\tau)$ can be easily derived from the sheer knowledge of the trajectory and definition of the policy:
@@ -368,7 +370,7 @@ This formulation of the \gls{PG} turns out to be extremely practical. Not only b
 \begin{align}
 \log \nabla_{\vtheta}p_{\vtheta}(\tau) 
 &= \nabla_{\vtheta}\log\left( \mu(s_{\tau,0})\prod_{t=0}^{H-1}\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})P(a_{\tau,h+1}|s_{\tau,h+1})\right) \\
-&= \sum_{t=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h}), \; \forall \tau\in\mathcal{T} \label{eq:logpolicy estimate}
+&= \sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h}), \; \forall \tau\in\mathcal{T} \label{eq:logpolicyestimate}
 \end{align}
 
 At this point, the careful reader might have noticed that we have not yet discussed the meaning of the $\boldsymbol{G}(\vtheta)$ in the parameters update equation \ref{eq:paramsupdate}. Well, the choice of this matrix represent the direction we want to take when performing a gradient update. The two most common direction choices in the \gls{RL} literature are \emph{steepest gradient ascent} and \emph{natural gradient ascent}. In the first case, it is sufficient to set $\boldsymbol{G}(\vtheta)=\boldsymbol{I}$. However, this option might be ineffective in many cases \cite{amari1998natural1}:
@@ -392,13 +394,15 @@ We are now ready to present the general setup for policy gradient methods, showe
 	\caption{Generic policy gradient algorithm}
 	\label{alg:PG}
 	\begin{algorithmic}[1]
-	\State Initialize policy parameters $\vtheta^0$
-	\For{$t=1,2,\dots,T_{max}$} 
+	\State \textbf{Input}: initial policy parameters $\vtheta^0$, learning rate $\alpha$
+	\State \textbf{Initialize} $t=0$
+	\While{not converged} 
 		\State Estimate $\boldsymbol{G}(\vtheta^t)$ with an estimator $\widehat{\boldsymbol{G}}(\vtheta^t)$
-		\State Estimate $\nabla_{\vtheta}J(\vtheta^t)$ with an estimator $\widehat{\nabla}_{\vtheta}J(\vtheta^t)$
+		\State Estimate $\nabla_{\vtheta}J(\vtheta^t)$ with an estimator $\widehat{\nabla}_{\vtheta}J(\vtheta^t)$ \label{step:PGestimation}
 		\State Update the policy parameters $\vtheta^{t+1} \leftarrow \vtheta^t+\alpha\widehat{\boldsymbol{G}}^{-1}(\vtheta^t)\widehat{\nabla}_{\vtheta}J(\vtheta^t)$
-	\EndFor \\
-	\Return policy parameters $\vtheta^{T_{max}}$
+		\State $t=t+1$
+	\EndWhile \\
+	\Return policy parameters $\vtheta^{T}$
 	\end{algorithmic}
 \end{algorithm}
 
@@ -417,10 +421,97 @@ is easy to implement and very efficient when applied to deterministic tasks or p
 
 \textbf{Likelihood ratio}\\
 Likelihood ratio methods were among the first policy search methods
-introduced in the early 1990s by Williams \cite{williams1992simple}, and include the famous REINFORCE algorithm. These methods build upon the policy gradient formulation given by the second equation \ref{eq:trajectoryPG}, which, in the same way of equation \ref{eq:reinforcetrick}, has been rewritten by applying the so called \emph{REINFORCE trick}, also called \emph{likelihood ratio} trick. As we have seen in equation \ref{eq:logpolicyestimate}, the policy gradient (eq. \ref{eq:trajectoryPG}) can be approximated by using a sum over the sampled trajectories. In a similar way, we can estimate $\Rew(\tau)$ in a Monte-Carlo fashion. However, such estimates suffer of very large variance. The variance can be reduced by introducing a baseline $b$ for the trajectory reward $\Rew(\tau)$, \ie
+introduced in the early 1990s by Williams \cite{williams1992simple}, and include the famous REINFORCE algorithm. These methods build upon the policy gradient formulation given by equation (\ref{eq:trajectoryPG}), which, in the same way of equation (\ref{eq:reinforcetrick}), has been rewritten by applying the so called \emph{REINFORCE trick}, also called \emph{likelihood ratio} trick. As we have seen in equation (\ref{eq:logpolicyestimate}), the policy gradient (eq. (\ref{eq:trajectoryPG})) can be approximated by using a sum over the sampled trajectories. In a similar way, we can estimate $\Rew(\tau)$ in a Monte-Carlo fashion. However, such estimates suffer of very large variance. The variance can be reduced by introducing a baseline $b$ for the trajectory reward $\Rew(\tau)$, \ie
 
 \begin{align}
-\nabla_{\vtheta}J(\vtheta) = \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\left(\Rew(\tau)-b\right)} \label{eq:trajectoryPG}
+\hat{\nabla}_{\vtheta}J(\vtheta, b) = \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\left(\Rew(\tau)-b\right)} \label{eq:PGbaseline}
 \end{align}
 
-The estimator with baseline is still unbiased. This parameter can be chosen arbitrarily in order to minimize the variance. The variance-minimizing baseline is usually referred to as \emph{optimal baseline}.
+Remarkably, adding the baseline keep the estimator unbiased. the baseline can be chosen arbitrarily in order to minimize the variance. The variance-minimizing baseline is usually referred to as \emph{optimal baseline}.  As we will see, the optimal baseline depends on the specific likelihood gradient estimation adopted.
+
+\subsection{Algorithms}
+The most popular sample-based estimate of the gradient is undoubtedly REINFORCE \cite{williams1992simple}, which uses the total return directly:
+
+\begin{align}
+\hat{\nabla}_{\vtheta}J(\vtheta, b)_{RF} = \frac{1}{N}\sum_{i=1}^{N}\left(\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau_i,h}|s_{\tau_i,h}) \right)\left(\sum_{h=0}^{H-1}\gamma^h r^{h+1}_{\tau_i} - b \right), \label{eq:REINFORCE}
+\end{align}
+
+based on $N$ independent trajectories. The variance of such estimator is represented by a $m\times m$ covariance matrix, with $m$ equals the number of parameters of the policy. We can obtain an optimal baseline in two ways. Either we minimize each element of the diagonal, obtaining a component-wise baseline made of $m$ elements \cite{peters2008reinforcement}. Or we can minimize the trace of the covariance matrix, obtaining a scalar baseline\cite{zhao2011analysis}:
+
+\begin{align}
+b^*_{RF} &= \frac{\myExpu{\tau\sim p_{\vtheta}}{\norm{\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})}_2^2\Rew(\tau)}}{\myExpu{\tau\sim p_{\vtheta}}{\norm{\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})}_2^2}} \\
+(b^*_{RF})_{j} &= \frac{\myExpu{\tau\sim p_{\vtheta}}{\left(\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})\right)^2\Rew(\tau)}}{\myExpu{\tau\sim p_{\vtheta}}{\left(\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})\right)^2}}, \; j=1,2,...,m.
+\end{align}
+
+As for the REINFORCE estimator (\ref{eq:REINFORCE}), these optimal baselines are estimated simply by replacing the expectation with the empirical average. Algorithm \label{alg:REINFORCE} shows the full REINFORCE procedure with component-based optimal baseline estimation. For sake of clarity, we underline that this algorithm, as well as the others that we discuss in this section, is meant to carry out step (\ref{step:PGestimation}) of the generic policy gradient algorithm (\ref{alg:PG}).
+\begin{algorithm}[t]
+	\caption{Episodic REINFORCE with component-wise optimal baseline.}
+	\label{alg:REINFORCE}
+	\begin{algorithmic}[1]
+	\State {\bfseries Input:} policy parametrization $\vtheta$
+	\State {\bfseries Initialize:} $n=0$
+	\While{not converged} 
+		\State collect a trajectory $\tau_n$
+		\For{every gradient component $j=1,2,\dots,m$}
+			\State Estimate the optimal baseline 
+			\begin{align*}
+			b_{j}^{n} &= \frac{\sum_{i=1}^{n}\left(\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau_i,h}|s_{\tau_i,h})\right)^2\left(\sum_{h=0}^{H-1}\gamma^h r^{h+1}_{\tau_i}\right)}{\sum_{i=1}^{n}\left(\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau_i,h}|s_{\tau_i,h})\right)^2}
+			\end{align*}
+			\State Estimate the gradient element
+			\begin{align*}
+\hat{\nabla}_{\vtheta_j}J(\vtheta)^{n}= \frac{1}{n}\sum_{i=1}^{n}\left(\sum_{h=0}^{H-1}\nabla_{\vtheta_j}\log\pi_{\vtheta}(a_{\tau_i,h}|s_{\tau_i,h}) \right)\left(\sum_{h=0}^{H-1}\gamma^h r^{h+1}_{\tau_i} - b_j^n \right)
+\end{align*}
+		\EndFor
+		\State $n=n+1$
+	\EndWhile \\
+	\Return gradient estimate $\hat{\nabla}_{\vtheta_j}J(\vtheta)^{N}$
+	\end{algorithmic}
+\end{algorithm}
+
+Another solution tackling the high-variance problem of REINFORCE is to leverage on the intuitive observation that future actions do not depend on past rewards(unless policy changes take place continuously during the trajectory). Hence, we can derive two other well-know gradient estimators, \gls{GPOMDP} \cite{baxter2001infinite} and PGT \cite{sutton2000policy}:
+
+\begin{align}
+\hat{\nabla}_{\vtheta}J(\vtheta, b)_{GPOMDP} = \frac{1}{N}\sum_{i=1}^{N}\left(\sum_{h=0}^{H-1}\left(\sum_{h'=0}^{h}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau_i,h'}|s_{\tau_i,h'})\right)\left(\gamma^h r^{h+1}_{\tau_i} - b_h \right)\right),
+\end{align}
+
+\begin{align}
+\hat{\nabla}_{\vtheta}J(\vtheta, b)_{PGT} = \frac{1}{N}\sum_{i=1}^{N}\left(\sum_{h=0}^{H-1}\gamma^h\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau_i,h}|s_{\tau_i,h})\left(\sum_{h'=0}^{H-1}\gamma^{h'-h}r^{h'+1}_{\tau_i} - b_h\right)\right).
+\end{align}
+
+In \cite{peters2008reinforcement} the authors show that these two estimators are equal, despite their apparent difference. In the same paper, the authors show how to derive the optimal baseline for \gls{GPOMDP}, which, differently from the  REINFORCE case, can be time dependent. In the case b = 0 and under mild assumptions, this gradient estimation has been proven to suffer from less variance than REINFORCE \cite{zhao2011analysis}. However, large variance remains a common trait of these Monte Carlo \gls{PG} techniques. In fact, being trajectories generated by sampling at each time step according to a stochastic policy $\pi_{\vtheta}$, the estimators inherit the variance of the policy. To address this
+issue, in \cite{sehnke2008policy} the authors propose the \gls{PGPE} method, in which the search in the policy space is replaced with a direct search in the model parameter space. This allows the use of a deterministic controller $\pi_{\vtheta}: \vtheta\in\Theta\subseteq\Reals^m$ for sampling the trajectories, \ie $\pi_{\vtheta}(a|s)=\delta(a-\upsilon_{\vtheta}(s))$, where $\upsilon_{\vtheta}$ is a deterministic function of the state $s$, \eg \cite{sehnke2010parameter}. The policy parameters are sampled from a distribution $\nu_{\vxi}\in\delta(\Theta)$, called \emph{hyper-policy}, where $\vxi\in\Xi\subseteq\Reals^d$ are the hyper-policy parameters, or \emph{hyper-parameters}. Thus, in episodic \gls{PGPE} it is sufficient to sample the parameters $\vtheta\sim\nu_{\vxi}$ once at the beginning of the episode and then generate an entire trajectory following the deterministic policy $\pi_{\vtheta}$, with a consequent reduction of the gradient estimate variance. As an additional benefit, the parameter gradient is estimated by direct parameter perturbations, without having to back-propagate any derivatives, which allows to use non-differentiable controllers. The hyper-parameters $\vxi$ are updated by following the gradient ascent direction of the gradient of the expected reward, which can be rewritten as:
+
+\begin{align}
+J(\vxi) = \int_{\Theta}\int_{\mathcal{T}}\nu_{\vxi}(\vtheta)p_{\vtheta}(\tau)\Rew(\tau)d\tau d\vtheta, 
+\end{align}
+
+where $\nu_{\vxi}(\vtheta)p_{\vtheta}(\tau)=p_{\vxi}(\vtheta,\tau)$ because $\tau$ is conditionally independent from $\vxi$ given $\vtheta$. Applying the likelihood ratio technique, we obtain:
+
+\begin{align}
+\hat{\nabla}_{\vxi}J(\vxi) = \myExpu{\vtheta\sim\nu_{\vxi}, \tau\sim p_{\vtheta}}{\nabla_{\vxi}\log\nu_{\vxi}(\vtheta)\Rew(\tau)} 
+\end{align}
+
+In order to further reduce the estimate variance, we can adopt an estimator with baseline and compute the optimal one similarly to the REINFORCE case. The episodic \gls{PGPE} algorithm is reported in Algorithm 4.3. I
+
+\begin{algorithm}[t]
+	\caption{Episodic PGPE}
+	\label{alg:PG}
+	\begin{algorithmic}[1]
+	\State \textbf{Input}: initial hyper-parameters $\vxi^0$, learning rate $\alpha$
+	\State \textbf{Initialize} $t=0$
+	\While{not converged} 
+		\For $n=1,2,\dots,N$
+			\State Sample controller parameters $\vtheta^n \sim\nu_{\epsilon_t}$
+			\State Sample trajectory $\tau\sim p_{\vtheta}$ under policy $\pi_{\vtheta}$
+		\EndFor 
+		\State Estimate the hyper-policy gradient:
+		\begin{align*}
+		bla
+		\end{align*}
+			
+	\EndWhile \\
+	\Return policy parameters $\vtheta^{T}$
+	\end{algorithmic}
+\end{algorithm}
+
+\todol{common policy classes}

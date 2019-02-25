@@ -6,45 +6,45 @@ Database file #1: Bibliography/bibliography.bib
 Warning--empty publisher in mcbook_2013
 Warning--empty publisher in mcbook
 Warning--empty booktitle in yupure
-You've used 98 entries,
+You've used 100 entries,
             2253 wiz_defined-function locations,
-            1045 strings with 20880 characters,
-and the built_in function-call counts, 37960 in all, are:
-= -- 3731
-> -- 1620
+            1054 strings with 21110 characters,
+and the built_in function-call counts, 38917 in all, are:
+= -- 3823
+> -- 1674
 < -- 0
-+ -- 666
-- -- 563
-* -- 2812
-:= -- 5736
-add.period$ -- 289
-call.type$ -- 98
-change.case$ -- 555
++ -- 688
+- -- 583
+* -- 2892
+:= -- 5885
+add.period$ -- 295
+call.type$ -- 100
+change.case$ -- 571
 chr.to.int$ -- 0
-cite$ -- 101
-duplicate$ -- 1591
-empty$ -- 3174
-format.name$ -- 563
-if$ -- 8193
+cite$ -- 103
+duplicate$ -- 1624
+empty$ -- 3243
+format.name$ -- 583
+if$ -- 8393
 int.to.chr$ -- 0
-int.to.str$ -- 98
-missing$ -- 97
-newline$ -- 485
-num.names$ -- 208
-pop$ -- 715
+int.to.str$ -- 100
+missing$ -- 99
+newline$ -- 495
+num.names$ -- 212
+pop$ -- 733
 preamble$ -- 1
-purify$ -- 471
+purify$ -- 485
 quote$ -- 0
-skip$ -- 1127
+skip$ -- 1150
 stack$ -- 0
-substring$ -- 2683
-swap$ -- 549
+substring$ -- 2750
+swap$ -- 561
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 368
+type$ -- 376
 warning$ -- 3
-while$ -- 379
-width$ -- 100
-write$ -- 984
+while$ -- 388
+width$ -- 103
+write$ -- 1004
 (There were 3 warnings)

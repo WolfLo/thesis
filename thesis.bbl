@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{abbasi2011improved}
 {\sc Abbasi-Yadkori, Y., P{\'a}l, D., and Szepesv{\'a}ri, C.}
@@ -505,6 +505,12 @@
 \newblock In {\em International Conference on Artificial Neural Networks\/}
   (2008), Springer, pp.~387--396.
 
+\bibitem{sehnke2010parameter}
+{\sc Sehnke, F., Osendorfer, C., R{\"u}ckstie{\ss}, T., Graves, A., Peters, J.,
+  and Schmidhuber, J.}
+\newblock Parameter-exploring policy gradients.
+\newblock {\em Neural Networks 23}, 4 (2010), 551--559.
+
 \bibitem{silver2014deterministic}
 {\sc Silver, D., Lever, G., Heess, N., Degris, T., Wierstra, D., and
   Riedmiller, M.}
@@ -596,5 +602,11 @@
 \bibitem{yupure}
 {\sc Yu, X., Shao, H., Lyu, M.~R., and King, I.}
 \newblock Pure exploration of multi-armed bandits with heavy-tailed payoffs.
+
+\bibitem{zhao2011analysis}
+{\sc Zhao, T., Hachiya, H., Niu, G., and Sugiyama, M.}
+\newblock Analysis and improvement of policy gradient estimation.
+\newblock In {\em Advances in Neural Information Processing Systems\/} (2011),
+  pp.~262--270.
 
 \end{thebibliography}
