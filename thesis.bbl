@@ -155,6 +155,18 @@
 \newblock {\em The Journal of Machine Learning Research 17}, 1 (2016),
   1746--1778.
 
+\bibitem{chentanez2005intrinsically}
+{\sc Chentanez, N., Barto, A.~G., and Singh, S.~P.}
+\newblock Intrinsically motivated reinforcement learning.
+\newblock In {\em Advances in neural information processing systems\/} (2005),
+  pp.~1281--1288.
+
+\bibitem{choshen2018dora}
+{\sc Choshen, L., Fox, L., and Loewenstein, Y.}
+\newblock Dora the explorer: Directed outreaching reinforcement
+  action-selection.
+\newblock {\em arXiv preprint arXiv:1804.04012\/} (2018).
+
 \bibitem{sayak2018online}
 {\sc Chowdhury, S.~R., and Gopalan, A.}
 \newblock Online learning in kernelized markov decision processes.
@@ -360,6 +372,11 @@
 \newblock Lipschitz bandits: Regret lower bounds and optimal algorithms.
 \newblock {\em arXiv preprint arXiv:1405.4758\/} (2014).
 
+\bibitem{masooddiversity}
+{\sc Masood, M.~A., and Doshi-Velez, F.}
+\newblock Diversity-inducing policy gradient: Using mmd to find a set of
+  policies that are diverse in terms of state-visitation.
+
 \bibitem{DBLP:conf/aips/2012}
 {\sc McCluskey, L., Williams, B.~C., Silva, J.~R., and Bonet, B.}, Eds.
 \newblock {\em Proceedings of the Twenty-Second International Conference on
@@ -423,11 +440,24 @@
   of a meeting held December 5-8, 2013, Lake Tahoe, Nevada, United States.\/}
   (2013), pp.~3003--3011.
 
+\bibitem{osband2017posterior}
+{\sc Osband, I., and Van~Roy, B.}
+\newblock Why is posterior sampling better than optimism for reinforcement
+  learning?
+\newblock In {\em Proceedings of the 34th International Conference on Machine
+  Learning-Volume 70\/} (2017), JMLR. org, pp.~2701--2710.
+
 \bibitem{osband2016generalization}
 {\sc Osband, I., Van~Roy, B., and Wen, Z.}
 \newblock Generalization and exploration via randomized value functions.
 \newblock In {\em International Conference on Machine Learning\/} (2016),
   pp.~2377--2386.
+
+\bibitem{ostrovski2017count}
+{\sc Ostrovski, G., Bellemare, M.~G., van~den Oord, A., and Munos, R.}
+\newblock Count-based exploration with neural density models.
+\newblock In {\em Proceedings of the 34th International Conference on Machine
+  Learning-Volume 70\/} (2017), JMLR. org, pp.~2721--2730.
 
 \bibitem{owen_safe_2000}
 {\sc Owen, A., and Zhou, Y.}
@@ -559,6 +589,17 @@
 \newblock On the likelihood that one unknown probability exceeds another in
   view of the evidence of two samples.
 \newblock {\em Biometrika 25}, 3/4 (1933), 285--294.
+
+\bibitem{thrun1992efficient}
+{\sc Thrun, S.~B.}
+\newblock Efficient exploration in reinforcement learning.
+
+\bibitem{tokic2011value}
+{\sc Tokic, M., and Palm, G.}
+\newblock Value-difference based exploration: adaptive control between
+  epsilon-greedy and softmax.
+\newblock In {\em Annual Conference on Artificial Intelligence\/} (2011),
+  Springer, pp.~335--346.
 
 \bibitem{vakili2011deterministic}
 {\sc Vakili, S., Liu, K., and Zhao, Q.}

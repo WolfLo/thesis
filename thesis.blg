@@ -3,48 +3,50 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: acm.bst
 Database file #1: Bibliography/bibliography.bib
+Warning--empty journal in masooddiversity
 Warning--empty publisher in mcbook_2013
 Warning--empty publisher in mcbook
+Warning--empty journal in thrun1992efficient
 Warning--empty booktitle in yupure
-You've used 100 entries,
+You've used 107 entries,
             2253 wiz_defined-function locations,
-            1054 strings with 21110 characters,
-and the built_in function-call counts, 38917 in all, are:
-= -- 3823
-> -- 1674
+            1083 strings with 22255 characters,
+and the built_in function-call counts, 41573 in all, are:
+= -- 4092
+> -- 1773
 < -- 0
-+ -- 688
-- -- 583
-* -- 2892
-:= -- 5885
-add.period$ -- 295
-call.type$ -- 100
-change.case$ -- 571
++ -- 729
+- -- 617
+* -- 3061
+:= -- 6273
+add.period$ -- 314
+call.type$ -- 107
+change.case$ -- 609
 chr.to.int$ -- 0
-cite$ -- 103
-duplicate$ -- 1624
-empty$ -- 3243
-format.name$ -- 583
-if$ -- 8393
+cite$ -- 112
+duplicate$ -- 1751
+empty$ -- 3465
+format.name$ -- 617
+if$ -- 8984
 int.to.chr$ -- 0
-int.to.str$ -- 100
-missing$ -- 99
-newline$ -- 495
-num.names$ -- 212
-pop$ -- 733
+int.to.str$ -- 107
+missing$ -- 106
+newline$ -- 528
+num.names$ -- 226
+pop$ -- 784
 preamble$ -- 1
-purify$ -- 485
+purify$ -- 516
 quote$ -- 0
-skip$ -- 1150
+skip$ -- 1250
 stack$ -- 0
-substring$ -- 2750
-swap$ -- 561
+substring$ -- 2937
+swap$ -- 611
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 376
-warning$ -- 3
-while$ -- 388
-width$ -- 103
-write$ -- 1004
-(There were 3 warnings)
+type$ -- 404
+warning$ -- 5
+while$ -- 414
+width$ -- 110
+write$ -- 1070
+(There were 5 warnings)
