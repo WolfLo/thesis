@@ -1,21 +1,21 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Preliminaries}
-This is an introduction...
+\chapter{Preliminaries} \label{Preliminaries}
+In this chapter we provide an introduction to the Multi-Armed Bandit framework and then Reinforcement Learning framework, which are the two frameworks of reference of our research project. The Reinforcement Learning section is opportunely preceded by an overview of Markov Decision Processes, which are the building blocks of Reinforcement Learning. Then, we present a particular class of strategies to solve the Reinforcement Learning problem: Policy Search methods. The aim is to introduce concepts that will be used extensively in the following chapters.
 
-\section{Multi Armed Bandits}
-Consider a situation in which a gambler (the \emph{agent}) is sitting in a casino, staring at a certain number of slot machines from which he wants to pick the most profitable one and play with it all night long. Each slot machine is characterized by a certain \emph{mean reward}. The objective of the gambler is to maximize the gains that he will have won by the end of the night, but, unfortunately, he can not know \emph{a priori} the mean reward associated to each slot machine. Hence, the gambler must find a suitable strategy in order to effectively \emph{explore} his possibilities, by testing the different slot machines, and, then, \emph{exploit} the ones that prove to be more profitable. In fact, the gambler would face an equivalent problem if he was to play a single machine with as many \emph{arms} (levers) as the number of slot machines present in the casino, each with its own specific mean reward. Hence the name \gls{MAB} \cite{lai1985asymptotically}, in homage to the one-armed bandit, an old-fashioned name for a lever operated slot machine ("bandit" because it steals your money). Of course, \gls{MAB}s have other, more valuable, applications other than gambling. Current applications span from web interfaces configuration, news recommendation, dynamic pricing, ad placement, networking routing and game design. 
+\section{Multi Armed Bandits} \label{Multi Armed Bandits}
+Consider a situation in which a gambler (the \emph{agent}) is sitting in a casino, staring at a number of slot machines from which he wants to pick the most profitable one and play with it all night long. Each slot machine is characterized by a certain \emph{mean reward}. The objective of the gambler is to maximize the gains that he will have won by the end of the night, but, unfortunately, he can not know \emph{a priori} the mean reward associated to each slot machine. Hence, the gambler must find a suitable strategy in order to effectively \emph{explore} his possibilities, by testing the different slot machines, and, then, \emph{exploit} the ones that prove to be more profitable. In fact, the gambler would face an equivalent problem if he was to play a single machine with as many \emph{arms} (levers) as the number of slot machines present in the casino, each with its own specific mean reward. Hence the name \gls{MAB} \cite{lai1985asymptotically} given to this problem, in homage to the one-armed bandit, an old-fashioned name for a lever operated slot machine ("bandit" because it steals your money). In the artificial intelligence literature, \gls{MAB} refers to a broad class of problems that can be formulated as this gambling learning problem. Of course, \gls{MAB}s have other, more valuable, applications other than gambling. Current applications span from web interfaces configuration, news recommendation, dynamic pricing, ad placement, networking routing and game design. 
 
 \begin{definition} \emph{(Multi Armed Bandit)}
 A \gls{MAB} is a tuple $\langle\mathcal{X}, \Rew\rangle$, where:
 \begin{enumerate}
-\item $\mathcal{X}$ is the $d_{\mathcal{X}}$-dimensional set of possible arms, or actions that the agent can pick; $\mathcal{X}$ can be discrete or continuous, one dimensional or multi-dimensional, finite or infinite; 
+\item $\mathcal{X}$ is the $d_{\mathcal{X}}$-dimensional set of possible arms, or actions that the agent can pick; $\mathcal{X}$ can be discrete or continuous, one dimensional or multi-dimensional, finite or infinite.
 \item $\Rew:\mathcal{X}\to\Delta([-\Rmax,\Rmax])$ is an unknown function of rewards such that for every $x\in\mathcal{X}$ it assigns a probability measure $\Rew(\cdot|x)$ over $[-\Rmax,\Rmax]$, a bounded set of real-valued rewards. $\Rmax$ is the maximum absolute reward that the agent can receive.
 \end{enumerate}
 \end{definition}
 
-One can think to the set of possible arms and reward functions associated to them as the \emph{environment} the learner interacts with. According to the specific characteristics of the environment, there exist a broad taxonomy of \gls{MAB}s that goes out of the scope of this work. For the reader, it is sufficient to know that in this work we deal with \emph{stochastic stationary bandits}. In this case, the environment is restricted to generate the reward in response to each action from a \emph{probability distribution} $\Rew(\cdot|x)$ that is specific to that action, stationary along time and independent of the previous action choices and rewards. For example, the reward distribution could be Gaussian or Bernoulli. The expected reward of the stationary distribution associated to arm $x$ is noted $\mu(x) = \Expu{r\sim\Rew(\cdot|x)}[r]$. \\
-The \gls{MAB} game is played sequentially by a \emph{learner} over multiple rounds $t=1, 2, \dots, T$, up to the \emph{horizon} $T\in\Naturals$. Evidently, the agent can have memory but can not foresee the future. Thus, the current action $x_t$ should only depend upon the sequence of previous actions and rewards, the \emph{history} $\mathcal{I} = \{x_0, r_0, x_1, r_1, \dots, x_{t-1}, r_{t-1}\}$. A \emph{policy} is a mapping from histories to actions which represents the behaviour of the agent, its strategy. \\
+One can think to the set of possible arms and reward functions associated to them as the \emph{environment} the learner interacts with. According to the specific characteristics of the environment, there exist a broad taxonomy of \gls{MAB}s. For our reader, it is sufficient to know that in this work we deal with \emph{stochastic stationary bandits}. In this case, the environment is restricted to generate the reward in response to each action from a \emph{probability distribution} $\Rew(\cdot|x)$ that is specific to that action, stationary along time and independent of the previous action choices and rewards. For example, the reward distribution could be Gaussian or Bernoulli. The expected reward of the stationary distribution associated to arm $x$ is noted $\mu(x) = \Expu{r\sim\Rew(\cdot|x)}[r]$. \\
+The \gls{MAB} game is played sequentially by a \emph{learner} over multiple rounds $t=1, 2, \dots, T$, up to the \emph{horizon} $T\in\Naturals$, which depends on the problem at hand. Evidently, the agent can have memory but can not foresee the future. Thus, the current action $x_t$ should only depend upon the sequence of previous actions and rewards, the \emph{history} $\mathcal{I} = \{x_0, r_0, x_1, r_1, \dots, x_{t-1}, r_{t-1}\}$. A \emph{policy} is a mapping from histories to actions which represents the behaviour of the agent, its strategy. \\
 the first question which springs to mind is then: how can we evaluate the quality of a policy? To this aim, the literature extensively adopts a performance measure called the \emph{regret};
 
 \begin{definition}\label{def:immediateregret} \emph{(Immediate Regret)}
@@ -32,13 +32,14 @@ Regret(T) = \sum_{t=0}^T\Delta_t
 \end{equation}
 \end{definition}
 
-The quality of a certain policy is then given by the rate of growth of the regret as the horizon $T$ grows. A good learner achieves sublinear regret, which means that $Regret(T) = o(T)$ or, equivalently, that $\lim_{T\to\infty}Regret(T)/T = 0$. For example, some state of the art policies for different bandit settings have regrets close to $O(\sqrt{T})$ or $O(\log(n))$ \cite{lattimore2019bandit}. The regret has two characteristics that make it a good performance metric. First, it supplies a degree of normalization because it is invariant under translation of rewards. Second, it represents the price paid by the learner for not knowing the true environment. Anyway, a crucial aspect for designing a sub-linear regret policy is to carefully balance the trade-off between exploration and exploitation that characterizes all bandits.
+The quality of a certain policy is then given by the rate of growth of the regret as the horizon $T$ grows. A good learner achieves sub-linear regret, which means that $Regret(T) = o(T)$ or, equivalently, that $\lim_{T\to\infty}Regret(T)/T = 0$. For example, some state of the art policies for different bandit settings have regrets close to $O(\sqrt{T})$ or $O(\log(n))$ \cite{lattimore2019bandit}. The regret has two characteristics that make it a good performance metric. First, it supplies a degree of normalization because it is invariant under translation of rewards. Second, it represents the price paid by the learner for not knowing the true environment. Anyway, a crucial aspect for designing a sub-linear regret policy is to carefully balance the trade-off between exploration and exploitation that characterizes all bandits.
 
 \subsection{Exploration and exploitation}
-In order to maximize its cumulative reward, a bandit agent must prefer high-reward arms discovered in past rounds. But to discover such arms, it has to spend a certain amount of rounds trying arms that it has not selected before. In other words, the agent has to \emph{exploit} the most profitable actions revealed in the past, but is also has to \emph{explore} in order to make better action selections in the future. If the reward function is stochastic as in stationary stochastic bandits, even more resources should be dedicated to exploration, because one trial is not enough to have a good estimate of the expected reward of one arm. As we will see, this dilemma arises in \emph{reinforcement learning} too and will be at the very core of our discussion. \\ Now, we briefly sketch out two bandit settings which are strongly related to what will be discussed after these preliminaries.
+In order to maximize its cumulative reward, a bandit agent must prefer high-reward arms discovered in past rounds. But to discover such arms, it has to spend a certain amount of rounds trying arms that it has not selected before. In other words, the agent has to \emph{exploit} the most profitable actions revealed in the past, but is also has to \emph{explore} in order to make better action selections in the future. If the reward function is stochastic as in stationary stochastic bandits, even more resources should be dedicated to exploration, because one trial is not enough to have a good estimate of the expected reward of one arm.  In fact, the exploration-exploitation trade-off is a well known mechanisms that goes back to psychology and it affects us all in our daily lives. Take for example a typical lunch break on a working day. Say, that your favourite restaurant is right around the corner. If you go there every day (\emph{exploitation}), you would be confident of what you will get, but miss the chances of discovering an even better option. On the contrary, if you try new places all the time (\emph{exploration}), you are very likely gonna have to eat unpleasant food from time to time. The sweet spot is usually in between these two extreme options and a crucial challenge for any bandit algorithm is to properly balance between exploration and exploitation. As we will see, this dilemma arises in \emph{reinforcement learning} too and will be at the very core of our discussion.
+\\ Now, we proceed by briefly sketching out two bandit settings that are of central interest to this work.
 
 \subsection{Stochastic Bandits With Finitely Many Arms}
-A fundamental bandit problem, much studied in the literature \cite{lattimore2019bandit}, is the stationary stochastic bandit problem with \emph{finitely many arms}, \ie stationary stochastic bandits whose action space consists of a discrete arm set $|\mathcal{X}| = K \in \Naturals_{+}$. This setting is particularly important because of its semplicity, which makes it a perfect starting point for understanding the exploration-exploitaiton trade-off and for designing algorithms that can be extended to more complex settings afterwards. Also, many real world applications can be modeled as finitely-armed stationary stochastic bandits. \\ In order to deepen our understanding of this setting, and of the bandit problem in general, let's discuss the most simple policy that one can imagine: the \emph{explore-then-commit} algorithm. Basically, this policy consists in choosing each arm a certain number of times $m$ and subsequently exploit by playing the arm that appeared best after exploration. Because there are $K$ actions, the algorithm will explore for $mK$ rounds before choosing a single action for the remaining rounds. The choice of the agent goes to the arm $i$ with the highest average pay-off received up to round $t$:
+An important declination of the bandit problem, much studied in the literature \cite{lattimore2019bandit}, is the stationary stochastic bandit problem with \emph{finitely many arms}, \ie stationary stochastic bandits whose action space consists of a discrete arm set $|\mathcal{X}| = K \in \Naturals_{+}$. This setting is particularly important because of its semplicity, which makes it a perfect starting point for understanding the exploration-exploitaiton trade-off and for designing algorithms that can be extended to more complex settings afterwards. Also, many real world applications can be modeled as finitely-armed stationary stochastic bandits. \\ In order to deepen our understanding of this setting, and of the bandit problem in general, let's discuss the most simple policy that one can imagine: the \emph{explore-then-commit} algorithm. Basically, this policy consists in choosing each arm a certain number of times $m$ and subsequently exploit by playing the arm that appeared best after exploration. Because there are $K$ actions, the algorithm will explore for $mK$ rounds before choosing a single action for the remaining rounds. The choice of the agent goes to the arm $i$ with the highest average pay-off received up to round $t$:
 
 \begin{equation}
 \wh{\mu}_i = \frac{1}{T_i(t)}\sum_{s=1}^{t}\mathds{1}_{\{x_s=i\}}r_s
@@ -65,18 +66,17 @@ Regret(T) \leq \min\left(m, \lceil\tfrac{T}{K}\rceil\right)\sum_{i=1}^{K}\Delta_
 where $\Delta_i$ is the immediate regret of arm $i$ as defined in \ref{def:immediateregret}.
 \end{restatable}
 
-Evidently, if $m$ is large, then the policy explores for too long and the first term will be eventually too large.
-On the other hand, if m is too small, then the probability that the algorithm exploits the wrong arm will grow and the second term becomes too large.
+Evidently, if $m$ is large  the policy explores for too long and the first term will be eventually too large. On the other hand, if $m$ is too small, then the probability that the algorithm exploits the wrong arm will grow and the second term will become too large.
 
 \subsection{$\mathcal{X}$-armed bandits}
-Another stationary stochastic bandit setting of interest to our scope is the \emph{continuum-armed bandit} setting \cite{agrawal1995continuum}. Here, the arms are chosen from a subset of the real numbers $\mathcal{X}\in\Reals^{d_{\mathcal{X}}} $, hence the action space is infinite. Moreover, the mean rewards are assumed to be a continuous function of the arms. An example of such bandits are continuous \emph{Lipschitz bandits} \cite{magureanu2014lipschitz}, where the expected reward is a Lipschitz function of the arm. This assumption is extremely useful because it implies that the information obtained by selecting one arm can be shared to its neighbouring arms. Thus, exploration can be made more efficient, and possibly directed, by exploiting the correlation between arms. \emph{$\mathcal{X}$-armed bandits} \cite{bubeck2011x} are a further generalization of this setting where the set of arms, $\mathcal{X}$, is allowed to be a generic measurable space and the mean-payoff function is \emph{weak Lipschitz} with respect to a dissimilarity function that is known to the decision maker.
+Another stationary stochastic bandit setting interesting to our scope is the \emph{continuum-armed bandit} setting \cite{agrawal1995continuum}. Here, the arms are chosen from a subset of the real numbers $\mathcal{X}\in\Reals^{d_{\mathcal{X}}} $, hence, the action space is infinite. Moreover, the mean rewards are assumed to be a continuous function of the arms. An example of such bandits are continuous \emph{Lipschitz bandits} \cite{magureanu2014lipschitz}, where the expected reward is a Lipschitz function of the arm. This assumption is extremely useful because it implies that the information obtained by selecting one arm can be shared to its neighbouring arms. Thus, exploration can be made more efficient, and possibly directed, by exploiting the correlation between arms. \emph{$\mathcal{X}$-armed bandits} \cite{bubeck2011x} are a further generalization of this setting where the set of arms, $\mathcal{X}$, is allowed to be a generic measurable space and the mean-payoff function is \emph{weak Lipschitz} with respect to a dissimilarity function that is known to the decision maker.
 
 
 By now, the reader should have noticed that a distinguishing feature of bandit problems is that the learner never needs to plan for the future. More precisely, in bandits we invariably make the assumption that the learner’s choices and rewards tomorrow are not affected by its decision today. In the next chapter, we discuss a more general framework that includes this kind of long-term planning.
 
 \section{Markov Decision Processes}
-A \gls{MDP} is another way to model the interaction between an agent, which is the learner and the decision maker, and an environment. When the agent performs an action $a$, the environment responds presenting a new state $s$ to the agent and rewarding the agent with a certain scalar signal called \emph{immediate reward}. Importantly, the environment dynamics of a \gls{MDP} are \emph{stationary}, \ie they do not depend upon time. Moreover, the state $s_{h+1}$ at time step $h+1$ must depend only on the previous state $s_{h}$ and action   $a_{h}$. This property, called Markovian Property, entails that the agent is somehow pushed to forget the states and actions of the past. Still, differently from what happened in bandits, the current state and set of possible actions and subsequent rewards the agent faces, are determined by his previous choice. This is a strong mechanism that encourages the agent to take into account the consequences of its choices over time. But there is another mechanism which makes it even more concerned by long term consequences. In fact, the objective of the agent is to maximize over time the  \emph{cumulative reward} or \emph{return}, which is the cumulated sum of the immediate rewards obtained after each action undertaken by the agent. Evidently, sometimes it is more profitable to sacrifice immediate reward in order to reach a higher cumulative reward in the long term. This mechanism pushes the agent to take into account the future in its current decisions. 
-Hence, \gls{MDP}s are a powerful tool capable of modelling many challenges that we encounter in life, science and engineering. Take, for example, a hungry newborn infant in his mother's arms. Through various attempts, the infant moves around his arms, head and mouth looking for food. In this ways, he changes its state until the moment he eventually receives a positive reward, the mother's milk. Little by little, the baby will learn the precise sequence of actions and states that rewards him with milk.
+A \gls{MDP} is another way to model the interaction between an agent, which is the learner and the decision maker, and an environment. When the agent performs an action $a$, the environment responds presenting a new state $s$ to the agent and rewarding the agent with a certain scalar signal called \emph{immediate reward}. Importantly, the environment dynamics of a \gls{MDP} are \emph{stationary}, \ie they do not depend upon time. Moreover, the state $s_{h+1}$ at time step $h+1$ must depend only on the previous state $s_{h}$ and action   $a_{h}$. This property, called \emph{Markovian Property}, entails that the agent is somehow pushed to forget the states and actions of the past. Still, differently from what happened in bandits, the current state and set of possible actions and subsequent rewards the agent faces, are determined by his previous choice. This is a strong mechanism that encourages the agent to take into account the consequences of its choices over time. On top of this, there is another mechanism that makes the agent even more concerned by long term consequences. In fact, the objective of the agent is to maximize over time the  \emph{cumulative reward} or \emph{return}, which is the cumulated sum of the immediate rewards obtained after each action undertaken by the agent. Evidently, sometimes it is more profitable to sacrifice immediate reward in order to reach a higher cumulative reward in the long term. This mechanism pushes the agent to take into account the future in its current decisions. \\
+Hence, \gls{MDP}s are a powerful tool capable of modelling many challenges that we encounter in life, science and engineering. Take, for example, a hungry newborn infant in his mother's arms. Through various attempts, the infant moves around his arms, head and mouth looking for food. In this way, he changes its state until the moment he eventually receives a positive reward, the mother's milk. Little by little, the baby will learn the precise sequence of actions and states that rewards him with milk. Having understood the general principles underlying \gls{MDP}s, we can now move to a formal definition.
 
 \begin{figure}
 \tikzset{
@@ -109,7 +109,7 @@ Hence, \gls{MDP}s are a powerful tool capable of modelling many challenges that 
 \begin{tikzpicture}
   [node distance=.8cm,
   start chain=going below,]
-     \node [normalchain, join] (szero) {$h=1$ and sample $s_0\sim\mu$};
+     \node [normalchain, join] (szero) {$h=0$ and sample $s_0\sim\mu$};
      \node [greychain, join] (sh) {Observe state $s_h$};
      \node [greychain, join] (ah) {Choose action $a_h\in\Aspace$};
      \begin{scope}[start branch=hoejre,]
@@ -142,11 +142,11 @@ Hence, \gls{MDP}s are a powerful tool capable of modelling many challenges that 
 A continuous \gls{MDP} \cite{puterman2014markov, sutton2018reinforcement} is a tuple $\Task = \langle\Sspace,\Aspace,\Tran,\Rew,\gamma,\init\rangle$, where:
 
 \begin{enumerate}
-\item $\Sspace\in\Reals^{d_{\Sspace}}$ is the $d_{\Sspace}$-dimensional \emph{state space}, \ie the set of all possible observable states of the environment;
-\item $\Aspace\in\Reals^{d_{\Aspace}}$ is the $d_{\Aspace}$-dimensional \emph{action space}, \ie the set of all the possible actions that the agent can perform. Sometimes, not all the actions are performable in all states. In such cases, we can define the set $\Aspace(s)$ for all $s \in \Sspace$, s.a  $\Aspace = \bigcup_{s \in \Sspace} \Aspace(s)$.
-\item  $\Tran:\Sspace\times\Aspace\to\Delta(\Sspace)$ is a function called \emph{transition model} such that, for every $s\in\Sspace$ and $a\in\Aspace$, it assigns a probability measure $\Tran(\cdot|s,a)$ over $\Sspace$. In general, we denote with $\Delta(\mathcal{X})$ the set of probability measures over a measurable state $\mathcal{X}$; The corresponding probability density function is $P(\cdot|s,a)$; 
-\item $\Rew:\Sspace\times\Aspace\to\Delta[-\Rmax,\Rmax]$ is a bounded \emph{reward} function such that, every time the agent chooses action $a\in\Aspace$ in state $s\in\Sspace$, it assigns a probability measure $\Rew(\cdot|s,a)$ over $[-\Rmax,\Rmax]$. With little abuse of notation, we will denote $\Rew(a, s)$ the expected return. $\Rmax$ is the maximum absolute reward that the agent can receive;
-\item $\gamma\in(0,1]$ is a discount factor to apply to future rewards. From an economical point of view, it accounts for the fact that an agent might be more interested in a pay-off obtained in the near future rather than a pay-off obtained far in the future. From a statistical point of view the discount factor is related to the probability that the process continues for another epoch.
+\item $\Sspace\in\Reals^{d_{\Sspace}}$ is the $d_{\Sspace}$-dimensional \emph{state space}, \ie the set of all possible observable states of the environment.
+\item $\Aspace\in\Reals^{d_{\Aspace}}$ is the $d_{\Aspace}$-dimensional \emph{action space}, \ie the set of all possible actions that the agent can perform. Sometimes, not all the actions are performable in all states. In such cases, we can define the set $\Aspace(s)$ for all $s \in \Sspace$, s.a  $\Aspace = \bigcup_{s \in \Sspace} \Aspace(s)$.
+\item  $\Tran:\Sspace\times\Aspace\to\Delta(\Sspace)$ is a function called \emph{transition model} such that, for every $s\in\Sspace$ and $a\in\Aspace$, it assigns a probability measure $\Tran(\cdot|s,a)$ over $\Sspace$. In general, we denote with $\Delta(\mathcal{X})$ the set of probability measures over a measurable space $\mathcal{X}$; The corresponding probability density function is $P(\cdot|s,a)$.
+\item $\Rew:\Sspace\times\Aspace\to\Delta[-\Rmax,\Rmax]$ is a bounded \emph{reward} function such that, every time the agent chooses action $a\in\Aspace$ in state $s\in\Sspace$, it assigns a probability measure $\Rew(\cdot|s,a)$ over $[-\Rmax,\Rmax]$. With little abuse of notation, we will denote $\Rew(a, s)$ its expected return too. $\Rmax$ is the maximum absolute reward that the agent can receive.
+\item $\gamma\in(0,1]$ is a discount factor to apply to future rewards. From an economical point of view, it accounts for the fact that an agent might be more interested in a pay-off obtained in the near future rather than a pay-off obtained far in the future. From a statistical point of view the discount factor is related to the probability that the process continues for another decision epoch.
 \item $\init\in\Delta(\Sspace)$ is the initial state distribution, such that the initial state is drawn as $s_0\sim\mu$.
 \end{enumerate}
 \end{definition}
@@ -160,34 +160,34 @@ The core of a \gls{MDP} agent is the \emph{policy} $\pi$, a mapping from perceiv
 A policy is a stochastic function $\pi:\Sspace\to\Delta(\Aspace)$, such that the current action is drawn as $a\sim\pi(\cdot|s)$
 \end{definition}
 
-Hence, deterministic policies $\pi:\Sspace\to\Aspace$, such that the current action is prescribed as $a=\pi(s)$, are a particular case. As for bandits, in the most general case a policy takes as input the past history of states and actions, but in our work we only consider \emph{memoryless policies}. In fact, as we will see we can always find an optimal policy that depends only on the current state. Moreover, we assumed that the agent's policy is stationary.
+Hence, deterministic policies $\pi:\Sspace\to\Aspace$, such that the current action is prescribed as $a=\pi(s)$, are a particular case. As for bandits, in the most general case a policy takes as input the past history of states and actions, but in our work we only consider \emph{memoryless policies}. In fact, we can always find an optimal policy that depends only on the current state. Moreover, we assumed that the agent's policy is stationary.
 
 \begin{remark}
-Note that we are adopting different notations for time steps in bandits and \gls{MDP}s, $t$ and $h$ respectively. The reason is that we can think of a full \gls{MDP} episode  performed with policy $\pi$ as a unique decision epoch $t$ of a bandit. In other words, one could consider a bandit in which, at iteration $t$, the \emph{bandit agent} pulls a policy $\pi$. The \emph{\gls{MDP} agent} perform a trajectory by interacting with its environment according to policy $\pi$. Then, the bandit agent obtains a reward $r_t=\sum_{h=0}^{H}r_h$. This is the modelling approach that we will adopt in our work. For all details see \textcolor{red}{IternalRef}.
+Note that we are adopting different notations for time steps in bandits and \gls{MDP}s, $t$ and $h$ respectively. The reason is that we can think of a full \gls{MDP} episode  performed with policy $\pi$ as a unique decision epoch $t$ of a bandit. In other words, one could consider a bandit in which, at iteration $t$, the \emph{bandit agent} pulls a policy $\pi$. The \emph{\gls{MDP} agent} perform a trajectory by interacting with its environment according to policy $\pi$. Then, the bandit agent obtains a reward $r_t=\sum_{h=1}^{H}r_h$. This is the modelling approach that we will adopt in our work. For all details see \textcolor{red}{IternalRef}.
 \end{remark}
 
 \subsection{Performance}
 A we stated above, the goal of an MDP agent is usually to maximize the total discounted reward, also called \emph{return}:
 
 \begin{align}
-\nu &= \sum_{h=0}^{\infty}\gamma^{h}r_{h}.
+\nu &= \sum_{h=0}^{\infty}\gamma^{h}r_{h+1},
 \end{align}
 
-Given this objective, how can we evaluate the agent's policy ? We need to design a \emph{utility function} which represents the performance of the agent's policy with respect to its objective. There are two common formulations of the \emph{performance} $J(\pi)$ in the reinforcement learning literature \cite{sutton2000policy}.
+where $\gamma\in(0,1]$ is the discount rate. Given this objective, how can we evaluate the agent's policy ? We need to design a \emph{utility function} which represents the performance of the agent's policy with respect to its objective. There are two common formulations of the \emph{performance} $J(\pi)$ in the reinforcement learning literature \cite{sutton2000policy}.
 In the \emph{start state formulation} the performance is calculated as the long-term discounted reward obtained by starting from a designated start state $s_0$:
 
 \begin{align}
-J(\pi) &=  \Exp[\nu\mid s_0\sim\mu,\pi], \label{eq:Jstartstate}
+J(\pi) &=  \Exp[\nu\mid s_0\sim\mu,\pi]. \label{eq:Jstartstate}
 \end{align}
 
 
-where $\gamma\in(0,1]$ is the discount rate. Note that $\gamma=1$ is allowed in episodic tasks only, otherwise the convergence of the performance is not guaranteed. We can now conveniently introduce the \emph{stationary distribution of states under $\pi$}:
+Note that $\gamma=1$ is allowed in episodic tasks only, otherwise the convergence of the performance is not guaranteed. We can now conveniently introduce the \emph{stationary distribution of states under $\pi$}:
 
 \begin{align} 
 d^{\pi}(s) = (1 - \gamma)\sum_{h=0}^{\infty}\gamma^h Pr(s_h=s\mid s_0\sim\mu,\pi) \label{eq:ssdistribution},
 \end{align}
 
-which is a which is the probability induced by the policy $\pi$  of having $s_h=s$, discounted by $\gamma^h$, when $t\to\infty$. This allows us to rewrite the performance measure as:
+which is the probability induced by the policy $\pi$  of having $s_h=s$, discounted by $\gamma^h$, when $t\to\infty$. This allows us to rewrite the performance measure as:
 
 \begin{align}
 J(\pi) &=  \int_{\Sspace}d^{\pi}(s)\int_{\Aspace}\pi(a|s)\Rew(s, a)dads.
@@ -196,14 +196,14 @@ J(\pi) &=  \int_{\Sspace}d^{\pi}(s)\int_{\Aspace}\pi(a|s)\Rew(s, a)dads.
 In the \emph{average reward formulation} policies are ranked according to their long-term expected reward per step:
 \begin{align}
 J(\pi)
-&=  \lim_{n\to\inf}\frac{1}{n}\Exp\left[\sum_{h=1}^{n}r_h\mid\pi\right]  \nonumber\\
-& = \int_{\Sspace}d^{\pi}(s)\int_{\Aspace}\pi(a|s)\Rew(s, a)dads,
+&=  \lim_{n\to\inf}\frac{1}{n}\Exp\left[\sum_{h=1}^{n}r_h\mid\pi\right]  \\
+& = \int_{\Sspace}d^{\pi}(s)\int_{\Aspace}\pi(a|s)\Rew(s, a)dads, \nonumber
 \end{align}
 
-where $d^{\pi}(s) = \lim_{n\to\inf} Pr(s_h=s\mid s_0\sim\mu,\pi)$. In this work, we mostly adopt the first formulation of the performance utility function on episodic tasks, \ie tasks with an absorbing state.
+where $d^{\pi}(s) = \lim_{n\to\inf} Pr(s_h=s\mid s_0\sim\mu,\pi)$. In this work, we mostly adopt the first formulation of the performance utility function on episodic tasks, \ie tasks with an absorbing (terminal) state.
 
 \subsection{Value functions}
-From the start state formulation of performance we can derive the value associated to a state $s$ by following  policy $\pi$, \ie the \emph{state-value function} $V^{pi}(s):\Sspace\to\Reals$ defined recursively as:
+From the start state formulation of performance we can derive the value associated to a state $s$ by following  policy $\pi$, \ie the \emph{state-value function} $V^{\pi}(s):\Sspace\to\Reals$ defined recursively as:
 
 \begin{align}
 V^{\pi}(s)
@@ -214,11 +214,11 @@ V^{\pi}(s)
 which allows to re write the performance as:
 
 \begin{align}
-J(\pi) &=  \int_{\Sspace}\mu(s)V^{pi}(s)ds.
+J(\pi) &=  \int_{\Sspace}\mu(s)V^{\pi}(s)ds.
 \end{align}
 
 
-Equation \ref{eq:BellmanV} is known as \emph{Bellman's equation} of the state value function. With another Bellman's equation we can define another value function $Q^{\pi}:\Sspace\times\Aspace\to\Reals$ which is more practical for control problems, in which we prefer to reason in terms of which actions are more valuable in a given state. Thus, we define the \emph{action-value function} $Q^{\pi}(s,a)$ as:
+Equation \ref{eq:BellmanV} is known as \emph{Bellman's equation} of the state-value function. Thanks to another Bellman's equation we can define another value function, namely $Q^{\pi}:\Sspace\times\Aspace\to\Reals$. This value function is more practical for control problems, in which we prefer to reason in terms of which actions are more valuable in a given state. Thus, we define the \emph{action-value function} $Q^{\pi}(s,a)$ as:
 
 \begin{align}
 Q^{\pi}(s,a)
@@ -232,33 +232,33 @@ The difference between the two value functions is known as advantage function \c
 A^{\pi}(s,a) &=  Q^{\pi}(s,a) - V^{\pi}(s)
 \end{align}
 
-Intuitively, the advantage function represents how much an action $a$ is convenient is a state $s$ \wrt the average utility of the actions.
+Intuitively, the advantage function represents how much an action $a$ is convenient is a state $s$ \wrt the average utility of the actions. \\
+Value functions are useful for evaluating the quality of a given policy or in order to define policies themselves. In fact, having an estimation of the value function for every state (and possibly action) one can build a policy following a greedy scheme. At each step we may choose the state-action pair that maximize the action-value function, or an action that brings to the maximally valuable state among those that are reachable from the current state.
 
 \section{Reinforcement Learning}
-The most basic way to solve \gls{MDP}s is \emph{dynamic programming}, which simply consists in solving the Bellmanequations presented in the previous chapter through a fixed-point iteration scheme. \emph{Value iteration} and \emph{Policy Iteration} are the most popular dynamic programming algorithms \cite{sutton2018reinforcement}, which provide the basic structure for most of the value-based reinforcement learning methods. However, these algorithms suffer of two major problems. First, they require knowledge of the \gls{MDP} transition kernel and of the reward function, which is not available in many real world problems. Second, the update involves an optimization with respect to all possible actions which can be carried out efficiently only in the case of finite (small) action spaces. 
+The most basic way to solve \gls{MDP}s is \emph{dynamic programming}, which simply consists in solving the Bellman equations presented in the previous chapter through a fixed-point iteration scheme. \emph{Value iteration} and \emph{Policy Iteration} are the most popular dynamic programming algorithms \cite{sutton2018reinforcement}, which provide the basic structure for most of the value-based reinforcement learning methods. However, these algorithms suffer of two major problems. First, they require knowledge of the \gls{MDP} transition kernel and of the reward function, which is not available in many real world problems. Second, the update involves an optimization with respect to all possible actions, which can be carried out efficiently only in the case of finite (small) action spaces. 
 \gls{RL} is a subfield of Machine Learning which aims at solving large-scale problems where the dynamics of the \gls{MDP} are not know, and thus dynamic programming algorithms can not be employed. 
 
 \subsection{Problem formulation}
-\gls{RL} is a branch of machine learning that aims at building learning agents capable to behave in a stochastic and possibly unknown environment, where the only feedback consists of a scalar reward signal. In order to maximize the long-run reward, the agent must learn which actions are the most profitable by trial-and-error. Therefore, \gls{RL} algorithms can be seen as computational methods to solve \gls{MDP}s by directly interacting with the environment, for which a model may or
-may not be available. Hence, the \gls{RL} problem can be formulated as a stochastic optimization problem aiming at finding the optimal policy $\pi^{*}$:
+\gls{RL} is a branch of machine learning that aims at building learning agents capable to behave in a stochastic and possibly unknown environment, where the only feedback consists of a scalar reward signal. In order to maximize the long-run reward, the agent must learn which state-action pairs are the most profitable by trial-and-error. Therefore, \gls{RL} algorithms can be seen as computational methods to solve \gls{MDP}s by directly interacting with the environment, for which a model may or may not be available. The \gls{RL} problem can be formulated as a stochastic optimization problem aiming at finding the optimal policy $\pi^{*}$:
 
 \begin{align}
 \pi^* = \arg \max_{\pi} J(\pi)
 \end{align}
 
-It is guaranteed that every \gls{MDP} admits an optimal policy when the space of possible policies is unconstrained  \cite{puterman2014markov}.
+Remarkably, it is guaranteed that every \gls{MDP} admits an optimal policy when the space of possible policies is unconstrained  \cite{puterman2014markov}.
 
 \emph{Trial-and-error} search and a \emph{delayed reward signal} can be
-seen as the most characteristic features of reinforcement learning. Compared to supervised learning, one of the main branches of machine learning, the feedback the learner receives is usually less and can be very sparse. In supervised learning, the agent is provided with examples of the correct or expected behaviour by a knowledgeable external supervisor and the agent’s goal is to learn how to replicate these examples as well as possible and possibly generalize this knowledge to new examples. In reinforcement learning, the agent receives a numerical reward that gives only a partial feedback of the goodness of actions taken. Therefore, this feedback system is \emph{evaluative} rather than \emph{instructive} and it makes it much more difficult for the agent to learn how to behave in uncharted territory.
+seen as the most characteristic features of reinforcement learning. Compared to supervised learning, one of the main branches of machine learning, the feedback the learner receives is usually less frequent and can be very sparse. In supervised learning, the agent is provided with examples of the correct or expected behaviour by a knowledgeable external supervisor and the agent’s goal is to learn how to replicate these examples as well as possible, and possibly generalize this knowledge to new examples. In reinforcement learning, the agent receives a numerical reward that only represents a partial feedback about the goodness of actions taken. A feedback system of this sort is said to be \emph{evaluative} rather than \emph{instructive} and it makes it much more difficult for the agent to learn how to behave in uncharted territory.
 Evidently, the exploration-exploitation trade-off is a substantial problem in \gls{RL} as much as for bandits. An agent must exploit what
-is known of the environment and the reward function to obtain rewards but also needs to explore to select better actions in the future. On top of this, since rewards might be delayed in time, it will be difficult for the agent to understand which actions are mostly responsible for the outcome. This represents another charchteristic problem of reinforcement learning known as \emph{assignement problem} \cite{sutton2018reinforcement}. As we will see, \gls{RL} algorithms are based on two key ideas: the first is to use samples to derive an approximate representation of the unknown dynamics of the controlled system. The second idea is to use function approximation methods to estimate value functions and policies in high-dimensional state and action spaces.
+is known of the environment and the reward function in order to obtain rewards, but it also needs to explore to select better actions in the future. On top of this, since rewards might be delayed in time, it will be difficult for the agent to understand which actions are mostly responsible for the outcome received. This represents another characteristic problem of reinforcement learning known as \emph{assignement problem} \cite{sutton2018reinforcement}. As we will see, \gls{RL} algorithms are based on two key ideas: the first is to use samples to derive an approximate representation of the unknown dynamics of the controlled system. The second idea is to use function approximation methods to estimate value functions and policies in high-dimensional state and action spaces.
 
 \subsection{Taxonomy}
-Many algorithms have been proposed along the years to solve the \gls{RL} problem as presented above. The solutions proposed often display similar approaches that can be used to outline a rough taxonomy of the \gls{RL} algorithms. In our taxonomy we consider the algorithms along four dimensions: \emph{model requirements}, \emph{policy-based sampling strategy}, \emph{solution search}, \emph{sample usage}.
+Along the years, many algorithms have been proposed to solve the \gls{RL} problem as presented above. The solutions proposed often display similar approaches that can be used to outline a rough taxonomy of the \gls{RL} algorithms. In our taxonomy we consider the algorithms along four dimensions: \emph{model requirements}, \emph{policy-based sampling strategy}, \emph{solution search}, \emph{sample usage}.
 The first dimension refers to the requirements of the algorithm \wrt the model of the \gls{MDP}. On the two sides of this dimension we have:
 
 \begin{itemize}
-\item \emph{Model-based} algorithms, which require an explicit approximation of the model of the \gls{MDP}. Not every model-based algorithm is equally demanding on this matter: some of them might need information about every element of the \gls{MDP} (transition model,  reward model, initial state distribution, etc.) while others might require approximations only for a fraction of them (e. g.the reward model only). Examples: DYNA \cite{sutton1991dyna}, contextual policy-search\cite{kupcsik2013data}.
+\item \emph{Model-based} algorithms, which require an explicit approximation of the model of the \gls{MDP}. Not every model-based algorithm is equally demanding on this matter: some of them might need information about every element of the \gls{MDP} (transition model,  reward model, initial state distribution, etc.) while others might require approximations only for a fraction of them, \eg the reward model only. Examples: DYNA \cite{sutton1991dyna}, contextual policy-search\cite{kupcsik2013data}.
 \item \emph{Model-free} algorithms, on the other hand, do not require any explicit approximation of the model. Model-free algorithms usually have low computational demands but require lots of data in order to get good results; they are well-suited for problems in which computation is costly but sampling is cheap. Examples: Q-learning \cite{watkins1989learning}, SARSA \cite{rummery1994line}, REINFORCE \cite{williams1992simple}.
 \end{itemize}
 
@@ -272,8 +272,8 @@ The \emph{policy-based sampling strategy} dimension refers to the relation betwe
 The \emph{solution search-space} dimension refers to the space where the optimal solution is searched:
 
  \begin{itemize}
-\item in direct \emph{policy search} methods the optimal solution is searched in the space of policies, defined by their parameters. These methods are well-suited for large state or action spaces,  produce smooth changes in the policy during the learning process, and allow to introduce prior expert knowledge in the policy; unfortunately, they often suffer from a high variance and have optimization issues. Examples: REINFORCE \cite{williams1992simple}, G(PO)MDP \cite{baxter2001infinite}.
-\item \emph{Value-based} methods rely instead on the computation of the value function to learn the optimal policy indirectly. Value-based techniques have good convergence properties under small state and action spaces and turn out very suitable when there is in-sufficient or none prior knowledge about the problem. However, changes to the underlying policy during the learning process can be unstable, and the convergence properties disappear when large (\eg continuous) state and action spaces demand the use of function approximation. Examples: value-iteration \cite{sutton2018reinforcement}, FQI \cite{antos2008fitted}.
+\item in direct \emph{policy search} methods the optimal solution is searched in the space of policies, \eg the space in which their parameters lie. These methods are well-suited for large state or action spaces,  produce smooth changes in the policy during the learning process, and allow to introduce prior expert knowledge in the policy; unfortunately, they often suffer from a high variance and have optimization issues. Examples: REINFORCE \cite{williams1992simple}, G(PO)MDP \cite{baxter2001infinite}.
+\item \emph{Value-based} methods rely instead on the computation of the value function to learn the optimal policy indirectly. Value-based techniques have good convergence properties under small state and action spaces and turn out very suitable when there is insufficient or none prior knowledge about the problem. However, changes to the underlying policy during the learning process can be unstable, and the convergence properties disappear when large (\eg continuous) state and action spaces demand the use of function approximation. Examples: value-iteration \cite{sutton2018reinforcement}, FQI \cite{antos2008fitted}.
 \end{itemize}
 
 Differently from the other dimensions which are populated by sharp dichotomies, policy and value-based methods can be combined, often with very successful results. For example, \emph{actor-critic} methods \cite{grondman2012survey} look for the optimal policy in the policy parameter space while leveraging on the predictive power of value-functions in order to guide the parameters update. \\
@@ -285,17 +285,17 @@ The fourth dimension of the taxonomy is the \emph{sample usage frequency}, which
 A finer classification of this dimension is presented in \cite{lange2012batch}, where the authors remark that the distinctions between the categories does not depend on the actual formulation: almost any algorithm can fall in any of these three categories depending on the implementation.
 
 \section{Policy Search}
-As mentioned in the introduction, this work focuses on improving the exploration task in continuous state-action domains, possibly characterized by some noise in the state as it happens for control tasks with noisy sensors. In such conditions, value-based methods present numerous difficulties. First, they have no guarantees of convergence to an optimal policy due to the need of function approximation for large, continuous \gls{MDP}s. Second, value based methods are highly sensitive to small perturbations in the state, which makes them useless in noisy control tasks. Hence, direct \gls{PS} methods represent the best alternative in such settings. Theoretical guarantees are often available \cite{more1994line}, environment noise has less impactful effects, and prior domain knowledge can be exploited to design ad-hoc policies for specific tasks. Moreover, approximate value functions can still be used to guide the search for the optimal policy, such as in actor-critic methods. Indeed, \gls{PS} has been successfully applied to complex control tasks, as reported in \cite{deisenroth2013survey}: from robotic arms playing baseball to simulated table tennis, from dart throwing to pan-cake flipping. 
+As mentioned in the introduction, this work focuses on improving the exploration task in continuous state-action domains, possibly characterized by some noise in the state as it happens for control tasks with noisy sensors. In such conditions, value-based methods present numerous difficulties. First, they have no guarantees of convergence to an optimal policy due to the need of function approximation for large, continuous \gls{MDP}s; second, value based methods are highly sensitive to small perturbations in the state, which makes them useless in noisy control tasks. Hence, direct \gls{PS} methods represent the best alternative in such settings. Theoretical guarantees are often available \cite{more1994line}, environment noise has less impactful effects, and prior domain knowledge can be exploited to design ad-hoc policies for specific tasks. Moreover, approximate value functions can still be used to guide the search for the optimal policy, such as in actor-critic methods. Indeed, \gls{PS} has been successfully applied to complex control tasks, as reported in \cite{deisenroth2013survey}: from robotic arms playing baseball to simulated table tennis, from dart throwing to pan-cake flipping. 
 
 \subsection{Overview}
-Given a predetermined class of approximating policies $\hat{\Pi}$, \gls{PS} aims at finding the policy whose performance $J(\pi)$ is as close ad possible to the performance of the optimal policy $J(\pi^*)=J^*$:
+Given a predetermined class of approximating policies $\hat{\Pi}$, \gls{PS} aims at finding the policy whose performance $J(\pi)$ is as close as possible to the performance of the optimal policy $J(\pi^*)=J^*$:
 
 \begin{align}
 \hat{\pi} &= \arg \min_{\pi\in\hat{\Pi}}\norm{J^*-J(\pi)}_p. \label{eq:PSproblem}
 \end{align}
 
 When $p=2$, this optimization problem can be interpreted as finding the policy $\hat{\pi}\in\hat{\Pi}$ whose orthogonal projection in the space of Markovian stationary policies $\Pi$ coincides with the optimal policy $\pi^*$. \\
-A Variety of technique have been proposed in literature to solve the problem \ref{eq:PSproblem}. As well as for value-based methods, we can distinguish between model-free, which learn policies directly based on sampled trajectories, and model-based approaches, which use the sampled trajectories to first build a model of the state dynamics. A part from this macro distinction, a further classification can be based on different policy update strategies, as depicted in figure \ref{fig:PStaxonomy}. The policy updates in both model-free and model-based \gls{PS} are based on either policy gradients \gls{PG}, expectation maximization-based updates, or information-theoretic insights (Inf.Th.). While all three update strategies are fairly well explored in model-free \gls{PS}, model-based \gls{PS} almost exclusively focuses on \gls{PG} to update the policy. In the followings, we will focus on model-free \gls{PS} with \gls{PG}.
+A Variety of technique have been proposed in literature to solve the problem defined by Equation (\ref{eq:PSproblem}). As well as for value-based methods, we can distinguish between model-free, which learn policies directly based on sampled trajectories, and model-based approaches, which use the sampled trajectories to first build a model of the state dynamics. A part from this macro distinction, a further classification can be based on different policy update strategies, as depicted in Figure (\ref{fig:PStaxonomy}). The policy updates in both model-free and model-based \gls{PS} are based on either policy gradients \gls{PG}, expectation maximization-based updates, or information-theoretic insights (Inf.Th.). In the followings, we will focus on model-free \gls{PS} with \gls{PG} updates.
 
 \begin{figure}[t!]
 \centering
@@ -318,7 +318,7 @@ where $\phi(s)$ can be any differentiable approximation function. In stochastic 
 \pi_{\vtheta}(a|s) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2}\left(\frac{a-\vtheta^T\phi(s)}{\sigma}\right)^2\right).
 \end{align}
 
-In some cases, the covariance matrix can be learned as well and the parameters set becomes $\{\mu_{\vtheta}=\vtheta^T\phi(s); \Sigma\}$. In most cases, $\Sigma$ is diagonal, thus easing the complexity of the learning task along with the theoretical analysis. Hence, problem \ref{PSproblem} translates to finding the policy optimal parameters:
+In some cases, the covariance matrix is learnable too, and the parameters set becomes $\{\mu_{\vtheta}=\vtheta^T\phi(s); \Sigma\}$. In most cases, $\Sigma$ is diagonal, thus easing the complexity of the learning task along with the theoretical analysis. Hence, the Problem (\ref{eq:PSproblem}) translates into finding the policy optimal parameters:
 
 \begin{align}
 \vtheta^* &= \arg \max_{\vtheta\in\Theta}J(\vtheta).
@@ -341,7 +341,7 @@ where $\alpha\geq 0$ is the \emph{learning rate} or \emph{step size}, and $\bold
 \end{equation}
 \end{theorem}
 
-$\pi_{\vtheta}(s)$ is the stationary state distribution induced by policy $\pi_{\vtheta}$, as defined in equation \ref{eq:ssdistribution}. By applying a trivial differentiation rule, $\nabla\log f=\nabla f/f$, we can rewrite equation \ref{eq:PGtheorem} in a way that will turn out to be extremely useful:
+$\pi_{\vtheta}(s)$ is the stationary state distribution induced by policy $\pi_{\vtheta}$, as defined in Equation (\ref{eq:ssdistribution}). By applying a trivial differentiation rule, $\nabla\log f=\nabla f/f$, we can rewrite Equation (\ref{eq:PGtheorem}) in a way that will turn out extremely useful:
 
 \begin{align}
 \nabla_{\vtheta}J(\vtheta) 
@@ -350,8 +350,8 @@ $\pi_{\vtheta}(s)$ is the stationary state distribution induced by policy $\pi_{
 \end{align}
 
 This rephrasing is know as REINFORCE trick \cite{williams1992simple} and gives the name to an algorithm which is a milestone of \gls{RL}.
-In practical applications it can be inconvenient or impossible to compute the Q-function. One solution is to leverage simple function approximators belonging to the class of \emph{compatible basis functions}, \ie functions of the form $f_{\vomega}=\vomega^{T}\nabla_{\vtheta}\log\pi_{\vtheta}(a|s)$. Such approximators can replace $Q^{\pi_{\vtheta}}(s,a)$ in equation \ref{eq:PGtheorem} for the calculation of the policy gradient as proven in \cite{sutton2000policy}.\\
-A second solution that prevent from calculating $Q^{\pi_{\vtheta}}(s,a)$ explicitly is to resort to a trajectory-based reformulation of equation \ref{eq:PGtheorem}. By rephrasing the expected performance under policy $\pi_{\vtheta}$ defined in equation \ref{eq:Jstartstate} as:
+In practical applications it can be inconvenient or impossible to compute the Q-function. One solution is to leverage simple function approximators belonging to the class of \emph{compatible basis functions}, \ie functions of the form $f_{\vomega}=\vomega^{T}\nabla_{\vtheta}\log\pi_{\vtheta}(a|s)$. Such approximators can replace $Q^{\pi_{\vtheta}}(s,a)$ in Equation (\ref{eq:PGtheorem}) for the calculation of the policy gradient as proven in \cite{sutton2000policy}.\\
+A second solution that prevent from calculating $Q^{\pi_{\vtheta}}(s,a)$ explicitly is to resort to a trajectory-based reformulation of Equation (\ref{eq:PGtheorem}). By rephrasing the expected performance under policy $\pi_{\vtheta}$ defined in Equation (\ref{eq:Jstartstate}) as:
 
 \begin{align}
 J(\vtheta) = \Exp_{\tau\sim p_{\vtheta}}[\Rew(\tau)], 
@@ -368,12 +368,12 @@ where $p_{\vtheta}$ is the distribution over trajectories $\tau\in\mathcal{T}$ i
 This formulation of the \gls{PG} turns out to be extremely practical. Not only because it prevents from the calculation of the Q-function, but also because it does not require any knowledge about the transition kernel of the \gls{MDP}. In fact, $\log p_{\vtheta}(\tau)$ can be easily derived from the sheer knowledge of the trajectory and definition of the policy:
 
 \begin{align}
-\log \nabla_{\vtheta}p_{\vtheta}(\tau) 
+\nabla_{\vtheta}\log p_{\vtheta}(\tau) 
 &= \nabla_{\vtheta}\log\left( \mu(s_{\tau,0})\prod_{t=0}^{H-1}\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})P(a_{\tau,h+1}|s_{\tau,h+1})\right) \\
 &= \sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h}), \; \forall \tau\in\mathcal{T} \label{eq:logpolicyestimate}
 \end{align}
 
-At this point, the careful reader might have noticed that we have not yet discussed the meaning of the $\boldsymbol{G}(\vtheta)$ in the parameters update equation \ref{eq:paramsupdate}. Well, the choice of this matrix represent the direction we want to take when performing a gradient update. The two most common direction choices in the \gls{RL} literature are \emph{steepest gradient ascent} and \emph{natural gradient ascent}. In the first case, it is sufficient to set $\boldsymbol{G}(\vtheta)=\boldsymbol{I}$. However, this option might be ineffective in many cases \cite{amari1998natural1}:
+At this point, the careful reader might have noticed that we have not yet discussed the meaning of the $\boldsymbol{G}(\vtheta)$ in the parameters update Equation (\ref{eq:paramsupdate}). The choice of this matrix represent the direction we want to take when performing a gradient update. The two most common direction choices in the \gls{RL} literature are \emph{steepest gradient ascent} and \emph{natural gradient ascent}. In the first case, it is sufficient to set $\boldsymbol{G}(\vtheta)=\boldsymbol{I}$. However, this option might be ineffective in many cases \cite{amari1998natural1}:
 
 \begin{itemize}
 \item when there are large plateaus where the gradient is very small and does not point in the direction of the global optimum;
@@ -381,14 +381,14 @@ At this point, the careful reader might have noticed that we have not yet discus
 \item when the gradient is not isotropic in magnitude \wrt any direction away from its maximum,creating troubles in the step size tuning.
 \end{itemize}
 
-In such cases, the \emph{natural gradient} as been empirically proven to have faster convergence and to avoid premature convergence to local maxima. In fact, natural gradient considers the parameter space as a Riemann manifold equipped with its own norm $\norm{\vtheta}^2_{\boldsymbol{G}(\vtheta)}=\vtheta^T\boldsymbol{G}(\vtheta)\vtheta$, which replaces the Euclidean norm, $\norm{\vtheta}^2_{\boldsymbol{I}}=\vtheta^T\vtheta$. In such manifold, $\boldsymbol{G}$ represents the local Riemann metric tensor, which, in the context of \gls{MDP}s is usually given by the \emph{Fisher Information Matrix}, \ie $\boldsymbol{G}(\vtheta)=\boldsymbol{F}(\vtheta)$:
+In such cases, the \emph{natural gradient} as been empirically proven to have faster convergence and to avoid premature convergence to local maxima. Natural gradient considers the parameter space as a Riemann manifold equipped with its own norm $\norm{\vtheta}^2_{\boldsymbol{G}(\vtheta)}=\vtheta^T\boldsymbol{G}(\vtheta)\vtheta$, which replaces the Euclidean norm, $\norm{\vtheta}^2_{\boldsymbol{I}}=\vtheta^T\vtheta$. Such parametric space is a Riemann manifold whose points are probability measures defined on a common probability space. Since $\boldsymbol{G}$ represents the local Riemann metric tensor, in this context it is given by the \emph{Fisher Information Matrix}, \ie $\boldsymbol{G}(\vtheta)=\boldsymbol{F}(\vtheta)$:
 
 \begin{align}
 \boldsymbol{F}(\vtheta &= \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\nabla_{\vtheta}\log p_{\vtheta}(\tau)^T}.
 \end{align}
 
 For more details on the advantages of the natural gradient over the steepest ascent gradient we refer to \cite{amari1998natural1, amari1998natural2, peters2008reinforcement}. \\
-We are now ready to present the general setup for policy gradient methods, showed in Algorithm \textcolor{red}{InternalRef}.
+We are now ready to present the general setup for policy gradient methods, showed in Algorithm (\ref{alg:PG}).
 
 \begin{algorithm}[t]
 	\caption{Generic policy gradient algorithm}
@@ -402,12 +402,12 @@ We are now ready to present the general setup for policy gradient methods, showe
 		\State Update the policy parameters $\vtheta^{t+1} \leftarrow \vtheta^t+\alpha\widehat{\boldsymbol{G}}^{-1}(\vtheta^t)\widehat{\nabla}_{\vtheta}J(\vtheta^t)$
 		\State $t=t+1$
 	\EndWhile \\
-	\Return policy parameters $\vtheta^{T}$
+	\Return an approximation of the optimal policy parameters $\vtheta^*$
 	\end{algorithmic}
 \end{algorithm}
 
 \subsection{Policy gradient estimation}
-As shown in the generic policy gradient algorithm, at each iteration an estimate of the policy gradient is required. Indeed, finding a good estimator is one of the main challenges of policy gradient methods. Since \emph{RL} aims at solving \gls{MDP}s  whose model is unknown to the agent, the sole mean to estimate the policy gradient is by leveraging on the experience collected, \ie the samples. Among several techniques proposed in the literature over the last years, the most prominent approaches to estimate the policy gradient from samples are \emph{Finite-Difference} and \emph{Likelihood Ratio} methods\cite{glynn1990likelihood}.
+As shown in the generic policy gradient algorithm, at each iteration an estimate of the policy gradient is required. Indeed, finding a good estimator is one of the main challenges of policy gradient methods. Since \emph{RL} aims at solving \gls{MDP}s  whose model is unknown to the agent, the sole mean to estimate the policy gradient is by leveraging on the experience collected, \ie the samples. Among several techniques proposed in the literature over the last years, the most prominent approaches to estimate the policy gradient from samples are \emph{Finite-Difference} and \emph{Likelihood Ratio} methods \cite{glynn1990likelihood}.
 
 \textbf{Finite differences}\\
 Finite difference methods aim at approximating the policy gradient as a quotient of finite increments. The idea is to perform multiple perturbations $\Delta\vtheta_1,\Delta\vtheta_2, \dots, \Delta\vtheta_N$ of the policy parameters. Then, with each set of perturbed parameters collect a number of sample trajectories in order to calculate $\Delta\hat{J}_i=J(\vtheta+\Delta\vtheta_i)-J(\vtheta)$. At this point, the policy gradient can be estimated by regression as:
@@ -421,13 +421,13 @@ is easy to implement and very efficient when applied to deterministic tasks or p
 
 \textbf{Likelihood ratio}\\
 Likelihood ratio methods were among the first policy search methods
-introduced in the early 1990s by Williams \cite{williams1992simple}, and include the famous REINFORCE algorithm. These methods build upon the policy gradient formulation given by equation (\ref{eq:trajectoryPG}), which, in the same way of equation (\ref{eq:reinforcetrick}), has been rewritten by applying the so called \emph{REINFORCE trick}, also called \emph{likelihood ratio} trick. As we have seen in equation (\ref{eq:logpolicyestimate}), the policy gradient (eq. (\ref{eq:trajectoryPG})) can be approximated by using a sum over the sampled trajectories. In a similar way, we can estimate $\Rew(\tau)$ in a Monte-Carlo fashion. However, such estimates suffer of very large variance. The variance can be reduced by introducing a baseline $b$ for the trajectory reward $\Rew(\tau)$, \ie
+introduced in the early 1990s by Williams \cite{williams1992simple}, and include the famous REINFORCE algorithm. These methods build upon the policy gradient formulation given by Equation (\ref{eq:trajectoryPG}), which, in the same way of Equation (\ref{eq:reinforcetrick}), has been rewritten by applying the so called \emph{REINFORCE trick}, also called \emph{likelihood ratio trick}. As we have seen in Equation (\ref{eq:logpolicyestimate}), the policy gradient (Equation (\ref{eq:trajectoryPG})) can be approximated by using a sum over the sampled trajectories. In a similar way, we can estimate $\Rew(\tau)$ in a Monte-Carlo fashion. However, such estimates suffer of very large variance. The variance can be reduced by introducing a baseline $b$ for the trajectory reward $\Rew(\tau)$, \ie
 
 \begin{align}
 \hat{\nabla}_{\vtheta}J(\vtheta, b) = \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\left(\Rew(\tau)-b\right)} \label{eq:PGbaseline}
 \end{align}
 
-Remarkably, adding the baseline keep the estimator unbiased. the baseline can be chosen arbitrarily in order to minimize the variance. The variance-minimizing baseline is usually referred to as \emph{optimal baseline}.  As we will see, the optimal baseline depends on the specific likelihood gradient estimation adopted.
+Remarkably, adding the baseline keep the estimator unbiased. the baseline can be chosen arbitrarily in order to minimize the variance. The variance-minimizing baseline is usually referred to as \emph{optimal baseline}.  Clearly, the optimal baseline depends on the specific likelihood gradient estimation adopted.
 
 \subsection{Algorithms}
 The most popular sample-based estimate of the gradient is undoubtedly REINFORCE \cite{williams1992simple}, which uses the total return directly:
@@ -443,7 +443,7 @@ b^*_{RF} &= \frac{\myExpu{\tau\sim p_{\vtheta}}{\norm{\sum_{h=0}^{H-1}\nabla_{\v
 (b^*_{RF})_{j} &= \frac{\myExpu{\tau\sim p_{\vtheta}}{\left(\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})\right)^2\Rew(\tau)}}{\myExpu{\tau\sim p_{\vtheta}}{\left(\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})\right)^2}}, \; j=1,2,...,m.
 \end{align}
 
-As for the REINFORCE estimator (\ref{eq:REINFORCE}), these optimal baselines are estimated simply by replacing the expectation with the empirical average. Algorithm \label{alg:REINFORCE} shows the full REINFORCE procedure with component-based optimal baseline estimation. For sake of clarity, we underline that this algorithm, as well as the others that we discuss in this section, is meant to carry out step (\ref{step:PGestimation}) of the generic policy gradient algorithm (\ref{alg:PG}).
+As for the REINFORCE estimator (\ref{eq:REINFORCE}), these optimal baselines are estimated simply by replacing the expectation with the empirical average. Algorithm (\ref{alg:REINFORCE}) shows the full REINFORCE procedure with component-based optimal baseline estimation. For sake of clarity, we underline that this algorithm, as well as the others that we discuss in this section, is meant to carry out step (\ref{step:PGestimation}) of the generic policy gradient algorithm, \ie Algorithm (\ref{alg:PG}).
 \begin{algorithm}[t]
 	\caption{Episodic REINFORCE with component-wise optimal baseline.}
 	\label{alg:REINFORCE}
@@ -468,7 +468,7 @@ As for the REINFORCE estimator (\ref{eq:REINFORCE}), these optimal baselines are
 	\end{algorithmic}
 \end{algorithm}
 
-Another solution tackling the high-variance problem of REINFORCE is to leverage on the intuitive observation that future actions do not depend on past rewards(unless policy changes take place continuously during the trajectory). Hence, we can derive two other well-know gradient estimators, \gls{GPOMDP} \cite{baxter2001infinite} and PGT \cite{sutton2000policy}:
+Another solution tackling the high-variance problem of REINFORCE is to leverage on the intuitive observation that future actions do not depend on past rewards (unless policy changes take place continuously along the trajectory). Hence, we can derive two other well-know gradient estimators, \gls{GPOMDP} \cite{baxter2001infinite} and PGT \cite{sutton2000policy}:
 
 \begin{align}
 \hat{\nabla}_{\vtheta}J(\vtheta, b)_{GPOMDP} = \frac{1}{N}\sum_{i=1}^{N}\left(\sum_{h=0}^{H-1}\left(\sum_{h'=0}^{h}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau_i,h'}|s_{\tau_i,h'})\right)\left(\gamma^h r^{h+1}_{\tau_i} - b_h \right)\right),
@@ -479,7 +479,7 @@ Another solution tackling the high-variance problem of REINFORCE is to leverage 
 \end{align}
 
 In \cite{peters2008reinforcement} the authors show that these two estimators are equal, despite their apparent difference. In the same paper, the authors show how to derive the optimal baseline for \gls{GPOMDP}, which, differently from the  REINFORCE case, can be time dependent. In the case b = 0 and under mild assumptions, this gradient estimation has been proven to suffer from less variance than REINFORCE \cite{zhao2011analysis}. However, large variance remains a common trait of these Monte Carlo \gls{PG} techniques. In fact, being trajectories generated by sampling at each time step according to a stochastic policy $\pi_{\vtheta}$, the estimators inherit the variance of the policy. To address this
-issue, in \cite{sehnke2008policy} the authors propose the \gls{PGPE} method, in which the search in the policy space is replaced with a direct search in the model parameter space. This allows the use of a deterministic controller $\pi_{\vtheta}: \vtheta\in\Theta\subseteq\Reals^m$ for sampling the trajectories, \ie $\pi_{\vtheta}(a|s)=\delta(a-\upsilon_{\vtheta}(s))$, where $\upsilon_{\vtheta}$ is a deterministic function of the state $s$, \eg \cite{sehnke2010parameter}. The policy parameters are sampled from a distribution $\nu_{\vxi}\in\delta(\Theta)$, called \emph{hyper-policy}, where $\vxi\in\Xi\subseteq\Reals^d$ are the hyper-policy parameters, or \emph{hyper-parameters}. Thus, in episodic \gls{PGPE} it is sufficient to sample the parameters $\vtheta\sim\nu_{\vxi}$ once at the beginning of the episode and then generate an entire trajectory following the deterministic policy $\pi_{\vtheta}$, with a consequent reduction of the gradient estimate variance. As an additional benefit, the parameter gradient is estimated by direct parameter perturbations, without having to back-propagate any derivatives, which allows to use non-differentiable controllers. The hyper-parameters $\vxi$ are updated by following the gradient ascent direction of the gradient of the expected reward, which can be rewritten as:
+issue, in \cite{sehnke2008policy} the authors propose the \gls{PGPE} method, in which the search in the policy space is replaced with a direct search in the model parameter space. This allows the use of a deterministic controller $\pi_{\vtheta}: \vtheta\in\Theta\subseteq\Reals^m$ for sampling the trajectories, \ie $\pi_{\vtheta}(a|s)=\delta(a-\upsilon_{\vtheta}(s))$, where $\upsilon_{\vtheta}$ is a deterministic function of the state $s$, \eg \cite{sehnke2010parameter}. The policy parameters are sampled from a distribution $\nu_{\vxi}\in\delta(\Theta)$, called \emph{hyper-policy}, where $\vxi\in\Xi\subseteq\Reals^d$ are the hyper-policy parameters, or \emph{hyper-parameters}. Thus, in episodic \gls{PGPE} it is sufficient to sample the parameters $\vtheta\sim\nu_{\vxi}$ once at the beginning of the episode and then generate an entire trajectory following the deterministic policy $\pi_{\vtheta}$, with a consequent reduction of the gradient estimate variance. As an additional benefit, the parameter gradient is estimated by direct parameter perturbations, without having to back-propagate any derivatives, which allows to use non-differentiable controllers. For what concern the hyper-policy parametrization choice, the most typical one is Gaussian with diagonal covariance matrix, as it happens in classical \gls{PG}. Although the policy is deterministic, the exploration is guaranteed by the stochasticity of the hyper-policy. The hyper-parameters $\vxi$ are updated by following the gradient ascent direction of the gradient of the expected reward, which can be rewritten as:
 
 \begin{align}
 J(\vxi) = \int_{\Theta}\int_{\mathcal{T}}\nu_{\vxi}(\vtheta)p_{\vtheta}(\tau)\Rew(\tau)d\tau d\vtheta, 
@@ -488,30 +488,33 @@ J(\vxi) = \int_{\Theta}\int_{\mathcal{T}}\nu_{\vxi}(\vtheta)p_{\vtheta}(\tau)\Re
 where $\nu_{\vxi}(\vtheta)p_{\vtheta}(\tau)=p_{\vxi}(\vtheta,\tau)$ because $\tau$ is conditionally independent from $\vxi$ given $\vtheta$. Applying the likelihood ratio technique, we obtain:
 
 \begin{align}
-\hat{\nabla}_{\vxi}J(\vxi) = \myExpu{\vtheta\sim\nu_{\vxi}, \tau\sim p_{\vtheta}}{\nabla_{\vxi}\log\nu_{\vxi}(\vtheta)\Rew(\tau)} 
+\nabla_{\vxi}J(\vxi) = \myExpu{\vtheta\sim\nu_{\vxi}, \tau\sim p_{\vtheta}}{\nabla_{\vxi}\log\nu_{\vxi}(\vtheta)\Rew(\tau)} 
 \end{align}
 
-In order to further reduce the estimate variance, we can adopt an estimator with baseline and compute the optimal one similarly to the REINFORCE case. The episodic \gls{PGPE} algorithm is reported in Algorithm 4.3. I
+In order to further reduce the estimate variance, we can adopt an estimator with baseline and compute the optimal one similarly to the REINFORCE case. The episodic \gls{PGPE} algorithm is reported in Algorithm \ref{alg:PGPE}.
 
 \begin{algorithm}[t]
 	\caption{Episodic PGPE}
-	\label{alg:PG}
+	\label{alg:PGPE}
 	\begin{algorithmic}[1]
-	\State \textbf{Input}: initial hyper-parameters $\vxi^0$, learning rate $\alpha$
+	\State \textbf{Input}: initial hyper-parameters $\vxi^{0}$, learning rate $\alpha$
 	\State \textbf{Initialize} $t=0$
 	\While{not converged} 
-		\For $n=1,2,\dots,N$
-			\State Sample controller parameters $\vtheta^n \sim\nu_{\epsilon_t}$
+		\For{$n=1,2,\dots,N$}
+			\State Sample controller parameters $\vtheta^{(n)} \sim\nu_{\vxi_t}$
 			\State Sample trajectory $\tau\sim p_{\vtheta}$ under policy $\pi_{\vtheta}$
 		\EndFor 
+		\State Estimate optimal baseline $b$
 		\State Estimate the hyper-policy gradient:
 		\begin{align*}
-		bla
+		\hat{\nabla}_{\vxi}J(\vxi_t) = \frac{1}{N}\sum_{i=1}^{N}\nabla_{\vxi}\log \nu_{\vxi}(\vtheta^{(i)})(\Rew(\tau^{(i)}) - b)
 		\end{align*}
-			
+		\State Update the hyper-parameters $\vxi_{t+1} = \vxi_{t}+\alpha\hat{\nabla}_{\vxi}J(\vxi_t)$
+		\State $t = t + 1$
 	\EndWhile \\
-	\Return policy parameters $\vtheta^{T}$
+	\Return an approximation of the optimal policy parameters $\vtheta^* \sim \nu_{\vxi^*}$
 	\end{algorithmic}
 \end{algorithm}
 
-\todol{common policy classes}
+  
+
