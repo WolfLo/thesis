@@ -1,7 +1,29 @@
-\BOOKMARK [0][-]{chapter.1}{Exploration Techniques}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Undirected Exploration}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Counter-based exploration and OFU}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{Value Difference and Recency-based exploration}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.4}{Intrinsic Motivation}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.5}{Thompson Sampling}{chapter.1}% 6
-\BOOKMARK [0][-]{chapter*.2}{Bibliography}{}% 7
+\BOOKMARK [0][-]{chapter.1}{Preliminaries}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Multi Armed Bandits}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Exploration and exploitation}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Stochastic Bandits With Finitely Many Arms}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{X-armed bandits}{section.1.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Markov Decision Processes}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.2.1}{Policies}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.2}{Performance}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.3}{Value functions}{section.1.2}% 9
+\BOOKMARK [1][-]{section.1.3}{Reinforcement Learning}{chapter.1}% 10
+\BOOKMARK [2][-]{subsection.1.3.1}{Problem formulation}{section.1.3}% 11
+\BOOKMARK [2][-]{subsection.1.3.2}{Taxonomy}{section.1.3}% 12
+\BOOKMARK [1][-]{section.1.4}{Policy Search}{chapter.1}% 13
+\BOOKMARK [2][-]{subsection.1.4.1}{Overview}{section.1.4}% 14
+\BOOKMARK [2][-]{subsection.1.4.2}{Policy gradient}{section.1.4}% 15
+\BOOKMARK [2][-]{subsection.1.4.3}{Policy gradient estimation}{section.1.4}% 16
+\BOOKMARK [2][-]{subsection.1.4.4}{Algorithms}{section.1.4}% 17
+\BOOKMARK [0][-]{chapter.2}{Exploration Techniques}{}% 18
+\BOOKMARK [1][-]{section.2.1}{Exploration in Multi Armed Bandits}{chapter.2}% 19
+\BOOKMARK [2][-]{subsection.2.1.1}{Undirected Exploration}{section.2.1}% 20
+\BOOKMARK [2][-]{subsection.2.1.2}{Counter-based exploration and OFU}{section.2.1}% 21
+\BOOKMARK [2][-]{subsection.2.1.3}{Thompson Sampling}{section.2.1}% 22
+\BOOKMARK [1][-]{section.2.2}{Exploration in Reinforcement Learning}{chapter.2}% 23
+\BOOKMARK [2][-]{subsection.2.2.1}{Undirected Exploration}{section.2.2}% 24
+\BOOKMARK [2][-]{subsection.2.2.2}{Counter-based exploration and OFU}{section.2.2}% 25
+\BOOKMARK [2][-]{subsection.2.2.3}{Value Difference and Recency-based exploration}{section.2.2}% 26
+\BOOKMARK [2][-]{subsection.2.2.4}{Intrinsic Motivation}{section.2.2}% 27
+\BOOKMARK [2][-]{subsection.2.2.5}{Thompson Sampling}{section.2.2}% 28
+\BOOKMARK [0][-]{chapter*.4}{Bibliography}{}% 29

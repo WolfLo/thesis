@@ -634,6 +634,13 @@
   Automated Planning and Scheduling, {ICAPS} 2012, Atibaia, S{\~{a}}o Paulo,
   Brazil, June 25-19, 2012\/} (2012).
 
+\bibitem{whitehead1991study}
+{\sc Whitehead, S.~D., and Ballard, D.~H.}
+\newblock {\em A study of cooperative mechanisms for faster reinforcement
+  learning}.
+\newblock University of Rochester, Department of Computer Science Rochester,
+  NY, 1991.
+
 \bibitem{williams1992simple}
 {\sc Williams, R.~J.}
 \newblock Simple statistical gradient-following algorithms for connectionist
