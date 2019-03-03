@@ -45,6 +45,8 @@
 \citation{lattimore2019bandit}
 \citation{lattimore2019bandit}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Stochastic Bandits With Finitely Many Arms}{4}{subsection.1.1.2}}
+\newlabel{finiteMABs}{{1.1.2}{4}{Stochastic Bandits With Finitely Many Arms}{subsection.1.1.2}{}}
+\newlabel{eq:averagereward}{{1.3}{4}{Stochastic Bandits With Finitely Many Arms}{equation.1.1.3}{}}
 \newlabel{thmt@@regretETC@data}{{\def \theequation {1.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )1.1.\@arabic {\c@equation }}\setcounter {equation}{3}}{4}{Stochastic Bandits With Finitely Many Arms}{algorithm.1.1}{}}
 \@writefile{loe}{\contentsline {theorem}{\numberline {1.1.1}Theorem}{4}{theorem.1.1.1}}
 \newlabel{thmt@@regretETC}{{1.1.1}{4}{}{theorem.1.1.1}{}}
@@ -143,18 +145,38 @@
 \citation{thrun1992efficient}
 \citation{whitehead1991study}
 \citation{thrun1992efficient}
+\citation{lattimore2019bandit}
+\citation{cesa2017boltzmann}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Exploration Techniques}{25}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\citation{bubeck2011x}
-\citation{osband2017posterior}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Exploration in Multi Armed Bandits}{26}{section.2.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Undirected Exploration}{26}{subsection.2.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Counter-based exploration and OFU}{26}{subsection.2.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Thompson Sampling}{26}{subsection.2.1.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Exploration in Reinforcement Learning}{26}{section.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Undirected Exploration}{26}{subsection.2.2.1}}
+\citation{lai1985asymptotically}
+\citation{agrawal1995continuum}
+\citation{auer2002finite}
+\citation{lattimore2019bandit}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Count-based exploration and Upper Confidence Bound}{27}{subsection.2.1.2}}
+\@writefile{loe}{\addvspace {10\p@ }}
+\@writefile{loe}{\contentsline {definition}{\numberline {2.1.1}Definition}{27}{definition.2.1.1}}
+\newlabel{def:subgaussianity}{{2.1.1}{27}{}{definition.2.1.1}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {2.1.1}Theorem}{27}{theorem.2.1.1}}
+\@writefile{loe}{\contentsline {corollary}{\numberline {2.1.1}Corollary}{27}{corollary.2.1.1}}
+\newlabel{cor:subgaussian}{{2.1.1}{27}{}{corollary.2.1.1}{}}
+\citation{auer2002finite}
+\citation{agrawal1995continuum}
+\citation{auer2002finite}
+\newlabel{eq:ucb}{{2.4}{28}{Count-based exploration and Upper Confidence Bound}{equation.2.1.4}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.1}{\ignorespaces UCB($\delta $) algorithm\relax }}{29}{algorithm.2.1}}
+\newlabel{alg:ucb}{{2.1}{29}{UCB($\delta $) algorithm\relax }{algorithm.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Optimism in the Face of Uncertainty}{29}{subsection.2.1.3}}
+\citation{bubeck2011x}
+\citation{osband2017posterior}
 \citation{haarnoja2017reinforcement}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4}Optimism in the Face of Uncertainty}{30}{subsection.2.1.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.5}Posterior Sampling}{30}{subsection.2.1.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Exploration in Reinforcement Learning}{30}{section.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Undirected Exploration}{30}{subsection.2.2.1}}
 \citation{srinivas2010gaussian}
 \citation{ostrovski2017count}
 \citation{bellemare2016unifying}
@@ -164,10 +186,10 @@
 \citation{houthooft2016vime}
 \citation{masooddiversity}
 \citation{osband2017posterior}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Counter-based exploration and OFU}{27}{subsection.2.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Value Difference and Recency-based exploration}{27}{subsection.2.2.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Intrinsic Motivation}{27}{subsection.2.2.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Thompson Sampling}{28}{subsection.2.2.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Counter-based exploration and OFU}{31}{subsection.2.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Value Difference and Recency-based exploration}{31}{subsection.2.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Intrinsic Motivation}{31}{subsection.2.2.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Thompson Sampling}{32}{subsection.2.2.5}}
 \citation{*}
 \bibstyle{acm}
 \bibdata{Bibliography/bibliography}
@@ -181,7 +203,7 @@
 \bibcite{auer2002using}{8}
 \bibcite{auer2002finite}{9}
 \bibcite{auer2007improved}{10}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{29}{chapter*.4}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{33}{chapter*.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{DBLP:conf/icml/2015}{11}
@@ -197,88 +219,89 @@
 \bibcite{bubeck2010open}{21}
 \bibcite{bubeck2011x}{22}
 \bibcite{bubeck2009online}{23}
-\bibcite{cesa2012combinatorial}{24}
-\bibcite{chapelle2011empirical}{25}
-\bibcite{chen2016combinatorial}{26}
-\bibcite{chentanez2005intrinsically}{27}
-\bibcite{choshen2018dora}{28}
-\bibcite{sayak2018online}{29}
-\bibcite{cochran2007sampling}{30}
-\bibcite{cortes2010learning}{31}
-\bibcite{dann2015sample}{32}
-\bibcite{dann2017unifying}{33}
-\bibcite{degris2012off}{34}
-\bibcite{deisenroth2013survey}{35}
-\bibcite{dorato1995linear}{36}
-\bibcite{DBLP:conf/icml/2018}{37}
-\bibcite{espeholt2018impala}{38}
-\bibcite{gil2013renyi}{39}
-\bibcite{glynn1990likelihood}{40}
-\bibcite{grondman2012survey}{41}
-\bibcite{haarnoja2017reinforcement}{42}
-\bibcite{haarnoja2018soft}{43}
-\bibcite{hershey2007approximating}{44}
-\bibcite{houthooft2016vime}{45}
-\bibcite{ionides2008truncated}{46}
-\bibcite{jaksch2010near}{47}
-\bibcite{jin2018q}{48}
-\bibcite{DBLP:conf/colt/2010}{49}
-\bibcite{kallus2018instrument}{50}
-\bibcite{kaufmann2012thompson}{51}
-\bibcite{kearns2002near}{52}
-\bibcite{kleinberg2008multi}{53}
-\bibcite{kleinberg2013bandits}{54}
-\bibcite{kleinberg2005nearly}{55}
-\bibcite{kupcsik2013data}{56}
-\bibcite{lai1985asymptotically}{57}
-\bibcite{lakshmanan2015improved}{58}
-\bibcite{lange2012batch}{59}
-\bibcite{lattimore2014near}{60}
-\bibcite{lattimore2019bandit}{61}
-\bibcite{magureanu2014lipschitz}{62}
-\bibcite{masooddiversity}{63}
-\bibcite{DBLP:conf/aips/2012}{64}
-\bibcite{pmlr-v48-medina16}{65}
-\bibcite{mersereau2009structured}{66}
-\bibcite{metelli2018policy}{67}
-\bibcite{mnih2016asynchronous}{68}
-\bibcite{more1994line}{69}
-\bibcite{jungseul2018exploration}{70}
-\bibcite{ortner2012online}{71}
-\bibcite{osband2013more}{72}
-\bibcite{osband2017posterior}{73}
-\bibcite{osband2016generalization}{74}
-\bibcite{ostrovski2017count}{75}
-\bibcite{owen_safe_2000}{76}
-\bibcite{mcbook_2013}{77}
-\bibcite{mcbook}{78}
-\bibcite{pandey2007multi}{79}
-\bibcite{peters2008reinforcement}{80}
-\bibcite{DBLP:conf/icml/2017}{81}
-\bibcite{puterman2014markov}{82}
-\bibcite{renyi1961measures}{83}
-\bibcite{robbins1985some}{84}
-\bibcite{rummery1994line}{85}
-\bibcite{saritacc2017combinatorial}{86}
-\bibcite{schulman2015trust}{87}
-\bibcite{sehnke2008policy}{88}
-\bibcite{sehnke2010parameter}{89}
-\bibcite{silver2014deterministic}{90}
-\bibcite{srinivas2010gaussian}{91}
-\bibcite{strehl2009reinforcement}{92}
-\bibcite{sutton1988learning}{93}
-\bibcite{sutton1991dyna}{94}
-\bibcite{sutton2018reinforcement}{95}
-\bibcite{sutton2000policy}{96}
-\bibcite{thompson1933likelihood}{97}
-\bibcite{thrun1992efficient}{98}
-\bibcite{tokic2011value}{99}
-\bibcite{vakili2011deterministic}{100}
-\bibcite{veach_optimally_1995}{101}
-\bibcite{wang2018regional}{102}
-\bibcite{watkins1989learning}{103}
-\bibcite{weinstein2012bandit}{104}
-\bibcite{whitehead1991study}{105}
-\bibcite{williams1992simple}{106}
-\bibcite{yupure}{107}
-\bibcite{zhao2011analysis}{108}
+\bibcite{cesa2017boltzmann}{24}
+\bibcite{cesa2012combinatorial}{25}
+\bibcite{chapelle2011empirical}{26}
+\bibcite{chen2016combinatorial}{27}
+\bibcite{chentanez2005intrinsically}{28}
+\bibcite{choshen2018dora}{29}
+\bibcite{sayak2018online}{30}
+\bibcite{cochran2007sampling}{31}
+\bibcite{cortes2010learning}{32}
+\bibcite{dann2015sample}{33}
+\bibcite{dann2017unifying}{34}
+\bibcite{degris2012off}{35}
+\bibcite{deisenroth2013survey}{36}
+\bibcite{dorato1995linear}{37}
+\bibcite{DBLP:conf/icml/2018}{38}
+\bibcite{espeholt2018impala}{39}
+\bibcite{gil2013renyi}{40}
+\bibcite{glynn1990likelihood}{41}
+\bibcite{grondman2012survey}{42}
+\bibcite{haarnoja2017reinforcement}{43}
+\bibcite{haarnoja2018soft}{44}
+\bibcite{hershey2007approximating}{45}
+\bibcite{houthooft2016vime}{46}
+\bibcite{ionides2008truncated}{47}
+\bibcite{jaksch2010near}{48}
+\bibcite{jin2018q}{49}
+\bibcite{DBLP:conf/colt/2010}{50}
+\bibcite{kallus2018instrument}{51}
+\bibcite{kaufmann2012thompson}{52}
+\bibcite{kearns2002near}{53}
+\bibcite{kleinberg2008multi}{54}
+\bibcite{kleinberg2013bandits}{55}
+\bibcite{kleinberg2005nearly}{56}
+\bibcite{kupcsik2013data}{57}
+\bibcite{lai1985asymptotically}{58}
+\bibcite{lakshmanan2015improved}{59}
+\bibcite{lange2012batch}{60}
+\bibcite{lattimore2014near}{61}
+\bibcite{lattimore2019bandit}{62}
+\bibcite{magureanu2014lipschitz}{63}
+\bibcite{masooddiversity}{64}
+\bibcite{DBLP:conf/aips/2012}{65}
+\bibcite{pmlr-v48-medina16}{66}
+\bibcite{mersereau2009structured}{67}
+\bibcite{metelli2018policy}{68}
+\bibcite{mnih2016asynchronous}{69}
+\bibcite{more1994line}{70}
+\bibcite{jungseul2018exploration}{71}
+\bibcite{ortner2012online}{72}
+\bibcite{osband2013more}{73}
+\bibcite{osband2017posterior}{74}
+\bibcite{osband2016generalization}{75}
+\bibcite{ostrovski2017count}{76}
+\bibcite{owen_safe_2000}{77}
+\bibcite{mcbook_2013}{78}
+\bibcite{mcbook}{79}
+\bibcite{pandey2007multi}{80}
+\bibcite{peters2008reinforcement}{81}
+\bibcite{DBLP:conf/icml/2017}{82}
+\bibcite{puterman2014markov}{83}
+\bibcite{renyi1961measures}{84}
+\bibcite{robbins1985some}{85}
+\bibcite{rummery1994line}{86}
+\bibcite{saritacc2017combinatorial}{87}
+\bibcite{schulman2015trust}{88}
+\bibcite{sehnke2008policy}{89}
+\bibcite{sehnke2010parameter}{90}
+\bibcite{silver2014deterministic}{91}
+\bibcite{srinivas2010gaussian}{92}
+\bibcite{strehl2009reinforcement}{93}
+\bibcite{sutton1988learning}{94}
+\bibcite{sutton1991dyna}{95}
+\bibcite{sutton2018reinforcement}{96}
+\bibcite{sutton2000policy}{97}
+\bibcite{thompson1933likelihood}{98}
+\bibcite{thrun1992efficient}{99}
+\bibcite{tokic2011value}{100}
+\bibcite{vakili2011deterministic}{101}
+\bibcite{veach_optimally_1995}{102}
+\bibcite{wang2018regional}{103}
+\bibcite{watkins1989learning}{104}
+\bibcite{weinstein2012bandit}{105}
+\bibcite{whitehead1991study}{106}
+\bibcite{williams1992simple}{107}
+\bibcite{yupure}{108}
+\bibcite{zhao2011analysis}{109}

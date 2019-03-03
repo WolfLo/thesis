@@ -136,6 +136,12 @@
 \newblock In {\em Advances in Neural Information Processing Systems\/} (2009),
   pp.~201--208.
 
+\bibitem{cesa2017boltzmann}
+{\sc Cesa-Bianchi, N., Gentile, C., Lugosi, G., and Neu, G.}
+\newblock Boltzmann exploration done right.
+\newblock In {\em Advances in Neural Information Processing Systems\/} (2017),
+  pp.~6284--6293.
+
 \bibitem{cesa2012combinatorial}
 {\sc Cesa-Bianchi, N., and Lugosi, G.}
 \newblock Combinatorial bandits.

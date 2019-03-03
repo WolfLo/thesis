@@ -19,12 +19,14 @@
 \contentsline {chapter}{\numberline {2}Exploration Techniques}{25}{chapter.2}
 \contentsline {section}{\numberline {2.1}Exploration in Multi Armed Bandits}{26}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Undirected Exploration}{26}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Counter-based exploration and OFU}{26}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Thompson Sampling}{26}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}Exploration in Reinforcement Learning}{26}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Undirected Exploration}{26}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Counter-based exploration and OFU}{27}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Value Difference and Recency-based exploration}{27}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Intrinsic Motivation}{27}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Thompson Sampling}{28}{subsection.2.2.5}
-\contentsline {chapter}{Bibliography}{29}{chapter*.4}
+\contentsline {subsection}{\numberline {2.1.2}Count-based exploration and Upper Confidence Bound}{27}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Optimism in the Face of Uncertainty}{29}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Optimism in the Face of Uncertainty}{30}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Posterior Sampling}{30}{subsection.2.1.5}
+\contentsline {section}{\numberline {2.2}Exploration in Reinforcement Learning}{30}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Undirected Exploration}{30}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Counter-based exploration and OFU}{31}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Value Difference and Recency-based exploration}{31}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Intrinsic Motivation}{31}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Thompson Sampling}{32}{subsection.2.2.5}
+\contentsline {chapter}{Bibliography}{33}{chapter*.4}
