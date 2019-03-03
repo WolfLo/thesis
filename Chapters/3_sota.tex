@@ -15,7 +15,7 @@ The most uninformed and basic way of exploring an unknown environment is to gene
 Another approach to undirected exploration which is more effective when costs are relevant during learning is \emph{non-uniform} exploration utilizing the current utility estimates to influence action-selection. The higher the expected utility by selecting action $i$, the more likely $i$ gets selected. This ensures that the learning system explores and exploits simultaneously, as it happens for the $\epsilon$-greedy algorithm, but in an intuitively more effective way since actions are not chosen uniformly during exploration. An example of utility-driven non-uniform undirected exploration is the  Boltzmann-distributed exploration \cite{cesa2017boltzmann}. By defining the average reward of an arm as in Equation \ref{eq:averagereward}:
 
 \begin{equation}
-\wh{\mu}(i) = \wh{\mu}_i = \frac{1}{T_i(t)}\sum_{s=1}^{t}\mathds{1}_{\{x_s=i\}}r_s,
+\wh{\mu}_i(t) = \frac{1}{T_i(t)}\sum_{s=1}^{t}\mathds{1}_{\{x_s=i\}}r_s,
 \end{equation}
 
 the probability for an action $i$ to get selected is a non-linear function of $\wh{\mu}_i$:
@@ -38,26 +38,26 @@ x_t = \arg\max_{x\in\mathcal{X}}\{\wh{\mu}_x + bonus(T_x(t-1))\}.
 Such strategy is at the core of the celebrated \gls{UCB} algorithm \cite{lai1985asymptotically, agrawal1995continuum, auer2002finite} that overcomes all of the limitations of strategies based on exploration followed by commitment. The algorithm has many different forms, depending on the distributional assumptions on the noise. Here, we assume the noise is 1-subgaussian, \ie :
 
 \begin{definition} \label{def:subgaussianity}
-\emph{Subgaussianity} A random variable $x$ is $\sigma$-subgaussian if, for all $\lambda\in\Reals$, it holds that $\Exp{\exp(\lambda X})\leq\exp(\lambda^2\sigma^2/2)$.
+\emph{Subgaussianity} A random variable $X$ is $\sigma$-subgaussian if, for all $\lambda\in\Reals$, it holds that $\Exp{\exp(\lambda X})\leq\exp(\lambda^2\sigma^2/2)$.
 \end{definition}
 
 Coupling this property with the application of the \emph{Markov's inequality}, we can prove that:
 
 \begin{theorem} \cite{lattimore2019bandit} 
-If $x$ is $\sigma$-subgaussian, then, for any $\epsilon\geq 0$,
+If $X$ is $\sigma$-subgaussian, then, for any $\epsilon\geq 0$,
 \begin{align*}
-Pr(x\geq\epsilon)\leq\exp\left(-\frac{\epsilon^2}{2\sigma^2}\right)
+Pr(X\geq\epsilon)\leq\exp\left(-\frac{\epsilon^2}{2\sigma^2}\right)
 \end{align*}
 \end{theorem}
 
 From this theorem, we can derive a key corollary which gives us precious information about the concentration of the sample mean around the true mean of independent, $\sigma$-subgaussian random variables: 
 
 \begin{corollary} \label{cor:subgaussian}
-Assume that $x_i - \mu$, for $i=1,2,\dots,n$ are independent, $\sigma$-subgaussian random variables. Then, for any $\epsilon\geq 0$, with probability at least $1-\delta$, $\delta\in [0,1]$: 
+Assume that $X_i - \mu$, for $i=1,2,\dots,n$ are independent, $\sigma$-subgaussian random variables. Then, for any $\epsilon\geq 0$, with probability at least $1-\delta$, $\delta\in [0,1]$: 
 \begin{align*}
 \mu\leq\wh{\mu}+\sqrt{\frac{2\sigma^2\log(1/\delta)}{n}} \enspace\enspace and \enspace\enspace \mu\geq\wh{\mu}-\sqrt{\frac{2\sigma^2\log(1/\delta)}{n}},
 \end{align*}
-where $\wh{\mu}=\frac{1}{n}\sum_{t=1}^{n}x_t$.
+where $\wh{\mu}=\frac{1}{n}\sum_{t=1}^{n}X_t$.
 \end{corollary}
 
 When considering its options in round t the learner has observed $T_i(t-1)$ samples from arm $i$ and received rewards from that arm with an empirical mean of $\wh{\mu}_i$. Then an \emph{optimist} candidate for the unknown mean of the $i$th arm is:
@@ -81,7 +81,7 @@ After having picked all actions once, the \gls{UCB} policy simply picks at each 
 	\begin{algorithmic}[1]
 	\State {\bfseries Input:} $K$ arms and $\delta$
 	\State Choose each action once
-	\For{$t=1,\dots,T$}
+	\For{$t=1,2,\dots,T$}
 		\If{$t\leq K$}
 			\State $x_{t} = t$
 		\Else
@@ -95,7 +95,7 @@ After having picked all actions once, the \gls{UCB} policy simply picks at each 
 The value of $1-\delta$ is called the confidence level and different choices lead to different algorithms, each with their pros and cons, and sometimes different analysis. For example, Auer et al. \cite{auer2002finite}, present an algorithm originating in \cite{agrawal1995continuum} called \emph{UCB1} which achieves expected logarithmic regret uniformly over time, for all reward distributions, with no prior knowledge of the reward distribution. \emph{UCB1} takes $\delta=1/t$, where $t$ is the current time step, resulting in:
 
 \begin{align}
-UCB1_i(t-1, \delta) = \wh{\mu}_i(t-1) + \sqrt{\frac{2\log(t)}{T_i(t-1)}}
+UCB1_i(t, \delta) = \wh{\mu}_i(t) + \sqrt{\frac{2\log(t)}{T_i(t)}}
 \end{align}
 
 However, rather than considering 1-subgaussian environments, Auer et al. \cite{auer2002finite} considers bandits where the payoffs are confined to the $[0,1]$ interval, which are ensured to be 1/2-subgaussian.
@@ -107,14 +107,86 @@ stochastic bandits. The \gls{OFU} principle states that one should choose their 
 To illustrate the intuition imagine of being in the same situation depicted in (\ref{eedilemma}), \ie, a standard lunch break from work. You can choose between your good old-fashioned favourite restaurant or sampling a restaurant that you never visited before. Taking an optimistic view of the unknown restaurant leads to exploration because without data it \emph{could} be amazing. Then, after trying the new option a few times you can update your statistics about each choice and make a more
 informed decision. On the other hand, taking a pessimistic view of the new option discourages exploration and you may suffer significant regret if the local options are delicious. The \gls{UCB} strategy assigns to each arm an upper confidence bound  that with high probability is an overestimate of the unknown mean reward. The intuitive reason why
 this leads to sublinear regret is simple. Assuming the upper confidence bound assigned to the optimal arm is indeed an overestimate, then another arm can only be played if its upper confidence bound is larger than that of the optimal arm, which in turn is larger than the mean of the optimal arm. And yet this cannot happen too often because the additional data provided by playing a suboptimal arm means that the upper confidence bound for this arm will eventually fall below that of the optimal arm.\\
-The next algorithm that we discuss will be useful to better understand the \gls{OFU} principle and its exploration power, with application in a more complex environment.
+The next algorithm that we discuss will be useful to better understand the \gls{OFU} principle and its exploration power, with application to a more complex environment.
 
-\subsection{Optimism in the Face of Uncertainty}
-Algorithms:
-\begin{itemize}
-\item UCB1
-\item  HOO algorithm from X-Armed Bandits \cite{bubeck2011x} 
-\end{itemize}
+\subsection{ Hierarchical Optimistic Optimization}
+In 2011 Bubeck et al. \cite{bubeck2011x} proposed a novel optimistic arm selection strategy whose regret improves upon previous results on continuum and Lipschitz bandits (\eg, \cite{kleinberg2005nearly, kleinberg2008multi}), extending and generalizing the environment class of application to arbitrary topological spaces. In particular, the setting is that of $\mathcal{X}$-armed bandits, introduced in (\ref{sub:xarmedbandits}). This algorithm is particularly interesting to us for two reasons:
+
+\begin{enumerate}
+\item it applies the \gls{OFU} principle to continuous action spaces, as we wish to do in the context of \gls{RL} Policy Search;
+\item it leverages the correlation between arms (expressed as a dissimilarity function) to explore the environment more effectively.
+\end{enumerate} 
+
+The \gls{HOO} strategy assumes that the decision maker is able to cover the space of arms in a recursive manner, successively refining the regions in the covering such that the diameters of these sets shrink at a known geometric rate when measured with the dissimilarity metric. In particular, the authors define a tree of coverings as:
+
+\begin{definition} \label{def:treeofcoverings}
+(\emph{Tree of coverings}) A tree of coverings is a family of measurable subsets $(\mathcal{P}_{(h,i)})_{1\leq i\leq 2^h, h\geq 0}$ of $\mathcal{X}$ such that for all fixed integer $h\geq 0$, the covering $\bigcup_{1\leq i\leq 2^h}P_{h,i}=\mathcal{X}$ holds. Moreover, the elements of the covering are obtained recursively: each subset $P_{h,i}$ is covered by the two subsets $P_{h+1,2i-1}$ and $P_{h+1,2i}$.
+\end{definition}
+
+\begin{remark}
+A typical choice for the coverings in a cubic domain is to let the domains be hyper-rectangles. They can be obtained, e.g., in a dyadic manner, by splitting at each step hyper-rectangles in the middle along their longest side, in an axis parallel manner; if all sides are equal, we split them along the first axis.
+\end{remark} 
+
+The number of visits of a node $(h,i)$ up to time-step $T$ is given by the number of visits of every node belonging to $\mathcal{C}(h,i)$, \ie the set of the node $(h,i)$ and its descendants:
+
+\begin{align}
+T_{h,i}(t) = \sum_{l=1}^{t}\mathds{1}_{\{(h_l, i_l)\in\mathcal{C}(h,i)\}},
+\end{align}
+
+where $(h_l, i_l)$ are the coordinates of the node selected at time step $l$. Then, the empirical average of the rewards received for the time-points when the path followed the algorithm has gone through $(h,i)$ is:
+
+\begin{align}
+\wh{\mu}_{h,i}(t) = \frac{1}{T_{h,i}(t)}\sum_{l=1}^{t}r_l\mathds{1}_{\{(h_l, i_l)\in\mathcal{C}(h,i)\}}.
+\end{align}
+
+Thus, similarly to the $UCB(\delta)$ algorithm, an upper confidence bound can be defined as:
+
+\begin{align}
+U_{h,i}(t) = \wh{\mu}_{h,i}(t) + \sqrt{\frac{2\log{t}}{T_{h,i}(t)}} + \nu_1\rho^h,
+\end{align}
+
+where $\rho\in(0,1)$ and $\nu_1\in\Reals^+_0$ are parameters of the algorithm. Along with the nodes the algorithm stores what the authors call B-values:
+
+\begin{align}
+B_{h,i}(t) = \min\{U_{h,i}(t), \max\{B_{h+1,2i-1}(t), B_{h+1,2i}(t)\}\}
+\end{align}
+
+Finally, let us denote by $\Tau$ the infinite tree of coverings, by $\Tau_t$ the set of nodes of the tree that have been picked in previous rounds and by $\mathcal{S}_t$ the nodes which are not in $\Tau_t$. Now, for a node $(h,i)$ in $\mathcal{S}_t$, we define
+its B-value to be $B_{h,i}(t)=+\infty$ . We now have everything we need to present the full \gls{HOO} strategy, \ie Algorithm (\ref{alg:hoo}).
+
+\begin{algorithm}[t]
+	\caption{HOO algorithm}
+	\label{alg:hoo}
+	\begin{algorithmic}[1]
+	\State {\bfseries Input:} the infinite tree of coverings $\Tau$, $\rho\in(0,1)$ and $\nu_1\in\Reals^+_0$
+	\State {\bfseries Initialize:} $t=0$, $\Tau_0=\emptyset$, $\mathcal{S}_0=\Tau$, $B_{h,i}(t)=+\infty$ $\forall (h,i)\in\mathcal{S}_0$
+	\State Choose the root node $(h_0, i_0)=(0,1)$ and update $t = t+1$
+	\For{$t=1,2,\dots,T$}
+		\State Choose a node according to the deterministic rule:
+		\begin{align}
+		(h_t, i_t) = \arg\max_{(h, i)\in\mathcal{S}_t}B_{h,i}(t)
+		\end{align}
+		\State Choose, possibly at random, an arm $x_t\in\mathcal{P}_{(h_t, i_t)}$ and collect reward $r_t$
+		\State Update $B_{h,i}(t)$ for $(h_t,i_t)$ and all its parent nodes
+		\State $\Tau_{t+1}=\Tau_t\cup(h_t,i_t)$, $\mathcal{S}_{t+1}=\mathcal{S}_t/(h_t,i_t)$
+	\EndFor
+	\end{algorithmic}
+\end{algorithm}
+
+The definition and use of B-values, that put in relationship each node (subset of $Xspace$) with all its children (subset of the subset of $\Xspace$), shows how the algorithm relies on the correlation between the reward of an arm and that of its neighbours. Indeed, the proof of the regret achieved by \gls{HOO} relies on:
+
+\begin{assumption}
+The mean-payoff function $\mu$ is weakly Lipschitz \wrt a dissimilarity metric $\ell$, \ie $\forall x_1,x_2\in\Xspace$,
+\begin{align}
+\mu^*-\mu(x_2)\leq\mu^* - \mu(x_1)+\max\{\mu^* - \mu(x_1), \ell(x_1,x_2)\}. \label{eq:weaklipschitz}
+\end{align}
+\end{assumption}
+
+Note that weak Lipschitzness is satisfied whenever $\mu$ is 1-Lipschitz, \ie $\forall x_1,x_2\in\Xspace, \; |\mu(x_1)-\mu(x_2)|\leq\ell(x_1,x_2)$. On the other hand, weak Lipschitzness implies local (one-sided) 1-Lipschitzness at any maxima. Indeed, at an optimal arm $x^*$, Equation \ref{eq:weaklipschitz} rewrites to $\mu(x^*)-\mu(x_2)\leq\ell(x^*,x_2)$. \\
+By carefully choosing the tree of coverings and the algorithm parameters, the authors show that the regret of the proposed approach is bounded by $\widetilde{\mathcal{O}}(\sqrt{T}) = \mathcal{O}(\log\sqrt{T})$. For more details, we remand to \cite{bubeck2011x}.
+
+
+
 
 \subsection{Posterior Sampling}
 Description
@@ -127,17 +199,11 @@ To conclude with: Why is Posterior Sampling Better than Optimism for Reinforceme
 %check thesis
 % pg101 of Bandits
 One may ask why you would want to randomize? The
-best answer is simplicity: The policy only depends on the exploration parameter
-$\epsilon$ rather than some complicated schedule. This can be useful in complicated
-settings like reinforcement learning where many instances of the same algorithm
-are acting simultaneously and communication is costly. In Chapter 11 we’ll see
-the role of randomization when the bandit itself is allowed to react to the actions
+best answer is simplicity: The policy only depends on the exploration parameter $\epsilon$ rather than some complicated schedule. This can be useful in complicated settings like reinforcement learning where many instances of the same algorithm are acting simultaneously and communication is costly. In Chapter 11 we’ll see the role of randomization when the bandit itself is allowed to react to the actions
 of the learner in a malicious way. The history of $\epsilon$-greedy is unclear, but it is a
 popular and widely used and known algorithm in reinforcement learning [Sutton
 and Barto, 1998]. Auer et al. [2002a] analyze the regret of $\epsilon$-greedy with slowly
-decreasing $\epsilon$ (see Exercise 6.7). There are other kinds of randomized exploration
-as well, including Thompson sampling [1933] and Boltzmann exploration analyzed
-recently by Cesa-Bianchi et al. [2017].
+decreasing $\epsilon$ (see Exercise 6.7). There are other kinds of randomized exploration as well, including Thompson sampling [1933] and Boltzmann exploration analyzed recently by Cesa-Bianchi et al. [2017].
 
 Algorithm:
 \begin{itemize}
