@@ -1,0 +1,175 @@
+% !TEX root = ../thesis.tex
+
+\chapter{Exploration Techniques}
+
+In this chapter we present the state of the art of \gls{MAB}s and \gls{RL} techniques that focus on the exploration challenge arising in these learning frameworks. While sketching a sort of taxonomy of the exploration techniques, we describe some of the most emblematic algorithms for each category. The exploration problem is the major goal of our research project, which has been inspired by many of the algorithms described in this chapter. \\
+Following the taxonomy outlined by Sebatian Thrun in 1992 for the \gls{RL} framework  \cite{thrun1992efficient}, we divide both \gls{MAB}s and \gls{RL} exploration techniques in two families of exploration schemes: \emph{undirected} and \emph{directed} exploration.
+While the former family is closely related to random walk exploration, directed exploration techniques memorize exploration-specific knowledge which is used for guiding the exploration search. In many finite deterministic domains, any learning technique based on undirected exploration is inefficient in terms of learning time, i.e. learning time is expected to scale exponentially with the size of the state space \cite{whitehead1991study}. For all these domains, reinforcement learning using a directed technique can always be performed in polynomial time, demonstrating the important role of exploration in reinforcement learning \cite{thrun1992efficient}. However, an important remark is that we do not address the problem of pure exploration, in which there is no price to be paid for exploration and the only objective is to find the reward-maximizing actions. Instead, we  exploration in the more general context of learning described in the previous chapter (\ref{eedilemma}), where the agent face the exploration-exploitation dilemma all along its journey. 
+
+\section{Exploration in Multi Armed Bandits}
+
+\subsection{Undirected Exploration}
+%372
+%epsilon-greedy @ pag 105
+The most uninformed and basic way of exploring an unknown environment is to generate actions randomly with uniform probability. This method is often applied if exploration costs do not matter during learning. Sometimes tasks are divided into two phases, namely an exploration and an exploitation phase, and costs are not considered during the exploration phase. This is the case of the \emph{explore-then-commit} algorithm (Algorithm \ref{alg:explorethencommit}) presented in the previous chapter, which explores uniformly the finite number of arms $m$ before starting the exploitation phase, after $mK$ steps. Another common algorithm with undirected uniform exploration is the $\epsilon$-greedy algorithm \cite{lattimore2019bandit}. One can think of it as an extension of the \emph{explore-then-commit} algorithm which allows to continue exploring with probability $\epsilon$ even during the performance phase (\ie the exploitation phase). The idea is, after a pure exploration phase of $mK$ steps as for the $explore-then-commit$ algorithm, to exploit the estimated best arm $x_t = \arg \max \wh{\mu}_i(t)$ with probability $(1-\epsilon_t)$ at each time step, and explore uniformly the remaining set of arms with probability $\epsilon_t$ at each step. \\
+Another approach to undirected exploration which is more effective when costs are relevant during learning is \emph{non-uniform} exploration utilizing the current utility estimates to influence action-selection. The higher the expected utility by selecting action $i$, the more likely $i$ gets selected. This ensures that the learning system explores and exploits simultaneously, as it happens for the $\epsilon$-greedy algorithm, but in an intuitively more effective way since actions are not chosen uniformly during exploration. An example of utility-driven non-uniform undirected exploration is the  Boltzmann-distributed exploration \cite{cesa2017boltzmann}. By defining the average reward of an arm as in Equation \ref{eq:averagereward}:
+
+\begin{equation}
+\wh{\mu}(i) = \wh{\mu}_i = \frac{1}{T_i(t)}\sum_{s=1}^{t}\mathds{1}_{\{x_s=i\}}r_s,
+\end{equation}
+
+the probability for an action $i$ to get selected is a non-linear function of $\wh{\mu}_i$:
+
+\begin{equation}
+Pr(i) = \frac{e^{\wh{\mu}_i \tau^{-1}}}{\sum_{a\in\mathcal{X}}e^{\wh{\mu}_{a}\tau^{-1}}}.
+\end{equation}
+
+Here $\tau$ is a gain factor, often called \emph{temperature}, which determines the amount of randomness in the action selection procedure. With $\tau\to 0$ pure exploitation is approached and with $\tau\to \infty$ the resulting distribution approached the uniform distribution. \\
+In the rest of this section, we present some techniques of \emph{directed exploration}, which memorizes knowledge about the learning process itself and utilizes this knowledge for directing the exploration.
+
+\subsection{Count-based exploration and Upper Confidence Bound}
+%pag107 of bandit algorithms
+Count-based exploration memorizes knowledge about the number of times $T_i(t)$ action $i$ has been visited up to time-step $t$, for all $i\in\mathcal{X}$. Strategies based on counting usually evaluate actions by a linear combination of an exploitation term and an exploration term, called the \emph{exploration bonus}, which is a (usually inverse) function of $T_i(t)$. Hence, action $x_t$ is selected in a deterministic fashion as:
+
+\begin{equation}
+x_t = \arg\max_{x\in\mathcal{X}}\{\wh{\mu}_x + bonus(T_x(t-1))\}.
+\end{equation}
+
+Such strategy is at the core of the celebrated \gls{UCB} algorithm \cite{lai1985asymptotically, agrawal1995continuum, auer2002finite} that overcomes all of the limitations of strategies based on exploration followed by commitment. The algorithm has many different forms, depending on the distributional assumptions on the noise. Here, we assume the noise is 1-subgaussian, \ie :
+
+\begin{definition} \label{def:subgaussianity}
+\emph{Subgaussianity} A random variable $x$ is $\sigma$-subgaussian if, for all $\lambda\in\Reals$, it holds that $\Exp{\exp(\lambda X})\leq\exp(\lambda^2\sigma^2/2)$.
+\end{definition}
+
+Coupling this property with the application of the \emph{Markov's inequality}, we can prove that:
+
+\begin{theorem} \cite{lattimore2019bandit} 
+If $x$ is $\sigma$-subgaussian, then, for any $\epsilon\geq 0$,
+\begin{align*}
+Pr(x\geq\epsilon)\leq\exp\left(-\frac{\epsilon^2}{2\sigma^2}\right)
+\end{align*}
+\end{theorem}
+
+From this theorem, we can derive a key corollary which gives us precious information about the concentration of the sample mean around the true mean of independent, $\sigma$-subgaussian random variables: 
+
+\begin{corollary} \label{cor:subgaussian}
+Assume that $x_i - \mu$, for $i=1,2,\dots,n$ are independent, $\sigma$-subgaussian random variables. Then, for any $\epsilon\geq 0$, with probability at least $1-\delta$, $\delta\in [0,1]$: 
+\begin{align*}
+\mu\leq\wh{\mu}+\sqrt{\frac{2\sigma^2\log(1/\delta)}{n}} \enspace\enspace and \enspace\enspace \mu\geq\wh{\mu}-\sqrt{\frac{2\sigma^2\log(1/\delta)}{n}},
+\end{align*}
+where $\wh{\mu}=\frac{1}{n}\sum_{t=1}^{n}x_t$.
+\end{corollary}
+
+When considering its options in round t the learner has observed $T_i(t-1)$ samples from arm $i$ and received rewards from that arm with an empirical mean of $\wh{\mu}_i$. Then an \emph{optimist} candidate for the unknown mean of the $i$th arm is:
+
+\begin{align} \label{eq:ucb}
+UCB_i(t-1, \delta) = \wh{\mu}_i(t-1) + \sqrt{\frac{2\log(1/\delta)}{T_i(t-1)}}.
+\end{align}
+
+Great care is required when comparing (\ref{cor:subgaussian}) and (\ref{eq:ucb}) because in the former the number of samples is the constant $n$, but in the latter it is a random variable
+$T_i(t-1)$. A part from this technicality, the intuition remains that $\delta$ is approximately an upper bound on the probability of the event that the above quantity is an underestimate of the true mean. In fact, by Corollary (\ref{cor:subgaussian}), for any $\delta\in [0,1]$:
+
+\begin{align}
+Pr\left(\mu\geq\wh{\mu}+\sqrt{\frac{2\sigma^2\log(1/\delta)}{n}}\right)\leq\delta.
+\end{align}
+
+After having picked all actions once, the \gls{UCB} policy simply picks at each time step $t$ the action $i$ whose $UCB_i(t-1,\delta)$ index is maximum, as shown in Algorithm (\ref{alg:ucb}).
+
+\begin{algorithm}[t]
+	\caption{UCB($\delta$) algorithm}
+	\label{alg:ucb}
+	\begin{algorithmic}[1]
+	\State {\bfseries Input:} $K$ arms and $\delta$
+	\State Choose each action once
+	\For{$t=1,\dots,T$}
+		\If{$t\leq K$}
+			\State $x_{t} = t$
+		\Else
+			\State $x_t = \arg\max_i UCB_i(t-1, \delta)$
+		\EndIf
+	\EndFor
+	\end{algorithmic}
+\end{algorithm}
+
+
+The value of $1-\delta$ is called the confidence level and different choices lead to different algorithms, each with their pros and cons, and sometimes different analysis. For example, Auer et al. \cite{auer2002finite}, present an algorithm originating in \cite{agrawal1995continuum} called \emph{UCB1} which achieves expected logarithmic regret uniformly over time, for all reward distributions, with no prior knowledge of the reward distribution. \emph{UCB1} takes $\delta=1/t$, where $t$ is the current time step, resulting in:
+
+\begin{align}
+UCB1_i(t-1, \delta) = \wh{\mu}_i(t-1) + \sqrt{\frac{2\log(t)}{T_i(t-1)}}
+\end{align}
+
+However, rather than considering 1-subgaussian environments, Auer et al. \cite{auer2002finite} considers bandits where the payoffs are confined to the $[0,1]$ interval, which are ensured to be 1/2-subgaussian.
+
+\subsection{Optimism in the Face of Uncertainty}
+
+The class of \gls{UCB} algorithms is of particular relevance because represents a successful implementation of the principle of \gls{OFU}, which is applicable to various exploration problems not only finite-armed
+stochastic bandits. The \gls{OFU} principle states that one should choose their actions as if the environment is as nice as plausibly possible. \\
+To illustrate the intuition imagine of being in the same situation depicted in (\ref{eedilemma}), \ie, a standard lunch break from work. You can choose between your good old-fashioned favourite restaurant or sampling a restaurant that you never visited before. Taking an optimistic view of the unknown restaurant leads to exploration because without data it \emph{could} be amazing. Then, after trying the new option a few times you can update your statistics about each choice and make a more
+informed decision. On the other hand, taking a pessimistic view of the new option discourages exploration and you may suffer significant regret if the local options are delicious. The \gls{UCB} strategy assigns to each arm an upper confidence bound  that with high probability is an overestimate of the unknown mean reward. The intuitive reason why
+this leads to sublinear regret is simple. Assuming the upper confidence bound assigned to the optimal arm is indeed an overestimate, then another arm can only be played if its upper confidence bound is larger than that of the optimal arm, which in turn is larger than the mean of the optimal arm. And yet this cannot happen too often because the additional data provided by playing a suboptimal arm means that the upper confidence bound for this arm will eventually fall below that of the optimal arm.\\
+The next algorithm that we discuss will be useful to better understand the \gls{OFU} principle and its exploration power, with application in a more complex environment.
+
+\subsection{Optimism in the Face of Uncertainty}
+Algorithms:
+\begin{itemize}
+\item UCB1
+\item  HOO algorithm from X-Armed Bandits \cite{bubeck2011x} 
+\end{itemize}
+
+\subsection{Posterior Sampling}
+Description
+%check thesis: Exploiting Action-Value Uncertainty to Drive Exploration in Reinforcement Learning
+To conclude with: Why is Posterior Sampling Better than Optimism for Reinforcement Learning? \cite{osband2017posterior}
+
+\section{Exploration in Reinforcement Learning}
+
+\subsection{Undirected Exploration}
+%check thesis
+% pg101 of Bandits
+One may ask why you would want to randomize? The
+best answer is simplicity: The policy only depends on the exploration parameter
+$\epsilon$ rather than some complicated schedule. This can be useful in complicated
+settings like reinforcement learning where many instances of the same algorithm
+are acting simultaneously and communication is costly. In Chapter 11 we’ll see
+the role of randomization when the bandit itself is allowed to react to the actions
+of the learner in a malicious way. The history of $\epsilon$-greedy is unclear, but it is a
+popular and widely used and known algorithm in reinforcement learning [Sutton
+and Barto, 1998]. Auer et al. [2002a] analyze the regret of $\epsilon$-greedy with slowly
+decreasing $\epsilon$ (see Exercise 6.7). There are other kinds of randomized exploration
+as well, including Thompson sampling [1933] and Boltzmann exploration analyzed
+recently by Cesa-Bianchi et al. [2017].
+
+Algorithm:
+\begin{itemize}
+\item Soft Q-learning \cite{haarnoja2017reinforcement}
+\end{itemize}
+
+\subsection{Counter-based exploration and OFU}
+Description. \\
+Algorithms:
+\begin{itemize}
+\item GPUCB \cite{srinivas2010gaussian}
+\item  PixelCNN algorithm from Count-based exploration with neural density models \cite{ostrovski2017count}. This paper builds upon Unifying Count-Based Exploration and Intrinsic Motivation \cite{bellemare2016unifying}. %check thesis on exp
+\end{itemize}
+
+\subsection{Value Difference and Recency-based exploration}
+Brief description, citing:
+\begin{itemize}
+\item  Value-Difference based Exploration: AdaptiveControl between epsilon-Greedy and Softmax \cite{tokic2011value}
+\item Efficient Exploration In Reinforcement Learning \cite{thrun1992efficient} refers to recency-based exploraiton.
+\end{itemize}
+
+\subsection{Intrinsic Motivation}
+%IM was introduced in Intrinically Motivated Reinforcement Learning \cite{chentanez2005intrinsically}
+Description, including: Unifying Count-Based Exploration and Intrinsic Motivation \cite{bellemare2016unifying}, talks about the connection between intrinsic motivation and counter-based exploration %check thesis on exp
+
+Algorithms:
+\begin{itemize}
+\item  Vime: Variational information maximizing exploration \cite{houthooft2016vime}
+\item  Diversity-Inducing Policy Gradient\cite{masooddiversity}, similarly to us, uses an exploration bonus based on diversity between distributions
+\end{itemize}
+
+\subsection{Thompson Sampling}
+Description
+%check thesis: Exploiting Action-Value Uncertainty to Drive Exploration in Reinforcement Learning
+To conclude with: Why is Posterior Sampling Better than Optimism for Reinforcement Learning? \cite{osband2017posterior}
