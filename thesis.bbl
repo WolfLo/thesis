@@ -18,6 +18,12 @@
   multi-armed bandit problem.
 \newblock {\em Advances in Applied Probability 27}, 4 (1995), 1054--1078.
 
+\bibitem{agrawal2013further}
+{\sc Agrawal, S., and Goyal, N.}
+\newblock Further optimal regret bounds for thompson sampling.
+\newblock In {\em Artificial intelligence and statistics\/} (2013),
+  pp.~99--107.
+
 \bibitem{amari1998natural2}
 {\sc Amari, S.-I.}
 \newblock Natural gradient works efficiently in learning.
@@ -50,6 +56,12 @@
 {\sc Auer, P., Cesa-Bianchi, N., and Fischer, P.}
 \newblock Finite-time analysis of the multiarmed bandit problem.
 \newblock {\em Machine learning 47}, 2-3 (2002), 235--256.
+
+\bibitem{auer2010ucb}
+{\sc Auer, P., and Ortner, R.}
+\newblock Ucb revisited: Improved regret bounds for the stochastic multi-armed
+  bandit problem.
+\newblock {\em Periodica Mathematica Hungarica 61}, 1-2 (2010), 55--65.
 
 \bibitem{auer2007improved}
 {\sc Auer, P., Ortner, R., and Szepesv{\'a}ri, C.}
@@ -236,6 +248,12 @@
   Learning, {ICML} 2018, Stockholmsm{\"{a}}ssan, Stockholm, Sweden, July 10-15,
   2018\/} (2018), pp.~1406--1415.
 
+\bibitem{garivier2011kl}
+{\sc Garivier, A., and Capp{\'e}, O.}
+\newblock The kl-ucb algorithm for bounded stochastic bandits and beyond.
+\newblock In {\em Proceedings of the 24th annual conference on learning
+  theory\/} (2011), pp.~359--376.
+
 \bibitem{gil2013renyi}
 {\sc Gil, M., Alajaji, F., and Linder, T.}
 \newblock R{\'e}nyi divergence measures for commonly used univariate continuous
@@ -310,6 +328,12 @@
 {\sc Kallus, N.}
 \newblock Instrument-armed bandits.
 \newblock In {\em Algorithmic Learning Theory\/} (2018), pp.~529--546.
+
+\bibitem{kappen2005path}
+{\sc Kappen, H.~J.}
+\newblock Path integrals and symmetry breaking for optimal control theory.
+\newblock {\em Journal of statistical mechanics: theory and experiment 2005},
+  11 (2005), P11011.
 
 \bibitem{kaufmann2012thompson}
 {\sc Kaufmann, E., Korda, N., and Munos, R.}
@@ -521,6 +545,23 @@
 \newblock University of Cambridge, Department of Engineering Cambridge,
   England, 1994.
 
+\bibitem{russo2013eluder}
+{\sc Russo, D., and Van~Roy, B.}
+\newblock Eluder dimension and the sample complexity of optimistic exploration.
+\newblock In {\em Advances in Neural Information Processing Systems\/} (2013),
+  pp.~2256--2264.
+
+\bibitem{russo2018tutorial}
+{\sc Russo, D.~J., Van~Roy, B., Kazerouni, A., Osband, I., Wen, Z., et~al.}
+\newblock A tutorial on thompson sampling.
+\newblock {\em Foundations and Trends{\textregistered} in Machine Learning 11},
+  1 (2018), 1--96.
+
+\bibitem{sallans2004reinforcement}
+{\sc Sallans, B., and Hinton, G.~E.}
+\newblock Reinforcement learning with factored states and actions.
+\newblock {\em Journal of Machine Learning Research 5}, Aug (2004), 1063--1088.
+
 \bibitem{saritacc2017combinatorial}
 {\sc Sarita{\c{c}}, A.~{\"O}., and Tekin, C.}
 \newblock Combinatorial multi-armed bandit problem with probabilistically
@@ -647,6 +688,11 @@
 \newblock University of Rochester, Department of Computer Science Rochester,
   NY, 1991.
 
+\bibitem{williams2006gaussian}
+{\sc Williams, C.~K., and Rasmussen, C.~E.}
+\newblock {\em Gaussian processes for machine learning}, vol.~2.
+\newblock MIT Press Cambridge, MA, 2006.
+
 \bibitem{williams1992simple}
 {\sc Williams, R.~J.}
 \newblock Simple statistical gradient-following algorithms for connectionist
@@ -662,5 +708,10 @@
 \newblock Analysis and improvement of policy gradient estimation.
 \newblock In {\em Advances in Neural Information Processing Systems\/} (2011),
   pp.~262--270.
+
+\bibitem{ziebart2008maximum}
+{\sc Ziebart, B.~D., Maas, A.~L., Bagnell, J.~A., and Dey, A.~K.}
+\newblock Maximum entropy inverse reinforcement learning.
+\newblock In {\em Aaai\/} (2008), vol.~8, Chicago, IL, USA, pp.~1433--1438.
 
 \end{thebibliography}

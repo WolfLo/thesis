@@ -243,7 +243,7 @@ The most basic way to solve \gls{MDP}s is \emph{dynamic programming}, which simp
 \gls{RL} is a branch of machine learning that aims at building learning agents capable to behave in a stochastic and possibly unknown environment, where the only feedback consists of a scalar reward signal. In order to maximize the long-run reward, the agent must learn which state-action pairs are the most profitable by trial-and-error. Therefore, \gls{RL} algorithms can be seen as computational methods to solve \gls{MDP}s by directly interacting with the environment, for which a model may or may not be available. The \gls{RL} problem can be formulated as a stochastic optimization problem aiming at finding the optimal policy $\pi^{*}$:
 
 \begin{align}
-\pi^* = \arg \max_{\pi} J(\pi)
+\pi^* = \arg \max_{\pi} J(\pi) \label{eq:optimalpolicy}
 \end{align}
 
 Remarkably, it is guaranteed that every \gls{MDP} admits an optimal policy when the space of possible policies is unconstrained  \cite{puterman2014markov}.

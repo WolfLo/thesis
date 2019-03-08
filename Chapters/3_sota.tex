@@ -11,7 +11,7 @@ While the former family is closely related to random walk exploration, directed 
 \subsection{Undirected Exploration}
 %372
 %epsilon-greedy @ pag 105
-The most uninformed and basic way of exploring an unknown environment is to generate actions randomly with uniform probability. This method is often applied if exploration costs do not matter during learning. Sometimes tasks are divided into two phases, namely an exploration and an exploitation phase, and costs are not considered during the exploration phase. This is the case of the \emph{explore-then-commit} algorithm (Algorithm \ref{alg:explorethencommit}) presented in the previous chapter, which explores uniformly the finite number of arms $m$ before starting the exploitation phase, after $mK$ steps. Another common algorithm with undirected uniform exploration is the $\epsilon$-greedy algorithm \cite{lattimore2019bandit}. One can think of it as an extension of the \emph{explore-then-commit} algorithm which allows to continue exploring with probability $\epsilon$ even during the performance phase (\ie the exploitation phase). The idea is, after a pure exploration phase of $mK$ steps as for the $explore-then-commit$ algorithm, to exploit the estimated best arm $x_t = \arg \max \wh{\mu}_i(t)$ with probability $(1-\epsilon_t)$ at each time step, and explore uniformly the remaining set of arms with probability $\epsilon_t$ at each step. \\
+The most uninformed and basic way of exploring an unknown environment is to generate actions randomly with uniform probability. This method is often applied if exploration costs do not matter during learning. Sometimes tasks are divided into two phases, namely an exploration and an exploitation phase, and costs are not considered during the exploration phase. This is the case of the \emph{explore-then-commit} algorithm (Algorithm \ref{alg:explorethencommit}) presented in the previous chapter, which explores uniformly the finite number of arms $m$ before starting the exploitation phase, after $mK$ steps. Another common algorithm with undirected uniform exploration is the $\epsilon$\emph{-greedy} algorithm \cite{lattimore2019bandit}. One can think of it as an extension of the \emph{explore-then-commit} algorithm which allows to continue exploring with probability $\epsilon$ even during the performance phase (\ie the exploitation phase). The idea is, after a pure exploration phase of $mK$ steps as for the $explore-then-commit$ algorithm, to exploit the estimated best arm $x_t = \arg \max \wh{\mu}_i(t)$ with probability $(1-\epsilon_t)$ at each time step, and explore uniformly the remaining set of arms with probability $\epsilon_t$ at each step. In 2002, Auer et al. \cite{auer2002finite} analyzed the regret of $\epsilon$\emph{-greedy} with slowly decreasing $\epsilon$ and showed its asymptotic convergence to the optimal solution. These are just asymptotic guarantees, however, and say little about the practical effectiveness of the methods.\\
 Another approach to undirected exploration which is more effective when costs are relevant during learning is \emph{non-uniform} exploration utilizing the current utility estimates to influence action-selection. The higher the expected utility by selecting action $i$, the more likely $i$ gets selected. This ensures that the learning system explores and exploits simultaneously, as it happens for the $\epsilon$-greedy algorithm, but in an intuitively more effective way since actions are not chosen uniformly during exploration. An example of utility-driven non-uniform undirected exploration is the  Boltzmann-distributed exploration \cite{cesa2017boltzmann}. By defining the average reward of an arm as in Equation \ref{eq:averagereward}:
 
 \begin{equation}
@@ -92,13 +92,13 @@ After having picked all actions once, the \gls{UCB} policy simply picks at each 
 \end{algorithm}
 
 
-The value of $1-\delta$ is called the confidence level and different choices lead to different algorithms, each with their pros and cons, and sometimes different analysis. For example, Auer et al. \cite{auer2002finite}, present an algorithm originating in \cite{agrawal1995continuum} called \emph{UCB1} which achieves expected logarithmic regret uniformly over time, for all reward distributions, with no prior knowledge of the reward distribution. \emph{UCB1} takes $\delta=1/t$, where $t$ is the current time step, resulting in:
+The value of $1-\delta$ is called the confidence level and different choices lead to different algorithms, each with their pros and cons, and sometimes different analysis. For example, Auer et al. \cite{auer2002finite}, present an algorithm originating in \cite{agrawal1995continuum} called \emph{UCB1} which achieves asymptotic logarithmic regret $\mathcal{O}(\log{T})$, for all reward distributions, with no prior knowledge of the reward distribution. Equivalently, we say that UCB1 achieves asymptotic sub-linear pseudo-regret $\widetilde{\mathcal{O}}(T)$. \emph{UCB1} takes $\delta=1/t$, where $t$ is the current time step, resulting in:
 
 \begin{align}
 UCB1_i(t, \delta) = \wh{\mu}_i(t) + \sqrt{\frac{2\log(t)}{T_i(t)}}
 \end{align}
 
-However, rather than considering 1-subgaussian environments, Auer et al. \cite{auer2002finite} considers bandits where the payoffs are confined to the $[0,1]$ interval, which are ensured to be 1/2-subgaussian.
+However, rather than considering 1-subgaussian environments, Auer et al. \cite{auer2002finite} considers bandits where the payoffs are confined to the $[0,1]$ interval, which are ensured to be 1/2-subgaussian. Better bounds have been proven for modifications of the UCB1 algorithm, for example Improved UCB \cite{auer2010ucb} and Kullback-Leibler Upper confidence Bound (KL-UCB) \cite{garivier2011kl}.
 
 \subsection{Optimism in the Face of Uncertainty}
 
@@ -187,34 +187,119 @@ By carefully choosing the tree of coverings and the algorithm parameters, the au
 
 
 
-
 \subsection{Posterior Sampling}
-Description
-%check thesis: Exploiting Action-Value Uncertainty to Drive Exploration in Reinforcement Learning
-To conclude with: Why is Posterior Sampling Better than Optimism for Reinforcement Learning? \cite{osband2017posterior}
+Now we address the exploration-exploitation dilemma in the \gls{MAB} problem with a heuristic called \gls{TS}, firstly introduced by \cite{thompson1933likelihood}, which has been thoroughly studied in the literature for its good properties. This technique is considered to be close to \gls{UCB} algorithms because it also allocates exploratory effort to actions that might be optimal \ie it also builds upon the \gls{OFU} principle \cite{russo2013eluder}. Indeed, similarly to \gls{UCB}, \gls{TS} avoids the under-exploitation of actions that are potentially good and prevents from wasting time on actions that are already known to be bad. However, \gls{TS} does so with a very different approach: the Bayesian one. Indeed, this technique requires a prior distribution for each arm as input, which encodes the initial belief that a learner has on each arm reward. Subsequently, at each round $t$, it samples from each arm distribution, chooses the action with the best reward and updates its posterior distribution by means of the Bayes'rule.\\ The elements of \gls{TS} are the followings:
+
+\begin{enumerate}
+\item a set $\Theta$ or parameters $\theta$ of the distribution of $r\sim\Rew_{\theta}(\cdot|x)$;
+\item a prior distribution $P(\theta)$ on these parameters;
+\item the history $\mathcal{I}_t = \{x_0, r_0, x_1, r_1, \dots, x_{t-1}, r_{t-1}\}$ of past observations;
+\item a likelihood function $P(\mathcal{I}_t|\theta)$;
+\item a posterior distribution $P(\theta|\mathcal{I}_t)\propto P(\mathcal{I}_t|\theta)P(\theta)$.
+\end{enumerate}
+
+\gls{TS} consists in playing the action $x\in\Xspace$ according to the probability that it maximizes the expected reward according to your belief, \ie:
+
+\begin{align}
+\arg\max_{x\in\Xspace}\Exp[r|x] &= \arg\max_{x\in\Xspace}\int\Exp[r|\theta,x]P(\theta|\mathcal{I}_t)d\theta
+\end{align}
+
+Once having observed the reward from the chosen arm, the posterior distribution can be updated by means using the Bayes' rule. In practice, it is either impossible or computationally expensive to compute the integral above. Therefore, usually we resort to sampling $\hat{\theta}_t\sim P(\theta|\mathcal{I}_t)$ at time $t$, and then play the arm $x_t=\arg\max_{x\in\Xspace} \Exp[r|\hat{\theta}_t,x]$.  Conceptually, this means that the player instantiates their beliefs randomly in each round, and then acts optimally according to them.  \\
+In \cite{agrawal2013further} the authors prove that for the K-armed stochastic bandit problem, Thompson Sampling has expected regret of
+
+\begin{align}
+\Exp[Regret(T)]\leq\mathcal(\sqrt{KT\log T}),
+\end{align}
+
+which is identical to the best known problem-independent bound for the expected regret of UCB1 \cite{bubeck2012regret}.
+
+\textbf{Example: Thompson Sampling for Bernoulli MAB}
+Suppose that the reward function of each arm $i$, $i=1,2,\dots,K$ is a Bernoulli of parameter $p_i$: $r_t,i\sim\mathcal{B}(p_i)$ \ie the result of pulling an arm is either a \emph{success} (with probability $p_i$) or a \emph{failure} (with probability $1-p_i$). We know that, given a uniform prior over the parameter $p\sim\mathcal{U}(0,1)=Beta(1,1)$, and having observed $\alpha-1$ successes and $\beta-1$ failures, the posterior distribution of the parameter $p$ of a Bernoulli is a Beta distribution of parameters $\alpha$ and $\beta$ (Beta distributions are frequently adopted as priors because of their conjugacy properties). Hence, \gls{TS} can be performed as shown in Algorithm(\ref{alg:bernoulliTS}).
+
+\begin{algorithm}[t]
+	\caption{Thompson Sampling for Bernoulli MAB with Beta priors}
+	\label{alg:bernoulliTS}
+	\begin{algorithmic}[1]
+	\State {\bfseries Initialize:} the prior distribution for each arm as $Beta(1,1)$
+	\For{$t=1,2,\dots,T$}
+		\For{$i=1,2,\dots,K$}
+			\State Sample $\hat{p}_i\sim Beta(\alpha_i,\beta_i)$
+		\EndFor
+		\State Pull arm $x_t=\arg\max_i\hat{p}_i$ and observe $r_t\in\{0,1\}$
+		\State Update distribution:
+		\begin{align}
+			(\alpha_i,\beta_i) = \begin{cases}(\alpha_i,\beta_i), &\text{if }x_t\neq i \\ (\alpha_i,\beta_i) + (r_t,1-r_t), &\text{if } x_t= i\end{cases}
+		\end{align}
+	\EndFor
+	\end{algorithmic}
+\end{algorithm}
+
+For a more extensive discussion on algorithms implementing \gls{TS}  refer to \cite{russo2018tutorial}.
+\\
+
+\subsection{Gaussian Process Upper Confidence Bound}
+We conclude by presenting an algorithm, \gls{GPUCB} \cite{srinivas2010gaussian}, of particular interest to us for two reasons. First, it serves as a further example of application of the \gls{OFU} principle and of \gls{UCB} variant. Second, because it formalize the broad problem of optimizing an unknown, noisy function, that is expensive to evaluate, as a multi-armed bandit problem. Indeed, our main contribution builds upon a similar formalization of the \gls{RL} continuous control problem. Moreover, it also represents a case of posterior sampling different from \gls{TS}. \\
+Consider the \gls{MAB} problem presented in Chapter \ref{Preliminaries}, where the reward distribution can be seen as the sum of a reward function (e.g. the expected reward function $\mu(\vx_t)$, that here we note as $f(\vx_t)$) and noise, \ie $y_t = \Rew(\cdot|x_t) = f(\vx_t) + \epsilon_t$. As we already know, the goal is to maximize the sum of the rewards collected by choosing a point of the domain $\vx_t\in\Xspace$ at each round $t$ up to the horizon $T$. For example, we might want to find locations of highest temperature in a building by sequentially activating sensors in a spatial network and regressing on their measurements. Each activation draws battery power, so we want to sample from as few sensors as possible.  In this context, as in many other \gls{MAB} problems, a natural performance metric is the cumulative regret as defined in Definition \ref{def:regret}. 
+In order to enforce some implicit properties like smoothness without relying on any parametric assumption, the authors of \cite{srinivas2010gaussian} model $f$ as a sample from a \gls{GP}: a collection of dependent random variables, one for each $\vx\in\Xspace$, every finite subset of which is multivariate Gaussian distributed \cite{williams2006gaussian}. A \gls{GP} is a stochastic process $GP(\mu(\vx), k(\vx,\vx'))$, specified by its mean $\mu(\vx) = \Exp{f(x)}$ and covariance function $k(\vx,\vx') = \Exp{(f(\vx)-\mu(\vx))(f(\vx')-\mu(\vx'))}$. \gls{GPUCB} generally adopts $GP(0,k(\vx,\vx'))$ as prior distribution over $f$.  A major advantage of working with GPs is the existence of simple analytic formulae for mean and co-variance of the posterior distribution, which allows easy implementation of algorithms. For a noisy sample $\boldsymbol{y}_T = [y_1,y_2,\dots, y_T]^T$ at points $A_T = \{\vx_1,\vx_2,\dots,\vx_T\}$ over $f$ is a GP distribution again specified by mean $\mu_T(\vx)$, covariance $k_T(\vx,\vx')$ and variance $\sigma^2_T(\vx)$:
+
+\begin{align}
+\mu_T(\vx) &= \boldsymbol{k}_T(\vx)^T(\boldsymbol{K}_T+\sigma^2\boldsymbol{I})^{-1}\boldsymbol{y}_T, \\
+k_T(\vx,\vx') &= k(\vx,\vx')-\boldsymbol{k}_T(\vx)^T(\boldsymbol{K}_T+\sigma^2\boldsymbol{I})^{-1}\boldsymbol{k}_T(\vx'),\\
+\sigma^2_T(\vx) &= k_T(\vx,\vx),\\
+\end{align}
+
+where $\boldsymbol{k}_T(\vx) = [k(\vx_1,\vx),k(\vx_2,\vx),\dots,k(\vx_T,\vx)]$ and $\boldsymbol{K}_T$ is the positive definite kernel matrix $[k(\vx,vx')]_{\vx,vx'\in A_T}$.
+The full \gls{GPUCB} procedure, motivated by the \gls{UCB} algorithm, is shown in Algorithm \ref{alg:gpucb}.
+
+\begin{algorithm}[t]
+	\caption{Gaussian Process Upper Confidence Bound}
+	\label{alg:gpucb}
+	\begin{algorithmic}[1]
+	\State {\bfseries Input:} GP prior $\mu_0=0$, $\mu_0=0$, $\beta_t\in\Reals^+$
+	\For{$t=1,2,\dots,T$}
+		\State Choose $\vx_t = \arg\max_{\vx\in\Xspace}\mu_{t-1}(\vx)+\sqrt{\beta_t}\sigma_{t-1}(\vx)$
+		\State Sample $y_t = f(\vx_t)+\epsilon_t$
+		\State Perform Bayesian update to obtain $\mu_t$ and $\sigma_t$
+	\EndFor
+	\end{algorithmic}
+\end{algorithm}
 
 \section{Exploration in Reinforcement Learning}
 
 \subsection{Undirected Exploration}
 %check thesis
 % pg101 of Bandits
-One may ask why you would want to randomize? The
-best answer is simplicity: The policy only depends on the exploration parameter $\epsilon$ rather than some complicated schedule. This can be useful in complicated settings like reinforcement learning where many instances of the same algorithm are acting simultaneously and communication is costly. In Chapter 11 we’ll see the role of randomization when the bandit itself is allowed to react to the actions
-of the learner in a malicious way. The history of $\epsilon$-greedy is unclear, but it is a
-popular and widely used and known algorithm in reinforcement learning [Sutton
-and Barto, 1998]. Auer et al. [2002a] analyze the regret of $\epsilon$-greedy with slowly
-decreasing $\epsilon$ (see Exercise 6.7). There are other kinds of randomized exploration as well, including Thompson sampling [1933] and Boltzmann exploration analyzed recently by Cesa-Bianchi et al. [2017].
+The most classic undirected exploration strategies in \gls{RL} are the same of those introduced earlier for \gls{MAB}s. Indeed, the $\epsilon$\emph{-greedy} policy is one of the most widely used and known algorithm in reinforcement learning \cite{sutton2018reinforcement}. In the same way, Boltzmann exploration, which uses the exponential of the
+standard Q-function as the probability of an action, has been extensively studied and studied \cite{thrun1992efficient, cesa2017boltzmann}. Similar policy representations are also energy-based models, with
+the Q-value obtained from an energy model such as a restricted Boltzmann machine \cite{sallans2004reinforcement}. An interesting family of extensions to these techniques goes under the name of \emph{maximum entropy} \gls{RL}.
 
-Algorithm:
-\begin{itemize}
-\item Soft Q-learning \cite{haarnoja2017reinforcement}
-\end{itemize}
+\textbf{Maximum Entropy Reinforcement Learning} \\
+As stated in Chapter \ref{Preliminaries}, Equation \ref{eq:optimalpolicy}, the goal of \gls{RL} is to find the optimal policy $\pi^*$ which maximizes the performance $J(\pi)$. Maximum entropy \gls{RL} augments this objective by introducing an entropy term, such that the optimal policy also aims to maximize its entropy at each visited state:
+
+\begin{align}
+\pi^*=\arg\max_\pi\sum_h\myExpu{s_h,a_h\sim d^{\pi}}{\Rew(s,a)+\alpha\mathcal{H}(\pi(\cdot|s_t))},
+\end{align}
+
+where $\alpha$ is a convenient hyperparameter that can be used to determine the relative importance of entropy and reward. This objective function entails a novel approach to undirected exploration \wrt Boltzmann  exploration. While the latter greedily maximizes entropy at the current time step, maximum entropy \gls{RL} explicitly optimizes for policies that aim to reach states where they will have high entropy in the future. This
+distinction is crucial, since the maximum entropy objective can be shown to maximize the entropy of the entire trajectory distribution for the policy $\pi$, while the greedy Boltzmann exploration approach does not. Optimization problems of this type have been covered in a number of scientific papers, \eg \cite{kappen2005path, ziebart2008maximum, haarnoja2017reinforcement}. In \cite{haarnoja2017reinforcement},  Haarnoja et al. extend the objective presented aboveto infinite time horizons with the introduction of a discount factor $\lambda$:
+
+\begin{align}
+\pi^*=\arg\max_\pi\sum_h\myExpu{s_h,a_h\sim d^{\pi}}{\Rew(s,a)+\alpha\mathcal{H}(\pi(\cdot|s_t))}.
+\end{align}
+
+Then, they define a soft Q-value $Q_{soft}^{\pi}$ for any policy $\pi$ as the expectation under $\pi$ of the discounted sum of rewards and entropy:
+
+\begin{align}
+\pi^*=\arg\max_\pi\sum_h\myExpu{s_h,a_h\sim d^{\pi}}{\Rew(s,a)+\alpha\mathcal{H}(\pi(\cdot|s_t))},
+\end{align}
+
+from which they derive the soft Bellman equation. The authors build upon this novel setting an algorithm called \emph{Soft Q-learning}, which has similar mechanisms to traditional \emph{Q-leanring} and adopts deep function approximation to compute the Q-values over a continuous domain. Among the advantages presented over other deep \gls{RL} approaches, Soft Q-learning turns out to be more effective for learning multi-modal policies for exploration. In fact, similarly to \gls{MAB}s, during the learning process it is often best to keep trying multiple available options until the agent is confident that one of them is the best. However, deep \gls{RL} algorithms for continuous control typically use unimodal action distributions, which are not well suited to capture such multi-modality. As a consequence, such algorithms may prematurely commit to one mode and converge to suboptimal behaviour, as it happens in the practice. \\
+Following the same pattern adopted for \gls{MAB}s, we proceed now with presenting some techniques that deals with the exploration challange in a more directed way, \ie by leveraging on relevant information collected during the learning process to lead exploration more effectively.
 
 \subsection{Counter-based exploration and OFU}
 Description. \\
 Algorithms:
 \begin{itemize}
-\item GPUCB \cite{srinivas2010gaussian}
 \item  PixelCNN algorithm from Count-based exploration with neural density models \cite{ostrovski2017count}. This paper builds upon Unifying Count-Based Exploration and Intrinsic Motivation \cite{bellemare2016unifying}. %check thesis on exp
 \end{itemize}
 
