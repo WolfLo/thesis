@@ -391,7 +391,7 @@ For more details on the advantages of the natural gradient over the steepest asc
 We are now ready to present the general setup for policy gradient methods, showed in Algorithm (\ref{alg:PG}).
 
 \begin{algorithm}[t]
-	\caption{Generic policy gradient algorithm}
+	\caption{Generic \gls{PG} algorithm}
 	\label{alg:PG}
 	\begin{algorithmic}[1]
 	\State \textbf{Input}: initial policy parameters $\vtheta^0$, learning rate $\alpha$
@@ -494,7 +494,7 @@ where $\nu_{\vxi}(\vtheta)p_{\vtheta}(\tau)=p_{\vxi}(\vtheta,\tau)$ because $\ta
 In order to further reduce the estimate variance, we can adopt an estimator with baseline and compute the optimal one similarly to the REINFORCE case. The episodic \gls{PGPE} algorithm is reported in Algorithm \ref{alg:PGPE}.
 
 \begin{algorithm}[t]
-	\caption{Episodic PGPE}
+	\caption{Episodic \gls{PGPE}}
 	\label{alg:PGPE}
 	\begin{algorithmic}[1]
 	\State \textbf{Input}: initial hyper-parameters $\vxi^{0}$, learning rate $\alpha$

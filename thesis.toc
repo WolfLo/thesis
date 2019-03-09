@@ -26,8 +26,6 @@
 \contentsline {subsection}{\numberline {2.1.6}Gaussian Process Upper Confidence Bound}{34}{subsection.2.1.6}
 \contentsline {section}{\numberline {2.2}Exploration in Reinforcement Learning}{36}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Undirected Exploration}{36}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Counter-based exploration and OFU}{37}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Value Difference and Recency-based exploration}{38}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Intrinsic Motivation}{38}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Thompson Sampling}{38}{subsection.2.2.5}
-\contentsline {chapter}{Bibliography}{39}{chapter*.4}
+\contentsline {subsection}{\numberline {2.2.2}Count-based exploration and Intrinsic Motivation}{37}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Thompson Sampling}{42}{subsection.2.2.3}
+\contentsline {chapter}{Bibliography}{43}{chapter*.4}

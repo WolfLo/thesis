@@ -100,6 +100,17 @@
   Conference on Neural Information Processing Systems 2018, NeurIPS 2018, 3-8
   December 2018, Montr{\'{e}}al, Canada\/} (2018).
 
+\bibitem{blei2017variational}
+{\sc Blei, D.~M., Kucukelbir, A., and McAuliffe, J.~D.}
+\newblock Variational inference: A review for statisticians.
+\newblock {\em Journal of the American Statistical Association 112}, 518
+  (2017), 859--877.
+
+\bibitem{blundell2015weight}
+{\sc Blundell, C., Cornebise, J., Kavukcuoglu, K., and Wierstra, D.}
+\newblock Weight uncertainty in neural networks.
+\newblock {\em arXiv preprint arXiv:1505.05424\/} (2015).
+
 \bibitem{boucheron2013concentration}
 {\sc Boucheron, S., Lugosi, G., and Massart, P.}
 \newblock {\em Concentration inequalities: A nonasymptotic theory of
@@ -397,6 +408,13 @@
 \newblock {\em Bandit Algorithms}.
 \newblock Cambridge University Press (preprint), 2019.
 
+\bibitem{lopes2012exploration}
+{\sc Lopes, M., Lang, T., Toussaint, M., and Oudeyer, P.-Y.}
+\newblock Exploration in model-based reinforcement learning by empirically
+  estimating learning progress.
+\newblock In {\em Advances in Neural Information Processing Systems\/} (2012),
+  pp.~206--214.
+
 \bibitem{magureanu2014lipschitz}
 {\sc Magureanu, S., Combes, R., and Proutiere, A.}
 \newblock Lipschitz bandits: Regret lower bounds and optimal algorithms.
@@ -454,6 +472,11 @@
   Conference on Neural Information Processing Systems 2018, NeurIPS 2018, 3-8
   December 2018, Montr{\'{e}}al, Canada.\/} (2018), pp.~8888--8896.
 
+\bibitem{oord2016pixel}
+{\sc Oord, A. v.~d., Kalchbrenner, N., and Kavukcuoglu, K.}
+\newblock Pixel recurrent neural networks.
+\newblock {\em arXiv preprint arXiv:1601.06759\/} (2016).
+
 \bibitem{ortner2012online}
 {\sc Ortner, R., and Ryabko, D.}
 \newblock Online regret bounds for undiscounted continuous reinforcement
@@ -489,6 +512,12 @@
 \newblock In {\em Proceedings of the 34th International Conference on Machine
   Learning-Volume 70\/} (2017), JMLR. org, pp.~2721--2730.
 
+\bibitem{oudeyer2007intrinsic}
+{\sc Oudeyer, P.-Y., Kaplan, F., and Hafner, V.~V.}
+\newblock Intrinsic motivation systems for autonomous mental development.
+\newblock {\em IEEE transactions on evolutionary computation 11}, 2 (2007),
+  265--286.
+
 \bibitem{owen_safe_2000}
 {\sc Owen, A., and Zhou, Y.}
 \newblock Safe and {Effective} {Importance} {Sampling}.
@@ -510,6 +539,12 @@
 \newblock Multi-armed bandit problems with dependent arms.
 \newblock In {\em Proceedings of the 24th international conference on Machine
   learning\/} (2007), ACM, pp.~721--728.
+
+\bibitem{pathak2017curiosity}
+{\sc Pathak, D., Agrawal, P., Efros, A.~A., and Darrell, T.}
+\newblock Curiosity-driven exploration by self-supervised prediction.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition Workshops\/} (2017), pp.~16--17.
 
 \bibitem{peters2008reinforcement}
 {\sc Peters, J., and Schaal, S.}
@@ -568,6 +603,13 @@
   triggered arms: A case with bounded regret.
 \newblock In {\em Signal and Information Processing (GlobalSIP), 2017 IEEE
   Global Conference on\/} (2017), IEEE, pp.~111--115.
+
+\bibitem{schmidhuber1991possibility}
+{\sc Schmidhuber, J.}
+\newblock A possibility for implementing curiosity and boredom in
+  model-building neural controllers.
+\newblock In {\em Proc. of the international conference on simulation of
+  adaptive behavior: From animals to animats\/} (1991), pp.~222--227.
 
 \bibitem{schulman2015trust}
 {\sc Schulman, J., Levine, S., Abbeel, P., Jordan, M., and Moritz, P.}
@@ -630,6 +672,14 @@
   approximation.
 \newblock In {\em Advances in neural information processing systems\/} (2000),
   pp.~1057--1063.
+
+\bibitem{tang2017exploration}
+{\sc Tang, H., Houthooft, R., Foote, D., Stooke, A., Chen, O.~X., Duan, Y.,
+  Schulman, J., DeTurck, F., and Abbeel, P.}
+\newblock \# exploration: A study of count-based exploration for deep
+  reinforcement learning.
+\newblock In {\em Advances in neural information processing systems\/} (2017),
+  pp.~2753--2762.
 
 \bibitem{thompson1933likelihood}
 {\sc Thompson, W.~R.}

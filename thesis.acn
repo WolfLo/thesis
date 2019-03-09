@@ -46,6 +46,8 @@
 \glossaryentry{PG?\glossentry{PG}|setentrycounter[]{page}\glsnumberformat}{18}
 \glossaryentry{MDP?\glossentry{MDP}|setentrycounter[]{page}\glsnumberformat}{18}
 \glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{18}
+\glossaryentry{PG?\glossentry{PG}|setentrycounter[]{page}\glsnumberformat}{19}
+\glossaryentry{PG?\glossentry{PG}|setentrycounter[]{page}\glsnumberformat}{19}
 \glossaryentry{MDP?\glossentry{MDP}|setentrycounter[]{page}\glsnumberformat}{19}
 \glossaryentry{GPOMDP?\glossentry{GPOMDP}|setentrycounter[]{page}\glsnumberformat}{21}
 \glossaryentry{GPOMDP?\glossentry{GPOMDP}|setentrycounter[]{page}\glsnumberformat}{22}
@@ -54,12 +56,16 @@
 \glossaryentry{PGPE?\glossentry{PGPE}|setentrycounter[]{page}\glsnumberformat}{22}
 \glossaryentry{PG?\glossentry{PG}|setentrycounter[]{page}\glsnumberformat}{22}
 \glossaryentry{PGPE?\glossentry{PGPE}|setentrycounter[]{page}\glsnumberformat}{23}
+\glossaryentry{PGPE?\glossentry{PGPE}|setentrycounter[]{page}\glsnumberformat}{23}
+\glossaryentry{PGPE?\glossentry{PGPE}|setentrycounter[]{page}\glsnumberformat}{23}
 \glossaryentry{MAB?\glossentry{MAB}|setentrycounter[]{page}\glsnumberformat}{25}
 \glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{25}
 \glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{25}
 \glossaryentry{MAB?\glossentry{MAB}|setentrycounter[]{page}\glsnumberformat}{25}
 \glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{25}
 \glossaryentry{UCB?\glossentry{UCB}|setentrycounter[]{page}\glsnumberformat}{27}
+\glossaryentry{UCB?\glossentry{UCB}|setentrycounter[]{page}\glsnumberformat}{28}
+\glossaryentry{UCB?\glossentry{UCB}|setentrycounter[]{page}\glsnumberformat}{28}
 \glossaryentry{UCB?\glossentry{UCB}|setentrycounter[]{page}\glsnumberformat}{28}
 \glossaryentry{UCB?\glossentry{UCB}|setentrycounter[]{page}\glsnumberformat}{29}
 \glossaryentry{OFU?\glossentry{OFU}|setentrycounter[]{page}\glsnumberformat}{29}
@@ -69,6 +75,8 @@
 \glossaryentry{OFU?\glossentry{OFU}|setentrycounter[]{page}\glsnumberformat}{30}
 \glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{30}
 \glossaryentry{HOO?\glossentry{HOO}|setentrycounter[]{page}\glsnumberformat}{30}
+\glossaryentry{HOO?\glossentry{HOO}|setentrycounter[]{page}\glsnumberformat}{31}
+\glossaryentry{HOO?\glossentry{HOO}|setentrycounter[]{page}\glsnumberformat}{31}
 \glossaryentry{HOO?\glossentry{HOO}|setentrycounter[]{page}\glsnumberformat}{31}
 \glossaryentry{HOO?\glossentry{HOO}|setentrycounter[]{page}\glsnumberformat}{31}
 \glossaryentry{MAB?\glossentry{MAB}|setentrycounter[]{page}\glsnumberformat}{32}
@@ -81,6 +89,8 @@
 \glossaryentry{TS?\glossentry{TS}|setentrycounter[]{page}\glsnumberformat}{32}
 \glossaryentry{TS?\glossentry{TS}|setentrycounter[]{page}\glsnumberformat}{33}
 \glossaryentry{TS?\glossentry{TS}|setentrycounter[]{page}\glsnumberformat}{33}
+\glossaryentry{TS?\glossentry{TS}|setentrycounter[]{page}\glsnumberformat}{34}
+\glossaryentry{TS?\glossentry{TS}|setentrycounter[]{page}\glsnumberformat}{34}
 \glossaryentry{TS?\glossentry{TS}|setentrycounter[]{page}\glsnumberformat}{34}
 \glossaryentry{GPUCB?\glossentry{GPUCB}|setentrycounter[]{page}\glsnumberformat}{34}
 \glossaryentry{OFU?\glossentry{OFU}|setentrycounter[]{page}\glsnumberformat}{34}
@@ -104,4 +114,16 @@
 \glossaryentry{MAB?\glossentry{MAB}|setentrycounter[]{page}\glsnumberformat}{37}
 \glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{37}
 \glossaryentry{MAB?\glossentry{MAB}|setentrycounter[]{page}\glsnumberformat}{37}
+\glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{37}
+\glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{38}
+\glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{39}
+\glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{39}
+\glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{39}
+\glossaryentry{VIME?\glossentry{VIME}|setentrycounter[]{page}\glsnumberformat}{40}
+\glossaryentry{VIME?\glossentry{VIME}|setentrycounter[]{page}\glsnumberformat}{40}
+\glossaryentry{KL?\glossentry{KL}|setentrycounter[]{page}\glsnumberformat}{40}
+\glossaryentry{KL?\glossentry{KL}|setentrycounter[]{page}\glsnumberformat}{40}
+\glossaryentry{VIME?\glossentry{VIME}|setentrycounter[]{page}\glsnumberformat}{41}
+\glossaryentry{VIME?\glossentry{VIME}|setentrycounter[]{page}\glsnumberformat}{41}
+\glossaryentry{RL?\glossentry{RL}|setentrycounter[]{page}\glsnumberformat}{41}
 
