@@ -485,6 +485,12 @@
   Information Processing Systems-Volume 2\/} (2012), Curran Associates Inc.,
   pp.~1763--1771.
 
+\bibitem{osband2016deep}
+{\sc Osband, I., Blundell, C., Pritzel, A., and Van~Roy, B.}
+\newblock Deep exploration via bootstrapped dqn.
+\newblock In {\em Advances in neural information processing systems\/} (2016),
+  pp.~4026--4034.
+
 \bibitem{osband2013more}
 {\sc Osband, I., Russo, D., and Roy, B.~V.}
 \newblock (more) efficient reinforcement learning via posterior sampling.
@@ -492,6 +498,11 @@
   Annual Conference on Neural Information Processing Systems 2013. Proceedings
   of a meeting held December 5-8, 2013, Lake Tahoe, Nevada, United States.\/}
   (2013), pp.~3003--3011.
+
+\bibitem{osband2015bootstrapped}
+{\sc Osband, I., and Van~Roy, B.}
+\newblock Bootstrapped thompson sampling and deep exploration.
+\newblock {\em arXiv preprint arXiv:1507.00300\/} (2015).
 
 \bibitem{osband2017posterior}
 {\sc Osband, I., and Van~Roy, B.}
@@ -524,12 +535,12 @@
 \newblock {\em Journal of the American Statistical Association\/} (Mar. 2000),
   135--143.
 
-\bibitem{mcbook_2013}
+\bibitem{mcbook}
 {\sc Owen, A.~B.}
 \newblock {\em Monte Carlo theory, methods and examples}.
 \newblock 2013.
 
-\bibitem{mcbook}
+\bibitem{mcbook_2013}
 {\sc Owen, A.~B.}
 \newblock {\em Monte Carlo theory, methods and examples}.
 \newblock 2013.
@@ -649,6 +660,11 @@
 \newblock Reinforcement learning in finite mdps: Pac analysis.
 \newblock {\em Journal of Machine Learning Research 10}, Nov (2009),
   2413--2444.
+
+\bibitem{strens2000bayesian}
+{\sc Strens, M.}
+\newblock A bayesian framework for reinforcement learning.
+\newblock In {\em ICML\/} (2000), vol.~2000, pp.~943--950.
 
 \bibitem{sutton1988learning}
 {\sc Sutton, R.~S.}

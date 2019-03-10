@@ -291,7 +291,7 @@ As mentioned in the introduction, this work focuses on improving the exploration
 Given a predetermined class of approximating policies $\hat{\Pi}$, \gls{PS} aims at finding the policy whose performance $J(\pi)$ is as close as possible to the performance of the optimal policy $J(\pi^*)=J^*$:
 
 \begin{align}
-\hat{\pi} &= \arg \min_{\pi\in\hat{\Pi}}\norm{J^*-J(\pi)}_p. \label{eq:PSproblem}
+\hat{\pi} &= \arg \min_{\pi\in\hat{\Pi}}\norm[p]{J^*-J(\pi)}. \label{eq:PSproblem}
 \end{align}
 
 When $p=2$, this optimization problem can be interpreted as finding the policy $\hat{\pi}\in\hat{\Pi}$ whose orthogonal projection in the space of Markovian stationary policies $\Pi$ coincides with the optimal policy $\pi^*$. \\
@@ -381,7 +381,7 @@ At this point, the careful reader might have noticed that we have not yet discus
 \item when the gradient is not isotropic in magnitude \wrt any direction away from its maximum,creating troubles in the step size tuning.
 \end{itemize}
 
-In such cases, the \emph{natural gradient} as been empirically proven to have faster convergence and to avoid premature convergence to local maxima. Natural gradient considers the parameter space as a Riemann manifold equipped with its own norm $\norm{\vtheta}^2_{\boldsymbol{G}(\vtheta)}=\vtheta^T\boldsymbol{G}(\vtheta)\vtheta$, which replaces the Euclidean norm, $\norm{\vtheta}^2_{\boldsymbol{I}}=\vtheta^T\vtheta$. Such parametric space is a Riemann manifold whose points are probability measures defined on a common probability space. Since $\boldsymbol{G}$ represents the local Riemann metric tensor, in this context it is given by the \emph{Fisher Information Matrix}, \ie $\boldsymbol{G}(\vtheta)=\boldsymbol{F}(\vtheta)$:
+In such cases, the \emph{natural gradient} as been empirically proven to have faster convergence and to avoid premature convergence to local maxima. Natural gradient considers the parameter space as a Riemann manifold equipped with its own norm $\norm[\boldsymbol{G}(\vtheta)]{\vtheta}^2=\vtheta^T\boldsymbol{G}(\vtheta)\vtheta$, which replaces the Euclidean norm, $\norm[\boldsymbol{I}]{\vtheta}^2=\vtheta^T\vtheta$. Such parametric space is a Riemann manifold whose points are probability measures defined on a common probability space. Since $\boldsymbol{G}$ represents the local Riemann metric tensor, in this context it is given by the \emph{Fisher Information Matrix}, \ie $\boldsymbol{G}(\vtheta)=\boldsymbol{F}(\vtheta)$:
 
 \begin{align}
 \boldsymbol{F}(\vtheta &= \myExpu{\tau\sim p_{\vtheta}}{\nabla_{\vtheta}\log p_{\vtheta}(\tau)\nabla_{\vtheta}\log p_{\vtheta}(\tau)^T}.
@@ -439,7 +439,7 @@ The most popular sample-based estimate of the gradient is undoubtedly REINFORCE 
 based on $N$ independent trajectories. The variance of such estimator is represented by a $m\times m$ covariance matrix, with $m$ equals the number of parameters of the policy. We can obtain an optimal baseline in two ways. Either we minimize each element of the diagonal, obtaining a component-wise baseline made of $m$ elements \cite{peters2008reinforcement}. Or we can minimize the trace of the covariance matrix, obtaining a scalar baseline\cite{zhao2011analysis}:
 
 \begin{align}
-b^*_{RF} &= \frac{\myExpu{\tau\sim p_{\vtheta}}{\norm{\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})}_2^2\Rew(\tau)}}{\myExpu{\tau\sim p_{\vtheta}}{\norm{\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})}_2^2}} \\
+b^*_{RF} &= \frac{\myExpu{\tau\sim p_{\vtheta}}{\norm[2]{\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})}^2\Rew(\tau)}}{\myExpu{\tau\sim p_{\vtheta}}{\norm[2]{\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})}^2}} \\
 (b^*_{RF})_{j} &= \frac{\myExpu{\tau\sim p_{\vtheta}}{\left(\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})\right)^2\Rew(\tau)}}{\myExpu{\tau\sim p_{\vtheta}}{\left(\sum_{h=0}^{H-1}\nabla_{\vtheta}\log\pi_{\vtheta}(a_{\tau,h}|s_{\tau,h})\right)^2}}, \; j=1,2,...,m.
 \end{align}
 
@@ -516,5 +516,56 @@ In order to further reduce the estimate variance, we can adopt an estimator with
 	\end{algorithmic}
 \end{algorithm}
 
-  
+\section{Multiple Importance Sampling}
+In the last section of this chapter we present a statistical tool which is an extension of the well known \emph{importance sampling}. Although this is not strictly related to learning itself, we introduce this tool to the reader because our work leverages it to enable off-line learning for the agent, in a way that is described thoroughly in Chapter (\ref{OPOMIS}).
+We conclude this section with a lemma which represents the first little contribution of this work to the literature and an essential building block for further developments.
+
+Importance sampling \cite{cochran2007sampling,mcbook} is a technique that allows estimating the expectation of a function under some \textit{target} or \textit{proposal} distribution with samples drawn from a different distribution, called \textit{behavioral}.   Let $P$ and $Q$ be probability measures on a measurable space $(\mathcal{Z}, \mathcal{F})$, such that $P\ll Q$ (\ie $P$ is absolutely continuous \wrt $Q$). The importance weight $w_{P/Q}$ is the Radon-Nikodym derivative of $P$ \wrt $Q$, \ie~$w_{P/Q} \equiv \frac{\de P}{\de Q}$. Let $p$ and $q$ be the densities of $P$ and $Q$, respectively, \wrt a reference measure. From the chain rule, $w_{P/Q} = \frac{p}{q}$. In the continuous case, $p$ and $q$ are probability density functions of absolutely continuous random variables having laws $P$ and $Q$, respectively, and $w_{P/Q}$ is a likelihood ratio. 
+Given a bounded function $f:\mathcal{Z}\to\Reals$, and a set of \iid outcomes $z_1,\dots,z_N$ sampled from $Q$, the importance sampling estimator of $\mu\coloneqq\Exp_{z\sim P}\left[f(z)\right]$ is:
+\begin{align}\label{eq:ise}
+	\wh{\mu}_{\text{IS}} = \frac{1}{N}\sum_{i=1}^{N}f(z_i)w_{P/Q}(z_i),
+\end{align}
+which is an \emph{unbiased} estimator \cite{mcbook}, \ie ${\Exp_{z_i\simiid Q}\left[\wh{\mu}_{IS}\right] = \mu}$. 
+
+\gls{MIS} \cite{veach_optimally_1995} is a generalization of the importance sampling technique which allows samples drawn from several different behavioral distributions to be used for the same estimate.
+Let $Q_1,\dots,Q_K$ be all probability measures over the same probability space as $P$, and $P\ll Q_k$ for $k=1,\dots,K$. Let $\beta_1(z),\dots,\beta_K(z)$ be mixture weights, \ie for all $z\in\mathcal{Z}$, ${\beta_1(z)+\dots+\beta_K(z) = 1}$ and $\beta_k(z)\geq0$ for ${k=1,\dots,K}$. Let $z_{ik}$ denote the $i$-th sample drawn from $Q_k$. Given $N_k$ \iid samples from each $Q_k$, the \gls{MIS} estimator is:
+\begin{align}\label{eq:mise}
+	\wh{\mu}_{\text{MIS}} = \sum_{k=1}^K\frac{1}{N_k}\sum_{i=1}^{N_k}\beta_k(z_{ik})w_{P/Q_k}(z_{ik})f(z_{ik}),
+\end{align}
+which is also an unbiased estimator of $\mu$ for any valid choice of the mixture weights. A common choice of the mixture weights having desirable variance properties is the balance heuristic \cite{veach_optimally_1995}: 
+\begin{align}\label{eq:bhw}
+	\beta_k(z) = \frac{N_kq_k(z)}{\sum_{j=1}^{K}N_jq_j(z)},
+\end{align}
+which yields the \gls{BH}:
+\begin{align}\label{eq:bhe}
+	\wh{\mu}_{\text{BH}} = \sum_{k=1}^K\sum_{i=1}^{N_k}\frac{p(z_{ik})}{\sum_{j=1}^K N_jq_j(z_{ik})}f(z_{ik}).
+\end{align}
+Since (\ref{eq:bhw}) are valid mixture weights, $\wh{\mu}_{\text{BH}}$ is an unbiased estimator of $\mu$. Moreover, its variance is not significantly larger than any other choice of the mixture weights \cite{veach_optimally_1995}. An appealing interpretation of the balance heuristic is that we can look at $\wh{\mu}_{\text{BH}}$ as an importance sampling estimation in which samples are drawn from the mixture $\Phi = \frac{p(z_{ik})}{\sum_{j=1}^K \frac{N_j}{N}q_j(z_{ik})}$.
+
+To further characterize the variance of this estimator, we introduce the concept of \emph{\Renyi divergence}. Given probability measures $P$ and $Q$ on $(\mathcal{Z},\mathcal{F})$, where $P\ll Q$ and $Q$ is $\sigma$-finite, the $\alpha$-\Renyi divergence is defined as \cite{renyi1961measures}:
+\begin{align}\label{eq:renyi}
+	D_{\alpha}(P\|Q) = \frac{1}{\alpha-1}\log\int_{\mathcal{Z}}\left(w_{P/Q}\right)^{\alpha}\de Q,
+\end{align}
+for $\alpha\in[0,\infty]$\footnote{The special cases $\alpha=0,1$ and $\infty$ are defined as limits.}.
+We denote the \emph{exponentiated $\alpha$-\Renyi divergence} with:
+
+\begin{align*}
+d_{\alpha}(P\|Q) = \exp\{D_{\alpha}(P\|Q)\}.
+\end{align*}
+
+Of particular interest is $d_2$, as the variance of the importance weight is $\Var_{z\sim Q}\left[w_{P/Q}(z)\right] = d_2(P\|Q) - 1$, which is a divergence itself \cite{cortes2010learning}. For this reason, we always mean the $2$-\Renyi divergence when omitting the order $\alpha$. The \Renyi divergence was used by \cite{metelli2018policy} to upper bound the variance of the importance sampling estimator as:
+
+\begin{align}
+Var_{z_i\simiid q}\left[\wh{\mu}_{\text{IS}}\right]\leq \norm[\infty]{f}^2d_2(P\|Q)/N.
+\end{align}
+
+A similar result can be derived for the BH estimator:
+\begin{restatable}{lemma}{misevarbound}\label{lem:misevarbound}
+	Let $P$ and $\{ Q_k \}_{k=1}^K$ be probability measures on the measurable space $(\mathcal{Z},\mathcal{F})$ such that $P\ll Q_k$ and $d_2(P\|Q_k)<\infty$ for $k=1,\dots,K$. Let $f:\mathcal{Z}\to\Reals$ be a bounded function, \ie $\norm[\infty]{f}<\infty$. Let $\wh{\mu}_{\text{BH}}$ be the balance heuristic estimator of $f$, as defined in (\ref{eq:bhe}), using $N_k$ \iid samples from each $Q_k$. Then, the variance of $\wh{\mu}_{\text{BH}}$ can be upper bounded as:
+	\begin{align*}
+		\Var_{z_{ik}\simiid Q_k}\left[\wh{\mu}_{\text{BH}}\right] \leq \norm[\infty]{f}^2\frac{d_2(P\|\Phi)}{N},
+	\end{align*}
+	where ${N=\sum_{k=1}^{K}N_k}$ is the total number of samples and ${\Phi=\sum_{k=1}^K\frac{N_k}{N}Q_k}$ is a finite mixture.
+\end{restatable}
+%
 

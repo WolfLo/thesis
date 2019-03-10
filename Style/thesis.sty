@@ -43,6 +43,7 @@
 \usepackage{dsfont}
 \usepackage{enumerate}
 \usepackage{nicefrac}
+\usepackage{mathtools}
 
 
 
@@ -73,7 +74,7 @@
 % User-defined environments
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemmma}{Lemma}[section]
+\newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{corollary}{Corollary}[section]
 \newtheorem{definition}{Definition}[section]
@@ -121,7 +122,7 @@
 \newcommand{\Var}{\mathop{\mathbb{V}\mathrm{ar}}}
 \newcommand{\Expu}[1]{\underset{#1}{\mathbb{E}}}
 \newcommand{\Varu}[1]{\underset{#1}{\mathbb{V}\mathrm{ar}}}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\norm}[2][]{\left\|#2\right\|_{#1}}
 \newcommand{\myExp}[1]{\mathop{\mathbb{E}\left[{#1}\right]}}
 \newcommand{\myExpu}[2]{\underset{#1}{\mathbb{E}}\left[{#2}\right]}
 
@@ -139,6 +140,14 @@
 
 %Bandit
 \newcommand{\Reg}{\textit{Regret}}
+
+%Specific macros
+\newcommand{\muo}{\hat{\mu}_{\omega}}
+\newcommand{\mua}{\hat{\mu}_{\alpha}}
+\newcommand{\muab}{\hat{\mu}_{\alpha,\beta}}
+\newcommand{\muabopt}{\hat{\mu}_{\alpha,\beta^{opt}}}
+\DeclareRobustCommand{\algoname}{OPTIMIST\@\xspace}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

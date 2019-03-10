@@ -186,7 +186,6 @@ Note that weak Lipschitzness is satisfied whenever $\mu$ is 1-Lipschitz, \ie $\f
 By carefully choosing the tree of coverings and the algorithm parameters, the authors show that the regret of the proposed approach is bounded by $\widetilde{\mathcal{O}}(\sqrt{T}) = \mathcal{O}(\log\sqrt{T})$. For more details, we remand to \cite{bubeck2011x}.
 
 
-
 \subsection{Posterior Sampling}
 Now we address the exploration-exploitation dilemma in the \gls{MAB} problem with a heuristic called \gls{TS}, firstly introduced by \cite{thompson1933likelihood}, which has been thoroughly studied in the literature for its good properties. This technique is considered to be close to \gls{UCB} algorithms because it also allocates exploratory effort to actions that might be optimal \ie it also builds upon the \gls{OFU} principle \cite{russo2013eluder}. Indeed, similarly to \gls{UCB}, \gls{TS} avoids the under-exploitation of actions that are potentially good and prevents from wasting time on actions that are already known to be bad. However, \gls{TS} does so with a very different approach: the Bayesian one. Indeed, this technique requires a prior distribution for each arm as input, which encodes the initial belief that a learner has on each arm reward. Subsequently, at each round $t$, it samples from each arm distribution, chooses the action with the best reward and updates its posterior distribution by means of the Bayes'rule.\\ The elements of \gls{TS} are the followings:
 
@@ -338,24 +337,24 @@ Interestingly, this notion of pseudo-counts and their application is closely rel
 \item encourage the agent to perform actions that reduce the error/uncertainty in the agent’s ability to predict the consequence of its own actions, \ie its knowledge about the environment.
 \end{enumerate}
 
-Measuring \emph{novelty} requires a statistical model of the distribution of the environmental states, as the one described above, whereas measuring prediction error/uncertainty requires building a model of environmental dynamics that predicts the next state $s_{t+1}$ given the current state $s_t$ and the action $a_t$ executed at time $t$. Evidently, these mechanisms, particularly the first one, are closely related to the concept of count-based exploration. Indeed, Bellamare et al. showed in \cite{bellemare2016unifying} the close relationship between the two.\\
+Measuring \emph{novelty} requires a statistical model of the distribution of the environmental states, as the one described above, whereas measuring prediction error/uncertainty requires building a model of environmental dynamics that predicts the next state $s_{h+1}$ given the current state $s_h$ and the action $a_h$ executed at time $h$. Evidently, these mechanisms, particularly the first one, are closely related to the concept of count-based exploration. Indeed, Bellamare et al. showed in \cite{bellemare2016unifying} the close relationship between the two.\\
 
 \textbf{Variational Information Maximizing Exploration}
-To help the reader grasping these concepts, we proceed by describing a successful implementation of the principle of intrinsic motivation, the \gls{VIME} algorithm \cite{houthooft2016vime}. \gls{VIME} makes use of the information gain about the agent’s internal belief of the dynamics model as a driving force, as described in the following. The approach taken in model-based, where the agent models the environment dynamics via a model $p(s_{t+1}|s_t,a_t,\theta)$, parametrized by the random variable $\Theta$ with values $\theta\in\boldsymbol{\Theta}$. Assuming a prior $p(\theta)$, it keeps a distribution over dynamic models through a distribution over $\theta$, which is updated in a Bayesian fashion. The authors formalize the intrinsic goal of taking actions that maximize the reduction in uncertainty about the dynamics as taking actions that lead to states that are maximally informative about the dynamics model. In other terms, the agent is encouraged to maximize the mutual information between the next state distribution $S_{t+1}$ and the model parameter $\Theta$:
+To help the reader grasping these concepts, we proceed by describing a successful implementation of the principle of intrinsic motivation, the \gls{VIME} algorithm \cite{houthooft2016vime}. \gls{VIME} makes use of the information gain about the agent’s internal belief of the dynamics model as a driving force, as described in the following. The approach taken in model-based, where the agent models the environment dynamics via a model $p(s_{h+1}|s_h,a_h,\theta)$, parametrized by the random variable $\Theta$ with values $\theta\in\boldsymbol{\Theta}$. Assuming a prior $p(\theta)$, it keeps a distribution over dynamic models through a distribution over $\theta$, which is updated in a Bayesian fashion. The authors formalize the intrinsic goal of taking actions that maximize the reduction in uncertainty about the dynamics as taking actions that lead to states that are maximally informative about the dynamics model. In other terms, the agent is encouraged to maximize the mutual information between the next state distribution $S_{h+1}$ and the model parameter $\Theta$:
 
 \begin{align}
-I(S_{t+1};\Theta|\xi_t,a_t)=\myExpu{s_{t+1}\sim\Tran(\cdot|\xi_t,a_t)}{D_{KL}[p(\theta|\xi_t,a_t,s_{t+1})||p(\theta|\xi_t)]},
+I(S_{h+1};\Theta|\xi_h,a_h)=\myExpu{s_{h+1}\sim\Tran(\cdot|\xi_h,a_h)}{D_{KL}[p(\theta|\xi_h,a_h,s_{h+1})||p(\theta|\xi_h)]},
 \end{align}
 
-where $D_{KL}(P||Q)$ is the \gls{KL} divergence between probabilities $P$ and $Q$, $\Tran$ are the true environment dynamics and $\xi_t=\{s_1,a_1,...,s_t\}$ is the history of the agent up until time step $t$. This \gls{KL} divergence can be interpreted as information gain. Therefore we can add each term $I(S_{t+1};\Theta|\xi_t,a_t)$ as an \emph{intrinsic reward} to the standard reward $r_t$ obtained by the agent at time step $t$. The trade-off between exploitation and
+where $D_{KL}(P||Q)$ is the \gls{KL} divergence between probabilities $P$ and $Q$, $\Tran$ are the true environment dynamics and $\xi_h=\{s_1,a_1,...,s_h\}$ is the history of the agent up until time step $t$. This \gls{KL} divergence can be interpreted as information gain. Therefore we can add each term $I(S_{h+1};\Theta|\xi_h,a_h)$ as an \emph{intrinsic reward} to the standard reward $r_h$ obtained by the agent at time step $t$. The trade-off between exploitation and
 exploration can now be realized explicitly as follows:
 
 \begin{align}
-r'_t = r_t + \eta D_{KL}[p(\theta|\xi_t,a_t,s_{t+1})||p(\theta|\xi_t)], \label{eq:augmentedreward}
+r'_h = r_h + \eta D_{KL}[p(\theta|\xi_h,a_h,s_{h+1})||p(\theta|\xi_h)], \label{eq:augmentedreward}
 \end{align}
  
 with $\eta\in\Reals^+$ a hyperparameter controlling the urge to explore. The biggest practical
-issue with maximizing information gain for exploration is that the computation of this equation requires calculating the posterior $p(\theta|\xi_t,a_t,s_{t+1})$, which is generally intractable. The practical solution adopted by the authors for calculating the posterior $p(\theta|\mathcal{D})$ for a dataset $\mathcal{D}$ is to approximate it through an alternative distribution $q(\theta;\phi)$, parametrized by $\phi$, by minimizing $D_{KL}[q(\theta;\phi)||p(\theta|\mathcal{D})]$. This is done through maximization of the \emph{variational lower bound} $L[q(\theta;\phi),\mathcal{D}]$, also called \emph{evidence lower bound} \cite{blei2017variational}:
+issue with maximizing information gain for exploration is that the computation of this equation requires calculating the posterior $p(\theta|\xi_h,a_h,s_{h+1})$, which is generally intractable. The practical solution adopted by the authors for calculating the posterior $p(\theta|\mathcal{D})$ for a dataset $\mathcal{D}$ is to approximate it through an alternative distribution $q(\theta;\phi)$, parametrized by $\phi$, by minimizing $D_{KL}[q(\theta;\phi)||p(\theta|\mathcal{D})]$. This is done through maximization of the \emph{variational lower bound} $L[q(\theta;\phi),\mathcal{D}]$, also called \emph{evidence lower bound} \cite{blei2017variational}:
 
 \begin{align}
 L[q(\theta;\phi),\mathcal{D}] = \myExpu{\theta\sim q(\cdot|\phi)}{\log p(\mathcal{D}|\theta)}-D_{KL}[q(\theta;\phi)||p(\theta)]. \label{eq:elb}
@@ -364,38 +363,28 @@ L[q(\theta;\phi),\mathcal{D}] = \myExpu{\theta\sim q(\cdot|\phi)}{\log p(\mathca
 Rather than computing information gain in Equation (\ref{eq:augmentedreward}) explicitly, we compute an approximation to it, leading to the following total reward:
 
 \begin{align}
-r'_t = r_t + \eta D_{KL}[q(\theta;\phi_{t+1})||q(\theta;\phi_t)],
+r'_h = r_h + \eta D_{KL}[q(\theta;\phi_{h+1})||q(\theta;\phi_h)],
 \end{align}
 
-with $\phi_{t+1}$ the updated and $\phi_{t}$ the old parameters representing the agent’s belief. Natural candidates for parametrizing the agent’s dynamics model $q(\theta;\phi)$ are Bayesian neural networks, whose weight distribution ($q(\theta;\phi)$ itself) is given by the fully factorized Gaussian distribution \cite{blundell2015weight}. This is particularly convenient as it allows for a simple analytical formulation of the KL divergence, that can be easily approximated. Algorithm \ref{alg:VIME} outline the procedure. For more details about the implementation the reader should refer to \cite{houthooft2016vime}. 
+with $\phi_{h+1}$ the updated and $\phi_{t}$ the old parameters representing the agent’s belief. Natural candidates for parametrizing the agent’s dynamics model $q(\theta;\phi)$ are Bayesian neural networks, whose weight distribution ($q(\theta;\phi)$ itself) is given by the fully factorized Gaussian distribution \cite{blundell2015weight}. This is particularly convenient as it allows for a simple analytical formulation of the KL divergence, that can be easily approximated. In fact, \gls{VIME} approximates the KL divergence between the former belief $\phi_{t}$ on the dynamics and the approximate updated belief $\phi'_{t}$. Algorithm \ref{alg:VIME} outline the procedure. For more details about the implementation the reader should refer to \cite{houthooft2016vime}. 
 
 \begin{algorithm}[t]
 	\caption{\gls{VIME}}
 	\label{alg:VIME}
 	\begin{algorithmic}[1]
 	\For{each epoch $t$}
-		\For{each timestep $h$ in each trajectory generated during $t$}
-			\State Generate action $a_t\sim\pi(s_h)$ and sample $s_{h+1}\sim\Tran(\cdot|\xi_h,a_h)$, get $r_h$
+		\For{for $h=1,2,\dots,H$}
+			\State Generate action $a_h\sim\pi(s_h)$ and sample $s_{h+1}\sim\Tran(\cdot|\xi_h,a_h)$, get $r_h$
 			\State Add triplet $(s_h,a_h,s_{h+1})$ to FIFO replay pool R
-			\State Compute the approximated $D_{KL}[q(\theta;\phi_{t+1} + \Delta \phi_{t+1})||q(\theta;\phi_{t+1})]$
-			\State Construct $r'_h = r_h + \eta D_{KL}[q(\theta;\phi_{t+1} + \Delta \phi_{t+1})||q(\theta;\phi_{t+1})]$
+			\State Compute the approximated divergence $D_{KL}[q(\theta;\phi'_{t}||q(\theta;\phi_{t})]$
+			\State Construct $r'_h = r_h + \eta D_{KL}[q(\theta;\phi'_{t}||q(\theta;\phi_{t})]$
 		\EndFor
-		\State Minimize $-L[q(\theta;\phi_t),\mathcal{D}]$ following Equation (\ref{eq:elb}), with $\mathcal{D}$ sampled randomly from R, leading to updated posterior $q(\theta;\phi_{t+1})$
-		\State Use rewards ${r'_h}$ to update policy $\pi$ using any standard \gls{RL} method
+		\State Sample randomly $\mathcal{D}$ from R
+		\State Minimize $-L[q(\theta;\phi_t),\mathcal{D}]$ and obtain the updated posterior $q(\theta;\phi_{t+1})$
+		\State Use rewards ${r'_1,r'_h,\dots,r'_H,}$ to update policy $\pi$ using any standard \gls{RL} method
 	\EndFor
 	\end{algorithmic}
 \end{algorithm}
 
-
-Description, including: Unifying Count-Based Exploration and Intrinsic Motivation \cite{bellemare2016unifying}, talks about the connection between intrinsic motivation and counter-based exploration %check thesis on exp
-
-Algorithms:
-\begin{itemize}
-\item  Vime: Variational information maximizing exploration \cite{houthooft2016vime}
-\item  Diversity-Inducing Policy Gradient\cite{masooddiversity}, similarly to us, uses an exploration bonus based on diversity between distributions
-\end{itemize}
-
-\subsection{Thompson Sampling}
-Description
-%check thesis: Exploiting Action-Value Uncertainty to Drive Exploration in Reinforcement Learning
-To conclude with: Why is Posterior Sampling Better than Optimism for Reinforcement Learning? \cite{osband2017posterior}
+\subsection{Posterior Sampling}
+The \gls{TS} technique described in the previous section has been adopted and investigated in the framework of \gls{RL} as well \cite{strens2000bayesian, osband2013more, osband2015bootstrapped, osband2016deep}. Here, \gls{TS} involves sampling a statistically plausibly set of action values (or policies) and selecting the maximizing action (or best policy). These values can be generated, for example, by sampling from the posterior distribution over MDPs and computing the state-action value function of the sampled MDP. This approach, originally proposed in \cite{strens2000bayesian}, is called posterior sampling for reinforcement learning. In \cite{osband2017posterior}, the authors present theoretical and experimental arguments to show that posterior sampling is better than optimism in synthesizing efficient exploration with powerful generalization. Although we build our work leveraging on the principle of optimism in the face of uncertainty, posterior sampling appears to be an interesting option to further investigate. Indeed, as we will see, the formalization of the \gls{RL} problem that we propose in this paper seems to be a good testing ground for \gls{TS}.
