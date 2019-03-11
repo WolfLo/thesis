@@ -1,6 +1,6 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Optimistic Policy Optimization via Multiple Importance Sampling} \label{OPOMIS}
+\chapter{Optimistic Policy Optimization via Multiple Importance Sampling} \label{ch:core}
 
 \section{Robust Importance Sampling Estimation}\label{sec:robust}
 In this section, we discuss how to perform a robust importance weighting estimation. Recently it has been observed that, in many cases of interest, the plain estimator \eqref{eq:ise} presents problematic tail behaviors \cite{metelli2018policy}, preventing the use of exponential concentration inequalities.\footnote{Unless we require that $d_{\infty}(P \| \Phi)$ is finite, \ie that the importance weight have finite supremum, there always exists a value $\alpha>1$ such that $d_{\alpha}(P \| \Phi)=+\infty$.} A common heuristic to address this problem consists in truncating the weight \cite{ionides2008truncated}:

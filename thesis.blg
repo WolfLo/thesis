@@ -9,45 +9,45 @@ Warning--empty publisher in mcbook_2013
 Warning--empty journal in thrun1992efficient
 Warning--can't use both volume and number fields in williams2006gaussian
 Warning--empty booktitle in yupure
-You've used 129 entries,
+You've used 132 entries,
             2253 wiz_defined-function locations,
-            1188 strings with 25982 characters,
-and the built_in function-call counts, 50443 in all, are:
-= -- 4967
-> -- 2152
+            1205 strings with 26377 characters,
+and the built_in function-call counts, 51538 in all, are:
+= -- 5081
+> -- 2188
 < -- 0
-+ -- 890
-- -- 751
-* -- 3711
-:= -- 7595
-add.period$ -- 380
-call.type$ -- 129
-change.case$ -- 739
++ -- 906
+- -- 763
+* -- 3796
+:= -- 7758
+add.period$ -- 389
+call.type$ -- 132
+change.case$ -- 754
 chr.to.int$ -- 0
-cite$ -- 135
-duplicate$ -- 2125
-empty$ -- 4198
-format.name$ -- 751
-if$ -- 10912
+cite$ -- 138
+duplicate$ -- 2167
+empty$ -- 4294
+format.name$ -- 763
+if$ -- 11148
 int.to.chr$ -- 0
-int.to.str$ -- 129
-missing$ -- 130
-newline$ -- 638
-num.names$ -- 270
-pop$ -- 948
+int.to.str$ -- 132
+missing$ -- 133
+newline$ -- 653
+num.names$ -- 276
+pop$ -- 963
 preamble$ -- 1
-purify$ -- 626
+purify$ -- 638
 quote$ -- 0
-skip$ -- 1532
+skip$ -- 1561
 stack$ -- 0
-substring$ -- 3565
-swap$ -- 750
+substring$ -- 3663
+swap$ -- 764
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 488
+type$ -- 500
 warning$ -- 6
-while$ -- 502
-width$ -- 132
-write$ -- 1291
+while$ -- 515
+width$ -- 135
+write$ -- 1321
 (There were 6 warnings)

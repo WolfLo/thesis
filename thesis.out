@@ -28,16 +28,4 @@
 \BOOKMARK [2][-]{subsection.2.2.1}{Undirected Exploration}{section.2.2}% 28
 \BOOKMARK [2][-]{subsection.2.2.2}{Count-based exploration and Intrinsic Motivation}{section.2.2}% 29
 \BOOKMARK [2][-]{subsection.2.2.3}{Posterior Sampling}{section.2.2}% 30
-\BOOKMARK [0][-]{chapter.3}{Optimistic Policy Optimization via Multiple Importance Sampling}{}% 31
-\BOOKMARK [1][-]{section.3.1}{Robust Importance Sampling Estimation}{chapter.3}% 32
-\BOOKMARK [1][-]{section.3.2}{Problem Formalization}{chapter.3}% 33
-\BOOKMARK [1][-]{section.3.3}{Algorithms}{chapter.3}% 34
-\BOOKMARK [1][-]{section.3.4}{Regret Analysis}{chapter.3}% 35
-\BOOKMARK [2][-]{subsection.3.4.1}{Discrete arm set}{section.3.4}% 36
-\BOOKMARK [2][-]{subsection.3.4.2}{Compact arm set}{section.3.4}% 37
-\BOOKMARK [2][-]{subsection.3.4.3}{Discretization}{section.3.4}% 38
-\BOOKMARK [0][-]{section*.4}{Appendices}{}% 39
-\BOOKMARK [0][-]{Appendix.1.A}{Implementation}{}% 40
-\BOOKMARK [1][-]{section.1.A.1}{Upper Bound for the Exponentiated Renyi Divergence between mixtures}{Appendix.1.A}% 41
-\BOOKMARK [1][-]{section.1.A.2}{Proofs}{Appendix.1.A}% 42
-\BOOKMARK [0][-]{chapter*.5}{Bibliography}{}% 43
+\BOOKMARK [0][-]{chapter*.4}{Bibliography}{}% 31

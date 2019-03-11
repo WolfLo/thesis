@@ -226,6 +226,11 @@
 \newblock In {\em Advances in Neural Information Processing Systems\/} (2017),
   pp.~5713--5723.
 
+\bibitem{dayan1997using}
+{\sc Dayan, P., and Hinton, G.~E.}
+\newblock Using expectation-maximization for reinforcement learning.
+\newblock {\em Neural Computation 9}, 2 (1997), 271--278.
+
 \bibitem{degris2012off}
 {\sc Degris, T., White, M., and Sutton, R.~S.}
 \newblock Off-policy actor-critic.
@@ -373,6 +378,12 @@
 \newblock Nearly tight bounds for the continuum-armed bandit problem.
 \newblock In {\em Advances in Neural Information Processing Systems\/} (2005),
   pp.~697--704.
+
+\bibitem{kober2009policy}
+{\sc Kober, J., and Peters, J.~R.}
+\newblock Policy search for motor primitives in robotics.
+\newblock In {\em Advances in neural information processing systems\/} (2009),
+  pp.~849--856.
 
 \bibitem{kupcsik2013data}
 {\sc Kupcsik, A.~G., Deisenroth, M.~P., Peters, J., and Neumann, G.}
@@ -654,6 +665,12 @@
 \newblock In {\em Proceedings of the 27th International Conference on Machine
   Learning (ICML-10)\/} (Haifa, Israel, June 2010), J.~F{\"u}rnkranz and
   T.~Joachims, Eds., Omnipress, pp.~1015--1022.
+
+\bibitem{still2012information}
+{\sc Still, S., and Precup, D.}
+\newblock An information-theoretic approach to curiosity-driven reinforcement
+  learning.
+\newblock {\em Theory in Biosciences 131}, 3 (2012), 139--148.
 
 \bibitem{strehl2009reinforcement}
 {\sc Strehl, A.~L., Li, L., and Littman, M.~L.}
