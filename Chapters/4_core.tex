@@ -2,14 +2,17 @@
 
 \chapter{Optimistic Policy Optimization via Multiple Importance Sampling} \label{ch:core}
 
+In this chapter we present the main theoretical contributions of this thesis project. In Section (\ref{sec:robust}), we extend Section (\ref{sec:mis}) to develop robust \gls{MIS} estimators that will play an essential role in the algorithms proposed. In Section (\ref{sec:problem}) we provide a formalization of the online policy optimization problem. The algorithms are presented in Section (\ref{sec:algo}) and analyzed in Section (\ref{sec:regret}). The proposed algorithms, called \gls{OPTIMIST} and \gls{OPTIMIST}2, are based on the \gls{OFU} principle and follows the \gls{UCB} strategy, both introduced in Section (\ref{sec:mab}) and covered with practical implementations in (\ref{sec:expinmab}). The idea is to leverage these techniques to deal with the problem of exploration in continuous-action \gls{RL}, whose solutions proposed so far have been largely heuristic, as we have seen in Chapter (\ref{ch:sota}). However, the solutions proposed here should not be interpreted as an application of the \gls{MAB} framework to \gls{PS} but rather as a way to formulate exploration in policy search as a \gls{MAB}-like problem
+
+
 \section{Robust Importance Sampling Estimation}\label{sec:robust}
-In this section, we discuss how to perform a robust importance weighting estimation. Recently it has been observed that, in many cases of interest, the plain estimator \eqref{eq:ise} presents problematic tail behaviors \cite{metelli2018policy}, preventing the use of exponential concentration inequalities.\footnote{Unless we require that $d_{\infty}(P \| \Phi)$ is finite, \ie that the importance weight have finite supremum, there always exists a value $\alpha>1$ such that $d_{\alpha}(P \| \Phi)=+\infty$.} A common heuristic to address this problem consists in truncating the weight \cite{ionides2008truncated}:
+In this section, we discuss how to perform a robust importance weighting estimation. Recently it has been observed that, in many cases of interest, the plain estimator \eqref{eq:ise} presents problematic tail behaviors \cite{metelli2018policy}, preventing the use of exponential concentration inequalities. In fact, unless we require that $d_{\infty}(P \| \Phi)$ is finite, \ie that the importance weight have finite supremum, there always exists a value $\alpha>1$ such that $d_{\alpha}(P \| \Phi)=+\infty$. A common heuristic to address this problem consists in truncating the weight \cite{ionides2008truncated}:
 \begin{align}\label{eq:truncatedise}
 	\widecheck{\mu}_{\text{IS}} = \frac{1}{N}\sum_{i=1}^{N} \min \left\{ M, {w}_{P/Q}(z_i) \right\} f(z_i),
 \end{align}
 where 
 % $\widecheck{w}_{P/Q}^M(z_i) = $ and $M_N$ 
-$M$ is a threshold to limit the magnitude of the importance weight. Similarly, for the multiple importance sampling case, restricting to the BH, we have:
+$M$ is a threshold to limit the magnitude of the importance weight. Similarly, for the multiple importance sampling case, restricting to the \gls{BH}, we have:
 \begin{align}\label{eq:truncatedmise}
 	\widecheck{\mu}_{\text{BH}} =\frac{1}{N} \sum_{k=1}^K\sum_{i=1}^{N_k} \min \left\{M,  \frac{p(z_{ik})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{ik})} \right\} f(z_{ik}).
 \end{align}
@@ -46,68 +49,77 @@ Our adaptive truncation approach and the consequent concentration results resemb
 
 
 \section{Problem Formalization}\label{sec:problem}
-The online learning problem that we aim to solve does \textit{not} fall within the traditional MAB framework (not in its basic version, anyway) and can benefit from an ad-hoc formalization, provided in this section.
+The online learning problem that we aim to solve does \textit{not} fall within the traditional \gls{MAB} framework (not in its basic version, anyway) and can benefit from an ad-hoc formalization, provided in this section.
 
-Let $\Xspace\subseteq \Reals^d$ be our decision set, or \textit{arm set} in MAB jargon. Let $(\Omega,\mathcal{F},P)$ be a probability space. Let ${\{Z_{\vx}:\Omega\to\mathcal{Z}\mid \vx\in\Xspace\}}$ be a set of continuous random vectors parametrized by $\Xspace$, with common sample space ${\mathcal{Z}\subseteq \Reals^m}$. We denote with $p_{\vx}$ the probability density function of $Z_{\vx}$. Finally, let $f:\mathcal{Z}\to\Reals$ be a bounded \textit{payoff function}, and $\mu(\vx) = \Exp_{z\sim p_{\vx}}\left[f(z)\right]$ its expectation under $p_{\vx}$. For each iteration $t=0,\dots,T$, we select an arm $\vx_t$, draw a sample $z_t$ from $p_{\vx_t}$, and observe payoff $f(z_t)$, up to horizon $T$. The goal is to maximize the expected total payoff:
+Let $\Xspace\subseteq \Reals^d$ be our decision set, or \textit{arm set} in \gls{MAB} jargon. Let $(\Omega,\mathcal{F},P)$ be a probability space. Let ${\{Z_{\vx}:\Omega\to\mathcal{Z}\mid \vx\in\Xspace\}}$ be a set of continuous random vectors parametrized by $\Xspace$, with common sample space ${\mathcal{Z}\subseteq \Reals^m}$. We denote with $p_{\vx}$ the probability density function of $Z_{\vx}$. Finally, let $f:\mathcal{Z}\to\Reals$ be a bounded \textit{payoff function}, and $\mu(\vx) = \Exp_{z\sim p_{\vx}}\left[f(z)\right]$ its expectation under $p_{\vx}$. For each iteration $t=0,\dots,T$, we select an arm $\vx_t$, draw a sample $z_t$ from $p_{\vx_t}$, and observe payoff $f(z_t)$, up to horizon $T$. The goal is to maximize the expected total payoff:
 \begin{align}\label{eq:theproblem}
 \max_{\vx_0,\dots,\vx_T\in\Xspace} \sum_{t=0}^T \Exp_{z_t\sim p_{\vx_t}}\left[ f(z_t)\right] = \max_{\vx_0,\dots,\vx_T\in\Xspace}\sum_{t=0}^{T}\mu(\vx_t).
 \end{align}
 Although we can evaluate $p_{\vx}$ for each $\vx\in\Xspace$, we can only observe $f(z_t)$ for the $z_t$ that are actually sampled. 
-This models precisely the online, episodic policy optimization problem.
-In action-based policy optimization, $\Xspace$ corresponds to the parameter space $\Theta$ of a class of stochastic policies ${\{\pi_{\vtheta}\mid\vtheta\in\Theta\}}$, $\mathcal{Z}$ to the set of possible trajectories, $p_{\vx}$ to the density $p_{\vtheta}$ over trajectories induced by policy $\pi_{\vtheta}$, and $f(z)$ to cumulated reward $\Rew(\tau)$. 
-In parameter-based policy optimization, $\Xspace$ corresponds to the hyperparameter space $\Xi$ of a class of stochastic hyperpolicies $\{\nu_{\vxi}\mid\vxi\in\Xi\}$, $\mathcal{Z}$ to the policy parameter space $\Theta$, $p_{\vx}$ to hyperpolicy $\nu_{\vxi}$, and $f(z)$ to performance $J(\vtheta)$. In both cases, each iteration corresponds to a single episode, and horizon $T$ is the total number of episodes (not to be confused with the trajectory horizon $H$). From now on, we will refer to (\ref{eq:theproblem}) simply as the policy optimization problem.\footnote{ In abstract terms, (\ref{eq:theproblem}) is a sequential decision problem over a functional space of random variables, and may have applications beyond policy optimization.}
+This models precisely the online, episodic policy optimization problem. Within this problem formulation, we distinguish between two categories of policy optimization: \emph{action-based} and \emph{parameter-based} policy optimization. 
 
-The peculiarity of this framework, compared to the classic MAB one, is the special structure existing over the arms. In particular, the expected payoff $\mu$ of different arms is correlated thanks to the stochasticity of the $p_{\vx}$'s on a common sample space $\mathcal{Z}$.
-We \textit{could}, of course, frame policy optimization as a MAB problem, at the cost of ignoring some structure. It would be enough to regard $\mu(\vx)$ as the expectation of a totally unknown, stochastic reward function. This would put us in the continuous MAB framework \cite{kleinberg2013bandits}, but would ignore the special arm correlation. In the following, we will show how this correlation can be exploited to guarantee efficient exploration.
+\begin{itemize}
+\item In \emph{action-based} policy optimization, $\Xspace$ corresponds to the parameter space $\Theta$ of a class of stochastic policies ${\{\pi_{\vtheta}\mid\vtheta\in\Theta\}}$, $\mathcal{Z}$ to the set of possible trajectories, $p_{\vx}$ to the density $p_{\vtheta}$ over trajectories induced by policy $\pi_{\vtheta}$, and $f(z)$ to cumulated reward $\Rew(\tau)$.
+\item In \emph{parameter-based} policy optimization, $\Xspace$ corresponds to the hyperparameter space $\Xi$ of a class of stochastic hyperpolicies $\{\nu_{\vxi}\mid\vxi\in\Xi\}$, $\mathcal{Z}$ to the policy parameter space $\Theta$, $p_{\vx}$ to hyperpolicy $\nu_{\vxi}$, and $f(z)$ to performance $J(\vtheta)$.
+\end{itemize}
+ 
+In both cases, each iteration corresponds to a single episode, and horizon $T$ is the total number of episodes (not to be confused with the trajectory horizon $H$). With reference to the standard \gls{PS} framework, the first category is closely related to standard \gls{PG} methods that perform a search in a parametric policy space by following the gradient of the utility function. The second, is more related to methods searching directly in the space of parameters like \gls{PGPE}. From now on, we will refer to (\ref{eq:theproblem}) simply as the policy optimization problem.
+
+\begin{remark}
+In abstract terms, (\ref{eq:theproblem}) is a sequential decision problem over a functional space of random variables, and may have applications beyond policy optimization.
+\end{remark}
+
+The peculiarity of this framework, compared to the classic \gls{MAB} one, is the special structure existing over the arms. In particular, the expected payoff $\mu$ of different arms is correlated thanks to the stochasticity of the $p_{\vx}$'s on a common sample space $\mathcal{Z}$.
+We \textit{could}, of course, frame policy optimization as a \gls{MAB} problem, at the cost of ignoring some structure. It would be enough to regard $\mu(\vx)$ as the expectation of a totally unknown, stochastic reward function. This would put us in the continuous \gls{MAB} framework \cite{kleinberg2013bandits}, but would ignore the special arm correlation. In the following, we will show how this correlation can be exploited to guarantee efficient exploration. This insight stems from the literature on $\mathcal{X}$-armed bandits, as discussed in (\ref{sub:xarmedbandits}) and (\ref{sub:hoo}).
 
 \section{Algorithms}\label{sec:algo}
-In this section, we use the mathematical tools presented so far to design a policy search algorithm that efficiently explores the space of solutions. The proposed algorithm, called \algoname (Optimistic Policy opTImization via Multiple Importance Sampling with Truncation), is based on the Optimism in the Face of Uncertainty (OFU) principle and follows the Upper Confidence Bound (UCB) strategy \cite{lai1985asymptotically,agrawal1995sample,auer2002finite} commonly used in Multi Armed Bandit (MAB) problems \cite{robbins1985some,bubeck2012regret,lattimore2019bandit}. 
+In this section, we use the mathematical tools presented so far to design a policy search algorithm that efficiently explores the space of solutions. The proposed algorithm, called \gls{OPTIMIST}, is based on the \gls{OFU} principle and follows the \gls{UCB} strategy. 
 
-To apply the UCB strategy to the policy optimization problem, we need an estimate of the objective $\mu(\vx)$ and a confidence region. We use importance sampling to capture the correlation among the arms. In particular, to better use all the data that we collect, we would like to use a multiple importance sampling estimator like the one from (\ref{eq:mise}). Unfortunately, the heavy-tailed behavior of this estimator would result in an inefficient exploration.
-Instead, we use the robust balance heuristic estimator $\wc{\mu}_{\text{BH}}$ from (\ref{eq:truncatedmise}), which has better tail behavior. To simplify the notation, , we treat each sample $\vx$ as a distinct one. This is \wlg (as each sample is always multiplied by its number of occurrences anyway) and corresponds to the case $K=t-1$ and $N_k\equiv1$. Hence, at each iteration $t$:
+To apply the \gls{UCB} strategy to the policy optimization problem described above, we need an estimate of the objective $\mu(\vx)$ and a confidence region. We use importance sampling to capture the correlation among the arms. In particular, to better use all the data that we collect, we would like to use a multiple importance sampling estimator like the one from (\ref{eq:mise}). Unfortunately, the heavy-tailed behavior of this estimator would result in an inefficient exploration.
+Instead, we use the robust balance heuristic estimator $\wc{\mu}_{\text{BH}}$ from (\ref{eq:truncatedmise}), which has better tail behavior. To simplify the notation, we treat each sample $\vx$ as a distinct one. This is \wlg (as each sample is always multiplied by its number of occurrences anyway) and corresponds to the case $K=t-1$ and $N_k\equiv1$. Hence, at each iteration $t$:
 \begin{align}\label{eq:wcmu}
 	\wc{\mu}_t(\vx) = \sum_{k=0}^{t-1}
 	\min\left\{M_{t-1}, \frac{p_{\vx}(z_k)}
 	{\sum_{j=1}^{t-1}p_{\vx_j(z_k)}}\right\}f(z_k),
 \end{align}
 where ${M_{t} = \left(\frac{td_{1+\epsilon}(p_{\vx}\|\Phi_t)^{\epsilon}}{\log\frac{1}{\delta_t}}\right)^{\frac{1}{1+\epsilon}}}$ and ${\Phi_t = \frac{1}{t}\sum_{k=0}^{t-1}p_{\vx_k}}$.
-According to Theorem \ref{lem:thrucatedconcentration}, the following \textit{index}:
+According to Theorem (\ref{lem:thrucatedconcentration}), the following \textit{index}:
 \begin{align}
 	&B_t^{\epsilon}(\vx,\delta_t) \coloneqq 
 	\wc{\mu}_t(\vx) \nonumber\\
 	&\quad+\norm[\infty]{f}\left(\sqrt{2}+\frac{4}{3}\right)
 	\left(\frac{d_{1+\epsilon}(p_{\vx_t}\|\Phi_{t})\log\frac{1}{\delta_t}}{t}\right)^{\frac{\epsilon}{1+\epsilon}},
 \end{align}
-is an upper bound on $\mu(\vx)$ with probability at least $1-\delta_t$, \ie an upper confidence bound. The \algoname algorithm simply selects, at each iteration $t$, the arm with the largest value of the index $B_t^{\epsilon}(\vx)$, breaking ties deterministically. The pseudocode is provided in Algorithm \ref{alg:1}. The initial arm $\vx_0$ is arbitrary, as no prior information is available. The regret analysis of Section \ref{sec:regret} will provide a confidence schedule $(\delta_t)_{t=1}^T$. Knowledge of the actual horizon $T$ is not needed. Although we can use any $\epsilon\in (0,1]$, we suggest to use $\epsilon=1$ in practice, as it yields the more common $2$-\Renyi divergence. To be able to compute the indexes (or to perform any kind of index maximization), the algorithm needs to store all the $\vx_t$ together with the observed payoffs $f(z_t)$, hence $\mathcal{O}(Td)$ space is required, where $d$ is the dimensionality of the arm space $\Xspace$ (not to be confused with cardinality $|\Xspace|$, which may be infinite). 
+is an upper bound on $\mu(\vx)$ with probability at least $1-\delta_t$, \ie an upper confidence bound. The \gls{OPTIMIST} algorithm simply selects, at each iteration $t$, the arm with the largest value of the index $B_t^{\epsilon}(\vx)$, breaking ties deterministically. The pseudocode is provided in Algorithm (\ref{alg:1}). The initial arm $\vx_0$ is arbitrary, as no prior information is available. The regret analysis of Section (\ref{sec:regret}) will provide a confidence schedule $(\delta_t)_{t=1}^T$. Knowledge of the actual horizon $T$ is not needed. Although we can use any $\epsilon\in (0,1]$, we suggest to use $\epsilon=1$ in practice, as it yields the more common $2$-\Renyi divergence. To be able to compute the indexes (or to perform any kind of index maximization), the algorithm needs to store all the $\vx_t$ together with the observed pay-offs $f(z_t)$, hence $\mathcal{O}(Td)$ space is required, where $d$ is the dimensionality of the arm space $\Xspace$ (not to be confused with cardinality $|\Xspace|$, which may be infinite). 
 
-The optimization step (line 4) may be very difficult when $\Xspace$ is not discrete \cite{srinivas2010gaussian}, as the index $B_t^{\epsilon}(\vx,\delta_t)$ is non-convex and non-differentiable. Global optimization methods could be applied at the cost of giving up theoretical guarantees. In practice, this direction may be beneficial, but we leave it to future, more application-oriented work. Instead, we propose a general discretization method. The key intuition, common in the continuous MAB literature, is to make the discretization progressively finer. The pseudocode for this variant, called \algoname2, is reported in Algorithm \ref{alg:2}. Note that the arm space $\Xspace$ itself is fixed (and infinite), as adaptive discretization is performed for optimization purposes only. 
-Implementing any variant of \algoname to solve a policy optimization problem, whether in the action-based or in the parameter-based formulation, requires some additional caveats, discussed in Appendix~\ref{app:practical}.
+The optimization step (line \ref{line:optstep}) may be very difficult when $\Xspace$ is not discrete \cite{srinivas2010gaussian}, as the index $B_t^{\epsilon}(\vx,\delta_t)$ is non-convex and non-differentiable. Global optimization methods could be applied at the cost of giving up theoretical guarantees. In practice, this direction may be beneficial, but we leave it to future, more application-oriented work. Instead, we propose a general discretization method. The key intuition, common in the continuous \gls{MAB} literature, is to make the discretization progressively finer. The pseudocode for this variant, called \gls{OPTIMIST}2, is reported in Algorithm (\ref{alg:2}). Note that the arm space $\Xspace$ itself is fixed (and infinite), as adaptive discretization is performed for optimization purposes only. 
+Implementing any variant of \gls{OPTIMIST} to solve a policy optimization problem, whether in the action-based or in the parameter-based formulation, requires some additional caveats, discussed in Section~(\ref{sec:practical}).
 
 \begin{algorithm}[t]
-	\caption{\algoname}
+	\caption{\gls{OPTIMIST}}
 	\label{alg:1}
 	\begin{algorithmic}[1]
 	\State {\bfseries Input:} initial arm $\vx_0$, confidence schedule $(\delta_t)_{t=1}^T$, order ${\epsilon\in(0,1]}$
-	\State Draw sample $z_0\sim p_{\vx_0}$ and observe payoff $f(z_0)$
+	\State Draw sample $z_0\sim p_{\vx_0}$ and observe payoff $f(z_0)$ \label{line:sampling}
 	\For{$t=1,\dots,T$}
-		\State Select arm $\vx_t = \arg\max_{\vx\in\Xspace}B_t^{\epsilon}(\vx,\delta_t)$
+		\State Select arm $\vx_t = \arg\max_{\vx\in\Xspace}B_t^{\epsilon}(\vx,\delta_t)$ \label{line:optstep}
 		\State Draw sample $z_t\sim p_{\vx_t}$ and observe payoff $f(z_t)$
 	\EndFor
 	\end{algorithmic}
 \end{algorithm}
 
 \section{Regret Analysis}\label{sec:regret}
-In this section, we provide high-probability guarantees on the quality of the solution provided by Algorithm \ref{alg:1}.
-First, we rephrase the optimization problem (\ref{alg:1}) in terms of \textit{regret minimization}. The instantaneous regret is defined as:
+In this section, we provide high-probability guarantees on the quality of the solution provided by Algorithm (\ref{alg:1}).
+First, we rephrase the optimization problem (\ref{alg:1}) in terms of \textit{regret minimization}. The instantaneous regret, as defined in (\ref{def:immediateregret}), is:
 \begin{align}\label{eq:inregret}
 	\Delta_t = \mu(\vx^*) - \mu(\vx_t),
 \end{align}
-where $\vx^* = \arg\max_{\vx\in\Xspace}\mu(\vx)$. Let $\Reg(T) = \sum_{t=0}^T\Delta_t$ be the total regret.
+where $\vx^* = \arg\max_{\vx\in\Xspace}\mu(\vx)$. Let $\Reg(T) = \sum_{t=0}^T\Delta_t$ be the total regret, as in (\ref{def:regret}).
 As $\mu(\vx^*)$ is a constant, problem (\ref{eq:theproblem}) is trivially equivalent to:
 \begin{align}\label{eq:regret}
 	\min_{\vx_0,\dots,\vx_T\in\Xspace} \Reg(T).
 \end{align}
-In the following, we will show that Algorithm \ref{alg:1} yields sublinear regret under some mild assumptions. The proofs combine techniques from \cite{srinivas2010gaussian} and \cite{bubeck2013bandits} and are reported in Appendix \ref{app:proof}.
+In the following, we will show that Algorithm (\ref{alg:1}) yields sublinear regret under some mild assumptions. The proofs combine techniques from \cite{srinivas2010gaussian} and \cite{bubeck2013bandits} and are reported in Appendix (\ref{app:proof}).
 First, we need the following assumption on the \Renyi divergence:
 %
 \begin{restatable}{assumption}{boundrenyi}\label{ass:boundrenyi}
@@ -118,14 +130,14 @@ First, we need the following assumption on the \Renyi divergence:
 	where $\Phi_t = \frac{1}{t}\sum_{k=0}^{t-1}p_{\vx_k}$,
 \end{restatable}
 %
-which can be easily enforced through careful policy (or hyperpolicy) design (See Appendix TODO).
+which can be easily enforced through careful policy (or hyperpolicy) design. \textcolor{red}{InternalRef}
 
 \subsection{Discrete arm set}
 We start from the discrete case, where $|\mathcal{X}| = K \in \Naturals_{+}$.
-This setting is particularly convenient, as the optimization step can be trivially solved in time $\mathcal{O}(Kt)$ per iteration,\footnote{We consider the evaluation of pdf's, payoffs and \Renyi divergences in (\ref{eq:wcmu}) atomic, as it is heavily problem-dependent.} where $t$ is from evaluation of (\ref{eq:wcmu}) via clever caching. This sums up to total time $\mathcal{O}(KT^2)$. It is also of practical interest: even in applications where $\Xspace$ is naturally continuous (\eg robotics), the set of solutions that can be actually tried in practice may sometimes be constrained to a discrete, reasonably small set. In this simple setting, \algoname achieves $\wt{\mathcal{O}}(T^{\frac{1}{1+\epsilon}})$ regret:
+This setting is particularly convenient, as the optimization step can be trivially solved in time $\mathcal{O}(Kt)$ per iteration,\footnote{We consider the evaluation of pdf's, payoffs and \Renyi divergences in (\ref{eq:wcmu}) atomic, as it is heavily problem-dependent.} where $t$ is from evaluation of (\ref{eq:wcmu}) via clever caching. This sums up to total time $\mathcal{O}(KT^2)$. It is also of practical interest: even in applications where $\Xspace$ is naturally continuous (\eg robotics), the set of solutions that can be actually tried in practice may sometimes be constrained to a discrete, reasonably small set. In this simple setting, \gls{OPTIMIST} achieves $\wt{\mathcal{O}}(T^{\frac{1}{1+\epsilon}})$ regret:
 
 \begin{restatable}{theorem}{regretdiscrete}\label{th:regretdiscrete}
-	Let $\Xspace$ be a discrete arm set with ${|\mathcal{X}| = K \in \Naturals_{+}}$. Under Assumption \ref{ass:boundrenyi}, Algorithm \ref{alg:1} with confidence schedule $\delta_t = \frac{3\delta}{t^2\pi^2K}$ guarantees, with probability at least $1-\delta$:
+	Let $\Xspace$ be a discrete arm set with ${|\mathcal{X}| = K \in \Naturals_{+}}$. Under Assumption (\ref{ass:boundrenyi}), Algorithm (\ref{alg:1}) with confidence schedule $\delta_t = \frac{3\delta}{t^2\pi^2K}$ guarantees, with probability at least $1-\delta$:
 	\begin{align*}
 		&\Reg(T) \leq \Delta_0 \\
 		&\quad+ 	C
@@ -165,10 +177,10 @@ This assumption is easily satisfied for policy optimization, as shown in the fol
 	in the parameter-based paradigm, where $\vu_1$ and $\vu_2$ are $d$-dimensional vectors and the inequalities are component-wise.
 \end{restatable}
 %
-In the proof, we show how to derive the corresponding Lipschitz constants, and show how (\ref{eq:lp1}) and (\ref{eq:lp2}) are satisfied by the commonly-used Gaussian policy and hyperpolicy, respectively. This is enough for \algoname to achieve $\wt{\mathcal{O}}(d^{\frac{\epsilon}{1+\epsilon}}T^{\frac{1}{1+\epsilon}})$ regret:
+In the proof (Appendix (\ref{app:proof})), we show how to derive the corresponding Lipschitz constants, and show how (\ref{eq:lp1}) and (\ref{eq:lp2}) are satisfied by the commonly-used Gaussian policy and hyperpolicy, respectively. This is enough for \gls{OPTIMIST} to achieve $\wt{\mathcal{O}}(d^{\frac{\epsilon}{1+\epsilon}}T^{\frac{1}{1+\epsilon}})$ regret:
 %
 \begin{restatable}{theorem}{regretcompact}\label{th:regretcompact}
-	Let $\Xspace$ be a $d$-dimensional compact arm set with $\Xspace \subseteq [-D,D]^d$. Under Assumptions \ref{ass:boundrenyi} and \ref{ass:lipschitz}, Algorithm \ref{alg:1} with confidence schedule $\delta_t = \frac{6\delta}{\pi^2t^2(1+d^dt^{2d})}$ guarantees, with probability at least $1-\delta$:
+	Let $\Xspace$ be a $d$-dimensional compact arm set with $\Xspace \subseteq [-D,D]^d$. Under Assumptions (\ref{ass:boundrenyi}) and (\ref{ass:lipschitz}), Algorithm (\ref{alg:1}) with confidence schedule $\delta_t = \frac{6\delta}{\pi^2t^2(1+d^dt^{2d})}$ guarantees, with probability at least $1-\delta$:
 	\begin{align*}
 	&\Reg(T) \leq \Delta_0 \\
 	&\quad+ 	C
@@ -181,10 +193,10 @@ In the proof, we show how to derive the corresponding Lipschitz constants, and s
 	where $C=(1+\epsilon)\left(2\sqrt{2}+\frac{5}{3}\right)\norm[\infty]{f}$, and $\Delta_0$ is the instantaneous regret of the initial arm $\vx_0$.
 \end{restatable}
 %
-This yields a $\wt{\mathcal{O}}(\sqrt{dT})$ regret when $\epsilon=1$. Unfortunately, the optimization step may be very time-consuming. In some applications, we can assume the time required to draw samples to dominate the computational time. In fact, drawing a sample (Algorithm \ref{alg:1}, line 2) corresponds to generating a whole trajectory of experience, which may take a long time, especially in real-world applications.
+This yields a $\wt{\mathcal{O}}(\sqrt{dT})$ regret when $\epsilon=1$. Unfortunately, the optimization step may be very time-consuming. In some applications, we can assume the time required to draw samples to dominate the computational time. In fact, drawing a sample (Algorithm (\ref{alg:1}), line \ref{line:sampling}) corresponds to generating a whole trajectory of experience, which may take a long time, especially in real-world applications.
 
 \begin{algorithm}[t]
-	\caption{\algoname2}
+	\caption{\gls{OPTIMIST}2}
 	\label{alg:2}
 	\begin{algorithmic}[1]
 		\State {\bfseries Input:} initial arm $\vx_0$, confidence schedule $(\delta_t)_{t=1}^T$, discretization schedule $(\tau_t)_{t=1}^T$, order $\epsilon\in(0,1]$
@@ -199,10 +211,10 @@ This yields a $\wt{\mathcal{O}}(\sqrt{dT})$ regret when $\epsilon=1$. Unfortunat
 %
 
 \subsection{Discretization}
-When optimization over the infinite arm space $\Xspace$ is not feasible, Algorithm \ref{alg:2} can be used instead. This variant restricts the optimization to a progressively finer grid $\wt{\Xspace}_t$ of $(\tau_t)^d$ vertices. A reasonably coarse discretization schedule can be used at the price of a worse (but still sublinear) regret:
+When optimization over the infinite arm space $\Xspace$ is not feasible, Algorithm (\ref{alg:2}) can be used instead. This variant restricts the optimization to a progressively finer grid $\wt{\Xspace}_t$ of $(\tau_t)^d$ vertices. A reasonably coarse discretization schedule can be used at the price of a worse (but still sublinear) regret:
 %
 \begin{restatable}{theorem}{regretdiscretized}\label{th:regretdiscretized}
-	Let $\Xspace$ be a $d$-dimensional compact arm set with $\Xspace \subseteq [-D,D]^d$. For any $\kappa\geq2$, under Assumptions \ref{ass:boundrenyi} and \ref{ass:lipschitz}, Algorithm \ref{alg:2} with confidence schedule ${\delta_t = \frac{6\delta}{\pi^2t^2\left(1+\left\lceil t^{\nicefrac{1}{\kappa}}\right\rceil^d\right)}}$ and discretization schedule $\tau_t=\lceil t^{\frac{1}{\kappa}} \rceil$ guarantees, with probability at least $1-\delta$:
+	Let $\Xspace$ be a $d$-dimensional compact arm set with $\Xspace \subseteq [-D,D]^d$. For any $\kappa\geq2$, under Assumptions (\ref{ass:boundrenyi}) and (\ref{ass:lipschitz}), Algorithm (\ref{alg:2}) with confidence schedule ${\delta_t = \frac{6\delta}{\pi^2t^2\left(1+\left\lceil t^{\nicefrac{1}{\kappa}}\right\rceil^d\right)}}$ and discretization schedule $\tau_t=\lceil t^{\frac{1}{\kappa}} \rceil$ guarantees, with probability at least $1-\delta$:
 	\begin{align*}
 	&\Reg(T) \leq \Delta_0  + C_1T^{\left(1-\frac{1}{\kappa}\right)}d
 	+ C_2
@@ -214,5 +226,9 @@ When optimization over the infinite arm space $\Xspace$ is not feasible, Algorit
 \end{restatable}
 %
 Let us focus on the case $\epsilon=1$, which is the only one of practical interest in the scope of this paper.
-For $\kappa=2$, we obtain regret $\wt{\mathcal{O}}(d\sqrt{T})$. Unfortunately, the time required for optimization is exponential in arm space dimensionality $d$. For $d\geq 2$, we can break the curse of dimensionality by taking $\kappa=d$. In this case, the regret is $\wt{\mathcal{O}}\left(dT^{\left(1-\frac{1}{d}\right)}\right)$. On the other hand, the time per iteration is only $O(t^2)$. Note that the regret is sublinear for any choice of $\kappa$. 
-Going further: for any $\zeta>0$, $\kappa=\frac{d}{\zeta}$ grants $O(t^{1+\zeta})$ time per iteration at the cost of $\wt{\mathcal{O}}\left(dT^{\left(1-\frac{\zeta}{d}\right)}\right)$ regret.\footnote{The worse dependency $\wt{\mathcal{O}}(d)$ of the regret on the arm space dimensionality (\wrt $\wt{\mathcal{O}}(\sqrt{d})$ of Algorithm \ref{alg:1}) is also necessary to prevent the time per iteration from being exponential in $d$.}
+For $\kappa=2$, we obtain regret $\wt{\mathcal{O}}(d\sqrt{T})$. Unfortunately, the time required for optimization is exponential in arm space dimensionality $d$, \ie $\mathcal{O}(\lceil t^{\frac{1}{\kappa}} \rceil^d)$. For $d\geq 2$, we can break the curse of dimensionality by taking $\kappa=d$. In this case, the regret is $\wt{\mathcal{O}}\left(dT^{\left(1-\frac{1}{d}\right)}\right)$. On the other hand, the time per iteration is only $\mathcal{O}(t^2)$. Note that the regret is sublinear for any choice of $\kappa$. 
+Going further: for any $\zeta>0$, $\kappa=\frac{d}{\zeta}$ grants $O(t^{1+\zeta})$ time per iteration at the cost of $\wt{\mathcal{O}}\left(dT^{\left(1-\frac{\zeta}{d}\right)}\right)$ regret. 
+
+\begin{remark}
+The worse dependency $\wt{\mathcal{O}}(d)$ of the regret on the arm space dimensionality (\wrt $\wt{\mathcal{O}}(\sqrt{d})$ of Algorithm (\ref{alg:1})) is also necessary to prevent the time per iteration from being exponential in $d$.
+\end{remark}

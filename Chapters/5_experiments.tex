@@ -2,4 +2,22 @@
 
 \chapter{Numerical Simulations} \label{ch:experiments}
 
+\section{Practical Aspects} \label{sec:practical}
 
+\begin{remark}
+Assumption (\ref{ass:boundrenyi}) is easy to guarantee in our case of application: a compact arm set. In fact, the the maximum distance between policy hyperparameters is bounded in a compact arm set. Depending on the parametrization, one must ensure that the \Renyi divergence is also bounded. As an example, for Gaussian hyperpolicies with fixed standard deviation there is no such problem, as the Renyi divergence [1] is a continuous function of the mean parameter (a continuous function on a compact set is bounded). If the standard deviation (or covariance matrix) is also part of the parameter set, additional care must be placed on the allowed range. For $\epsilon=1$, the std of the target distribution must not be larger than twice that of the behavioral for the divergence to be finite. When considering multiple behavioral distributions (MIS), it sufficies to have one of them fullfilling the requirement (Appendix A). Hence, given a minimum std $\sigma_0 > 0$, it is enough to constrain the search within $[\sigma_0, 2*\sigma_0]$. We also suggest to initialize the first behavioral distribution with $2*\sigma_0$, since the algorithm will tend to focus on smaller stds (i.e., less stochastic behavior) as the learning proceeds. Similar constraints can be defined for other kinds of hyperpolicies.
+\end{remark}
+
+\algoname requires at each iteration to compute the exponentiated \Renyi divergence between the currently considered distribution $p_{\vx}$ 
+and the mixture $\Phi_t$, \ie $d_{1+\epsilon}(p_{\vx}\|\Phi_t)$. Even for Gaussian distributions, this quantity cannot be obtained in closed form, while
+the \Renyi divergence between Gaussians can be computed exactly. In this section, we provide an upper bound for computing the exponentiated \Renyi divergence
+between a generic distribution and a mixture.
+\begin{restatable}{theorem}{armonic}\label{th:armonic}
+	Let $P$ be a probability measure and $\Phi = \sum_{k=1}^K \beta_k Q_k$, with $\beta_k \in [0,1]$ and $\sum_{k=1}^K \beta_k =1$, be a finite mixture of the
+	probability measures $\{Q_k\}_{k=1}^K$. Then, for any $\alpha \ge 1$, the exponentiated $\alpha$-\Renyi divergence can be bounded as: 
+	\begin{equation*}
+	d_{\alpha}(P \| \Phi) \le \frac{1} {\sum_{k=1}^K \frac{ \beta_k}{ d_{\alpha}(P \| Q_k)}}.
+	\end{equation*}
+\end{restatable}
+
+In Appendix \ref{app:proof}, we prove a more general result for the case when also $P$ is a mixture.

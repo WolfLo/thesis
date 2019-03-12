@@ -3,7 +3,7 @@
 \chapter{Preliminaries} \label{Preliminaries}
 In this chapter we provide an introduction to the Multi-Armed Bandit framework and the Reinforcement Learning framework, which are the two frameworks of reference of this thesis project. The Reinforcement Learning section is opportunely preceded by an overview of Markov Decision Processes, which are the building blocks of Reinforcement Learning. Then, we present a particular class of strategies to solve the Reinforcement Learning problem: Policy Search methods. The aim is to introduce concepts that will be used extensively in the following chapters.
 
-\section{Multi Armed Bandits} \label{Multi Armed Bandits}
+\section{Multi Armed Bandits} \label{sec:mab}
 Consider a situation in which a gambler (the \emph{agent}) is sitting in a casino, staring at a number of slot machines from which he wants to pick the most profitable one and play with it all night long. Each slot machine is characterized by a certain \emph{mean reward}. The objective of the gambler is to maximize the gains that he will have won by the end of the night, but, unfortunately, he can not know \emph{a priori} the mean reward associated to each slot machine. Hence, the gambler must find a suitable strategy in order to effectively \emph{explore} his possibilities, by testing the different slot machines, and, then, \emph{exploit} the ones that prove to be more profitable. In fact, the gambler would face an equivalent problem if he was to play a single machine with as many \emph{arms} (levers) as the number of slot machines present in the casino, each with its own specific mean reward. Hence the name \gls{MAB} \cite{lai1985asymptotically} given to this problem, in homage to the one-armed bandit, an old-fashioned name for a lever operated slot machine ("bandit" because it steals your money). In the artificial intelligence literature, \gls{MAB} refers to a broad class of problems that can be formulated as this gambling learning problem. Of course, \gls{MAB}s have other, more valuable, applications other than gambling. Current applications span from web interfaces configuration, news recommendation, dynamic pricing, ad placement, networking routing and game design. 
 
 \begin{definition} \emph{(Multi Armed Bandit)}
@@ -287,7 +287,7 @@ A finer classification of this dimension is presented in \cite{lange2012batch}, 
 \section{Policy Search}
 As mentioned in the introduction, this work focuses on improving the exploration task in continuous state-action domains, possibly characterized by some noise in the state as it happens for control tasks with noisy sensors. In such conditions, value-based methods present numerous difficulties. First, they have no guarantees of convergence to an optimal policy due to the need of function approximation for large, continuous \gls{MDP}s; second, value based methods are highly sensitive to small perturbations in the state, which makes them useless in noisy control tasks. Hence, direct \gls{PS} methods represent the best alternative in such settings. Theoretical guarantees are often available \cite{more1994line}, environment noise has less impactful effects, and prior domain knowledge can be exploited to design ad-hoc policies for specific tasks. Moreover, approximate value functions can still be used to guide the search for the optimal policy, such as in actor-critic methods. Indeed, \gls{PS} has been successfully applied to complex control tasks, as reported in \cite{deisenroth2013survey}: from robotic arms playing baseball to simulated table tennis, from dart throwing to pan-cake flipping. 
 
-\subsection{Overview}
+\subsection{Overview} \label{subsec:PSoverview}
 Given a predetermined class of policies $\hat{\Pi}$, \gls{PS} aims at finding the policy whose performance $J(\pi)$ is as close as possible to the performance of the optimal policy $J(\pi^*)=J^*$:
 
 \begin{align}
@@ -516,7 +516,7 @@ In order to further reduce the estimate variance, we can adopt an estimator with
 	\end{algorithmic}
 \end{algorithm}
 
-\section{Multiple Importance Sampling}
+\section{Multiple Importance Sampling} \label{sec:mis}
 In the last section of this chapter we present a statistical tool which is an extension of the well known \emph{importance sampling}. Although this is not strictly related to learning itself, we introduce this tool to the reader because our work leverages it to enable off-line learning for the agent, in a way that is described thoroughly in Chapter (\ref{OPOMIS}).
 We conclude this section with a lemma which represents the first little contribution of this work to the literature and an essential building block for further developments.
 

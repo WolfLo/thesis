@@ -1,20 +1,5 @@
 \chapter{Implementation}
 
-\section{Upper Bound for the Exponentiated Renyi Divergence between mixtures}\label{app:practical}
-\algoname requires at each iteration to compute the exponentiated \Renyi divergence between the currently considered distribution $p_{\vx}$ 
-and the mixture $\Phi_t$, \ie $d_{1+\epsilon}(p_{\vx}\|\Phi_t)$. Even for Gaussian distributions, this quantity cannot be obtained in closed form, while
-the \Renyi divergence between Gaussians can be computed exactly. In this section, we provide an upper bound for computing the exponentiated \Renyi divergence
-between a generic distribution and a mixture.
-\begin{restatable}{theorem}{armonic}\label{th:armonic}
-	Let $P$ be a probability measure and $\Phi = \sum_{k=1}^K \beta_k Q_k$, with $\beta_k \in [0,1]$ and $\sum_{k=1}^K \beta_k =1$, be a finite mixture of the
-	probability measures $\{Q_k\}_{k=1}^K$. Then, for any $\alpha \ge 1$, the exponentiated $\alpha$-\Renyi divergence can be bounded as: 
-	\begin{equation*}
-	d_{\alpha}(P \| \Phi) \le \frac{1} {\sum_{k=1}^K \frac{ \beta_k}{ d_{\alpha}(P \| Q_k)}}.
-	\end{equation*}
-\end{restatable}
-
-In Appendix \ref{app:proof}, we prove a more general result for the case when also $P$ is a mixture.
-
 \section{Proofs}\label{app:proof}
 
 \misevarbound*

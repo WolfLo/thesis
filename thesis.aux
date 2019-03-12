@@ -32,7 +32,7 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{Preliminaries}{{1}{1}{Preliminaries}{chapter.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Multi Armed Bandits}{1}{section.1.1}}
-\newlabel{Multi Armed Bandits}{{1.1}{1}{Multi Armed Bandits}{section.1.1}{}}
+\newlabel{sec:mab}{{1.1}{1}{Multi Armed Bandits}{section.1.1}{}}
 \@writefile{loe}{\addvspace {10\p@ }}
 \@writefile{loe}{\contentsline {definition}{\numberline {1.1.1}Definition}{2}{definition.1.1.1}}
 \@writefile{loe}{\contentsline {definition}{\numberline {1.1.2}Definition}{2}{definition.1.1.2}}
@@ -106,6 +106,7 @@
 \citation{kober2009policy}
 \citation{still2012information}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Overview}{15}{subsection.1.4.1}}
+\newlabel{subsec:PSoverview}{{1.4.1}{15}{Overview}{subsection.1.4.1}{}}
 \newlabel{eq:PSproblem}{{1.16}{15}{Overview}{equation.1.4.16}{}}
 \citation{deisenroth2013survey}
 \citation{deisenroth2013survey}
@@ -151,6 +152,7 @@
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1.4}{\ignorespaces Episodic \gls {PGPE}\relax }}{24}{algorithm.1.4}}
 \newlabel{alg:PGPE}{{1.4}{24}{Episodic \gls {PGPE}\relax }{algorithm.1.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.5}Multiple Importance Sampling}{24}{section.1.5}}
+\newlabel{sec:mis}{{1.5}{24}{Multiple Importance Sampling}{section.1.5}{}}
 \citation{mcbook}
 \citation{veach_optimally_1995}
 \citation{veach_optimally_1995}
@@ -173,10 +175,12 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Exploration Techniques}{27}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:sota}{{2}{27}{Exploration Techniques}{chapter.2}{}}
 \citation{lattimore2019bandit}
 \citation{auer2002finite}
 \citation{cesa2017boltzmann}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Exploration in Multi Armed Bandits}{28}{section.2.1}}
+\newlabel{sec:expinmab}{{2.1}{28}{Exploration in Multi Armed Bandits}{section.2.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Undirected Exploration}{28}{subsection.2.1.1}}
 \citation{lai1985asymptotically}
 \citation{agrawal1995continuum}
@@ -203,6 +207,7 @@
 \citation{kleinberg2005nearly}
 \citation{kleinberg2008multi}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4} Hierarchical Optimistic Optimization}{32}{subsection.2.1.4}}
+\newlabel{sub:hoo}{{2.1.4}{32}{Hierarchical Optimistic Optimization}{subsection.2.1.4}{}}
 \@writefile{loe}{\contentsline {definition}{\numberline {2.1.2}Definition}{32}{definition.2.1.2}}
 \newlabel{def:treeofcoverings}{{2.1.2}{32}{}{definition.2.1.2}{}}
 \@writefile{loe}{\contentsline {remark}{\numberline {2.1.1}Remark}{33}{remark.2.1.1}}
@@ -264,6 +269,172 @@
 \@writefile{loa}{\contentsline {algorithm}{\numberline {2.5}{\ignorespaces \gls {VIME}\relax }}{44}{algorithm.2.5}}
 \newlabel{alg:VIME}{{2.5}{44}{\gls {VIME}\relax }{algorithm.2.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Posterior Sampling}{44}{subsection.2.2.3}}
+\citation{metelli2018policy}
+\citation{ionides2008truncated}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Optimistic Policy Optimization via Multiple Importance Sampling}{46}{chapter.3}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:core}{{3}{46}{Optimistic Policy Optimization via Multiple Importance Sampling}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Robust Importance Sampling Estimation}{46}{section.3.1}}
+\newlabel{sec:robust}{{3.1}{46}{Robust Importance Sampling Estimation}{section.3.1}{}}
+\newlabel{eq:truncatedise}{{3.1}{47}{Robust Importance Sampling Estimation}{equation.3.1.1}{}}
+\newlabel{eq:truncatedmise}{{3.2}{47}{Robust Importance Sampling Estimation}{equation.3.1.2}{}}
+\newlabel{thmt@@truncatedbias@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.1.\@arabic {\c@equation }}\setcounter {equation}{2}}{47}{Robust Importance Sampling Estimation}{equation.3.1.2}{}}
+\@writefile{loe}{\addvspace {10\p@ }}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.1.1}Lemma}{47}{lemma.3.1.1}}
+\newlabel{thmt@@truncatedbias}{{3.1.1}{47}{}{lemma.3.1.1}{}}
+\newlabel{lem:truncatedbias}{{3.1.1}{47}{}{lemma.3.1.1}{}}
+\newlabel{eq:biastruncated}{{3.3}{47}{}{equation.3.1.3}{}}
+\newlabel{eq:variancetruncated}{{3.4}{47}{}{equation.3.1.4}{}}
+\citation{bubeck2013bandits}
+\citation{bubeck2013bandits}
+\citation{ionides2008truncated}
+\newlabel{thmt@@thrucatedconcentration@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.1.\@arabic {\c@equation }}\setcounter {equation}{4}}{48}{Robust Importance Sampling Estimation}{equation.3.1.4}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.1.1}Theorem}{48}{theorem.3.1.1}}
+\newlabel{thmt@@thrucatedconcentration}{{3.1.1}{48}{}{theorem.3.1.1}{}}
+\newlabel{lem:thrucatedconcentration}{{3.1.1}{48}{}{theorem.3.1.1}{}}
+\newlabel{eq:1.1}{{3.5}{48}{}{equation.3.1.5}{}}
+\newlabel{eq:1.2}{{3.6}{48}{}{equation.3.1.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Problem Formalization}{48}{section.3.2}}
+\newlabel{sec:problem}{{3.2}{48}{Problem Formalization}{section.3.2}{}}
+\citation{kleinberg2013bandits}
+\newlabel{eq:theproblem}{{3.7}{49}{Problem Formalization}{equation.3.2.7}{}}
+\@writefile{loe}{\contentsline {remark}{\numberline {3.2.1}Remark}{49}{remark.3.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Algorithms}{50}{section.3.3}}
+\newlabel{sec:algo}{{3.3}{50}{Algorithms}{section.3.3}{}}
+\newlabel{eq:wcmu}{{3.8}{50}{Algorithms}{equation.3.3.8}{}}
+\citation{srinivas2010gaussian}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3.1}{\ignorespaces \gls {OPTIMIST}\relax }}{51}{algorithm.3.1}}
+\newlabel{alg:1}{{3.1}{51}{\gls {OPTIMIST}\relax }{algorithm.3.1}{}}
+\newlabel{line:sampling}{{2}{51}{\gls {OPTIMIST}\relax }{algorithm.3.1}{}}
+\newlabel{line:optstep}{{4}{51}{\gls {OPTIMIST}\relax }{algorithm.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Regret Analysis}{51}{section.3.4}}
+\newlabel{sec:regret}{{3.4}{51}{Regret Analysis}{section.3.4}{}}
+\newlabel{eq:inregret}{{3.10}{51}{Regret Analysis}{equation.3.4.10}{}}
+\citation{srinivas2010gaussian}
+\citation{bubeck2013bandits}
+\newlabel{eq:regret}{{3.11}{52}{Regret Analysis}{equation.3.4.11}{}}
+\newlabel{thmt@@boundrenyi@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{52}{Regret Analysis}{equation.3.4.11}{}}
+\@writefile{loe}{\contentsline {assumption}{\numberline {3.4.1}Assumption}{52}{assumption.3.4.1}}
+\newlabel{thmt@@boundrenyi}{{3.4.1}{52}{}{assumption.3.4.1}{}}
+\newlabel{ass:boundrenyi}{{3.4.1}{52}{}{assumption.3.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Discrete arm set}{52}{subsection.3.4.1}}
+\newlabel{thmt@@regretdiscrete@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{52}{Discrete arm set}{subsection.3.4.1}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.1}Theorem}{52}{theorem.3.4.1}}
+\newlabel{thmt@@regretdiscrete}{{3.4.1}{52}{}{theorem.3.4.1}{}}
+\newlabel{th:regretdiscrete}{{3.4.1}{52}{}{theorem.3.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Compact arm set}{53}{subsection.3.4.2}}
+\newlabel{thmt@@lipschitz@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{53}{Compact arm set}{subsection.3.4.2}{}}
+\@writefile{loe}{\contentsline {assumption}{\numberline {3.4.2}Assumption}{53}{assumption.3.4.2}}
+\newlabel{thmt@@lipschitz}{{3.4.2}{53}{}{assumption.3.4.2}{}}
+\newlabel{ass:lipschitz}{{3.4.2}{53}{}{assumption.3.4.2}{}}
+\newlabel{thmt@@lipschitzpol@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{53}{Compact arm set}{assumption.3.4.2}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.4.1}Lemma}{53}{lemma.3.4.1}}
+\newlabel{thmt@@lipschitzpol}{{3.4.1}{53}{}{lemma.3.4.1}{}}
+\newlabel{lem:lispschitzpol}{{3.4.1}{53}{}{lemma.3.4.1}{}}
+\newlabel{eq:lp1}{{3.12}{53}{}{equation.3.4.12}{}}
+\newlabel{eq:lp2}{{3.13}{53}{}{equation.3.4.13}{}}
+\newlabel{thmt@@regretcompact@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{13}}{53}{Compact arm set}{equation.3.4.13}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.2}Theorem}{53}{theorem.3.4.2}}
+\newlabel{thmt@@regretcompact}{{3.4.2}{53}{}{theorem.3.4.2}{}}
+\newlabel{th:regretcompact}{{3.4.2}{53}{}{theorem.3.4.2}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3.2}{\ignorespaces \gls {OPTIMIST}2\relax }}{54}{algorithm.3.2}}
+\newlabel{alg:2}{{3.2}{54}{\gls {OPTIMIST}2\relax }{algorithm.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Discretization}{54}{subsection.3.4.3}}
+\newlabel{thmt@@regretdiscretized@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{13}}{54}{Discretization}{subsection.3.4.3}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.3}Theorem}{54}{theorem.3.4.3}}
+\newlabel{thmt@@regretdiscretized}{{3.4.3}{54}{}{theorem.3.4.3}{}}
+\newlabel{th:regretdiscretized}{{3.4.3}{54}{}{theorem.3.4.3}{}}
+\@writefile{loe}{\contentsline {remark}{\numberline {3.4.1}Remark}{55}{remark.3.4.1}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Numerical Simulations}{56}{chapter.4}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:experiments}{{4}{56}{Numerical Simulations}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Practical Aspects}{56}{section.4.1}}
+\newlabel{sec:practical}{{4.1}{56}{Practical Aspects}{section.4.1}{}}
+\@writefile{loe}{\addvspace {10\p@ }}
+\@writefile{loe}{\contentsline {remark}{\numberline {4.1.1}Remark}{56}{remark.4.1.1}}
+\newlabel{thmt@@armonic@data}{{\def \theequation {4.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )4.1.\@arabic {\c@equation }}\setcounter {equation}{0}}{57}{Practical Aspects}{remark.4.1.1}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {4.1.1}Theorem}{57}{theorem.4.1.1}}
+\newlabel{thmt@@armonic}{{4.1.1}{57}{}{theorem.4.1.1}{}}
+\newlabel{th:armonic}{{4.1.1}{57}{}{theorem.4.1.1}{}}
+\citation{metelli2018policy}
+\@writefile{toc}{\contentsline {chapter}{Appendices}{58}{section*.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Implementation}{58}{Appendix.1.A}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Proofs}{58}{section.1.A.1}}
+\newlabel{app:proof}{{A.1}{58}{Proofs}{section.1.A.1}{}}
+\@writefile{loe}{\addvspace {10\p@ }}
+\@writefile{loe}{\contentsline {lemma}{\numberline {1.5.1}Lemma}{58}{lemma.dummy.40}}
+\newlabel{p:misevarboundline2}{{A.1}{59}{Proofs}{equation.1.A.1.1}{}}
+\newlabel{p:misevarboundline5}{{A.2}{59}{Proofs}{equation.1.A.1.2}{}}
+\newlabel{eq:expectationdecomposition}{{A.3}{59}{Proofs}{equation.1.A.1.3}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.1.1}Lemma}{59}{lemma.dummy.42}}
+\newlabel{p:truncatedbias1}{{A.5}{60}{Proofs}{equation.1.A.1.5}{}}
+\newlabel{p:truncatedbias2}{{A.6}{60}{Proofs}{equation.1.A.1.6}{}}
+\newlabel{p:truncatedbias3}{{A.7}{60}{Proofs}{equation.1.A.1.7}{}}
+\citation{boucheron2013concentration}
+\newlabel{p:truncatedbias4}{{A.8}{61}{Proofs}{equation.1.A.1.8}{}}
+\newlabel{p:truncatedbias5}{{A.9}{61}{Proofs}{equation.1.A.1.9}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.1.1}Theorem}{61}{theorem.dummy.44}}
+\newlabel{p:thrucatedconcentration1}{{A.11}{62}{Proofs}{equation.1.A.1.11}{}}
+\newlabel{p:thrucatedconcentration2}{{A.12}{62}{Proofs}{equation.1.A.1.12}{}}
+\newlabel{p:thrucatedconcentration3}{{A.13}{62}{Proofs}{equation.1.A.1.13}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.1}Theorem}{62}{theorem.dummy.46}}
+\newlabel{aux:1}{{A.15}{63}{Proofs}{equation.1.A.1.15}{}}
+\newlabel{pp:1}{{A.16}{63}{Proofs}{equation.1.A.1.16}{}}
+\newlabel{pp:2}{{A.17}{63}{Proofs}{equation.1.A.1.17}{}}
+\newlabel{pp:3}{{A.18}{63}{Proofs}{equation.1.A.1.18}{}}
+\newlabel{pp:4}{{A.19}{63}{Proofs}{equation.1.A.1.19}{}}
+\newlabel{pp:5}{{A.20}{63}{Proofs}{equation.1.A.1.20}{}}
+\newlabel{aux:2}{{A.21}{63}{Proofs}{equation.1.A.1.21}{}}
+\citation{sutton2000policy}
+\newlabel{pp:6}{{A.22}{64}{Proofs}{equation.1.A.1.22}{}}
+\newlabel{pp:7}{{A.23}{64}{Proofs}{equation.1.A.1.23}{}}
+\newlabel{pp:8}{{A.24}{64}{Proofs}{equation.1.A.1.24}{}}
+\newlabel{pp:9}{{A.25}{64}{Proofs}{equation.1.A.1.25}{}}
+\newlabel{aux:3}{{A.26}{64}{Proofs}{equation.1.A.1.26}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.4.1}Lemma}{64}{lemma.dummy.48}}
+\citation{sutton2000policy}
+\newlabel{aux:4}{{A.27}{65}{Proofs}{equation.1.A.1.27}{}}
+\newlabel{pp:10}{{A.28}{65}{Proofs}{equation.1.A.1.28}{}}
+\newlabel{pp:11}{{A.29}{65}{Proofs}{equation.1.A.1.29}{}}
+\newlabel{eq:gauss}{{A.30}{65}{Proofs}{equation.1.A.1.30}{}}
+\newlabel{pp:14}{{A.31}{65}{Proofs}{equation.1.A.1.31}{}}
+\newlabel{aux:5}{{A.32}{65}{Proofs}{equation.1.A.1.32}{}}
+\citation{srinivas2010gaussian}
+\newlabel{pp:12}{{A.33}{66}{Proofs}{equation.1.A.1.33}{}}
+\newlabel{pp:13}{{A.34}{66}{Proofs}{equation.1.A.1.34}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.2}Theorem}{66}{theorem.dummy.50}}
+\newlabel{aux:6}{{A.35}{66}{Proofs}{equation.1.A.1.35}{}}
+\newlabel{aux:7}{{A.36}{67}{Proofs}{equation.1.A.1.36}{}}
+\newlabel{aux:8}{{A.37}{67}{Proofs}{equation.1.A.1.37}{}}
+\newlabel{aux:9}{{A.38}{67}{Proofs}{equation.1.A.1.38}{}}
+\newlabel{pp:15}{{A.39}{67}{Proofs}{equation.1.A.1.39}{}}
+\newlabel{pp:16}{{A.40}{67}{Proofs}{equation.1.A.1.40}{}}
+\newlabel{aux:10}{{A.41}{67}{Proofs}{equation.1.A.1.41}{}}
+\newlabel{pp:17}{{A.42}{68}{Proofs}{equation.1.A.1.42}{}}
+\newlabel{pp:18}{{A.43}{68}{Proofs}{equation.1.A.1.43}{}}
+\newlabel{pp:19}{{A.44}{68}{Proofs}{equation.1.A.1.44}{}}
+\newlabel{pp:20}{{A.45}{68}{Proofs}{equation.1.A.1.45}{}}
+\newlabel{pp:21}{{A.46}{68}{Proofs}{equation.1.A.1.46}{}}
+\newlabel{pp:22}{{A.47}{68}{Proofs}{equation.1.A.1.47}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.3}Theorem}{68}{theorem.dummy.52}}
+\newlabel{aux:11}{{A.48}{69}{Proofs}{equation.1.A.1.48}{}}
+\newlabel{pp:23}{{A.49}{69}{Proofs}{equation.1.A.1.49}{}}
+\newlabel{pp:24}{{A.50}{69}{Proofs}{equation.1.A.1.50}{}}
+\newlabel{aux:12}{{A.51}{69}{Proofs}{equation.1.A.1.51}{}}
+\newlabel{pp:25}{{A.52}{70}{Proofs}{equation.1.A.1.52}{}}
+\newlabel{pp:26}{{A.53}{70}{Proofs}{equation.1.A.1.53}{}}
+\newlabel{pp:27}{{A.54}{70}{Proofs}{equation.1.A.1.54}{}}
+\newlabel{pp:28}{{A.55}{70}{Proofs}{equation.1.A.1.55}{}}
+\newlabel{pp:29}{{A.56}{70}{Proofs}{equation.1.A.1.56}{}}
+\newlabel{pp:30}{{A.57}{70}{Proofs}{equation.1.A.1.57}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {A.1.1}Lemma}{70}{lemma.1.A.1.1}}
+\citation{hershey2007approximating}
+\newlabel{eq:strangeBound}{{A.59}{71}{Proofs}{equation.1.A.1.59}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {4.1.1}Theorem}{71}{theorem.dummy.55}}
 \citation{*}
 \bibstyle{acm}
 \bibdata{Bibliography/bibliography}
@@ -277,7 +448,7 @@
 \bibcite{atan2015global}{8}
 \bibcite{auer2002using}{9}
 \bibcite{auer2002finite}{10}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{46}{chapter*.4}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{73}{chapter*.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{auer2010ucb}{11}

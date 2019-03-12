@@ -29,4 +29,17 @@
 \contentsline {subsection}{\numberline {2.2.1}Undirected Exploration}{38}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Count-based exploration and Intrinsic Motivation}{40}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Posterior Sampling}{44}{subsection.2.2.3}
-\contentsline {chapter}{Bibliography}{46}{chapter*.4}
+\contentsline {chapter}{\numberline {3}Optimistic Policy Optimization via Multiple Importance Sampling}{46}{chapter.3}
+\contentsline {section}{\numberline {3.1}Robust Importance Sampling Estimation}{46}{section.3.1}
+\contentsline {section}{\numberline {3.2}Problem Formalization}{48}{section.3.2}
+\contentsline {section}{\numberline {3.3}Algorithms}{50}{section.3.3}
+\contentsline {section}{\numberline {3.4}Regret Analysis}{51}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Discrete arm set}{52}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Compact arm set}{53}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Discretization}{54}{subsection.3.4.3}
+\contentsline {chapter}{\numberline {4}Numerical Simulations}{56}{chapter.4}
+\contentsline {section}{\numberline {4.1}Practical Aspects}{56}{section.4.1}
+\contentsline {chapter}{Appendices}{58}{section*.4}
+\contentsline {chapter}{\numberline {A}Implementation}{58}{Appendix.1.A}
+\contentsline {section}{\numberline {A.1}Proofs}{58}{section.1.A.1}
+\contentsline {chapter}{Bibliography}{73}{chapter*.5}

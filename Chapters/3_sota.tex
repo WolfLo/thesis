@@ -1,12 +1,12 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Exploration Techniques}
+\chapter{Exploration Techniques} \label{ch:sota}
 
 In this chapter we present the state of the art of \gls{MAB}s and \gls{RL} techniques that focus on the exploration challenge arising in these learning frameworks. While sketching a sort of taxonomy of the exploration techniques, we describe some emblematic algorithms for each category, with particular attention to those that inspired our work. Indeed, the exploration problem is the main target of our research project and our main contributions, described in Chapters (\ref{ch:core}-\ref{ch:experiments}), have been designed after a careful literature review. In this chapter we try to report the most relevant insights collected along this review. \\
 Following the taxonomy outlined by Sebatian Thrun in 1992 for the \gls{RL} framework  \cite{thrun1992efficient}, we divide both \gls{MAB}s and \gls{RL} exploration techniques in two families of exploration schemes: \emph{undirected} and \emph{directed} exploration.
 While the former family is closely related to random walk exploration, directed exploration techniques memorize exploration-specific knowledge which is used for guiding the exploration search. In many finite deterministic domains, any learning technique based on undirected exploration is inefficient in terms of learning time, i.e. learning time is expected to scale exponentially with the size of the state space \cite{whitehead1991study}. For all these domains, reinforcement learning using a directed technique can always be performed in polynomial time, demonstrating the important role of exploration in reinforcement learning \cite{thrun1992efficient}. However, an important remark is that we do not address the problem of pure exploration, in which there is no price to be paid for exploration and the only objective is to find the reward-maximizing actions. Instead, we investigate effective exploration in the more general context of learning described in the previous chapter (\ref{eedilemma}), where the agent faces the exploration-exploitation dilemma all along its journey. How can the agent achieve a better balance between exploration and exploitation? How can it explore more effectively? Can it improve the effectiveness of its exploration as long as it goes along the learning process? We will try to answer these questions in the two sections of this chapter. Each of the sections will start with an overview on undirected exploration techniques, then directed strategies will be investigated more thoroughly.
 
-\section{Exploration in Multi Armed Bandits}
+\section{Exploration in Multi Armed Bandits} \label{sec:expinmab}
 
 \subsection{Undirected Exploration}
 %372
@@ -109,7 +109,7 @@ informed decision. On the other hand, taking a pessimistic view of the new optio
 this leads to sublinear regret is simple. Assuming the upper confidence bound assigned to the optimal arm is indeed an overestimate, then another arm can only be played if its upper confidence bound is larger than that of the optimal arm, which in turn is larger than the mean of the optimal arm. And yet this cannot happen too often because the additional data provided by playing a suboptimal arm means that the upper confidence bound for this arm will eventually fall below that of the optimal arm.\\
 The next algorithm that we discuss will be useful to better understand the \gls{OFU} principle and its exploration power, with application to a wider set of arms.
 
-\subsection{ Hierarchical Optimistic Optimization}
+\subsection{ Hierarchical Optimistic Optimization} \label{sub:hoo}
 In 2011, Bubeck et al. \cite{bubeck2011x} proposed a novel optimistic arm selection strategy whose regret improved upon previous results on continuum and Lipschitz bandits (\eg, \cite{kleinberg2005nearly, kleinberg2008multi}), extending and generalizing the environment class of application to arbitrary topological spaces. In particular, the setting is that of $\mathcal{X}$-armed bandits, introduced in (\ref{sub:xarmedbandits}). This algorithm is particularly interesting to us for two reasons:
 
 \begin{enumerate}
