@@ -39,7 +39,10 @@
 \contentsline {subsection}{\numberline {3.4.3}Discretization}{54}{subsection.3.4.3}
 \contentsline {chapter}{\numberline {4}Numerical Simulations}{56}{chapter.4}
 \contentsline {section}{\numberline {4.1}Practical Aspects}{56}{section.4.1}
-\contentsline {chapter}{Appendices}{58}{section*.4}
-\contentsline {chapter}{\numberline {A}Implementation}{58}{Appendix.1.A}
-\contentsline {section}{\numberline {A.1}Proofs}{58}{section.1.A.1}
-\contentsline {chapter}{Bibliography}{73}{chapter*.5}
+\contentsline {subsection}{\numberline {4.1.1}Divergence Between Gaussian Multivariate Distributions}{57}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Uniformly Bounded R\IeC {\'e}nyi divergence}{58}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Action-based setting}{58}{section.4.2}
+\contentsline {section}{\numberline {4.3}Linear Quadratic Gaussian Regulator}{60}{section.4.3}
+\contentsline {chapter}{Appendices}{61}{section*.4}
+\contentsline {chapter}{\numberline {A}Proofs}{61}{Appendix.1.A}
+\contentsline {chapter}{Bibliography}{76}{chapter*.5}

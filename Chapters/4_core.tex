@@ -88,7 +88,7 @@ According to Theorem (\ref{lem:thrucatedconcentration}), the following \textit{i
 	&B_t^{\epsilon}(\vx,\delta_t) \coloneqq 
 	\wc{\mu}_t(\vx) \nonumber\\
 	&\quad+\norm[\infty]{f}\left(\sqrt{2}+\frac{4}{3}\right)
-	\left(\frac{d_{1+\epsilon}(p_{\vx_t}\|\Phi_{t})\log\frac{1}{\delta_t}}{t}\right)^{\frac{\epsilon}{1+\epsilon}},
+	\left(\frac{d_{1+\epsilon}(p_{\vx_t}\|\Phi_{t})\log\frac{1}{\delta_t}}{t}\right)^{\frac{\epsilon}{1+\epsilon}}, \label{eq:optimistindex}
 \end{align}
 is an upper bound on $\mu(\vx)$ with probability at least $1-\delta_t$, \ie an upper confidence bound. The \gls{OPTIMIST} algorithm simply selects, at each iteration $t$, the arm with the largest value of the index $B_t^{\epsilon}(\vx)$, breaking ties deterministically. The pseudocode is provided in Algorithm (\ref{alg:1}). The initial arm $\vx_0$ is arbitrary, as no prior information is available. The regret analysis of Section (\ref{sec:regret}) will provide a confidence schedule $(\delta_t)_{t=1}^T$. Knowledge of the actual horizon $T$ is not needed. Although we can use any $\epsilon\in (0,1]$, we suggest to use $\epsilon=1$ in practice, as it yields the more common $2$-\Renyi divergence. To be able to compute the indexes (or to perform any kind of index maximization), the algorithm needs to store all the $\vx_t$ together with the observed pay-offs $f(z_t)$, hence $\mathcal{O}(Td)$ space is required, where $d$ is the dimensionality of the arm space $\Xspace$ (not to be confused with cardinality $|\Xspace|$, which may be infinite). 
 
@@ -130,7 +130,7 @@ First, we need the following assumption on the \Renyi divergence:
 	where $\Phi_t = \frac{1}{t}\sum_{k=0}^{t-1}p_{\vx_k}$,
 \end{restatable}
 %
-which can be easily enforced through careful policy (or hyperpolicy) design. \textcolor{red}{InternalRef}
+which can be easily enforced through careful policy (or hyperpolicy) design, as discussed in \ref{subsec:boundrenyi}.
 
 \subsection{Discrete arm set}
 We start from the discrete case, where $|\mathcal{X}| = K \in \Naturals_{+}$.

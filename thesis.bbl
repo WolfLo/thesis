@@ -385,6 +385,12 @@
 \newblock In {\em Advances in neural information processing systems\/} (2009),
   pp.~849--856.
 
+\bibitem{kong1992note}
+{\sc Kong, A.}
+\newblock A note on importance sampling using standardized weights.
+\newblock {\em University of Chicago, Dept. of Statistics, Tech. Rep 348\/}
+  (1992).
+
 \bibitem{kupcsik2013data}
 {\sc Kupcsik, A.~G., Deisenroth, M.~P., Peters, J., and Neumann, G.}
 \newblock Data-efficient generalization of robot skills with contextual policy
@@ -430,6 +436,12 @@
 {\sc Magureanu, S., Combes, R., and Proutiere, A.}
 \newblock Lipschitz bandits: Regret lower bounds and optimal algorithms.
 \newblock {\em arXiv preprint arXiv:1405.4758\/} (2014).
+
+\bibitem{martino2017effective}
+{\sc Martino, L., Elvira, V., and Louzada, F.}
+\newblock Effective sample size for importance sampling based on discrepancy
+  measures.
+\newblock {\em Signal Processing 131\/} (2017), 386--401.
 
 \bibitem{masooddiversity}
 {\sc Masood, M.~A., and Doshi-Velez, F.}

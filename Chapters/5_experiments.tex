@@ -1,23 +1,88 @@
 % !TEX root = ../thesis.tex
 
 \chapter{Numerical Simulations} \label{ch:experiments}
+In this chapter, we start by discussing two practical aspects related to the experimental applications of the algorithms described in Chapter (\ref{ch:core}). Then, we proceed by showing the results of our numerical simulations on three \gls{RL} benchmarking challenges: the \gls{LQG}, the continuous mountain car problem and the inverted pendulum.
+
+This allows the use of a deterministic controller $\pi_{\vtheta}: \vtheta\in\Theta\subseteq\Reals^m$ for sampling the trajectories, \ie $\pi_{\vtheta}(a|s)=\delta(a-\upsilon_{\vtheta}(s))$, where $\upsilon_{\vtheta}$ is a deterministic function of the state $s$, \eg \cite{sehnke2010parameter}. The policy parameters are sampled from a distribution $\nu_{\vxi}\in\delta(\Theta)$, called \emph{hyper-policy}, where $\vxi\in\Xi\subseteq\Reals^d$ are the hyper-policy parameters, or \emph{hyper-parameters}.
 
 \section{Practical Aspects} \label{sec:practical}
+In the numerical simulations that will be presented in the following sections we place ourselves in the \emph{parameter-based} \gls{PS} setting (see Section (\ref{sec:problem}) for details). We adopt Gaussian distributions as target and behavioural hyperpolicies $\nu_{\vxi}\sim \mathcal{N}(\vmu,\Cov)$, from which the policy parameters $\vtheta$ are drawn. In particular, we will adopt diagonal hyperpolicies $\nu_{\vxi}$, with hyperparameters $\vxi=\{\vtheta,\Cov\}$, of the form: 
 
-\begin{remark}
-Assumption (\ref{ass:boundrenyi}) is easy to guarantee in our case of application: a compact arm set. In fact, the the maximum distance between policy hyperparameters is bounded in a compact arm set. Depending on the parametrization, one must ensure that the \Renyi divergence is also bounded. As an example, for Gaussian hyperpolicies with fixed standard deviation there is no such problem, as the Renyi divergence [1] is a continuous function of the mean parameter (a continuous function on a compact set is bounded). If the standard deviation (or covariance matrix) is also part of the parameter set, additional care must be placed on the allowed range. For $\epsilon=1$, the std of the target distribution must not be larger than twice that of the behavioral for the divergence to be finite. When considering multiple behavioral distributions (MIS), it sufficies to have one of them fullfilling the requirement (Appendix A). Hence, given a minimum std $\sigma_0 > 0$, it is enough to constrain the search within $[\sigma_0, 2*\sigma_0]$. We also suggest to initialize the first behavioral distribution with $2*\sigma_0$, since the algorithm will tend to focus on smaller stds (i.e., less stochastic behavior) as the learning proceeds. Similar constraints can be defined for other kinds of hyperpolicies.
-\end{remark}
+\begin{align}
+\nu_{\vxi}(\vtheta) & = \frac{1}{\sqrt{(2\pi)^m |\Cov |}}\exp\left(
+	-\frac{1}{2} (\vtheta - \vmu )^T\Cov^{-1}(\vtheta - \vmu )\right)\\
+	& = \frac{1}{\sqrt{(2\pi)^m \prod_{i=1}^{m} \sigmai^2}}\exp\left(
+	-\frac{1}{2} \sum\limits_{i=1}^m\frac{(\thetai-\mui)^2}{\sigmai^2}\right).
+\end{align}
 
-\algoname requires at each iteration to compute the exponentiated \Renyi divergence between the currently considered distribution $p_{\vx}$ 
-and the mixture $\Phi_t$, \ie $d_{1+\epsilon}(p_{\vx}\|\Phi_t)$. Even for Gaussian distributions, this quantity cannot be obtained in closed form, while
+This allows the use of a deterministic controller $\pi_{\vtheta}: \vtheta\in\Theta\subseteq\Reals^m$ for sampling the trajectories, that we define as $\pi_{\vtheta}(a|s)=\delta(a-\vtheta s)$. This parameter-based setting follows the one adopted in \gls{PGPE}, as described in (\ref{subsec:algorithms}). \\
+This distribution choice for our target and behavioural hyperpolicies allows a comfortable computation of the robust balance heuristic estimator $\wc{\mu}_t(\vx)$ defined in Equation (\ref{eq:wcmu}). Unfortunately, that is not all for the computation of the upper bound $B_t^{\epsilon}(\vx,\delta_t)$, that we need to optimize in each iteration $t$ of the \gls{OPTIMIST} algorithm (\ref{eq:optimistindex}).
+
+\subsection{Divergence Between Gaussian Multivariate Distributions}
+
+Indeed, \gls{OPTIMIST} requires also to compute the exponentiated \Renyi divergence between the currently considered distribution $p_{\vx}$ 
+and the mixture $\Phi_t$, \ie $d_{1+\epsilon}(p_{\vx}\|\Phi_t)=d_{1+\epsilon}(\nu_{\vxi}\|\Phi_t)$, at each iteration. Even for Gaussian distributions, this quantity cannot be obtained in closed form, while
 the \Renyi divergence between Gaussians can be computed exactly. In this section, we provide an upper bound for computing the exponentiated \Renyi divergence
 between a generic distribution and a mixture.
 \begin{restatable}{theorem}{armonic}\label{th:armonic}
 	Let $P$ be a probability measure and $\Phi = \sum_{k=1}^K \beta_k Q_k$, with $\beta_k \in [0,1]$ and $\sum_{k=1}^K \beta_k =1$, be a finite mixture of the
 	probability measures $\{Q_k\}_{k=1}^K$. Then, for any $\alpha \ge 1$, the exponentiated $\alpha$-\Renyi divergence can be bounded as: 
-	\begin{equation*}
+	\begin{equation}
 	d_{\alpha}(P \| \Phi) \le \frac{1} {\sum_{k=1}^K \frac{ \beta_k}{ d_{\alpha}(P \| Q_k)}}.
-	\end{equation*}
+	\end{equation}
 \end{restatable}
 
-In Appendix \ref{app:proof}, we prove a more general result for the case when also $P$ is a mixture.
+The proof can be found in Appendix~\ref{app:proof}. We can easily compute this upper bound of the exponentiated \Renyi divergence between the target distribution and the mixture of behavioural distributions. In fact, all the hyperpolicies employed are multivariate diagonal Gaussian distributions, and the \Renyi divergence between multivariate Gaussian distributions is known \cite{gil2013renyi}. Let $P\sim\mathcal{N}(\vmu_P,\Cov_P)$ and $Q\sim\mathcal{N}(\vmu_Q,\Cov_Q)$ and $\alpha\in[0,\infty]$:
+
+\begin{align} \label{eq:gaussianrenyi}
+D_{\alpha}(P||Q) &= \frac{1}{\alpha}(\vmu_P-\vmu_Q)^T\Cov_\alpha^{-1}(\vmu_P-\vmu_Q)-\frac{1}{2(\alpha-1)}\log\frac{\det(\Cov_{alpha})}{\det(\Cov_P)^{1-\alpha}\det(\Cov_Q)^{\alpha}}.
+\end{align}
+ 
+
+\subsection{Uniformly Bounded Rényi divergence} \label{subsec:boundrenyi}
+
+The other concern about the exponentiated \Renyi divergence between the target and mixture of behavioural hyperpolicies is to make it compliant with Assumption (\ref{ass:boundrenyi}), \ie uniformly bounded. Without this assumption, the results on \gls{OPTIMIST} regret are no more guaranteed. This assumption can be easily respected by careful hyperpolicy design. First, note that the results on the regret are provided for a compact arm set, hence the maximum distance among the parameters is bounded. Additionally, we must ensure that the \Renyi divergence is bounded. As showed in Theorem (\ref{th:armonic}), considering the divergence between a target distribution and a mixture of behavioural distributions it is enough that the divergence is finite between the target and one of the components of the mixture, hence we will focus on the constraints between behavioural/target pairs. As an example, for multivariate diagonal Gaussian distributions with fixed covariance there is no such problem, as the Renyi divergence is a continuous function of the mean parameter \cite{gil2013renyi}. As we know, a continuous function on a compact set is bounded. If the standard deviation (or covariance matrix) is also part of the parameter set, additional constraints are needed, as one can understand by examining Equation (\ref{gaussianrenyi}). For $\epsilon=1$, the standard deviation $\sigma_P$ of the target distribution must not be larger than twice that of the behavioural ($\sigma_Q$) for the divergence to be finite. Hence, given a minimum $\sigma_{0} > 0$, it is enough to constrain the search within $[\sigma_0, 2*\sigma_0]$. We also suggest initializing the first behavioural distribution with $\sigma_Q=2*\sigma_0$, so that the algorithm will move towards smaller standard deviations. This will result in a less stochastic behaviour. Similar constraints can be defined for other kinds of policies \cite{gil2013renyi}. 
+
+\section{Action-based setting}
+
+The reader may wonder why we did not carry out numerical simulations in the \emph{action-based} setting. Actually, we did make some experiments, but we briefly understood that there was a major obstacle represented by the computation of the \Renyi divergence. In fact, although what has been discussed in this section apply also to the policies (not only hyperpolicies), the loss function can not be directly optimized since computing $d_{1+\epsilon}(p_{\vx}\|\Phi_t)$ requires the approximation of an integral over the trajectory space and, for stochastic environments, to know the transition model $\Tran$, which is unknown in a model free setting. For the sake of clarity, we report here the definition of the \Renyi divergence between the distributions $p_{\vtheta'}(\tau)$ and $p_{\vtheta}(\tau)$ over trajectories $\tau\in\Tau$, induced by the target ($\pi_{\vtheta'}$) and behavioural ($\pi_{\vtheta}$) policies: \ref{eq:renyi}
+
+\begin{align}
+	d_{\alpha}(p_{\vtheta'}|p_{\vtheta}) = \left(\int_{\Tau}p_{\vtheta}(\tau)\left(\frac{p_{\vtheta'}(\tau)}{p_{\vtheta}(\tau)}\right)^{\alpha}\de \tau\right)^{\frac{1}{\alpha-1}}.
+\end{align}
+
+Simple bounds to this quantity, like $d_{\alpha}(p_{\vtheta'}|p_{\vtheta})\leq\sup_{s\in\Sspace}d_{\alpha}(\pi_{\vtheta'}(\cdot|s)|\pi_{\vtheta}(\cdot|s))$ , besides being hard to compute due to the presence of the supremum, are extremely conservative since the Rényi divergence is raised to the horizon $H$. In our experiments, we tested \gls{OPTIMIST} over the \gls{LQG} problem by estimating the exponentiated 2-\Renyi divergence between a proposal ($Q$) and a target ($P$) distribution as follows:
+
+\begin{align}
+d_{2}(P|Q)=t / \wh{ESS}
+\end{align}
+
+where $t$ is the number of samples available, which in our case corresponds to the iteration step number, $w_{P/Q}$ is the importance weight, and $\wh{ESS}$ \cite{martino2017effective} is a well known estimator of the \emph{effective sample size}(ESS) \cite{kong1992note}, given by:
+
+\begin{align}
+\wh{ESS} = \frac{\norm[1]{w_{P/Q}}^2}{\norm[2]{w_{P/Q}}^2}
+\end{align}
+
+Ideed, the effective sample size is defined as \cite{kong1992note}
+
+\begin{align}
+ESS = \frac{t}{\Var_{x\sim Q}[w_{P/Q}(x)]+1}=\frac{t}{d_{2}(P|Q)}.
+\end{align}
+
+However, its estimator $\wh{ESS}$ is very rough and turned out to be useless in our case. As we show in Figure (BOOO), the main problem about $\wh{ESS}$ was that  it did not allow to share the information obtained by a behavioural $Q$ with distant target distributions $P$...Moreover, by estimating the the \Renyi from the samples we would lose our theoretical guarantees on the regret.
+
+\section{Linear Quadratic Gaussian Regulator}
+The \gls{LQG} problem \cite{peters2008reinforcement} is a continuous \gls{MDP} which represents a useful testing ground for our algorithms, mainly because of its simplicity. At each time-step $h$, the transition model and reward function are given by:
+
+\begin{align}
+s_h\sim\mathcal{N}(s_h + a_h, \sigma_{LQG}^2), \\
+r_h=-0.5(s_h^2 + a_h^2).
+\end{align}
+
+Intuitively, in this problem the agent has to bring its state to zero, while facing a cost related proportional to the magnitude of its actions. 
+As mentioned in the previous section, in all our experiments we employ diagonal Gaussian hyperpolicies. In this particular case, the hyperpolicy is univariate $\nu_{\xi} = \mathcal{N}( \xi, \sigma^2)$, where $\xi$ is the mean parameter to be learned and $\sigma$ can be either fixed or learnable as well.
+For implementation reasons, we consider the case in which the state space is limited to $\mathcal{S}=[-4,4]$, the action space is $\mathcal{A}=[-4,4]$ and the horizon is limited to $H=20$. \\
+The goal of our numerical simulations on \gls{LQG} is twofold. First, we need a simple continuous control problem to understand the functioning of our algorithms. Second, we want to compare \gls{OPTIMIST} with two classical \gls{MAB} algorithms presented in Chapter \ref{ch:sota}: \gls{UCB}1 (Section ()) and \gls{GPUCB} Section () when the parameter space $\Xi$ is discrete. 
+
+For this purpose we consider a uniform discretization of the interval $[-1,1]$ made of 100 arms. All algorithms are run with confidence level $\delta=0.2$.
+In Figure~\ref{fig:lqg}, we show the cumulative regret averaged over 30 runs of \algoname compared with UCB1 and GPUCB. We can see that our algorithm significantly outperforms UCB1. Indeed, \algoname is able to exploit the structure of arms, \ie hyperpolicies, by means of the MIS estimation, whereas UCB1 does not make any assumption on arm correlation. On the contrary, GPUCB shows a better performance \wrt to \algoname. We point out that GPUCB requires to specify, at the beginning of learning, the kernel of the Gaussian Process (GP) from which the payoff function is sampled. We employed the default scikit-learn kernel (RBF) which invalidates all theoretical guarantees, as our payoff is not actually sampled from a GP.\footnote{Indeed, GPUCB showed a significantly more exploitative behavior \wrt UCB1 and \algoname in the experiment.}

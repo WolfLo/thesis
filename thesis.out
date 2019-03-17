@@ -38,7 +38,10 @@
 \BOOKMARK [2][-]{subsection.3.4.3}{Discretization}{section.3.4}% 38
 \BOOKMARK [0][-]{chapter.4}{Numerical Simulations}{}% 39
 \BOOKMARK [1][-]{section.4.1}{Practical Aspects}{chapter.4}% 40
-\BOOKMARK [0][-]{section*.4}{Appendices}{}% 41
-\BOOKMARK [0][-]{Appendix.1.A}{Implementation}{}% 42
-\BOOKMARK [1][-]{section.1.A.1}{Proofs}{Appendix.1.A}% 43
-\BOOKMARK [0][-]{chapter*.5}{Bibliography}{}% 44
+\BOOKMARK [2][-]{subsection.4.1.1}{Divergence Between Gaussian Multivariate Distributions}{section.4.1}% 41
+\BOOKMARK [2][-]{subsection.4.1.2}{Uniformly Bounded R\351nyi divergence}{section.4.1}% 42
+\BOOKMARK [1][-]{section.4.2}{Action-based setting}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.3}{Linear Quadratic Gaussian Regulator}{chapter.4}% 44
+\BOOKMARK [0][-]{section*.4}{Appendices}{}% 45
+\BOOKMARK [0][-]{Appendix.1.A}{Proofs}{}% 46
+\BOOKMARK [0][-]{chapter*.5}{Bibliography}{}% 47
