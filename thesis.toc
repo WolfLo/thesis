@@ -11,38 +11,38 @@
 \contentsline {section}{\numberline {1.3}Reinforcement Learning}{11}{section.1.3}
 \contentsline {subsection}{\numberline {1.3.1}Problem formulation}{11}{subsection.1.3.1}
 \contentsline {subsection}{\numberline {1.3.2}Taxonomy}{12}{subsection.1.3.2}
-\contentsline {section}{\numberline {1.4}Policy Search}{14}{section.1.4}
+\contentsline {section}{\numberline {1.4}Policy Search}{15}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Overview}{15}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Policy gradient}{16}{subsection.1.4.2}
 \contentsline {subsection}{\numberline {1.4.3}Policy gradient estimation}{19}{subsection.1.4.3}
 \contentsline {subsection}{\numberline {1.4.4}Algorithms}{21}{subsection.1.4.4}
-\contentsline {section}{\numberline {1.5}Multiple Importance Sampling}{24}{section.1.5}
-\contentsline {chapter}{\numberline {2}Exploration Techniques}{27}{chapter.2}
-\contentsline {section}{\numberline {2.1}Exploration in Multi Armed Bandits}{28}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Undirected Exploration}{28}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Count-based exploration and Upper Confidence Bound}{29}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Optimism in the Face of Uncertainty}{31}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4} Hierarchical Optimistic Optimization}{32}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}Posterior Sampling}{35}{subsection.2.1.5}
+\contentsline {section}{\numberline {1.5}Multiple Importance Sampling}{25}{section.1.5}
+\contentsline {chapter}{\numberline {2}Exploration Techniques}{28}{chapter.2}
+\contentsline {section}{\numberline {2.1}Exploration in Multi Armed Bandits}{29}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Undirected Exploration}{29}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Count-based exploration and Upper Confidence Bound}{30}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Optimism in the Face of Uncertainty}{32}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4} Hierarchical Optimistic Optimization}{33}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Posterior Sampling}{36}{subsection.2.1.5}
 \contentsline {subsection}{\numberline {2.1.6}Gaussian Process Upper Confidence Bound}{37}{subsection.2.1.6}
-\contentsline {section}{\numberline {2.2}Exploration in Reinforcement Learning}{38}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Undirected Exploration}{38}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Count-based exploration and Intrinsic Motivation}{40}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Posterior Sampling}{44}{subsection.2.2.3}
-\contentsline {chapter}{\numberline {3}Optimistic Policy Optimization via Multiple Importance Sampling}{46}{chapter.3}
-\contentsline {section}{\numberline {3.1}Robust Importance Sampling Estimation}{46}{section.3.1}
-\contentsline {section}{\numberline {3.2}Problem Formalization}{48}{section.3.2}
-\contentsline {section}{\numberline {3.3}Algorithms}{50}{section.3.3}
-\contentsline {section}{\numberline {3.4}Regret Analysis}{51}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Discrete arm set}{52}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Compact arm set}{53}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Discretization}{54}{subsection.3.4.3}
-\contentsline {chapter}{\numberline {4}Numerical Simulations}{56}{chapter.4}
-\contentsline {section}{\numberline {4.1}Practical Aspects}{56}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Divergence Between Gaussian Multivariate Distributions}{57}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Uniformly Bounded R\IeC {\'e}nyi divergence}{58}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Action-based setting}{58}{section.4.2}
-\contentsline {section}{\numberline {4.3}Linear Quadratic Gaussian Regulator}{60}{section.4.3}
-\contentsline {chapter}{Appendices}{61}{section*.4}
-\contentsline {chapter}{\numberline {A}Proofs}{61}{Appendix.1.A}
-\contentsline {chapter}{Bibliography}{76}{chapter*.5}
+\contentsline {section}{\numberline {2.2}Exploration in Reinforcement Learning}{40}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Undirected Exploration}{40}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Count-based exploration and Intrinsic Motivation}{41}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Posterior Sampling}{45}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {3}Optimistic Policy Optimization via Multiple Importance Sampling}{47}{chapter.3}
+\contentsline {section}{\numberline {3.1}Robust Importance Sampling Estimation}{47}{section.3.1}
+\contentsline {section}{\numberline {3.2}Problem Formalization}{49}{section.3.2}
+\contentsline {section}{\numberline {3.3}Algorithms}{51}{section.3.3}
+\contentsline {section}{\numberline {3.4}Regret Analysis}{52}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Discrete arm set}{53}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Compact arm set}{54}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Discretization}{55}{subsection.3.4.3}
+\contentsline {chapter}{\numberline {4}Numerical Simulations}{57}{chapter.4}
+\contentsline {section}{\numberline {4.1}Practical Aspects}{57}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Divergence Between Gaussian Multivariate Distributions}{58}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Uniformly Bounded R\IeC {\'e}nyi divergence}{59}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Action-based setting}{59}{section.4.2}
+\contentsline {section}{\numberline {4.3}Linear Quadratic Gaussian Regulator}{61}{section.4.3}
+\contentsline {chapter}{Appendices}{62}{section*.4}
+\contentsline {chapter}{\numberline {A}Proofs}{62}{Appendix.1.A}
+\contentsline {chapter}{Bibliography}{77}{chapter*.5}

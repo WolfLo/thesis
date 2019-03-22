@@ -57,6 +57,13 @@
 \newblock Finite-time analysis of the multiarmed bandit problem.
 \newblock {\em Machine learning 47}, 2-3 (2002), 235--256.
 
+\bibitem{auer2007logarithmic}
+{\sc Auer, P., and Ortner, R.}
+\newblock Logarithmic online regret bounds for undiscounted reinforcement
+  learning.
+\newblock In {\em Advances in Neural Information Processing Systems\/} (2007),
+  pp.~49--56.
+
 \bibitem{auer2010ucb}
 {\sc Auer, P., and Ortner, R.}
 \newblock Ucb revisited: Improved regret bounds for the stochastic multi-armed

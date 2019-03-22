@@ -77,14 +77,14 @@
 \newlabel{eq:BellmanV}{{1.11}{10}{Value functions}{equation.1.2.11}{}}
 \newlabel{eq:BellmanQ}{{1.13}{10}{Value functions}{equation.1.2.13}{}}
 \citation{sutton2018reinforcement}
-\citation{puterman2014markov}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}Reinforcement Learning}{11}{section.1.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Problem formulation}{11}{subsection.1.3.1}}
-\newlabel{eq:optimalpolicy}{{1.15}{11}{Problem formulation}{equation.1.3.15}{}}
+\citation{puterman2014markov}
 \citation{sutton2018reinforcement}
+\newlabel{eq:optimalpolicy}{{1.15}{12}{Problem formulation}{equation.1.3.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Taxonomy}{12}{subsection.1.3.2}}
 \citation{sutton1991dyna}
 \citation{kupcsik2013data}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Taxonomy}{12}{subsection.1.3.2}}
 \citation{watkins1989learning}
 \citation{rummery1994line}
 \citation{williams1992simple}
@@ -100,11 +100,11 @@
 \citation{lange2012batch}
 \citation{more1994line}
 \citation{deisenroth2013survey}
-\@writefile{toc}{\contentsline {section}{\numberline {1.4}Policy Search}{14}{section.1.4}}
 \citation{sutton2000policy}
 \citation{dayan1997using}
 \citation{kober2009policy}
 \citation{still2012information}
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Policy Search}{15}{section.1.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Overview}{15}{subsection.1.4.1}}
 \newlabel{subsec:PSoverview}{{1.4.1}{15}{Overview}{subsection.1.4.1}{}}
 \newlabel{eq:PSproblem}{{1.16}{15}{Overview}{equation.1.4.16}{}}
@@ -114,14 +114,14 @@
 \newlabel{fig:PStaxonomy}{{1.2}{16}{A taxonomy of \gls {PS} methods \cite {deisenroth2013survey}\relax }{figure.caption.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}Policy gradient}{16}{subsection.1.4.2}}
 \citation{sutton2000policy}
-\citation{williams1992simple}
-\citation{sutton2000policy}
 \newlabel{eq:paramsupdate}{{1.20}{17}{Policy gradient}{equation.1.4.20}{}}
 \@writefile{loe}{\contentsline {theorem}{\numberline {1.4.1}Theorem}{17}{theorem.1.4.1}}
 \newlabel{th:PGtheorem}{{1.4.1}{17}{}{theorem.1.4.1}{}}
 \newlabel{eq:PGtheorem}{{1.21}{17}{}{equation.1.4.21}{}}
-\newlabel{eq:reinforcetrick}{{1.21}{17}{Policy gradient}{equation.1.4.21}{}}
+\citation{williams1992simple}
+\citation{sutton2000policy}
 \citation{amari1998natural1}
+\newlabel{eq:reinforcetrick}{{1.21}{18}{Policy gradient}{equation.1.4.21}{}}
 \newlabel{eq:trajectoryPG}{{1.24}{18}{Policy gradient}{equation.1.4.24}{}}
 \newlabel{eq:logpolicyestimate}{{1.26}{18}{Policy gradient}{equation.1.4.26}{}}
 \citation{amari1998natural1}
@@ -148,23 +148,23 @@
 \citation{zhao2011analysis}
 \citation{sehnke2008policy}
 \citation{sehnke2010parameter}
-\citation{cochran2007sampling}
-\citation{mcbook}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1.4}{\ignorespaces Episodic \gls {PGPE}\relax }}{24}{algorithm.1.4}}
 \newlabel{alg:PGPE}{{1.4}{24}{Episodic \gls {PGPE}\relax }{algorithm.1.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.5}Multiple Importance Sampling}{24}{section.1.5}}
-\newlabel{sec:mis}{{1.5}{24}{Multiple Importance Sampling}{section.1.5}{}}
+\citation{cochran2007sampling}
+\citation{mcbook}
 \citation{mcbook}
 \citation{veach_optimally_1995}
 \citation{veach_optimally_1995}
-\citation{veach_optimally_1995}
-\citation{renyi1961measures}
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Multiple Importance Sampling}{25}{section.1.5}}
+\newlabel{sec:mis}{{1.5}{25}{Multiple Importance Sampling}{section.1.5}{}}
 \newlabel{eq:ise}{{1.37}{25}{Multiple Importance Sampling}{equation.1.5.37}{}}
 \newlabel{eq:mise}{{1.38}{25}{Multiple Importance Sampling}{equation.1.5.38}{}}
-\newlabel{eq:bhw}{{1.39}{25}{Multiple Importance Sampling}{equation.1.5.39}{}}
-\newlabel{eq:bhe}{{1.40}{25}{Multiple Importance Sampling}{equation.1.5.40}{}}
+\citation{veach_optimally_1995}
+\citation{renyi1961measures}
 \citation{cortes2010learning}
 \citation{metelli2018policy}
+\newlabel{eq:bhw}{{1.39}{26}{Multiple Importance Sampling}{equation.1.5.39}{}}
+\newlabel{eq:bhe}{{1.40}{26}{Multiple Importance Sampling}{equation.1.5.40}{}}
 \newlabel{eq:renyi}{{1.41}{26}{Multiple Importance Sampling}{equation.1.5.41}{}}
 \newlabel{thmt@@misevarbound@data}{{\def \theequation {1.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )1.5.\@arabic {\c@equation }}\setcounter {equation}{43}}{26}{Multiple Importance Sampling}{equation.1.5.43}{}}
 \@writefile{loe}{\contentsline {lemma}{\numberline {1.5.1}Lemma}{26}{lemma.1.5.1}}
@@ -173,81 +173,87 @@
 \citation{thrun1992efficient}
 \citation{whitehead1991study}
 \citation{thrun1992efficient}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Exploration Techniques}{27}{chapter.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Exploration Techniques}{28}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:sota}{{2}{27}{Exploration Techniques}{chapter.2}{}}
+\newlabel{ch:sota}{{2}{28}{Exploration Techniques}{chapter.2}{}}
 \citation{lattimore2019bandit}
 \citation{auer2002finite}
 \citation{cesa2017boltzmann}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Exploration in Multi Armed Bandits}{28}{section.2.1}}
-\newlabel{sec:expinmab}{{2.1}{28}{Exploration in Multi Armed Bandits}{section.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Undirected Exploration}{28}{subsection.2.1.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Exploration in Multi Armed Bandits}{29}{section.2.1}}
+\newlabel{sec:expinmab}{{2.1}{29}{Exploration in Multi Armed Bandits}{section.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Undirected Exploration}{29}{subsection.2.1.1}}
 \citation{lai1985asymptotically}
 \citation{agrawal1995continuum}
 \citation{auer2002finite}
-\citation{lattimore2019bandit}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Count-based exploration and Upper Confidence Bound}{29}{subsection.2.1.2}}
-\newlabel{count&UCB}{{2.1.2}{29}{Count-based exploration and Upper Confidence Bound}{subsection.2.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Count-based exploration and Upper Confidence Bound}{30}{subsection.2.1.2}}
+\newlabel{sebsec:count&UCB}{{2.1.2}{30}{Count-based exploration and Upper Confidence Bound}{subsection.2.1.2}{}}
 \@writefile{loe}{\addvspace {10\p@ }}
-\@writefile{loe}{\contentsline {definition}{\numberline {2.1.1}Definition}{29}{definition.2.1.1}}
-\newlabel{def:subgaussianity}{{2.1.1}{29}{}{definition.2.1.1}{}}
+\@writefile{loe}{\contentsline {definition}{\numberline {2.1.1}Definition}{30}{definition.2.1.1}}
+\newlabel{def:subgaussianity}{{2.1.1}{30}{}{definition.2.1.1}{}}
+\citation{lattimore2019bandit}
 \citation{auer2002finite}
 \citation{agrawal1995continuum}
-\@writefile{loe}{\contentsline {theorem}{\numberline {2.1.1}Theorem}{30}{theorem.2.1.1}}
-\@writefile{loe}{\contentsline {corollary}{\numberline {2.1.1}Corollary}{30}{corollary.2.1.1}}
-\newlabel{cor:subgaussian}{{2.1.1}{30}{}{corollary.2.1.1}{}}
-\newlabel{eq:ucb}{{2.4}{30}{Count-based exploration and Upper Confidence Bound}{equation.2.1.4}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {2.1.1}Theorem}{31}{theorem.2.1.1}}
+\@writefile{loe}{\contentsline {corollary}{\numberline {2.1.1}Corollary}{31}{corollary.2.1.1}}
+\newlabel{cor:subgaussian}{{2.1.1}{31}{}{corollary.2.1.1}{}}
+\newlabel{eq:ucb}{{2.4}{31}{Count-based exploration and Upper Confidence Bound}{equation.2.1.4}{}}
 \citation{auer2002finite}
 \citation{auer2010ucb}
 \citation{garivier2011kl}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2.1}{\ignorespaces \gls {UCB}($\delta $) algorithm\relax }}{31}{algorithm.2.1}}
-\newlabel{alg:ucb}{{2.1}{31}{\gls {UCB}($\delta $) algorithm\relax }{algorithm.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Optimism in the Face of Uncertainty}{31}{subsection.2.1.3}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.1}{\ignorespaces \gls {UCB}($\delta $) algorithm\relax }}{32}{algorithm.2.1}}
+\newlabel{alg:ucb}{{2.1}{32}{\gls {UCB}($\delta $) algorithm\relax }{algorithm.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Optimism in the Face of Uncertainty}{32}{subsection.2.1.3}}
 \citation{bubeck2011x}
 \citation{kleinberg2005nearly}
 \citation{kleinberg2008multi}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4} Hierarchical Optimistic Optimization}{32}{subsection.2.1.4}}
-\newlabel{sub:hoo}{{2.1.4}{32}{Hierarchical Optimistic Optimization}{subsection.2.1.4}{}}
-\@writefile{loe}{\contentsline {definition}{\numberline {2.1.2}Definition}{32}{definition.2.1.2}}
-\newlabel{def:treeofcoverings}{{2.1.2}{32}{}{definition.2.1.2}{}}
-\@writefile{loe}{\contentsline {remark}{\numberline {2.1.1}Remark}{33}{remark.2.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4} Hierarchical Optimistic Optimization}{33}{subsection.2.1.4}}
+\newlabel{sub:hoo}{{2.1.4}{33}{Hierarchical Optimistic Optimization}{subsection.2.1.4}{}}
+\@writefile{loe}{\contentsline {definition}{\numberline {2.1.2}Definition}{34}{definition.2.1.2}}
+\newlabel{def:treeofcoverings}{{2.1.2}{34}{}{definition.2.1.2}{}}
+\@writefile{loe}{\contentsline {remark}{\numberline {2.1.1}Remark}{34}{remark.2.1.1}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.2}{\ignorespaces \gls {HOO} algorithm\relax }}{35}{algorithm.2.2}}
+\newlabel{alg:hoo}{{2.2}{35}{\gls {HOO} algorithm\relax }{algorithm.2.2}{}}
 \citation{bubeck2011x}
 \citation{thompson1933likelihood}
 \citation{russo2013eluder}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2.2}{\ignorespaces \gls {HOO} algorithm\relax }}{34}{algorithm.2.2}}
-\newlabel{alg:hoo}{{2.2}{34}{\gls {HOO} algorithm\relax }{algorithm.2.2}{}}
-\@writefile{loe}{\contentsline {assumption}{\numberline {2.1.1}Assumption}{34}{assumption.2.1.1}}
-\newlabel{eq:weaklipschitz}{{2.12}{34}{}{equation.2.1.12}{}}
+\@writefile{loe}{\contentsline {assumption}{\numberline {2.1.1}Assumption}{36}{assumption.2.1.1}}
+\newlabel{eq:weaklipschitz}{{2.12}{36}{}{equation.2.1.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.5}Posterior Sampling}{36}{subsection.2.1.5}}
 \citation{agrawal2013further}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.5}Posterior Sampling}{35}{subsection.2.1.5}}
 \citation{bubeck2012regret}
 \citation{russo2018tutorial}
 \citation{srinivas2010gaussian}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.6}Gaussian Process Upper Confidence Bound}{37}{subsection.2.1.6}}
 \citation{srinivas2010gaussian}
 \citation{williams2006gaussian}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2.3}{\ignorespaces \gls {TS} for Bernoulli MAB with Beta priors\relax }}{36}{algorithm.2.3}}
-\newlabel{alg:bernoulliTS}{{2.3}{36}{\gls {TS} for Bernoulli MAB with Beta priors\relax }{algorithm.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.6}Gaussian Process Upper Confidence Bound}{37}{subsection.2.1.6}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.3}{\ignorespaces \gls {TS} for Bernoulli MAB with Beta priors\relax }}{38}{algorithm.2.3}}
+\newlabel{alg:bernoulliTS}{{2.3}{38}{\gls {TS} for Bernoulli MAB with Beta priors\relax }{algorithm.2.3}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.4}{\ignorespaces \gls {GPUCB}\relax }}{39}{algorithm.2.4}}
+\newlabel{alg:gpucb}{{2.4}{39}{\gls {GPUCB}\relax }{algorithm.2.4}{}}
+\newlabel{eq:gpucbrule}{{3}{39}{\gls {GPUCB}\relax }{algorithm.2.4}{}}
 \citation{sutton2018reinforcement}
 \citation{thrun1992efficient}
 \citation{cesa2017boltzmann}
 \citation{sallans2004reinforcement}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2.4}{\ignorespaces \gls {GPUCB}\relax }}{38}{algorithm.2.4}}
-\newlabel{alg:gpucb}{{2.4}{38}{\gls {GPUCB}\relax }{algorithm.2.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Exploration in Reinforcement Learning}{38}{section.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Undirected Exploration}{38}{subsection.2.2.1}}
 \citation{kappen2005path}
 \citation{ziebart2008maximum}
 \citation{haarnoja2017reinforcement}
 \citation{haarnoja2017reinforcement}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Exploration in Reinforcement Learning}{40}{section.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Undirected Exploration}{40}{subsection.2.2.1}}
+\citation{haarnoja2017reinforcement}
+\citation{haarnoja2018soft}
+\citation{kearns2002near}
+\citation{brafman2002r}
+\citation{auer2007logarithmic}
 \citation{bellemare2016unifying}
 \citation{tang2017exploration}
 \citation{ostrovski2017count}
 \citation{choshen2018dora}
 \citation{bellemare2016unifying}
 \citation{ostrovski2017count}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Count-based exploration and Intrinsic Motivation}{40}{subsection.2.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Count-based exploration and Intrinsic Motivation}{41}{subsection.2.2.2}}
 \citation{ostrovski2017count}
 \citation{oord2016pixel}
 \citation{lopes2012exploration}
@@ -259,198 +265,196 @@
 \citation{blei2017variational}
 \citation{blundell2015weight}
 \citation{houthooft2016vime}
-\newlabel{eq:augmentedreward}{{2.29}{43}{Count-based exploration and Intrinsic Motivation}{equation.2.2.29}{}}
-\newlabel{eq:elb}{{2.30}{43}{Count-based exploration and Intrinsic Motivation}{equation.2.2.30}{}}
 \citation{strens2000bayesian}
 \citation{osband2013more}
 \citation{osband2015bootstrapped}
 \citation{osband2016deep}
 \citation{strens2000bayesian}
 \citation{osband2017posterior}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2.5}{\ignorespaces \gls {VIME}\relax }}{44}{algorithm.2.5}}
-\newlabel{alg:VIME}{{2.5}{44}{\gls {VIME}\relax }{algorithm.2.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Posterior Sampling}{44}{subsection.2.2.3}}
+\newlabel{eq:augmentedreward}{{2.29}{45}{Count-based exploration and Intrinsic Motivation}{equation.2.2.29}{}}
+\newlabel{eq:elb}{{2.30}{45}{Count-based exploration and Intrinsic Motivation}{equation.2.2.30}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Posterior Sampling}{45}{subsection.2.2.3}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.5}{\ignorespaces \gls {VIME}\relax }}{46}{algorithm.2.5}}
+\newlabel{alg:VIME}{{2.5}{46}{\gls {VIME}\relax }{algorithm.2.5}{}}
 \citation{metelli2018policy}
 \citation{ionides2008truncated}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Optimistic Policy Optimization via Multiple Importance Sampling}{46}{chapter.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Optimistic Policy Optimization via Multiple Importance Sampling}{47}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:core}{{3}{46}{Optimistic Policy Optimization via Multiple Importance Sampling}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Robust Importance Sampling Estimation}{46}{section.3.1}}
-\newlabel{sec:robust}{{3.1}{46}{Robust Importance Sampling Estimation}{section.3.1}{}}
-\newlabel{eq:truncatedise}{{3.1}{47}{Robust Importance Sampling Estimation}{equation.3.1.1}{}}
-\newlabel{eq:truncatedmise}{{3.2}{47}{Robust Importance Sampling Estimation}{equation.3.1.2}{}}
-\newlabel{thmt@@truncatedbias@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.1.\@arabic {\c@equation }}\setcounter {equation}{2}}{47}{Robust Importance Sampling Estimation}{equation.3.1.2}{}}
+\newlabel{ch:core}{{3}{47}{Optimistic Policy Optimization via Multiple Importance Sampling}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Robust Importance Sampling Estimation}{47}{section.3.1}}
+\newlabel{sec:robust}{{3.1}{47}{Robust Importance Sampling Estimation}{section.3.1}{}}
+\newlabel{eq:truncatedise}{{3.1}{48}{Robust Importance Sampling Estimation}{equation.3.1.1}{}}
+\newlabel{eq:truncatedmise}{{3.2}{48}{Robust Importance Sampling Estimation}{equation.3.1.2}{}}
+\newlabel{thmt@@truncatedbias@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.1.\@arabic {\c@equation }}\setcounter {equation}{2}}{48}{Robust Importance Sampling Estimation}{equation.3.1.2}{}}
 \@writefile{loe}{\addvspace {10\p@ }}
-\@writefile{loe}{\contentsline {lemma}{\numberline {3.1.1}Lemma}{47}{lemma.3.1.1}}
-\newlabel{thmt@@truncatedbias}{{3.1.1}{47}{}{lemma.3.1.1}{}}
-\newlabel{lem:truncatedbias}{{3.1.1}{47}{}{lemma.3.1.1}{}}
-\newlabel{eq:biastruncated}{{3.3}{47}{}{equation.3.1.3}{}}
-\newlabel{eq:variancetruncated}{{3.4}{47}{}{equation.3.1.4}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.1.1}Lemma}{48}{lemma.3.1.1}}
+\newlabel{thmt@@truncatedbias}{{3.1.1}{48}{}{lemma.3.1.1}{}}
+\newlabel{lem:truncatedbias}{{3.1.1}{48}{}{lemma.3.1.1}{}}
+\newlabel{eq:biastruncated}{{3.3}{48}{}{equation.3.1.3}{}}
+\newlabel{eq:variancetruncated}{{3.4}{48}{}{equation.3.1.4}{}}
 \citation{bubeck2013bandits}
 \citation{bubeck2013bandits}
 \citation{ionides2008truncated}
-\newlabel{thmt@@thrucatedconcentration@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.1.\@arabic {\c@equation }}\setcounter {equation}{4}}{48}{Robust Importance Sampling Estimation}{equation.3.1.4}{}}
-\@writefile{loe}{\contentsline {theorem}{\numberline {3.1.1}Theorem}{48}{theorem.3.1.1}}
-\newlabel{thmt@@thrucatedconcentration}{{3.1.1}{48}{}{theorem.3.1.1}{}}
-\newlabel{lem:thrucatedconcentration}{{3.1.1}{48}{}{theorem.3.1.1}{}}
-\newlabel{eq:1.1}{{3.5}{48}{}{equation.3.1.5}{}}
-\newlabel{eq:1.2}{{3.6}{48}{}{equation.3.1.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Problem Formalization}{48}{section.3.2}}
-\newlabel{sec:problem}{{3.2}{48}{Problem Formalization}{section.3.2}{}}
+\newlabel{thmt@@thrucatedconcentration@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.1.\@arabic {\c@equation }}\setcounter {equation}{4}}{49}{Robust Importance Sampling Estimation}{equation.3.1.4}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.1.1}Theorem}{49}{theorem.3.1.1}}
+\newlabel{thmt@@thrucatedconcentration}{{3.1.1}{49}{}{theorem.3.1.1}{}}
+\newlabel{lem:thrucatedconcentration}{{3.1.1}{49}{}{theorem.3.1.1}{}}
+\newlabel{eq:1.1}{{3.5}{49}{}{equation.3.1.5}{}}
+\newlabel{eq:1.2}{{3.6}{49}{}{equation.3.1.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Problem Formalization}{49}{section.3.2}}
+\newlabel{sec:problem}{{3.2}{49}{Problem Formalization}{section.3.2}{}}
 \citation{kleinberg2013bandits}
-\newlabel{eq:theproblem}{{3.7}{49}{Problem Formalization}{equation.3.2.7}{}}
-\@writefile{loe}{\contentsline {remark}{\numberline {3.2.1}Remark}{49}{remark.3.2.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Algorithms}{50}{section.3.3}}
-\newlabel{sec:algo}{{3.3}{50}{Algorithms}{section.3.3}{}}
-\newlabel{eq:wcmu}{{3.8}{50}{Algorithms}{equation.3.3.8}{}}
-\newlabel{eq:optimistindex}{{3.9}{50}{Algorithms}{equation.3.3.9}{}}
+\newlabel{eq:theproblem}{{3.7}{50}{Problem Formalization}{equation.3.2.7}{}}
+\@writefile{loe}{\contentsline {remark}{\numberline {3.2.1}Remark}{50}{remark.3.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Algorithms}{51}{section.3.3}}
+\newlabel{sec:algo}{{3.3}{51}{Algorithms}{section.3.3}{}}
+\newlabel{eq:wcmu}{{3.8}{51}{Algorithms}{equation.3.3.8}{}}
+\newlabel{eq:optimistindex}{{3.9}{51}{Algorithms}{equation.3.3.9}{}}
 \citation{srinivas2010gaussian}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3.1}{\ignorespaces \gls {OPTIMIST}\relax }}{51}{algorithm.3.1}}
-\newlabel{alg:1}{{3.1}{51}{\gls {OPTIMIST}\relax }{algorithm.3.1}{}}
-\newlabel{line:sampling}{{2}{51}{\gls {OPTIMIST}\relax }{algorithm.3.1}{}}
-\newlabel{line:optstep}{{4}{51}{\gls {OPTIMIST}\relax }{algorithm.3.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Regret Analysis}{51}{section.3.4}}
-\newlabel{sec:regret}{{3.4}{51}{Regret Analysis}{section.3.4}{}}
-\newlabel{eq:inregret}{{3.10}{51}{Regret Analysis}{equation.3.4.10}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3.1}{\ignorespaces \gls {OPTIMIST}\relax }}{52}{algorithm.3.1}}
+\newlabel{alg:1}{{3.1}{52}{\gls {OPTIMIST}\relax }{algorithm.3.1}{}}
+\newlabel{line:sampling}{{2}{52}{\gls {OPTIMIST}\relax }{algorithm.3.1}{}}
+\newlabel{line:optstep}{{4}{52}{\gls {OPTIMIST}\relax }{algorithm.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Regret Analysis}{52}{section.3.4}}
+\newlabel{sec:regret}{{3.4}{52}{Regret Analysis}{section.3.4}{}}
+\newlabel{eq:inregret}{{3.10}{52}{Regret Analysis}{equation.3.4.10}{}}
 \citation{srinivas2010gaussian}
 \citation{bubeck2013bandits}
-\newlabel{eq:regret}{{3.11}{52}{Regret Analysis}{equation.3.4.11}{}}
-\newlabel{thmt@@boundrenyi@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{52}{Regret Analysis}{equation.3.4.11}{}}
-\@writefile{loe}{\contentsline {assumption}{\numberline {3.4.1}Assumption}{52}{assumption.3.4.1}}
-\newlabel{thmt@@boundrenyi}{{3.4.1}{52}{}{assumption.3.4.1}{}}
-\newlabel{ass:boundrenyi}{{3.4.1}{52}{}{assumption.3.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Discrete arm set}{52}{subsection.3.4.1}}
-\newlabel{thmt@@regretdiscrete@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{52}{Discrete arm set}{subsection.3.4.1}{}}
-\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.1}Theorem}{52}{theorem.3.4.1}}
-\newlabel{thmt@@regretdiscrete}{{3.4.1}{52}{}{theorem.3.4.1}{}}
-\newlabel{th:regretdiscrete}{{3.4.1}{52}{}{theorem.3.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Compact arm set}{53}{subsection.3.4.2}}
-\newlabel{thmt@@lipschitz@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{53}{Compact arm set}{subsection.3.4.2}{}}
-\@writefile{loe}{\contentsline {assumption}{\numberline {3.4.2}Assumption}{53}{assumption.3.4.2}}
-\newlabel{thmt@@lipschitz}{{3.4.2}{53}{}{assumption.3.4.2}{}}
-\newlabel{ass:lipschitz}{{3.4.2}{53}{}{assumption.3.4.2}{}}
-\newlabel{thmt@@lipschitzpol@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{53}{Compact arm set}{assumption.3.4.2}{}}
-\@writefile{loe}{\contentsline {lemma}{\numberline {3.4.1}Lemma}{53}{lemma.3.4.1}}
-\newlabel{thmt@@lipschitzpol}{{3.4.1}{53}{}{lemma.3.4.1}{}}
-\newlabel{lem:lispschitzpol}{{3.4.1}{53}{}{lemma.3.4.1}{}}
-\newlabel{eq:lp1}{{3.12}{53}{}{equation.3.4.12}{}}
-\newlabel{eq:lp2}{{3.13}{53}{}{equation.3.4.13}{}}
-\newlabel{thmt@@regretcompact@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{13}}{53}{Compact arm set}{equation.3.4.13}{}}
-\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.2}Theorem}{53}{theorem.3.4.2}}
-\newlabel{thmt@@regretcompact}{{3.4.2}{53}{}{theorem.3.4.2}{}}
-\newlabel{th:regretcompact}{{3.4.2}{53}{}{theorem.3.4.2}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3.2}{\ignorespaces \gls {OPTIMIST}2\relax }}{54}{algorithm.3.2}}
-\newlabel{alg:2}{{3.2}{54}{\gls {OPTIMIST}2\relax }{algorithm.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Discretization}{54}{subsection.3.4.3}}
-\newlabel{thmt@@regretdiscretized@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{13}}{54}{Discretization}{subsection.3.4.3}{}}
-\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.3}Theorem}{54}{theorem.3.4.3}}
-\newlabel{thmt@@regretdiscretized}{{3.4.3}{54}{}{theorem.3.4.3}{}}
-\newlabel{th:regretdiscretized}{{3.4.3}{54}{}{theorem.3.4.3}{}}
-\@writefile{loe}{\contentsline {remark}{\numberline {3.4.1}Remark}{55}{remark.3.4.1}}
+\newlabel{eq:regret}{{3.11}{53}{Regret Analysis}{equation.3.4.11}{}}
+\newlabel{thmt@@boundrenyi@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{53}{Regret Analysis}{equation.3.4.11}{}}
+\@writefile{loe}{\contentsline {assumption}{\numberline {3.4.1}Assumption}{53}{assumption.3.4.1}}
+\newlabel{thmt@@boundrenyi}{{3.4.1}{53}{}{assumption.3.4.1}{}}
+\newlabel{ass:boundrenyi}{{3.4.1}{53}{}{assumption.3.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Discrete arm set}{53}{subsection.3.4.1}}
+\newlabel{thmt@@regretdiscrete@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{53}{Discrete arm set}{subsection.3.4.1}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.1}Theorem}{53}{theorem.3.4.1}}
+\newlabel{thmt@@regretdiscrete}{{3.4.1}{53}{}{theorem.3.4.1}{}}
+\newlabel{th:regretdiscrete}{{3.4.1}{53}{}{theorem.3.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Compact arm set}{54}{subsection.3.4.2}}
+\newlabel{thmt@@lipschitz@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{54}{Compact arm set}{subsection.3.4.2}{}}
+\@writefile{loe}{\contentsline {assumption}{\numberline {3.4.2}Assumption}{54}{assumption.3.4.2}}
+\newlabel{thmt@@lipschitz}{{3.4.2}{54}{}{assumption.3.4.2}{}}
+\newlabel{ass:lipschitz}{{3.4.2}{54}{}{assumption.3.4.2}{}}
+\newlabel{thmt@@lipschitzpol@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{11}}{54}{Compact arm set}{assumption.3.4.2}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.4.1}Lemma}{54}{lemma.3.4.1}}
+\newlabel{thmt@@lipschitzpol}{{3.4.1}{54}{}{lemma.3.4.1}{}}
+\newlabel{lem:lispschitzpol}{{3.4.1}{54}{}{lemma.3.4.1}{}}
+\newlabel{eq:lp1}{{3.12}{54}{}{equation.3.4.12}{}}
+\newlabel{eq:lp2}{{3.13}{54}{}{equation.3.4.13}{}}
+\newlabel{thmt@@regretcompact@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{13}}{54}{Compact arm set}{equation.3.4.13}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.2}Theorem}{54}{theorem.3.4.2}}
+\newlabel{thmt@@regretcompact}{{3.4.2}{54}{}{theorem.3.4.2}{}}
+\newlabel{th:regretcompact}{{3.4.2}{54}{}{theorem.3.4.2}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3.2}{\ignorespaces \gls {OPTIMIST}2\relax }}{55}{algorithm.3.2}}
+\newlabel{alg:2}{{3.2}{55}{\gls {OPTIMIST}2\relax }{algorithm.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Discretization}{55}{subsection.3.4.3}}
+\newlabel{thmt@@regretdiscretized@data}{{\def \theequation {3.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )3.4.\@arabic {\c@equation }}\setcounter {equation}{13}}{55}{Discretization}{subsection.3.4.3}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.3}Theorem}{55}{theorem.3.4.3}}
+\newlabel{thmt@@regretdiscretized}{{3.4.3}{55}{}{theorem.3.4.3}{}}
+\newlabel{th:regretdiscretized}{{3.4.3}{55}{}{theorem.3.4.3}{}}
+\@writefile{loe}{\contentsline {remark}{\numberline {3.4.1}Remark}{56}{remark.3.4.1}}
 \citation{sehnke2010parameter}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Numerical Simulations}{56}{chapter.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Numerical Simulations}{57}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:experiments}{{4}{56}{Numerical Simulations}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Practical Aspects}{56}{section.4.1}}
-\newlabel{sec:practical}{{4.1}{56}{Practical Aspects}{section.4.1}{}}
+\newlabel{ch:experiments}{{4}{57}{Numerical Simulations}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Practical Aspects}{57}{section.4.1}}
+\newlabel{sec:practical}{{4.1}{57}{Practical Aspects}{section.4.1}{}}
 \citation{gil2013renyi}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Divergence Between Gaussian Multivariate Distributions}{57}{subsection.4.1.1}}
-\newlabel{thmt@@armonic@data}{{\def \theequation {4.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )4.1.\@arabic {\c@equation }}\setcounter {equation}{2}}{57}{Divergence Between Gaussian Multivariate Distributions}{subsection.4.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Divergence Between Gaussian Multivariate Distributions}{58}{subsection.4.1.1}}
+\newlabel{thmt@@armonic@data}{{\def \theequation {4.\@arabic {\c@equation }}\def \theHequation {(restate \theHthmt@dummyctr )4.1.\@arabic {\c@equation }}\setcounter {equation}{2}}{58}{Divergence Between Gaussian Multivariate Distributions}{subsection.4.1.1}{}}
 \@writefile{loe}{\addvspace {10\p@ }}
-\@writefile{loe}{\contentsline {theorem}{\numberline {4.1.1}Theorem}{57}{theorem.4.1.1}}
-\newlabel{thmt@@armonic}{{4.1.1}{57}{}{theorem.4.1.1}{}}
-\newlabel{th:armonic}{{4.1.1}{57}{}{theorem.4.1.1}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {4.1.1}Theorem}{58}{theorem.4.1.1}}
+\newlabel{thmt@@armonic}{{4.1.1}{58}{}{theorem.4.1.1}{}}
+\newlabel{th:armonic}{{4.1.1}{58}{}{theorem.4.1.1}{}}
 \citation{gil2013renyi}
 \citation{gil2013renyi}
-\newlabel{eq:gaussianrenyi}{{4.4}{58}{Divergence Between Gaussian Multivariate Distributions}{equation.4.1.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Uniformly Bounded R\IeC {\'e}nyi divergence}{58}{subsection.4.1.2}}
-\newlabel{subsec:boundrenyi}{{4.1.2}{58}{Uniformly Bounded Rényi divergence}{subsection.4.1.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Action-based setting}{58}{section.4.2}}
+\newlabel{eq:gaussianrenyi}{{4.4}{59}{Divergence Between Gaussian Multivariate Distributions}{equation.4.1.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Uniformly Bounded R\IeC {\'e}nyi divergence}{59}{subsection.4.1.2}}
+\newlabel{subsec:boundrenyi}{{4.1.2}{59}{Uniformly Bounded Rényi divergence}{subsection.4.1.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Action-based setting}{59}{section.4.2}}
 \citation{martino2017effective}
 \citation{kong1992note}
 \citation{kong1992note}
 \citation{peters2008reinforcement}
-\citation{auer2002finite}
-\citation{srinivas2010gaussian}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Linear Quadratic Gaussian Regulator}{60}{section.4.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Linear Quadratic Gaussian Regulator}{61}{section.4.3}}
 \citation{metelli2018policy}
-\@writefile{toc}{\contentsline {chapter}{Appendices}{61}{section*.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Proofs}{61}{Appendix.1.A}}
+\@writefile{toc}{\contentsline {chapter}{Appendices}{62}{section*.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Proofs}{62}{Appendix.1.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{app:proof}{{A}{61}{Proofs}{Appendix.1.A}{}}
+\newlabel{app:proof}{{A}{62}{Proofs}{Appendix.1.A}{}}
 \@writefile{loe}{\addvspace {10\p@ }}
-\@writefile{loe}{\contentsline {lemma}{\numberline {1.5.1}Lemma}{61}{lemma.dummy.39}}
-\newlabel{p:misevarboundline2}{{A.1}{62}{Proofs}{equation.1.A.0.1}{}}
-\newlabel{p:misevarboundline5}{{A.2}{62}{Proofs}{equation.1.A.0.2}{}}
-\newlabel{eq:expectationdecomposition}{{A.3}{62}{Proofs}{equation.1.A.0.3}{}}
-\@writefile{loe}{\contentsline {lemma}{\numberline {3.1.1}Lemma}{62}{lemma.dummy.41}}
-\newlabel{p:truncatedbias1}{{A.5}{63}{Proofs}{equation.1.A.0.5}{}}
-\newlabel{p:truncatedbias2}{{A.6}{63}{Proofs}{equation.1.A.0.6}{}}
-\newlabel{p:truncatedbias3}{{A.7}{63}{Proofs}{equation.1.A.0.7}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {1.5.1}Lemma}{62}{lemma.dummy.39}}
+\newlabel{p:misevarboundline2}{{A.1}{63}{Proofs}{equation.1.A.0.1}{}}
+\newlabel{p:misevarboundline5}{{A.2}{63}{Proofs}{equation.1.A.0.2}{}}
+\newlabel{eq:expectationdecomposition}{{A.3}{63}{Proofs}{equation.1.A.0.3}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.1.1}Lemma}{63}{lemma.dummy.41}}
+\newlabel{p:truncatedbias1}{{A.5}{64}{Proofs}{equation.1.A.0.5}{}}
+\newlabel{p:truncatedbias2}{{A.6}{64}{Proofs}{equation.1.A.0.6}{}}
+\newlabel{p:truncatedbias3}{{A.7}{64}{Proofs}{equation.1.A.0.7}{}}
 \citation{boucheron2013concentration}
-\newlabel{p:truncatedbias4}{{A.8}{64}{Proofs}{equation.1.A.0.8}{}}
-\newlabel{p:truncatedbias5}{{A.9}{64}{Proofs}{equation.1.A.0.9}{}}
-\@writefile{loe}{\contentsline {theorem}{\numberline {3.1.1}Theorem}{64}{theorem.dummy.43}}
-\newlabel{p:thrucatedconcentration1}{{A.11}{65}{Proofs}{equation.1.A.0.11}{}}
-\newlabel{p:thrucatedconcentration2}{{A.12}{65}{Proofs}{equation.1.A.0.12}{}}
-\newlabel{p:thrucatedconcentration3}{{A.13}{65}{Proofs}{equation.1.A.0.13}{}}
-\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.1}Theorem}{65}{theorem.dummy.45}}
-\newlabel{aux:1}{{A.15}{66}{Proofs}{equation.1.A.0.15}{}}
-\newlabel{pp:1}{{A.16}{66}{Proofs}{equation.1.A.0.16}{}}
-\newlabel{pp:2}{{A.17}{66}{Proofs}{equation.1.A.0.17}{}}
-\newlabel{pp:3}{{A.18}{66}{Proofs}{equation.1.A.0.18}{}}
-\newlabel{pp:4}{{A.19}{66}{Proofs}{equation.1.A.0.19}{}}
-\newlabel{pp:5}{{A.20}{66}{Proofs}{equation.1.A.0.20}{}}
-\newlabel{aux:2}{{A.21}{66}{Proofs}{equation.1.A.0.21}{}}
+\newlabel{p:truncatedbias4}{{A.8}{65}{Proofs}{equation.1.A.0.8}{}}
+\newlabel{p:truncatedbias5}{{A.9}{65}{Proofs}{equation.1.A.0.9}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.1.1}Theorem}{65}{theorem.dummy.43}}
+\newlabel{p:thrucatedconcentration1}{{A.11}{66}{Proofs}{equation.1.A.0.11}{}}
+\newlabel{p:thrucatedconcentration2}{{A.12}{66}{Proofs}{equation.1.A.0.12}{}}
+\newlabel{p:thrucatedconcentration3}{{A.13}{66}{Proofs}{equation.1.A.0.13}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.1}Theorem}{66}{theorem.dummy.45}}
+\newlabel{aux:1}{{A.15}{67}{Proofs}{equation.1.A.0.15}{}}
+\newlabel{pp:1}{{A.16}{67}{Proofs}{equation.1.A.0.16}{}}
+\newlabel{pp:2}{{A.17}{67}{Proofs}{equation.1.A.0.17}{}}
+\newlabel{pp:3}{{A.18}{67}{Proofs}{equation.1.A.0.18}{}}
+\newlabel{pp:4}{{A.19}{67}{Proofs}{equation.1.A.0.19}{}}
+\newlabel{pp:5}{{A.20}{67}{Proofs}{equation.1.A.0.20}{}}
+\newlabel{aux:2}{{A.21}{67}{Proofs}{equation.1.A.0.21}{}}
 \citation{sutton2000policy}
-\newlabel{pp:6}{{A.22}{67}{Proofs}{equation.1.A.0.22}{}}
-\newlabel{pp:7}{{A.23}{67}{Proofs}{equation.1.A.0.23}{}}
-\newlabel{pp:8}{{A.24}{67}{Proofs}{equation.1.A.0.24}{}}
-\newlabel{pp:9}{{A.25}{67}{Proofs}{equation.1.A.0.25}{}}
-\newlabel{aux:3}{{A.26}{67}{Proofs}{equation.1.A.0.26}{}}
-\@writefile{loe}{\contentsline {lemma}{\numberline {3.4.1}Lemma}{67}{lemma.dummy.47}}
+\newlabel{pp:6}{{A.22}{68}{Proofs}{equation.1.A.0.22}{}}
+\newlabel{pp:7}{{A.23}{68}{Proofs}{equation.1.A.0.23}{}}
+\newlabel{pp:8}{{A.24}{68}{Proofs}{equation.1.A.0.24}{}}
+\newlabel{pp:9}{{A.25}{68}{Proofs}{equation.1.A.0.25}{}}
+\newlabel{aux:3}{{A.26}{68}{Proofs}{equation.1.A.0.26}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {3.4.1}Lemma}{68}{lemma.dummy.47}}
 \citation{sutton2000policy}
-\newlabel{aux:4}{{A.27}{68}{Proofs}{equation.1.A.0.27}{}}
-\newlabel{pp:10}{{A.28}{68}{Proofs}{equation.1.A.0.28}{}}
-\newlabel{pp:11}{{A.29}{68}{Proofs}{equation.1.A.0.29}{}}
-\newlabel{eq:gauss}{{A.30}{68}{Proofs}{equation.1.A.0.30}{}}
-\newlabel{pp:14}{{A.31}{68}{Proofs}{equation.1.A.0.31}{}}
-\newlabel{aux:5}{{A.32}{68}{Proofs}{equation.1.A.0.32}{}}
+\newlabel{aux:4}{{A.27}{69}{Proofs}{equation.1.A.0.27}{}}
+\newlabel{pp:10}{{A.28}{69}{Proofs}{equation.1.A.0.28}{}}
+\newlabel{pp:11}{{A.29}{69}{Proofs}{equation.1.A.0.29}{}}
+\newlabel{eq:gauss}{{A.30}{69}{Proofs}{equation.1.A.0.30}{}}
+\newlabel{pp:14}{{A.31}{69}{Proofs}{equation.1.A.0.31}{}}
+\newlabel{aux:5}{{A.32}{69}{Proofs}{equation.1.A.0.32}{}}
 \citation{srinivas2010gaussian}
-\newlabel{pp:12}{{A.33}{69}{Proofs}{equation.1.A.0.33}{}}
-\newlabel{pp:13}{{A.34}{69}{Proofs}{equation.1.A.0.34}{}}
-\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.2}Theorem}{69}{theorem.dummy.49}}
-\newlabel{aux:6}{{A.35}{69}{Proofs}{equation.1.A.0.35}{}}
-\newlabel{aux:7}{{A.36}{70}{Proofs}{equation.1.A.0.36}{}}
-\newlabel{aux:8}{{A.37}{70}{Proofs}{equation.1.A.0.37}{}}
-\newlabel{aux:9}{{A.38}{70}{Proofs}{equation.1.A.0.38}{}}
-\newlabel{pp:15}{{A.39}{70}{Proofs}{equation.1.A.0.39}{}}
-\newlabel{pp:16}{{A.40}{70}{Proofs}{equation.1.A.0.40}{}}
-\newlabel{aux:10}{{A.41}{70}{Proofs}{equation.1.A.0.41}{}}
-\newlabel{pp:17}{{A.42}{71}{Proofs}{equation.1.A.0.42}{}}
-\newlabel{pp:18}{{A.43}{71}{Proofs}{equation.1.A.0.43}{}}
-\newlabel{pp:19}{{A.44}{71}{Proofs}{equation.1.A.0.44}{}}
-\newlabel{pp:20}{{A.45}{71}{Proofs}{equation.1.A.0.45}{}}
-\newlabel{pp:21}{{A.46}{71}{Proofs}{equation.1.A.0.46}{}}
-\newlabel{pp:22}{{A.47}{71}{Proofs}{equation.1.A.0.47}{}}
-\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.3}Theorem}{71}{theorem.dummy.51}}
-\newlabel{aux:11}{{A.48}{72}{Proofs}{equation.1.A.0.48}{}}
-\newlabel{pp:23}{{A.49}{72}{Proofs}{equation.1.A.0.49}{}}
-\newlabel{pp:24}{{A.50}{72}{Proofs}{equation.1.A.0.50}{}}
-\newlabel{aux:12}{{A.51}{72}{Proofs}{equation.1.A.0.51}{}}
-\newlabel{pp:25}{{A.52}{73}{Proofs}{equation.1.A.0.52}{}}
-\newlabel{pp:26}{{A.53}{73}{Proofs}{equation.1.A.0.53}{}}
-\newlabel{pp:27}{{A.54}{73}{Proofs}{equation.1.A.0.54}{}}
-\newlabel{pp:28}{{A.55}{73}{Proofs}{equation.1.A.0.55}{}}
-\newlabel{pp:29}{{A.56}{73}{Proofs}{equation.1.A.0.56}{}}
-\newlabel{pp:30}{{A.57}{73}{Proofs}{equation.1.A.0.57}{}}
-\@writefile{loe}{\contentsline {lemma}{\numberline {A.0.1}Lemma}{73}{lemma.1.A.0.1}}
+\newlabel{pp:12}{{A.33}{70}{Proofs}{equation.1.A.0.33}{}}
+\newlabel{pp:13}{{A.34}{70}{Proofs}{equation.1.A.0.34}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.2}Theorem}{70}{theorem.dummy.49}}
+\newlabel{aux:6}{{A.35}{70}{Proofs}{equation.1.A.0.35}{}}
+\newlabel{aux:7}{{A.36}{71}{Proofs}{equation.1.A.0.36}{}}
+\newlabel{aux:8}{{A.37}{71}{Proofs}{equation.1.A.0.37}{}}
+\newlabel{aux:9}{{A.38}{71}{Proofs}{equation.1.A.0.38}{}}
+\newlabel{pp:15}{{A.39}{71}{Proofs}{equation.1.A.0.39}{}}
+\newlabel{pp:16}{{A.40}{71}{Proofs}{equation.1.A.0.40}{}}
+\newlabel{aux:10}{{A.41}{71}{Proofs}{equation.1.A.0.41}{}}
+\newlabel{pp:17}{{A.42}{72}{Proofs}{equation.1.A.0.42}{}}
+\newlabel{pp:18}{{A.43}{72}{Proofs}{equation.1.A.0.43}{}}
+\newlabel{pp:19}{{A.44}{72}{Proofs}{equation.1.A.0.44}{}}
+\newlabel{pp:20}{{A.45}{72}{Proofs}{equation.1.A.0.45}{}}
+\newlabel{pp:21}{{A.46}{72}{Proofs}{equation.1.A.0.46}{}}
+\newlabel{pp:22}{{A.47}{72}{Proofs}{equation.1.A.0.47}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {3.4.3}Theorem}{72}{theorem.dummy.51}}
+\newlabel{aux:11}{{A.48}{73}{Proofs}{equation.1.A.0.48}{}}
+\newlabel{pp:23}{{A.49}{73}{Proofs}{equation.1.A.0.49}{}}
+\newlabel{pp:24}{{A.50}{73}{Proofs}{equation.1.A.0.50}{}}
+\newlabel{aux:12}{{A.51}{73}{Proofs}{equation.1.A.0.51}{}}
+\newlabel{pp:25}{{A.52}{74}{Proofs}{equation.1.A.0.52}{}}
+\newlabel{pp:26}{{A.53}{74}{Proofs}{equation.1.A.0.53}{}}
+\newlabel{pp:27}{{A.54}{74}{Proofs}{equation.1.A.0.54}{}}
+\newlabel{pp:28}{{A.55}{74}{Proofs}{equation.1.A.0.55}{}}
+\newlabel{pp:29}{{A.56}{74}{Proofs}{equation.1.A.0.56}{}}
+\newlabel{pp:30}{{A.57}{74}{Proofs}{equation.1.A.0.57}{}}
+\@writefile{loe}{\contentsline {lemma}{\numberline {A.0.1}Lemma}{74}{lemma.1.A.0.1}}
 \citation{hershey2007approximating}
-\newlabel{eq:strangeBound}{{A.59}{74}{Proofs}{equation.1.A.0.59}{}}
-\@writefile{loe}{\contentsline {theorem}{\numberline {4.1.1}Theorem}{74}{theorem.dummy.54}}
+\newlabel{eq:strangeBound}{{A.59}{75}{Proofs}{equation.1.A.0.59}{}}
+\@writefile{loe}{\contentsline {theorem}{\numberline {4.1.1}Theorem}{75}{theorem.dummy.54}}
 \citation{*}
 \bibstyle{acm}
 \bibdata{Bibliography/bibliography}
@@ -464,130 +468,131 @@
 \bibcite{atan2015global}{8}
 \bibcite{auer2002using}{9}
 \bibcite{auer2002finite}{10}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{76}{chapter*.5}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{77}{chapter*.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\bibcite{auer2010ucb}{11}
-\bibcite{auer2007improved}{12}
-\bibcite{DBLP:conf/icml/2015}{13}
-\bibcite{baird1993advantage}{14}
-\bibcite{baxter2001infinite}{15}
-\bibcite{bellemare2016unifying}{16}
-\bibcite{DBLP:conf/nips/2018}{17}
-\bibcite{blei2017variational}{18}
-\bibcite{blundell2015weight}{19}
-\bibcite{boucheron2013concentration}{20}
-\bibcite{brafman2002r}{21}
-\bibcite{brockman2016openai}{22}
-\bibcite{bubeck2012regret}{23}
-\bibcite{bubeck2013bandits}{24}
-\bibcite{bubeck2010open}{25}
-\bibcite{bubeck2011x}{26}
-\bibcite{bubeck2009online}{27}
-\bibcite{cesa2017boltzmann}{28}
-\bibcite{cesa2012combinatorial}{29}
-\bibcite{chapelle2011empirical}{30}
-\bibcite{chen2016combinatorial}{31}
-\bibcite{chentanez2005intrinsically}{32}
-\bibcite{choshen2018dora}{33}
-\bibcite{sayak2018online}{34}
-\bibcite{cochran2007sampling}{35}
-\bibcite{cortes2010learning}{36}
-\bibcite{dann2015sample}{37}
-\bibcite{dann2017unifying}{38}
-\bibcite{dayan1997using}{39}
-\bibcite{degris2012off}{40}
-\bibcite{deisenroth2013survey}{41}
-\bibcite{dorato1995linear}{42}
-\bibcite{DBLP:conf/icml/2018}{43}
-\bibcite{espeholt2018impala}{44}
-\bibcite{garivier2011kl}{45}
-\bibcite{gil2013renyi}{46}
-\bibcite{glynn1990likelihood}{47}
-\bibcite{grondman2012survey}{48}
-\bibcite{haarnoja2017reinforcement}{49}
-\bibcite{haarnoja2018soft}{50}
-\bibcite{hershey2007approximating}{51}
-\bibcite{houthooft2016vime}{52}
-\bibcite{ionides2008truncated}{53}
-\bibcite{jaksch2010near}{54}
-\bibcite{jin2018q}{55}
-\bibcite{DBLP:conf/colt/2010}{56}
-\bibcite{kallus2018instrument}{57}
-\bibcite{kappen2005path}{58}
-\bibcite{kaufmann2012thompson}{59}
-\bibcite{kearns2002near}{60}
-\bibcite{kleinberg2008multi}{61}
-\bibcite{kleinberg2013bandits}{62}
-\bibcite{kleinberg2005nearly}{63}
-\bibcite{kober2009policy}{64}
-\bibcite{kong1992note}{65}
-\bibcite{kupcsik2013data}{66}
-\bibcite{lai1985asymptotically}{67}
-\bibcite{lakshmanan2015improved}{68}
-\bibcite{lange2012batch}{69}
-\bibcite{lattimore2014near}{70}
-\bibcite{lattimore2019bandit}{71}
-\bibcite{lopes2012exploration}{72}
-\bibcite{magureanu2014lipschitz}{73}
-\bibcite{martino2017effective}{74}
-\bibcite{masooddiversity}{75}
-\bibcite{DBLP:conf/aips/2012}{76}
-\bibcite{pmlr-v48-medina16}{77}
-\bibcite{mersereau2009structured}{78}
-\bibcite{metelli2018policy}{79}
-\bibcite{mnih2016asynchronous}{80}
-\bibcite{more1994line}{81}
-\bibcite{jungseul2018exploration}{82}
-\bibcite{oord2016pixel}{83}
-\bibcite{ortner2012online}{84}
-\bibcite{osband2016deep}{85}
-\bibcite{osband2013more}{86}
-\bibcite{osband2015bootstrapped}{87}
-\bibcite{osband2017posterior}{88}
-\bibcite{osband2016generalization}{89}
-\bibcite{ostrovski2017count}{90}
-\bibcite{oudeyer2007intrinsic}{91}
-\bibcite{owen_safe_2000}{92}
-\bibcite{mcbook}{93}
-\bibcite{mcbook_2013}{94}
-\bibcite{pandey2007multi}{95}
-\bibcite{pathak2017curiosity}{96}
-\bibcite{peters2008reinforcement}{97}
-\bibcite{DBLP:conf/icml/2017}{98}
-\bibcite{puterman2014markov}{99}
-\bibcite{renyi1961measures}{100}
-\bibcite{robbins1985some}{101}
-\bibcite{rummery1994line}{102}
-\bibcite{russo2013eluder}{103}
-\bibcite{russo2018tutorial}{104}
-\bibcite{sallans2004reinforcement}{105}
-\bibcite{saritacc2017combinatorial}{106}
-\bibcite{schmidhuber1991possibility}{107}
-\bibcite{schulman2015trust}{108}
-\bibcite{sehnke2008policy}{109}
-\bibcite{sehnke2010parameter}{110}
-\bibcite{silver2014deterministic}{111}
-\bibcite{srinivas2010gaussian}{112}
-\bibcite{still2012information}{113}
-\bibcite{strehl2009reinforcement}{114}
-\bibcite{strens2000bayesian}{115}
-\bibcite{sutton1988learning}{116}
-\bibcite{sutton1991dyna}{117}
-\bibcite{sutton2018reinforcement}{118}
-\bibcite{sutton2000policy}{119}
-\bibcite{tang2017exploration}{120}
-\bibcite{thompson1933likelihood}{121}
-\bibcite{thrun1992efficient}{122}
-\bibcite{tokic2011value}{123}
-\bibcite{vakili2011deterministic}{124}
-\bibcite{veach_optimally_1995}{125}
-\bibcite{wang2018regional}{126}
-\bibcite{watkins1989learning}{127}
-\bibcite{weinstein2012bandit}{128}
-\bibcite{whitehead1991study}{129}
-\bibcite{williams2006gaussian}{130}
-\bibcite{williams1992simple}{131}
-\bibcite{yupure}{132}
-\bibcite{zhao2011analysis}{133}
-\bibcite{ziebart2008maximum}{134}
+\bibcite{auer2007logarithmic}{11}
+\bibcite{auer2010ucb}{12}
+\bibcite{auer2007improved}{13}
+\bibcite{DBLP:conf/icml/2015}{14}
+\bibcite{baird1993advantage}{15}
+\bibcite{baxter2001infinite}{16}
+\bibcite{bellemare2016unifying}{17}
+\bibcite{DBLP:conf/nips/2018}{18}
+\bibcite{blei2017variational}{19}
+\bibcite{blundell2015weight}{20}
+\bibcite{boucheron2013concentration}{21}
+\bibcite{brafman2002r}{22}
+\bibcite{brockman2016openai}{23}
+\bibcite{bubeck2012regret}{24}
+\bibcite{bubeck2013bandits}{25}
+\bibcite{bubeck2010open}{26}
+\bibcite{bubeck2011x}{27}
+\bibcite{bubeck2009online}{28}
+\bibcite{cesa2017boltzmann}{29}
+\bibcite{cesa2012combinatorial}{30}
+\bibcite{chapelle2011empirical}{31}
+\bibcite{chen2016combinatorial}{32}
+\bibcite{chentanez2005intrinsically}{33}
+\bibcite{choshen2018dora}{34}
+\bibcite{sayak2018online}{35}
+\bibcite{cochran2007sampling}{36}
+\bibcite{cortes2010learning}{37}
+\bibcite{dann2015sample}{38}
+\bibcite{dann2017unifying}{39}
+\bibcite{dayan1997using}{40}
+\bibcite{degris2012off}{41}
+\bibcite{deisenroth2013survey}{42}
+\bibcite{dorato1995linear}{43}
+\bibcite{DBLP:conf/icml/2018}{44}
+\bibcite{espeholt2018impala}{45}
+\bibcite{garivier2011kl}{46}
+\bibcite{gil2013renyi}{47}
+\bibcite{glynn1990likelihood}{48}
+\bibcite{grondman2012survey}{49}
+\bibcite{haarnoja2017reinforcement}{50}
+\bibcite{haarnoja2018soft}{51}
+\bibcite{hershey2007approximating}{52}
+\bibcite{houthooft2016vime}{53}
+\bibcite{ionides2008truncated}{54}
+\bibcite{jaksch2010near}{55}
+\bibcite{jin2018q}{56}
+\bibcite{DBLP:conf/colt/2010}{57}
+\bibcite{kallus2018instrument}{58}
+\bibcite{kappen2005path}{59}
+\bibcite{kaufmann2012thompson}{60}
+\bibcite{kearns2002near}{61}
+\bibcite{kleinberg2008multi}{62}
+\bibcite{kleinberg2013bandits}{63}
+\bibcite{kleinberg2005nearly}{64}
+\bibcite{kober2009policy}{65}
+\bibcite{kong1992note}{66}
+\bibcite{kupcsik2013data}{67}
+\bibcite{lai1985asymptotically}{68}
+\bibcite{lakshmanan2015improved}{69}
+\bibcite{lange2012batch}{70}
+\bibcite{lattimore2014near}{71}
+\bibcite{lattimore2019bandit}{72}
+\bibcite{lopes2012exploration}{73}
+\bibcite{magureanu2014lipschitz}{74}
+\bibcite{martino2017effective}{75}
+\bibcite{masooddiversity}{76}
+\bibcite{DBLP:conf/aips/2012}{77}
+\bibcite{pmlr-v48-medina16}{78}
+\bibcite{mersereau2009structured}{79}
+\bibcite{metelli2018policy}{80}
+\bibcite{mnih2016asynchronous}{81}
+\bibcite{more1994line}{82}
+\bibcite{jungseul2018exploration}{83}
+\bibcite{oord2016pixel}{84}
+\bibcite{ortner2012online}{85}
+\bibcite{osband2016deep}{86}
+\bibcite{osband2013more}{87}
+\bibcite{osband2015bootstrapped}{88}
+\bibcite{osband2017posterior}{89}
+\bibcite{osband2016generalization}{90}
+\bibcite{ostrovski2017count}{91}
+\bibcite{oudeyer2007intrinsic}{92}
+\bibcite{owen_safe_2000}{93}
+\bibcite{mcbook}{94}
+\bibcite{mcbook_2013}{95}
+\bibcite{pandey2007multi}{96}
+\bibcite{pathak2017curiosity}{97}
+\bibcite{peters2008reinforcement}{98}
+\bibcite{DBLP:conf/icml/2017}{99}
+\bibcite{puterman2014markov}{100}
+\bibcite{renyi1961measures}{101}
+\bibcite{robbins1985some}{102}
+\bibcite{rummery1994line}{103}
+\bibcite{russo2013eluder}{104}
+\bibcite{russo2018tutorial}{105}
+\bibcite{sallans2004reinforcement}{106}
+\bibcite{saritacc2017combinatorial}{107}
+\bibcite{schmidhuber1991possibility}{108}
+\bibcite{schulman2015trust}{109}
+\bibcite{sehnke2008policy}{110}
+\bibcite{sehnke2010parameter}{111}
+\bibcite{silver2014deterministic}{112}
+\bibcite{srinivas2010gaussian}{113}
+\bibcite{still2012information}{114}
+\bibcite{strehl2009reinforcement}{115}
+\bibcite{strens2000bayesian}{116}
+\bibcite{sutton1988learning}{117}
+\bibcite{sutton1991dyna}{118}
+\bibcite{sutton2018reinforcement}{119}
+\bibcite{sutton2000policy}{120}
+\bibcite{tang2017exploration}{121}
+\bibcite{thompson1933likelihood}{122}
+\bibcite{thrun1992efficient}{123}
+\bibcite{tokic2011value}{124}
+\bibcite{vakili2011deterministic}{125}
+\bibcite{veach_optimally_1995}{126}
+\bibcite{wang2018regional}{127}
+\bibcite{watkins1989learning}{128}
+\bibcite{weinstein2012bandit}{129}
+\bibcite{whitehead1991study}{130}
+\bibcite{williams2006gaussian}{131}
+\bibcite{williams1992simple}{132}
+\bibcite{yupure}{133}
+\bibcite{zhao2011analysis}{134}
+\bibcite{ziebart2008maximum}{135}
