@@ -3,7 +3,7 @@
 \chapter{Numerical Simulations} \label{ch:experiments}
 In this chapter, we start by discussing two practical aspects related to the experimental applications of the algorithms described in Chapter (\ref{ch:core}). Then, we proceed by showing the results of our numerical simulations on three \gls{RL} benchmarking challenges: the \gls{LQG}, the continuous mountain car problem and the inverted pendulum.
 
-This allows the use of a deterministic controller $\pi_{\vtheta}: \vtheta\in\Theta\subseteq\Reals^m$ for sampling the trajectories, \ie $\pi_{\vtheta}(a|s)=\delta(a-\upsilon_{\vtheta}(s))$, where $\upsilon_{\vtheta}$ is a deterministic function of the state $s$, \eg \cite{sehnke2010parameter}. The policy parameters are sampled from a distribution $\nu_{\vxi}\in\delta(\Theta)$, called \emph{hyper-policy}, where $\vxi\in\Xi\subseteq\Reals^d$ are the hyper-policy parameters, or \emph{hyper-parameters}.
+The programming language chosen for implementing all the numerical simulations discussed in this chapter is Python. The code is publicly available on GitHub\footnote{https://github.com/T3p/baselines/tree/exploration/baselines}, and it is built upon the OpenAI Baselines library\footnote{https://github.com/openai/baselines}.
 
 \section{Practical Aspects} \label{sec:practical}
 In the numerical simulations that will be presented in the following sections we place ourselves in the \emph{parameter-based} \gls{PS} setting (see Section (\ref{sec:problem}) for details). We adopt Gaussian distributions as target and behavioural hyperpolicies $\nu_{\vxi}\sim \mathcal{N}(\vmu,\Cov)$, from which the policy parameters $\vtheta$ are drawn. In particular, we will adopt diagonal hyperpolicies $\nu_{\vxi}$, with hyperparameters $\vxi=\{\vtheta,\Cov\}$, of the form: 
@@ -72,17 +72,75 @@ ESS = \frac{t}{\Var_{x\sim Q}[w_{P/Q}(x)]+1}=\frac{t}{d_{2}(P|Q)}.
 However, its estimator $\wh{ESS}$ is very rough and turned out to be useless in our case. As we show in Figure (BOOO), the main problem about $\wh{ESS}$ was that  it did not allow to share the information obtained by a behavioural $Q$ with distant target distributions $P$...Moreover, by estimating the the \Renyi from the samples we would lose our theoretical guarantees on the regret.
 
 \section{Linear Quadratic Gaussian Regulator}
-The \gls{LQG} problem \cite{peters2008reinforcement} is a continuous \gls{MDP} which represents a useful testing ground for our algorithms, mainly because of its simplicity. At each time-step $h$, the transition model and reward function are given by:
+The goal of our numerical simulations on \gls{LQG} is twofold. First, we need a simple continuous control problem to understand the functioning of our algorithms. Second, we want to compare \gls{OPTIMIST} with two classical \gls{MAB} algorithms presented in Chapter (\ref{ch:sota}): \gls{UCB}1 (\ref{sebsec:count&UCB}) and \gls{GPUCB} (\ref{alg:gpucb}), in the case of discrete parameter space $\Xi$.\\
+The \gls{LQG} problem \cite{peters2008reinforcement} is a continuous \gls{MDP} which represents a useful testing ground for our algorithms, mainly because of its simplicity. At each time-step $h$, the transition kernel and reward function are given by:
 
 \begin{align}
-s_h\sim\mathcal{N}(s_h + a_h, \sigma_{LQG}^2), \\
-r_h=-0.5(s_h^2 + a_h^2).
+\boldsymbol{s}_{h+1}=\boldsymbol{A}\boldsymbol{s}_h+\boldsymbol{B}\boldsymbol{a}_h +\boldsymbol{\eta}_h\\
+r_h=\boldsymbol{s}_{h}^T\boldsymbol{Q}\boldsymbol{s}_{h}+\boldsymbol{a}_{h}^T\boldsymbol{R}\boldsymbol{a}_{h}
 \end{align}
 
-Intuitively, in this problem the agent has to bring its state to zero, while facing a cost related proportional to the magnitude of its actions. 
-As mentioned in the previous section, in all our experiments we employ diagonal Gaussian hyperpolicies. In this particular case, the hyperpolicy is univariate $\nu_{\xi} = \mathcal{N}( \xi, \sigma^2)$, where $\xi$ is the mean parameter to be learned and $\sigma$ can be either fixed or learnable as well.
-For implementation reasons, we consider the case in which the state space is limited to $\mathcal{S}=[-4,4]$, the action space is $\mathcal{A}=[-4,4]$ and the horizon is limited to $H=20$. \\
-The goal of our numerical simulations on \gls{LQG} is twofold. First, we need a simple continuous control problem to understand the functioning of our algorithms. Second, we want to compare \gls{OPTIMIST} with two classical \gls{MAB} algorithms presented in Chapter (\ref{ch:sota}): \gls{UCB}1 (\ref{sebsec:count&UCB}) and \gls{GPUCB} (\ref{alg:gpucb}), in the case of discrete parameter space $\Xi$. 
+where $\boldsymbol{A}$, $\boldsymbol{B}$, $\boldsymbol{Q}$ and $\boldsymbol{R}$ are coefficient matrices and $\eta_h$ is a noise process assumed to be a Gaussian white noise $\eta_h\sim\mathcal{N}(\boldsymbol{0}, \Cov_{LQG})$ with uncorrelated components $\Cov_{LQG}=\sigma_{LQG}\boldsymbol{I}$. The reward $r_h$ has to be intended as a cost for the agent, something it wants to avoid.
+Intuitively, in this problem the agent has to bring its state to zero, while facing a cost proportional to the magnitude of its state and action. The optimal contion policy in steady state conditions is the linear controller $\boldsymbol{a}_{h}=\boldsymbol{K}\boldsymbol{s}_{h}$, where matrix $\boldsymbol{K}$ can be found by solving a Riccati equation \cite{dorato1995linear}. 
+We conducted our experiments on one-dimensional \gls{LQG}
+For implementation reasons, we consider the case in which the state space is limited to $\mathcal{S}=[-4,4]$, the action space is $\mathcal{A}=[-4,4]$ and the horizon is limited to $H=20$. As mentioned in the previous section, in all our experiments we employ diagonal Gaussian hyperpolicies. In this case the hyperpolicy is univariate $\nu_{\vxi} = \mathcal{N}(\mu, \sigma^2)$, where $\mu$ is the mean parameter to be learned and $\sigma$ can be either fixed or learnable as well. On the other hand, the policy $\pi_{\theta}$ adopted by the agent is a deterministic linear controller $a_h=\pi_{\theta}(s_h)=\theta s_h$, with $\theta\sim\nu_{\vxi}$. Since \gls{UCB}1 requires a positive return $r_t\in[0,1]$, we standardized the trajectory return $\Rew(\vxi_t)=\sum_{h=0}^{H-1}\gamma^h r_{h+1}$ associated to the arm $\xi_t$ pulled at iteration $t$: 
 
-For this purpose we consider a uniform discretization of the interval $[-1,1]$ made of 100 arms. All algorithms are run with confidence level $\delta=0.2$.
-In Figure~\ref{fig:lqg}, we show the cumulative regret averaged over 30 runs of \algoname compared with UCB1 and GPUCB. We can see that our algorithm significantly outperforms UCB1. Indeed, \algoname is able to exploit the structure of arms, \ie hyperpolicies, by means of the MIS estimation, whereas UCB1 does not make any assumption on arm correlation. On the contrary, GPUCB shows a better performance \wrt to \algoname. We point out that GPUCB requires to specify, at the beginning of learning, the kernel of the Gaussian Process (GP) from which the payoff function is sampled. We employed the default scikit-learn kernel (RBF) which invalidates all theoretical guarantees, as our payoff is not actually sampled from a GP.\footnote{Indeed, GPUCB showed a significantly more exploitative behavior \wrt UCB1 and \algoname in the experiment.}
+\begin{align}
+r_t=\Rew(\vxi_t)/\Rew(\vxi^*),
+\end{align}
+
+where $\vxi^*$ is the optimal arm and $\Rew(\vxi^*)$ is:
+
+\begin{align}
+\Rew(\vxi^*)
+&= \sum_{h=0}^{H-1}\gamma^h\cdot 1 = \frac{1-\gamma^h}{1-\gamma}.
+\end{align}
+ 
+The values of the coefficients used in the experiments are reported in Table (\ref{tab:LQGcoeff}).
+
+\begin{table}[t!]
+\centering
+\begin{tabular}{*{6}{c}} 
+\toprule
+a & b & q & r & $\sigma_{LQG}$ & $\gamma$\\ 
+\midrule
+1.00 & 1.00 & 0.90 & 0.90 & 0.10 & 0.99 \\
+\bottomrule
+\end{tabular}
+\caption{ Coefficients of the \gls{LQG} experiments.}
+\label{tab:LQGcoeff}
+\end{table}
+
+In order to benchmark \gls{OPTIMIST} with both \gls{UCB}1 and \gls{GPUCB} on a discrete set, we consider a uniform discretization of the interval $[-1,1]$ made of 100 arms. All algorithms are run with confidence level $\delta=0.2$.\\
+In Figure~\ref{fig:LQG_mu}, we show the cumulative regret of the three algorithms, averaged over 30 runs. We can see that our algorithm significantly outperforms \gls{UCB}1.
+Indeed, \gls{OPTIMIST} is able to exploit the structure of arms, \ie hyperpolicies, by means of the \gls{MIS} estimation, whereas \gls{UCB}1 does not make any assumption on arm correlation. In other words, \gls{OPTIMIST} performs a more informed, \ie directed, exploration, leveraging what the agent has experienced in past episodes more effectively. On the contrary, \gls{GPUCB} shows a better performance \wrt to \gls{OPTIMIST}. We point out that \gls{GPUCB} requires to specify, at the beginning of learning, the kernel of the Gaussian process from which the payoff function is sampled. We employed the default scikit-learn\footnote{A popular library for data mining and data analysis. Available at: https://scikit-learn.org/stable/} kernel, \ie the radial basis function kernel of the form:
+
+\begin{align}
+	k_T(\vx,\vx') &= \exp\left(-\lambda\norm{\vx-\vx'}^2\right),
+\end{align}
+
+where $\lambda$ is a free parameter. However, as it often happens in control tasks, our payoff is not actually sampled from a Gaussian process. This invalidates all theoretical guarantees of \gls{GPUCB} and may be at the root of the significantly more exploitative behavior \wrt \gls{UCB}1 and \gls{OPTIMIST} in the experiment. Indeed, the exploration effort of the different algorithms is vi
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Images/LQG_mu.pdf}
+\caption{Cumulative regret in
+the \gls{LQG} experiment, comparing
+\gls{OPTIMIST}, \gls{UCB}1 and \gls{GPUCB}
+(30 runs, 95\% c.i.)}
+\label{fig:LQG_mu}
+\end{figure}
+
+\begin{figure*}[ht!]
+\includegraphics[width=.33\textwidth]{Images/LQG_GPUCB_mu.pdf}\hfill
+\includegraphics[width=.33\textwidth]{Images/LQG_OPTIMIST_mu.pdf}\hfill
+\includegraphics[width=.33\textwidth]{Images/LQG_UCB1_mu.pdf}\caption{The gain parameter $\mu\in\vxi$ selected at each iteration of (), () and ()}
+\end{figure*}
+
+\begin{enumerate}
+\item explain how and why rewards have been rescaled
+\item show figures with gain oscillations
+\item maybe show other tensor-board plots of the bound and shit?
+\item what happened when changing variance???
+
+\end{enumerate}
