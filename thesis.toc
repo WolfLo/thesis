@@ -43,6 +43,9 @@
 \contentsline {subsection}{\numberline {4.1.2}Uniformly Bounded R\IeC {\'e}nyi divergence}{59}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Action-based setting}{59}{section.4.2}
 \contentsline {section}{\numberline {4.3}Linear Quadratic Gaussian Regulator}{61}{section.4.3}
-\contentsline {chapter}{Appendices}{64}{section*.7}
-\contentsline {chapter}{\numberline {A}Proofs}{64}{Appendix.1.A}
-\contentsline {chapter}{Bibliography}{79}{chapter*.8}
+\contentsline {subsection}{\numberline {4.3.1}Gain only}{62}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Gain and standard deviation}{64}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Continuous Mountain Car}{64}{section.4.4}
+\contentsline {chapter}{Appendices}{68}{section*.13}
+\contentsline {chapter}{\numberline {A}Proofs}{68}{Appendix.1.A}
+\contentsline {chapter}{Bibliography}{83}{chapter*.14}
