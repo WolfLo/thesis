@@ -369,6 +369,13 @@
 \newblock Near-optimal reinforcement learning in polynomial time.
 \newblock {\em Machine learning 49}, 2-3 (2002), 209--232.
 
+\bibitem{kimura1999efficient}
+{\sc Kimura, H.}
+\newblock Efficient non-linear control by combining q-learning with local
+  linear controllers.
+\newblock In {\em Proceedings of the 16th International Conference on Machine
+  Learning\/} (1999), pp.~210--219.
+
 \bibitem{kleinberg2008multi}
 {\sc Kleinberg, R., Slivkins, A., and Upfal, E.}
 \newblock Multi-armed bandits in metric spaces.
@@ -755,6 +762,13 @@
   epsilon-greedy and softmax.
 \newblock In {\em Annual Conference on Artificial Intelligence\/} (2011),
   Springer, pp.~335--346.
+
+\bibitem{tornio2006variational}
+{\sc Tornio, M., and Raiko, T.}
+\newblock Variational bayesian approach for nonlinear identification and
+  control.
+\newblock In {\em Proc. of the IFAC Workshop on Nonlinear Model Predictive
+  Control for Fast Systems, NMPC FS06\/} (2006), Citeseer, pp.~41--46.
 
 \bibitem{vakili2011deterministic}
 {\sc Vakili, S., Liu, K., and Zhao, Q.}

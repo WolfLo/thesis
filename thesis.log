@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  25 MAR 2019 00:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  26 MAR 2019 00:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2254,7 +2254,7 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 262.
  [13] [14]
-[15] <Images/ps_taxonomy.png, id=502, 1804.7425pt x 757.83125pt>
+[15] <Images/ps_taxonomy.png, id=507, 1804.7425pt x 757.83125pt>
 File: Images/ps_taxonomy.png Graphic file (type png)
 
 <use Images/ps_taxonomy.png>
@@ -2330,112 +2330,112 @@ Overfull \hbox (0.26564pt too wide) in paragraph at lines 39--39
 [] 
  []
 
-[58] [59] [60] [61] <Images/LQGcomparison.pdf, id=1338, 867.24pt x 361.35pt>
+[58] [59] [60] [61] <Images/LQGcomparison.pdf, id=1346, 867.24pt x 361.35pt>
 File: Images/LQGcomparison.pdf Graphic file (type pdf)
 
 <use Images/LQGcomparison.pdf>
-Package pdftex.def Info: Images/LQGcomparison.pdf used on input line 120.
+Package pdftex.def Info: Images/LQGcomparison.pdf used on input line 122.
 (pdftex.def)             Requested size: 406.87505pt x 169.53127pt.
 
-<Images/LQG_GPUCB_mu.pdf, id=1347, 722.7pt x 505.89pt>
+<Images/LQG_GPUCB_mu.pdf, id=1355, 722.7pt x 505.89pt>
 File: Images/LQG_GPUCB_mu.pdf Graphic file (type pdf)
 
 <use Images/LQG_GPUCB_mu.pdf>
-Package pdftex.def Info: Images/LQG_GPUCB_mu.pdf used on input line 129.
+Package pdftex.def Info: Images/LQG_GPUCB_mu.pdf used on input line 131.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
 
-<Images/LQG_OPTIMIST_mu.pdf, id=1348, 722.7pt x 505.89pt>
+<Images/LQG_OPTIMIST_mu.pdf, id=1356, 722.7pt x 505.89pt>
 File: Images/LQG_OPTIMIST_mu.pdf Graphic file (type pdf)
 
 <use Images/LQG_OPTIMIST_mu.pdf>
-Package pdftex.def Info: Images/LQG_OPTIMIST_mu.pdf used on input line 130.
+Package pdftex.def Info: Images/LQG_OPTIMIST_mu.pdf used on input line 132.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
 
-<Images/LQG_optimal_gain.pdf, id=1353, 867.24pt x 361.35pt>
+<Images/LQG_optimal_gain.pdf, id=1363, 867.24pt x 361.35pt>
 File: Images/LQG_optimal_gain.pdf Graphic file (type pdf)
 
 <use Images/LQG_optimal_gain.pdf>
-Package pdftex.def Info: Images/LQG_optimal_gain.pdf used on input line 139.
+Package pdftex.def Info: Images/LQG_optimal_gain.pdf used on input line 141.
 (pdftex.def)             Requested size: 305.1558pt x 127.14706pt.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 144.
+ine 146.
 
-Overfull \hbox (11.63283pt too wide) in paragraph at lines 144--144
+Overfull \hbox (11.63283pt too wide) in paragraph at lines 146--146
 [][][][]\T1/lmr/m/n/12 (-20) spiegare 
  []
 
 
-Overfull \hbox (4.85883pt too wide) in paragraph at lines 144--144
+Overfull \hbox (4.85883pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) troppo 
  []
 
 
-Overfull \hbox (1.33336pt too wide) in paragraph at lines 144--144
+Overfull \hbox (1.33336pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) bracci 
  []
 
 
-Overfull \hbox (12.20906pt too wide) in paragraph at lines 144--144
+Overfull \hbox (12.20906pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) mazione  
  []
 
 
-Overfull \hbox (11.63283pt too wide) in paragraph at lines 144--144
+Overfull \hbox (11.63283pt too wide) in paragraph at lines 146--146
 [][][][]\T1/lmr/m/n/12 (-20) spiegare 
  []
 
 
-Overfull \hbox (4.85883pt too wide) in paragraph at lines 144--144
+Overfull \hbox (4.85883pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) troppo 
  []
 
 
-Overfull \hbox (1.33336pt too wide) in paragraph at lines 144--144
+Overfull \hbox (1.33336pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) bracci 
  []
 
 
-Overfull \hbox (12.20906pt too wide) in paragraph at lines 144--144
+Overfull \hbox (12.20906pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) mazione  
  []
 
 
-Overfull \hbox (11.63283pt too wide) in paragraph at lines 144--144
+Overfull \hbox (11.63283pt too wide) in paragraph at lines 146--146
 [][][][]\T1/lmr/m/n/12 (-20) spiegare 
  []
 
 
-Overfull \hbox (4.85883pt too wide) in paragraph at lines 144--144
+Overfull \hbox (4.85883pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) troppo 
  []
 
 
-Overfull \hbox (1.33336pt too wide) in paragraph at lines 144--144
+Overfull \hbox (1.33336pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) bracci 
  []
 
 
-Overfull \hbox (12.20906pt too wide) in paragraph at lines 144--144
+Overfull \hbox (12.20906pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) mazione  
  []
 
 
-Overfull \hbox (11.63283pt too wide) in paragraph at lines 144--144
+Overfull \hbox (11.63283pt too wide) in paragraph at lines 146--146
 [][][][]\T1/lmr/m/n/12 (-20) spiegare 
  []
 
 
-Overfull \hbox (4.85883pt too wide) in paragraph at lines 144--144
+Overfull \hbox (4.85883pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) troppo 
  []
 
 
-Overfull \hbox (1.33336pt too wide) in paragraph at lines 144--144
+Overfull \hbox (1.33336pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) bracci 
  []
 
 
-Overfull \hbox (12.20906pt too wide) in paragraph at lines 144--144
+Overfull \hbox (12.20906pt too wide) in paragraph at lines 146--146
 \T1/lmr/m/n/12 (-20) mazione  
  []
 
@@ -2448,51 +2448,86 @@ ltiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./Images/LQG_optimal_gain.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] <Images/LQGcomparisonVar.pdf, id=1461, 867.24pt x 361.35pt>
+>] <Images/LQGcomparisonVar.pdf, id=1472, 867.24pt x 361.35pt>
 File: Images/LQGcomparisonVar.pdf Graphic file (type pdf)
 
 <use Images/LQGcomparisonVar.pdf>
-Package pdftex.def Info: Images/LQGcomparisonVar.pdf used on input line 160.
+Package pdftex.def Info: Images/LQGcomparisonVar.pdf used on input line 162.
 (pdftex.def)             Requested size: 406.87505pt x 169.53127pt.
 
-<Images/MC.png, id=1470, 1362.08875pt x 900.36375pt>
+<Images/MC.png, id=1481, 1362.08875pt x 900.36375pt>
 File: Images/MC.png Graphic file (type png)
  <use Images/MC.png>
-Package pdftex.def Info: Images/MC.png used on input line 174.
+Package pdftex.def Info: Images/MC.png used on input line 176.
 (pdftex.def)             Requested size: 244.12712pt x 161.37155pt.
 
-<Images/MC_mu.pdf, id=1471, 867.24pt x 361.35pt>
+<Images/MC_mu.pdf, id=1484, 867.24pt x 361.35pt>
 File: Images/MC_mu.pdf Graphic file (type pdf)
  <use Images/MC_mu.pdf>
-Package pdftex.def Info: Images/MC_mu.pdf used on input line 181.
+Package pdftex.def Info: Images/MC_mu.pdf used on input line 196.
 (pdftex.def)             Requested size: 406.87505pt x 169.53127pt.
 
-[64]
-Underfull \hbox (badness 10000) in paragraph at lines 195--197
+[64] [65 <./Images/LQGcomparisonVar.pdf> <./Images/MC.png>] [66 <./Images/MC_mu
+.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
-[65 <./Images/LQGcomparisonVar.pdf> <./Images/MC.png>] [66 <./Images/MC_mu.pdf>
-] <Images/MCgainPGPE.pdf, id=1547, 722.7pt x 505.89pt>
+<Images/MCgainPGPE.pdf, id=1566, 722.7pt x 505.89pt>
 File: Images/MCgainPGPE.pdf Graphic file (type pdf)
 
 <use Images/MCgainPGPE.pdf>
-Package pdftex.def Info: Images/MCgainPGPE.pdf used on input line 202.
+Package pdftex.def Info: Images/MCgainPGPE.pdf used on input line 218.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
 
-<Images/MCgainOPTIMIST.pdf, id=1548, 722.7pt x 505.89pt>
+<Images/MCgainOPTIMIST.pdf, id=1567, 722.7pt x 505.89pt>
 File: Images/MCgainOPTIMIST.pdf Graphic file (type pdf)
 
 <use Images/MCgainOPTIMIST.pdf>
-Package pdftex.def Info: Images/MCgainOPTIMIST.pdf used on input line 203.
+Package pdftex.def Info: Images/MCgainOPTIMIST.pdf used on input line 219.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
-) [67 <./Images/MCgainPGPE.pdf> <./Images/MCgainOPTIMIST.pdf
+ [67]
+Overfull \hbox (37.58136pt too wide) in paragraph at lines 245--246
+[][]\T1/lmr/bx/n/12 Remark 4.4.2. []\T1/lmr/m/n/12 (-20) Con-sid-er-ing that []
+[]OP-TI-MIST[][] needs to eval-u-ate bound (eq:optimistindex)
+ []
+
+[68 <./Images/MCgainPGPE.pdf> <./Images/MCgainOPTIMIST.pdf
 
 pdfTeX warning: pdflatex (file ./Images/MCgainOPTIMIST.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
+>] <Images/inverted_pendulum.png, id=1617, 763.85374pt x 173.64874pt>
+File: Images/inverted_pendulum.png Graphic file (type png)
+
+<use Images/inverted_pendulum.png>
+Package pdftex.def Info: Images/inverted_pendulum.png used on input line 261.
+(pdftex.def)             Requested size: 325.50076pt x 73.99713pt.
+ [69 <./Images/inverted_pendulum.png>]
+[70] <Images/IP_mu_1.pdf, id=1651, 867.24pt x 361.35pt>
+File: Images/IP_mu_1.pdf Graphic file (type pdf)
+
+<use Images/IP_mu_1.pdf>
+Package pdftex.def Info: Images/IP_mu_1.pdf used on input line 301.
+(pdftex.def)             Requested size: 406.87442pt x 169.53127pt.
+ <Images/IPmise.pdf, id=1654, 722.7pt x 505.89pt>
+File: Images/IPmise.pdf Graphic file (type pdf)
+
+<use Images/IPmise.pdf>
+Package pdftex.def Info: Images/IPmise.pdf used on input line 308.
+(pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
+ <Images/IPbonus.pdf, id=1655, 722.7pt x 505.89pt>
+File: Images/IPbonus.pdf Graphic file (type pdf)
+
+<use Images/IPbonus.pdf>
+Package pdftex.def Info: Images/IPbonus.pdf used on input line 309.
+(pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
+) [71 <./Images/IP_mu_1.pdf>] [72 <./Images/IPmise.pdf> <./Images/IPbonus.pdf
+
+pdfTeX warning: pdflatex (file ./Images/IPbonus.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
 >] (./Appendix/A_proofs.tex
 Appendix A.
-[68
+[73
 
 
 ]
@@ -2500,12 +2535,12 @@ Overfull \hbox (35.19218pt too wide) in paragraph at lines 37--37
 [] 
  []
 
-[69]
+[74]
 Overfull \hbox (27.57492pt too wide) in paragraph at lines 49--49
 [] 
  []
 
-[70] [71] [72]
+[75] [76] [77]
 Overfull \hbox (46.3188pt too wide) in paragraph at lines 89--89
 [] 
  []
@@ -2515,7 +2550,7 @@ Overfull \hbox (64.59209pt too wide) in paragraph at lines 96--96
 [] 
  []
 
-[73] [74]
+[78] [79]
 Overfull \hbox (10.87653pt too wide) in paragraph at lines 147--149
 \T1/lmr/m/n/12 (-20) where $\OML/lmm/m/it/12 ^^^\U/matha/m/n/12 p\OML/lmm/m/it/
 12 s\U/matha/m/n/12 q$ \T1/lmr/m/n/12 (-20) is a vec-tor of component-wise boun
@@ -2523,17 +2558,17 @@ ded state fea-tures, i.e., $[][] \U/matha/m/n/12 |\OML/cmm/b/it/12 ^^^\U/matha/
 m/n/12 p\OML/lmm/m/it/12 s\U/matha/m/n/12 q| ¤
  []
 
-[75] [76]
+[80] [81]
 Overfull \hbox (37.49931pt too wide) in paragraph at lines 192--192
 [] 
  []
 
-[77]
+[82]
 Overfull \hbox (66.01527pt too wide) in paragraph at lines 225--225
 [] 
  []
 
-[78]
+[83]
 Overfull \hbox (37.49945pt too wide) in paragraph at lines 237--237
 [] 
  []
@@ -2543,23 +2578,23 @@ Overfull \hbox (128.63118pt too wide) in paragraph at lines 270--270
 [] 
  []
 
-[79]
+[84]
 Overfull \hbox (41.40572pt too wide) in paragraph at lines 270--272
 \T1/lmr/m/n/12 (-20) The proof is com-pleted by re-nam-ing $[]$
  []
 
-[80] [81]) [82] (./thesis.bbl
+[85] [86]) [87] (./thesis.bbl
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
- [83
+ [88
 
 
-] [84]
+] [89]
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 142.
- [85] [86] [87] [88] [89] [90] [91]
-[92] [93] [94]) [95]
+ [90] [91] [92] [93] [94] [95] [96]
+[97] [98] [99]) [100]
 
 Package glossaries Warning: No \printglossary or \printglossaries found.
 (Remove \makeglossaries if you don't want any glossaries.)
@@ -2574,17 +2609,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 75.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 75.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 75.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 698693A0025C66E721B8171B8D2FAC7C;3636.
+(rerunfilecheck)             Checksum: 1EF572C0440F75C77910420A32B4DC60;3700.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 35341 strings out of 493029
- 654098 string characters out of 6136234
- 921399 words of memory out of 7999999
- 37115 multiletter control sequences out of 15000+600000
+ 35393 strings out of 493029
+ 655027 string characters out of 6136234
+ 929914 words of memory out of 7999999
+ 37142 multiletter control sequences out of 15000+600000
  116136 words of font info for 281 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,18n,77p,2537b,954s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2678,10 +2713,10 @@ nts/type1/public/mathabx-type1/matha8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/mathabx-type1/mathb12.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (99 pages, 2264028 bytes).
+Output written on thesis.pdf (104 pages, 2373750 bytes).
 PDF statistics:
- 2184 PDF objects out of 2487 (max. 8388607)
- 1990 compressed objects within 20 object streams
- 593 named destinations out of 1000 (max. 500000)
- 28111 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 2317 PDF objects out of 2487 (max. 8388607)
+ 2102 compressed objects within 22 object streams
+ 614 named destinations out of 1000 (max. 500000)
+ 28139 words of extra memory for PDF output out of 29859 (max. 10000000)
 

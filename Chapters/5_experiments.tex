@@ -83,7 +83,9 @@ r_h=\boldsymbol{s}_{h}^T\boldsymbol{Q}\boldsymbol{s}_{h}+\boldsymbol{a}_{h}^T\bo
 where $\boldsymbol{A}$, $\boldsymbol{B}$, $\boldsymbol{Q}$ and $\boldsymbol{R}$ are coefficient matrices and $\eta_h$ is a noise process assumed to be a Gaussian white noise $\eta_h\sim\mathcal{N}(\boldsymbol{0}, \Cov_{LQG})$ with uncorrelated components $\Cov_{LQG}=\sigma_{LQG}\boldsymbol{I}$. The reward $r_h$ has to be intended as a cost for the agent, something it wants to avoid.
 Intuitively, in this problem the agent has to bring its state to zero, while facing a cost proportional to the magnitude of its state and action. The optimal control policy in steady state conditions is the linear controller $\boldsymbol{a}_{h}=\boldsymbol{K}\boldsymbol{s}_{h}$, where matrix $\boldsymbol{K}$ can be found by solving a Riccati equation \cite{dorato1995linear}. 
 We conducted our experiments on one-dimensional \gls{LQG}
-For implementation reasons, we consider the case in which the state space is limited to $\Sspace=[-4,4]$, the action space is $\Aspace=[-4,4]$ and the horizon is limited to $H=20$. At the beginning of the episode, the start-state is initialized randomly $s_0\sim\mathcal{U}([-4,4])$. As mentioned in the previous section, in all our experiments we employ diagonal Gaussian hyperpolicies. In this case the hyperpolicy is univariate $\nu_{\vxi} = \mathcal{N}(\mu, \sigma^2)$, where $\mu$ is the mean parameter to be learned and $\sigma$ can be either fixed or learnable as well. On the other hand, the policy $\pi_{\theta}$ adopted by the agent is a deterministic linear controller $a_h=\pi_{\theta}(s_h)=\theta s_h$, with $\theta\sim\nu_{\vxi}$. Since \gls{UCB}1 requires a positive return $r_t\in[0,1]$, we standardized the trajectory return $\Rew(\vxi_t)=\sum_{h=0}^{H-1}\gamma^h r_{h+1}$ associated to the arm $\xi_t$ pulled at iteration $t$: 
+For implementation reasons, we consider the case in which the state space is limited to $\Sspace=[-4,4]$, the action space is $\Aspace=[-4,4]$ and the horizon is limited to $H=20$. At the beginning of the episode, the start-state is initialized randomly $s_0\sim\mathcal{U}([-4,4])$. The agent samples $H=20$ steps-long trajectories with a discount factor of $\gamma=0.99$, for a total of $T=5000$ iterations.
+
+As mentioned in the previous section, in all our experiments we employ diagonal Gaussian hyperpolicies. In this case the hyperpolicy is univariate $\nu_{\vxi} = \mathcal{N}(\mu, \sigma^2)$, where $\mu$ is the mean parameter to be learned and $\sigma$ can be either fixed or learnable as well. On the other hand, the policy $\pi_{\theta}$ adopted by the agent is a deterministic linear controller $a_h=\pi_{\theta}(s_h)=\theta s_h$, with $\theta\sim\nu_{\vxi}$. Since \gls{UCB}1 requires a positive return $r_t\in[0,1]$, we standardized the trajectory return $\Rew(\vxi_t)=\sum_{h=0}^{H-1}\gamma^h r_{h+1}$ associated to the arm $\xi_t$ pulled at iteration $t$: 
 
 \begin{align}
 r_t=\Rew(\vxi_t)/\Rew(\vxi^*),
@@ -96,19 +98,19 @@ where $\vxi^*$ is the optimal arm and $\Rew(\vxi^*)$ is:
 &= \sum_{h=0}^{H-1}\gamma^h\cdot 1 = \frac{1-\gamma^h}{1-\gamma}.
 \end{align}
  
-The values of the coefficients used in the experiments are reported in Table (\ref{tab:LQGcoeff}). Each of these  All algorithms are run with the confidence schedule proposed in Theorem (\ref{th:regretdiscrete}), \ie $\delta_t = \frac{3\delta}{t^2\pi^2K}$, with $\delta=0.2$ (similar results have been obtained with different values of $\delta$).
+Each of these  All algorithms are run with the confidence schedule proposed in Theorem (\ref{th:regretdiscrete}), \ie $\delta_t = \frac{3\delta}{t^2\pi^2K}$, with $\delta=0.2$ (similar results have been obtained with different values of $\delta$). The parameters used in the \gls{LQG} experiments are summarized in Table (\ref{tab:LQGcoeff}).
 
 
 \begin{table}[t!]
 \centering
-\begin{tabular}{*{7}{c}} 
+\begin{tabular}{cccc|cccc|c} 
 \toprule
-a & b & q & r & $\gamma$ & $\delta$ & $\sigma_{LQG}$\\ 
+a & b & q & r & $\gamma$ & H & T & $\sigma_{LQG}$ & $\delta$\\ 
 \midrule
-1.00 & 1.00 & 0.90 & 0.90 & 0.99 & 0.20 & 0.10\\
+1.00 & 1.00 & 0.90 & 0.90 & 0.99 & 20 & 5000 & 0.10 & 0.20\\
 \bottomrule
 \end{tabular}
-\caption{ Coefficients of the \gls{LQG} experiments.}
+\caption{Environmental coefficients (left-side), task coefficients (center) and \gls{OPTIMIST} input parameters (left-side) for the \gls{LQG} experiments.}
 \label{tab:LQGcoeff}
 \end{table}
 
@@ -129,7 +131,7 @@ the \gls{LQG} experiment, comparing
 \includegraphics[width=.5\textwidth]{Images/LQG_GPUCB_mu.pdf}\hfill
 \includegraphics[width=.5\textwidth]{Images/LQG_OPTIMIST_mu.pdf}\hfill
 %\includegraphics[width=.33\textwidth]{Images/LQG_UCB1_mu.pdf}
-\caption{The gain parameter $\mu$ selected at each iteration of \gls{GPUCB}(left) and \gls{OPTIMIST}(right).}
+\caption{The gain parameter $\mu$ selected at each iteration of \gls{GPUCB}(left) and \gls{OPTIMIST}(right) in the \gls{LQG} experiment.}
 \label{fig:LQGmu}
 \end{figure*}
 
@@ -137,11 +139,11 @@ the \gls{LQG} experiment, comparing
 \begin{figure}[t!]
 \centering
 \includegraphics[width=.75\textwidth,keepaspectratio]{Images/LQG_optimal_gain.pdf}
-\caption{Mean return of arms $\mu\in[-0.9,-0,5]$, calculated by averaging the return collected over 2000 trajectories for each arm pulled.}
+\caption{Mean return of arms $\mu\in[-0.9,-0,5]$, calculated by averaging the return collected over 2000 trajectories for each arm pulled in the \gls{LQG} experiment.}
 \label{fig:LQGoptimalgain}
 \end{figure}
 
-In order to benchmark \gls{OPTIMIST} with both \gls{UCB}1 and \gls{GPUCB} on a discrete set, we first consider the case in which the only learnable parameter of $\nu_{\vxi}$ is the gain $\mu$. To this end, we consider a uniform discretization of the interval $[-1,1]$ made of 100 arms (every arm is a possible choice of $\mu$). The hyperpolicy standard deviation is fixed to $\sigma=0.1$. We experimented with different values of $\sigma$ and this turned out to be a good choice for making the task noisy enough, but not too noisy for obtaining interpretable results.\todo{spiegare cosa succede se $\sigma$ è troppo piccola e i bracci non condividono informazione} In Figure~\ref{fig:LQGcomparison}, we show the cumulative regret of the three algorithms, averaged over 30 runs. We can see that our algorithm significantly outperforms \gls{UCB}1.
+In order to benchmark \gls{OPTIMIST} with both \gls{UCB}1 and \gls{GPUCB} on a discrete set, we first consider the case in which the only learnable parameter of $\nu_{\vxi}$ is the gain $\mu$. To this end, we consider a uniform discretization of the interval $[-1,1]$ made of 100 arms (every arm is a possible choice of $\mu$). The hyperpolicy standard deviation is fixed to $\sigma=0.15$. We experimented with different values of $\sigma$ and this turned out to be a good choice for making the task noisy enough, but not too noisy for obtaining interpretable results.\todo{spiegare cosa succede se $\sigma$ è troppo piccola e i bracci non condividono informazione} In Figure (\ref{fig:LQGcomparison}), we show the cumulative regret of the three algorithms, averaged over 30 runs. We can see that our algorithm significantly outperforms \gls{UCB}1.
 Indeed, \gls{OPTIMIST} is able to exploit the structure of arms, \ie hyperpolicies, by means of the \gls{MIS} estimation, whereas \gls{UCB}1 does not make any assumption on arm correlation. In other words, \gls{OPTIMIST} performs a more informed, \ie directed, exploration, leveraging what the agent has experienced in past episodes more effectively. On the contrary, \gls{GPUCB} shows a better performance \wrt to \gls{OPTIMIST}. We point out that \gls{GPUCB} requires to specify, at the beginning of learning, the kernel of the Gaussian process from which the payoff function is sampled. We employed the default scikit-learn\footnote{A popular library for data mining and data analysis. Available at: https://scikit-learn.org/stable/} kernel, \ie the radial basis function kernel of the form:
 
 \begin{align}
@@ -152,7 +154,7 @@ where $\lambda$ is a free parameter. However, as it often happens in control tas
 
 
 \subsection{Gain and standard deviation}
-In the second experiment on \gls{LQG}, we learn both the mean and the variance parameter of the Gaussian hyperpolicy: $\nu_{\vxi} = \mathcal{N}(\mu, \exp(2\sigma))$, where $\vxi=(\mu,\sigma)^T$ and we modeled with $\xi_2$ the standard deviation. The experiment coefficients are the same used before, shown in Table (\ref{tab:LQGcoeff}).
+In the second experiment on \gls{LQG}, we learn both the mean and the variance parameter of the Gaussian hyperpolicy: $\nu_{\vxi} = \mathcal{N}(\mu, \exp(2\sigma))$, where $\vxi=(\mu,\sigma)^T$ and we modeled with $\xi_2$ the standard deviation. The experiment parameters are the same used before, reported in Table (\ref{tab:LQGcoeff}).
 In Figure (\ref{fig:LQGcomparisonVar}), we show the cumulative regret averaged over 5 runs comparing \gls{OPTIMIST}, \gls{UCB}1 and \gls{GPUCB}. We see a trend similar to the case in which we learn only the mean parameter. While \gls{OPTIMIST} is able to exploit the structure of the arms induced by the fact that hyperpolicyes share information, beating \gls{UCB}1, \gls{GPUCB} still displays a better performance. The wider confidence intervals are a direct consequence of the wider spectrum of variances adopted by the hyperpolicy, bringing to very different policy parameters and, subsequently, very difference performance from one run to another.
 
 \begin{figure*}[t!] 
@@ -176,6 +178,19 @@ the \gls{LQG} experiment, comparing
 \label{fig:MC}
 \end{figure*} 
 
+\begin{table}[t!]
+\centering
+\begin{tabular}{ccc|cc} 
+\toprule
+$\gamma$ & H & T & $\delta$ & k\\ 
+\midrule
+1.00 & 500 & 5000 & 0.20 & 3\\
+\bottomrule
+\end{tabular}
+\caption{Task parameters (left side) and \gls{OPTIMIST} input parameters (right side) for the Mountain Car experiment.}
+\label{tab:MCcoeff}
+\end{table}
+
 \begin{figure*}[t!] 
 \centering
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Images/MC_mu.pdf}
@@ -187,12 +202,13 @@ the \gls{LQG} experiment, comparing
 \end{figure*}
 
 The second experiment, illustrates the behaviour of \gls{OPTIMIST}2  
-when the parameters of the hyperpolicy belong to a compact (continuous) space, on the continuous Mountain Car task\cite{brockman2016openai}. We chose the continuous Mountain Car because it is a simple, well known, continuous problem and has a sparse reward, which requires more exploration \wrt other simple challenges s.a. \gls{LQG}. 
+when the parameters of the hyperpolicy belong to a compact (continuous) space, on the continuous Mountain Car task\cite{brockman2016openai}. We chose the continuous Mountain Car because it is a simple, well known, continuous problem and because it constitutes a relevant exploration challenge \wrt other simple tasks s.a. \gls{LQG}. 
 
-In this problem, graphically represented in Figure (\ref{fig:MC}), the agent has to control the engine of an under-powered car in order to reach a target. The target is on top of a hill on the right-hand side of the car. If the car reaches it or goes beyond, the episode terminates. On the left-hand side, there is another hill. Climbing this hill can be used to gain potential energy and accelerate towards the target. On top of this second hill, the car cannot go further than a position equal to -1, as if there was a wall. The state space $\Sspace=[-1.2,0.6]x[-0.07,0.07]$ is constituted by a bi-dimensional vector with current position and velocity of the car. The action space $\Aspace\in\Reals$ is continuous: positive values correspond to a forward engine traction, negative values to backward engine traction. Every episode starts with the cat in a position between $-0.6$ and $-0.4$, with null velocity. 
+In this problem, graphically represented in Figure (\ref{fig:MC}), the agent has to control the engine of an under-powered car in order to reach a target. The target is on top of a hill on the right-hand side of the car. If the car reaches it or goes beyond, the episode terminates. On the left-hand side, there is another hill. Climbing this hill can be used to gain potential energy and accelerate towards the target. On top of this second hill, the car cannot go further than a position equal to -1, as if there was a wall. Reward is 100 for reaching the target of the hill on the right hand side, minus the squared sum of actions from start to goal. This reward function raises an exploration challenge, because if the agent does not reach the target soon enough, it will figure out that it is better not to move, and won't find the target any more.The state space $\Sspace=[-1.2,0.6]x[-0.07,0.07]$ is constituted by a bi-dimensional vector with current position and velocity of the car. The action space $\Aspace\in\Reals$ is continuous: positive values correspond to a forward engine traction, negative values to backward engine traction. Every episode starts with the cat in a position between $-0.6$ and $-0.4$, with null velocity. The agent samples $H=500$ steps-long trajectories with a discount factor of $\gamma=1.00$ (the rationale of this choice is discussed in Remark (\ref{rk:undiscounted})), for a total of $T=5000$ iterations. 
 
+In our experiment we use a Gaussian hyperpolicy with a two-dimensional learnable mean $\vmu=\{\mu_1, \mu_2\}$, within a box $\vmu\in[-1,-1]\times[0,20]$, and a fixed covariance $\Cov=\mathrm{diag}(0.15^2,3^2)$. Concerning the confidence and discretization schedules for \gls{OPTIMIST}2, we adopted those suggested in Theorem (\ref{th:regretdiscretized}), \ie ${\delta_t = \frac{6\delta}{\pi^2t^2\left(1+\left\lceil t^{\nicefrac{1}{\kappa}}\right\rceil^d\right)}}$ and $\tau_t=\lceil t^{\frac{1}{\kappa}} \rceil$, with $\delta=0.2$ and $k=3$. The choice of $k$ influences the granularity of the discretization. Since $\tau_t=\lceil t^{\frac{1}{\kappa}} \rceil$ the granularity always increases with time, but smaller values of $k$ allow for a greater granularity at a given iteration $t$. For more information about the choice of $k$, refer to Remark (\ref{rk:discretization}). The parameters used in the Mountain Car experiments are summarized in Table (\ref{tab:LQGcoeff}).
 
-In our experiment we use a Gaussian hyperpolicy with a two-dimensional learnable mean within a box $\vmu\in[-1,-1]\times[0,20]$ and a fixed covariance $\Cov=\mathrm{diag}(0.15,3)$. We compare \gls{OPTIMIST}2 (\ref{alg:2}) against parameter based policy optimization algorithms \gls{PGPE} (\ref{alg:PGPE}) and \gls{PBPOIS} \cite{metelli2018policy}. The latter is a parameter-based off-policy policy search algorithm which optimizes a lower bound of the performance estimator, built using single importance sampling. We chose to compare \gls{OPTIMIST} with \gls{PBPOIS} because of both their similarities and differences. In fact, despite being both off-policy algorithms based on importance sampling, \gls{PBPOIS} optimizes a lower bound on the performance, which implies a very limited exploration. By contrast, \gls{OPTIMIST} optimizes an upper bound on performance, accordingly to \gls{OFU} principle. Both algorithms are compared to \gls{PGPE}, that laid the foundations for both and is also known to lack proper exploration. 
+We compare \gls{OPTIMIST}2 (\ref{alg:2}) against parameter based policy optimization algorithms \gls{PGPE} (\ref{alg:PGPE}) and \gls{PBPOIS} \cite{metelli2018policy}. The latter is a parameter-based off-policy policy search algorithm which optimizes a lower bound of the performance estimator, built using single importance sampling. We chose to compare \gls{OPTIMIST} with \gls{PBPOIS} because of both their similarities and differences. In fact, despite being both off-policy algorithms based on importance sampling, \gls{PBPOIS} optimizes a lower bound on the performance, which implies a very limited exploration. By contrast, \gls{OPTIMIST} optimizes an upper bound on performance, accordingly to \gls{OFU} principle. Both algorithms are compared to \gls{PGPE}, that laid the foundations for both and is also known to lack proper exploration. 
 The best learning rate $\alpha$ for \gls{PGPE} was searched in the set $[3, 2, 1, 0.1, 0.01, 0.001]$. For \gls{PBPOIS}, we used the suggested hyperparameters. \\
 
 Results are shown in Figure (\ref{fig:MC}). We can notice that \gls{OPTIMIST}2 is able to learn a good policy in a very short time thanks to its better exploration capabilities. However, the policy gradient methods outperform it on the long run. In fact, the exploitative behaviour of the other two algorithms make them more performant \wrt \gls{OPTIMIST}, which continue to explore even after having found suitable parameters in few iterations. Even though these results might not be satisfactory from a performance point of view, our primary goal was to develop a \gls{PS} algorithm that would explore effectively the space of parameters. From this point of view, the results turn out to be successful. To convince ourselves of this claim, we refer to Figure (\ref{fig:MCgain}), in which we show the result of the kernel density estimation \cite{scott2015multivariate} of the probability of the two-dimensional learnable mean $\vmu$, for \gls{PGPE} (left) and \gls{OPTIMIST} (right). The estimation has been carried out by means of the Gaussian kernel density estimation available in the SciPy library.\footnote{https://docs.scipy.org/doc/} Intuitively, this represents the likelihood of each two-dimensional mean arm to be pulled by either \gls{PGPE} or \gls{OPTIMIST}. 
@@ -203,4 +219,94 @@ Results are shown in Figure (\ref{fig:MC}). We can notice that \gls{OPTIMIST}2 i
 \includegraphics[width=.5\textwidth]{Images/MCgainOPTIMIST.pdf}
 \caption{Gaussian kernel density estimation \cite{scott2015multivariate} of the probability of the two-dimensional learnable mean $\vmu$ to be pulled by either \gls{PGPE} (left) or \gls{OPTIMIST} (right).} 
 \label{fig:MCgain}
+\end{figure*} 
+
+\begin{table}[t!]
+\centering
+\begin{tabular}{c|ccccc} 
+\toprule
+State-space dimension & $k=2$ & $k=3$ & $k=4$ & $k=5$ & $k=6$\\
+\midrule
+%$d=1$ & 71 & 18 & 9 & 6 & 5\\
+$d=2$ & 5041 & 324 & 81 & 36 & 25\\
+%$d=3$ & 357911 & 5832 & 729 & 216 & 125\\
+$d=4$ & 2541168 & 104976 & 6561 & 1296 & 625\\
+\bottomrule
+\end{tabular}
+\caption{Task parameters (left side) and \gls{OPTIMIST} input parameters (right side) for the Mountain Car experiment.}
+\label{tab:granularity}
+\end{table}
+
+\begin{remark} \label{rk:undiscounted}
+The rationale behind the choice of undiscounted ($\gamma=1.00$) returns lies in the design of the reward system. During learning, the car usually can not reach the target before a few hundred iterations, while collecting rewards equal to minus the squared sum of actions in all previous steps. In such scenario, the agent would barely distinguish between a successful episode (that ended by reaching the target) and an unsuccessful one. For the sake of clarity, we will illustrate this situation with an example. Imagine that, after driving up and down the hills for 300 episodes, the agent finally manages to reach the target. Imagine also that we are slightly discounting returns with $\gamma=0.99$. In this situation, the positive reward received would be $r_{301}=0.99^{300}\cdot 100.00=4.90$, while the negative reward cumulated in previous steps ($h=1,2,\dots,299$) would at least be numbered in tens. This means that the return of the episode would still be negative and numbered in tens, because $|r_{301}|\ll |\sum_{h=0}^{299}\gamma^hr_{h+1}|$. Hence, the agent would not from this successful episode, because it could not distinguish it from another unsuccessful episode. This problem is solved by setting $\gamma=1$.
+\end{remark}
+
+\begin{remark} \label{rk:discretization}
+Considering that \gls{OPTIMIST} needs to evaluate bound (eq:optimistindex) for every arm, the finer the discretization schedule the longer the time required by numerical simulation. Indeed, the optimization of the bound is largely more computationally demanding than any other operation undertaken by \gls{OPTIMIST}. In Table (\ref{tab:granularity}) we report the total number of arms resulting from different choices of $k$, according to the state-space dimension $d$, at final time step $T=5000$. As a reference, with the computing capacity at our disposal during this thesis project, the time needed for optimizing the bound over 5000 iterations was:
+
+\begin{itemize}
+\item approximately 4 hours with $d=2$ and $k=3$;
+\item approximately 39 hours with $d=3$ and $k=4$.
+\end{itemize} 
+
+Evidently, our limited time and computing capacity did not allow for the finest of the discretization schedules. However, we think that the discretization adopted in the Mountain Car and Inverted Pendulum (discussed next) experiments was appropriate to the task at hand.
+\end{remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Inverted Pendulum}
+
+\begin{figure*}[t!] 
+\centering
+\includegraphics[width=.8\textwidth,keepaspectratio]{Images/inverted_pendulum.png}
+\caption{Graphical representation of the Inverted Pendulum task.} 
+\label{fig:invpend}
+\end{figure*} 
+
+\begin{table}
+\centering
+\begin{tabular}{ccc|cc} 
+\toprule
+$\gamma$ & H & T & $\delta$ & k\\ 
+\midrule
+0.99 & 500 & 10000 & 0.20 & 5\\
+\bottomrule
+\end{tabular}
+\caption{Task parameters (left side) and \gls{OPTIMIST} input parameters (right side) for the Inverted Pendulum experiment.}
+\label{tab:IPcoeff}
+\end{table}
+
+As third comparative experiment, we attempted to run \gls{OPTIMIST} on the Cart-Pole Swing-Up task \cite{tornio2006variational}, also referred to as Inverted Pendulum task. Unfortunately, in this case optimist was not able to learn any performant policy, neither optimal nor near-optimal. However, we present the experiment and some considerations on what could have gone wrong as a starting point for future developments.
+This problem is a classic benchmark for non-linear control, which requires a thorough exploration for finding the optimal policy. The system consist of a pole attached to a cart (Figure \ref{fig:invpend})). The force applied to the cart can be controlled, and the goal is to swing the pole to an  upward  position  and  stabilise  it.  This  must  be accomplished without the cart crashing into the walls of the track. The state space $\Sspace\in\Reals^4$ consists of four observed variables. The position of the cart $u$ (constrained in $[-3,3]$), the angle  of  the  pole  measured  from  the upward  position $\phi$,  and  their  first  derivatives $u'$ and $\phi'$.  Control input is the force applied to the cart. The reward system is designed in a way that the agent receives a non-positive reward except when it manages to achieve an upward position:
+
+\begin{equation}
+\Rew(\boldsymbol{a}_t|\boldsymbol{s}_t)= \begin{cases}-100, &\text{if $|u_t|>3$} \\ \cos(\phi) &\text{if $|u_t|\leq3$} \end{cases}
+\end{equation}
+
+This task is known for requiring a thorough exploration of the parameter space because it is easy to encounter local optima which are far from the global optimum in terms of performance. An example would be a policy that continuously rotates the pole in order to receive a close-to-zero return (spending half of the time downwards and half upwards). The detailed dynamics and constraints for the simulated cart-pole system can be found in \cite{kimura1999efficient}, while for the implementation details (including the bounds applied to the position and the force) the reader can refer to \emph{rllab}\footnote{https://github.com/rll/rllab}. Before every trajectory, the system is initialized to a random state taken from the uniform distributions $u\in[-1,1]$, $u'\in[-2,2]$, $\phi\in[\pi-1,\pi+1]$, $\phi'\in[-3,+3]$. The agent samples $H=500$ steps-long trajectories with a discount factor of $\gamma=0.99$, for a total of $T=1000$ iterations.
+
+In our experiments we used a Gaussian hyperpolicy with a four-dimensional learnable mean $\vmu=\{\mu_1, \mu_2, \mu_3, \mu_4\}$, within a box $\vmu\in[-0.2,0.2]^4$, and a fixed covariance $\Cov=\mathrm{diag}(\sigma^2,\sigma^2,\sigma^2,\sigma^2)$, with $\sigma=0.001$. Concerning the confidence and discretization schedules for \gls{OPTIMIST}2, we adopted those suggested in Theorem (\ref{th:regretdiscretized}), \ie ${\delta_t = \frac{6\delta}{\pi^2t^2\left(1+\left\lceil t^{\nicefrac{1}{\kappa}}\right\rceil^d\right)}}$ and $\tau_t=\lceil t^{\frac{1}{\kappa}} \rceil$, with $\delta=0.2$ and $k=4$. The parameters used in the Inverted Pendulum experiments are reported in Table (\ref{tab:IPcoeff}).
+
+Unfortunately, \gls{OPTIMIST}2 failed to learn a good policy in this task.  Indeed, it failed to learn anything at all. This is clearly visible by looking at the hyperparameters curve over decision epochs: even after 10000 iterations the algorithm is still exploring (more or less) uniformly the parameter space. We report the curve of $\mu_1$ in Figure (\ref{fig:IPmu1}). The reason for this behaviour is likely to be $\sigma$. Indeed, for very small values of sigma, s.a. $\sigma=0.001$, the behavioural hyperpolicies adopted during learning do not share information with the target hyperpolicy. In other words, the \Renyi between the target and the mixture of behaviourals becomes very large and dominates the \gls{OPTIMIST} bound (\ref{eq:optimistindex}). We report the bound here for the sake of clarity:
+
+\begin{align}
+	&B_t^{1}(\vx,\delta_t) \coloneqq 
+	\wc{\mu}_t(\vx)+\norm[\infty]{f}\left(\sqrt{2}+\frac{4}{3}\right)\left(\frac{d_{2}(p_{\vx_t}\|\Phi_{t})\log\frac{1}{\delta_t}}{t}\right)^{\frac{1}{2}}.
+\end{align}
+
+Evidently, when the \Renyi divergence is very high the second half (the \emph{exploration bonus}) dominates the bound, and obliges the agent to explore disregarding the estimated performances of the arms. This intuition is confirmed by looking at the very irregular plots of the truncated \gls{MIS} estimator $\wc{\mu}_t(\vx_t)$ and the exploration bonus $\norm[\infty]{f}\left(\sqrt{2}+\frac{4}{3}\right)\left(\frac{d_{2}(p_{\vx_t}\|\Phi_{t})\log\frac{1}{\delta_t}}{t}\right)^{\frac{1}{2}}$ for the arms $\vx_t$ selected at iterations $t=1,2,\dots,T$, reported in Figure (\ref{fig:IPbound}). The bonus (whose value is frequently over 10000) largely dominates the performance estimator (whose value is mostly negative).
+
+\begin{figure*}[t!] 
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{Images/IP_mu_1.pdf}
+\caption{The hyperpolicy mean parameter selected at each iteration of \gls{OPTIMIST} in the Inverted Pendulum experiment.} 
+\label{fig:IPmu1}
+\end{figure*}
+
+\begin{figure*}[t!] 
+\centering
+\includegraphics[width=.5\textwidth]{Images/IPmise.pdf}\hfill
+\includegraphics[width=.5\textwidth]{Images/IPbonus.pdf}
+\caption{Truncated \gls{MIS} estimator (left) and exploration bonus (right) of the arms selected by \gls{OPTIMIST} at each iteration of the Inverted Pendulum experiment.} 
+\label{fig:IPbound}
 \end{figure*} 
