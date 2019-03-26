@@ -1,0 +1,20 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Interaction protocol for Markov decision processes\relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces A taxonomy of \gls {PS} methods \cite {deisenroth2013survey}\relax }}{17}{figure.caption.9}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Cumulative regret in the \gls {LQG} experiment. Comparison between \gls {OPTIMIST}, \gls {UCB}1 and \gls {GPUCB} when learning the hyperpolicy mean. (30 runs, 95\% c.i.)\relax }}{62}{figure.caption.11}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The gain parameter $\mu $ selected at each iteration of \gls {GPUCB} (left) and \gls {OPTIMIST} (right) in the \gls {LQG} experiment.\relax }}{63}{figure.caption.12}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Mean return of arms $\mu \in [-0.9,-0,5]$, calculated by averaging the return collected over 2000 trajectories in the \gls {LQG} experiment.\relax }}{63}{figure.caption.13}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Cumulative regret in the \gls {LQG} experiment, comparing \gls {OPTIMIST}, \gls {UCB}1 and \gls {GPUCB} when learning both the mean and the standard deviation hyperparameters only. (30 runs, 95\% c.i.)\relax }}{65}{figure.caption.14}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Graphical representation of the Mountain Car problem.\relax }}{65}{figure.caption.15}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Cumulative regret in the \gls {LQG} experiment. Comparison between \gls {OPTIMIST}, \gls {UCB}1 and \gls {GPUCB} when learning both hyperpolicy mean and the standard deviation. (30 runs, 95\% c.i.)\relax }}{66}{figure.caption.17}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Gaussian kernel density estimation \cite {scott2015multivariate} of the probability distribution of the arm set $\bm {\xi }=\bm {\mu }$ induced by \gls {PGPE} (left) and \gls {OPTIMIST} (right).\relax }}{68}{figure.caption.18}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Graphical representation of the Inverted Pendulum task.\relax }}{69}{figure.caption.20}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces The hyperpolicy mean parameter selected at each iteration of \gls {OPTIMIST} in the Inverted Pendulum experiment.\relax }}{72}{figure.caption.22}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Truncated \gls {MIS} estimator (left) and exploration bonus (right) of the arms selected by \gls {OPTIMIST} at each iteration of the Inverted Pendulum experiment.\relax }}{72}{figure.caption.23}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

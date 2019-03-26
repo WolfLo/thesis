@@ -208,20 +208,25 @@ Let us start with the first inequality. Observing that all samples $z_{ik}$ are 
 		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{\log\frac{1}{\delta_t}}{t}\right)^{\frac{\epsilon}{1+\epsilon}} + \frac{\pi^2LD}{6} \label{pp:19}\\
 		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
 			\log (1+d^dt^{2d}) + 2\log t + \log\frac{\pi^2}{6\delta}
-		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} + \frac{\pi^2LD}{6} \label{pp:20}\\
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\pi^2LD}{6} \label{pp:20}\\
 		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
 		\log (2d^dt^{2d}) + 2\log t + \log\frac{\pi^2}{6\delta}
-		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} + \frac{\pi^2LD}{6} \label{pp:21}\\
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\pi^2LD}{6} \label{pp:21}\\
 		&= \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
 		2(d+1)\log t + d\log d + \log\frac{\pi^2}{3\delta}
-		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} + \frac{\pi^2LD}{6} \nonumber\\
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\pi^2LD}{6} \nonumber\\
 		&\leq \Delta_0 + (c^{+}+c^{-})\left[v_{\epsilon}\left(
 			2(d+1)\log T + d\log d + \log\frac{\pi^2}{3\delta}
 		\right)\right]^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}
-		t^{-\frac{\epsilon}{1+\epsilon}} + \frac{\pi^2LD}{6} 	\nonumber\\
+		t^{-\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\pi^2LD}{6} 	\nonumber\\
 		&\leq \Delta_0 + (c^{+}+c^{-})\left[v_{\epsilon}\left(
 		2(d+1)\log T + d\log d + \log\frac{\pi^2}{3\delta}
-		\right)\right]^{\frac{\epsilon}{1+\epsilon}}(1+\epsilon)T^{\frac{1}{1+\epsilon}}+ \frac{\pi^2LD}{6}, 	\label{pp:22}
+		\right)\right]^{\frac{\epsilon}{1+\epsilon}}(1+\epsilon)T^{\frac{1}{1+\epsilon}} \\
+		&\qquad + \frac{\pi^2LD}{6}, 	\label{pp:22}
 	\end{align}
 	where (\ref{pp:17}) is from (\ref{aux:10}) and holds with probability at least $1-\delta$, (\ref{pp:18}) is from the choice of $\tau_t$ and $\sum_{t=1}^{T}t^{-2}\leq\sum_{t=1}^{\infty}t^{-2} = \frac{\pi^2}{6}$, (\ref{pp:19}) is from Assumption \ref{ass:boundrenyi}, (\ref{pp:20}) is from the choice of $\delta_t$, (\ref{pp:21}) is from $\log(1+x)\leq\log(2x)$, which holds for every $x\geq 1$, and (\ref{pp:22}) is from  (\ref{aux:3}) with $\alpha=\frac{\epsilon}{1+\epsilon}$. 
 	The proof is completed by renaming $C\gets (1+\epsilon)(c^{+}+c^{-}) = (1+\epsilon)(2\sqrt{2} + \frac{5}{3})\norm[\infty]{f}$.
@@ -252,21 +257,26 @@ Let us start with the first inequality. Observing that all samples $z_{ik}$ are 
 		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{\log\frac{1}{\delta_t}}{t}\right)^{\frac{\epsilon}{1+\epsilon}} + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:27}\\
 		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
 			2\log t + \log\left(1+\left\lceil t^{\frac{1}{\kappa}}\right\rceil^d\right) + \log\frac{\pi^2}{6\delta}
-		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:28}\\
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:28}\\
 		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
 		2\log t + d\log \left(t^{\frac{1}{\kappa}}+1\right) + \log\frac{\pi^2}{3\delta}
-		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:29}\\
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:29}\\
 		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
 		\left(2+ \frac{d}{\kappa}\right)\log t + d\log 2 + \log\frac{\pi^2}{3\delta}
-		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:30}\\
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:30}\\
 		&\leq \Delta_0 + (c^{+}+c^{-})\left[v_{\epsilon}
 		\left(
 		\left(2+ \frac{d}{\kappa}\right)\log T + d\log 2 + \log\frac{\pi^2}{3\delta}
-		\right)\right]^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}t^{-\frac{\epsilon}{1+\epsilon}} + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d, \nonumber\\
+		\right)\right]^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}t^{-\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d, \nonumber\\
 		&\leq \Delta_0 + (c^{+}+c^{-})\left[v_{\epsilon}
 		\left(
 		\left(2+ \frac{d}{\kappa}\right)\log T + d\log 2 + \log\frac{\pi^2}{3\delta}
-		\right)\right]^{\frac{\epsilon}{1+\epsilon}}(1+\epsilon)T^{\frac{1}{1+\epsilon}} + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d, \nonumber\\
+		\right)\right]^{\frac{\epsilon}{1+\epsilon}}(1+\epsilon)T^{\frac{1}{1+\epsilon}} \\
+		&\qquad + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d, \nonumber\\
 	\end{align}
 	where (\ref{pp:25}) is from (\ref{aux:12}) and holds with probability at least $1-\delta$ with the proposed $\delta_t$ and $\tau_t$, (\ref{pp:26}) is from the proposed $\tau_t$ and (\ref{aux:3}) with $\alpha=\nicefrac{1}{\kappa}$,  (\ref{pp:27}) is from Assumption \ref{ass:boundrenyi}, (\ref{pp:28}) is from the proposed $\delta_t$, (\ref{pp:29}) and (\ref{pp:30}) are from the fact $\log(x+1)\leq\log(2x)$ for $x\geq 1$, and (\ref{pp:30}) is from (\ref{aux:3}) with $\alpha=\frac{\epsilon}{1+\epsilon}$. The proof is completed by renaming ${C_1\gets(1+\epsilon)(c^{+}+c^{-})\norm[\infty]{f} = (1+\epsilon)(2\sqrt{2}+\frac{5}{3})\norm[\infty]{f}}$ and $C_2\gets\frac{\kappa}{\kappa-1}LD$.
 \end{proof}

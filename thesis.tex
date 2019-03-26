@@ -1,5 +1,7 @@
 \documentclass[12pt, a4paper, oneside]{book}  % openany
 
+
+
 %Custom packages and macros
 \usepackage{Style/thesis}
 
@@ -9,16 +11,16 @@
 % COVER PAGE
 %----------------------------------------------------------------------------------------
 
-%\pagestyle{empty}
-%\input{Cover/cover}
+\pagestyle{empty}
+\input{Cover/cover}
 
 %----------------------------------------------------------------------------------------
 % ABSTRACT
 %---------------------------------------------------------------------------------------
 
 %% Set page numbers of the introduction to roman
-% \frontmatter
-% \pagestyle{fancy}
+\frontmatter
+\pagestyle{fancy}
 % \include{Abstract/abstract}
 
 %----------------------------------------------------------------------------------------
@@ -31,17 +33,25 @@
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
 
+% Unset call to glossaries to avoid glossary terms appear in full in the list/tables of contents/algos/figures
+ 
+\glsunsetall
+
+
 \tableofcontents{} % Write out the Table of Contents
 
-% \listoffigures % Write out the List of Figures
-% \addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures % Write out the List of Figures
+\addcontentsline{toc}{chapter}{List of Figures}
 
-% \listoftables % Write out the List of Tables
+\listoftables % Write out the List of Tables
 
-% \listofalgorithms
-% \addcontentsline{toc}{chapter}{List of Algorithms}
+\listofalgorithms
+\addcontentsline{toc}{chapter}{List of Algorithms}
 
-%\printglossaries
+% Reset call to glossaries
+\glsresetall
+
+\printglossaries
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
@@ -49,7 +59,7 @@
 
 \mainmatter
 
-%\input{Chapters/1_introduction}
+\input{Chapters/1_introduction}
 \input{Chapters/2_preliminaries}
 \input{Chapters/3_sota}
 \input{Chapters/4_core}
