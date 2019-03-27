@@ -289,7 +289,8 @@ Evidently, when the \Renyi divergence is very high the second half (the \emph{ex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Action-based setting}
+
+\section{Action-based setting} \label{sec:actionbased}
 
 The reader may wonder why we did not carry out numerical simulations in the \emph{action-based} setting. Actually, we did make some experiments, but we briefly understood that there was a major obstacle represented by the computation of the \Renyi divergence. In fact, although what has been discussed in Section (\ref{sec:practical}) also applies to policies (not only hyperpolicies), the loss function can not be directly optimized since computing $d_{1+\epsilon}(p_{\vx}\|\Phi_t)$ requires the approximation of an integral over the trajectory space and, for stochastic environments, to know the transition model $\Tran$, which is unknown in a model free setting. For the sake of clarity, we report here the definition of the \Renyi divergence between the distributions $p_{\vtheta'}(\tau)$ and $p_{\vtheta}(\tau)$, induced over trajectories $\tau\in\Tau$ by the target $\pi_{\vtheta'}$ and behavioural $\pi_{\vtheta}$: \ref{eq:renyi}
 

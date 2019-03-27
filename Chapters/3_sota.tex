@@ -189,7 +189,7 @@ Note that weak Lipschitzness is satisfied whenever $\mu$ is 1-Lipschitz, \ie $\f
 By carefully choosing the tree of coverings and the algorithm parameters, the authors show that the regret of the proposed approach is bounded by $\widetilde{\mathcal{O}}(\sqrt{T}) = \mathcal{O}(\log\sqrt{T})$. For more details, refer to \cite{bubeck2011x}.
 
 
-\subsection{Posterior Sampling}
+\subsection{Posterior Sampling} \label{sub:posteriorMAB}
 Another way to address the exploration-exploitation dilemma in \gls{MAB}s is by posterior sampling. Particularly relevant is an heuristic called \gls{TS}, firstly introduced by \cite{thompson1933likelihood}, which has been thoroughly studied in the literature for its good properties. This technique is considered to be close to \gls{UCB} algorithms because it also allocates exploratory effort to actions that might be optimal \ie it also builds upon the \gls{OFU} principle \cite{russo2013eluder}. Indeed, similarly to \gls{UCB}, \gls{TS} avoids the under-exploitation of actions that are potentially good and prevents from wasting time on actions that are already known to be bad. The Bayesian approach is what sets \gls{TS} apart from the techniques previously mentioned. It requires a prior distribution for each arm as input, which encodes the initial belief that a learner has on each arm reward. Subsequently, at each round $t$, it samples from each arm distribution, chooses the action with the best reward and updates its posterior distribution by means of the Bayes'rule.\\ The elements of \gls{TS} are the followings:
 
 \begin{enumerate}
@@ -399,5 +399,5 @@ with $\phi_{h+1}$ the updated and $\phi_{t}$ the old parameters representing the
 	\end{algorithmic}
 \end{algorithm}
 
-\subsection{Posterior Sampling}
+\subsection{Posterior Sampling} \label{sub:posteriorRL}
 The \gls{TS} technique described in the previous section has been adopted and investigated in the framework of \gls{RL} as well \cite{strens2000bayesian, osband2013more, osband2015bootstrapped, osband2016deep}. Here, \gls{TS} involves sampling a statistically plausibly set of action values (or policies) and selecting the maximizing action (or best policy). These values can be generated, for example, by sampling from the posterior distribution over MDPs and computing the state-action value function of the sampled MDP. This approach, originally proposed in \cite{strens2000bayesian}, is called posterior sampling for reinforcement learning. In \cite{osband2017posterior}, the authors present theoretical and experimental arguments to show that posterior sampling is better than optimism in synthesizing efficient exploration with powerful generalization. Although we build our work leveraging on the principle of optimism in the face of uncertainty, posterior sampling appears to be an interesting option to further investigate. Indeed, as we will see, the formalization of the \gls{RL} problem that we propose in this paper seems to be a good testing ground for \gls{TS}.

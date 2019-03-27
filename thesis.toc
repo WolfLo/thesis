@@ -53,6 +53,9 @@
 \contentsline {section}{\numberline {5.3}Continuous Mountain Car}{65}{section.5.3}
 \contentsline {section}{\numberline {5.4}Inverted Pendulum}{69}{section.5.4}
 \contentsline {section}{\numberline {5.5}Action-based setting}{71}{section.5.5}
-\contentsline {chapter}{Appendices}{74}{section*.24}
-\contentsline {chapter}{\numberline {A}Proofs}{74}{Appendix.1.A}
-\contentsline {chapter}{Bibliography}{91}{chapter*.25}
+\contentsline {chapter}{\numberline {6}Conclusions}{74}{chapter.6}
+\contentsline {section}{\numberline {6.1}Original Contributions}{74}{section.6.1}
+\contentsline {section}{\numberline {6.2}Limitations and future works}{75}{section.6.2}
+\contentsline {chapter}{Appendices}{77}{section*.24}
+\contentsline {chapter}{\numberline {A}Proofs}{77}{Appendix.1.A}
+\contentsline {chapter}{Bibliography}{94}{chapter*.25}
