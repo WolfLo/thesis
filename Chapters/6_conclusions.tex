@@ -21,3 +21,8 @@ Future works should focus on finding more efficient ways to perform optimization
 the infinite-arm setting. The authors of \gls{GPUCB}, which faces a similar optimization problem, suggest the adoption of global search heuristics. Instead, the \gls{RL} community generally favours gradient descent. However, this latter is known for performing badly in optimizing multimodal functions, like our bound. Nonetheless, there exist many different variations of this technique (natural gradient, stein variational gradient, gradient with momentum etc.), and some of them could reveal effective.
 On an other track, parallel to the first one, future work could investigate appropriate estimators for the exploration bonus in the action-based setting. Also, they could study how to mitigate \gls{OPTIMIST} strong exploration drive whenever it proves to be excessive.
 Finally, an interesting line of research would be to study suitable integrations of our problem formalization and bounds with posterior sampling, as described in \ref{sub:posteriorMAB}. Indeed, exploiting the sample efficiency that characterizes \gls{TS} seems promising, and already proved to be a more powerful solution than optimism in some \gls{RL} scenarios, as discussed in \ref{sub:posteriorRL}. 
+
+
+\textcolor{red}{EXPLAIN CLEVER CASHING?}
+\textcolor{red}{Unfortunately, the time required for optimization is exponential in arm space dimensionality=====spendere qualche parola per dire come mai perchè la complessità è quella presentata?}
+\textcolor{red}{bigger labels \ref{fig:LQGoptimalgain}}

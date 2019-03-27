@@ -3,10 +3,10 @@
 \chapter{Numerical Simulations} \label{ch:experiments}
 In this chapter, we start by discussing two practical aspects related to the experimental applications of the algorithms described in Chapter (\ref{ch:core}). Then, we proceed by showing the results of our numerical simulations on three \gls{RL} benchmarking challenges: the \gls{LQG}, the Continuous Mountain Car problem and the Inverted Pendulum task.
 
-The programming language chosen for implementing the numerical simulations discussed in this chapter is Python. The code is publicly available on GitHub\footnote{https://github.com/T3p/baselines/tree/exploration/baselines}, and it is built upon the OpenAI Baselines library\footnote{https://github.com/openai/baselines}.
+The programming language chosen for implementing the numerical simulations discussed in this chapter is Python. The code is publicly available on GitHub\footnote{https://github.com/T3p/baselines/tree/exploration/baselines}, and it is built upon the OpenAI Baselines library \cite{baselines}.
 
 \section{Practical Aspects} \label{sec:practical}
-In the numerical simulations that will be presented in the following sections we place ourselves in the \emph{parameter-based} \gls{PS} setting (see Section (\ref{sec:problem}) for details). We adopt Gaussian distributions as target and behavioural hyperpolicies $\nu_{\vxi}= \mathcal{N}(\vmu,\Cov)$, from which the policy parameters $\vtheta$ are drawn. In particular, we will adopt diagonal hyperpolicies $\nu_{\vxi}$, with hyperparameters $\vxi=\{\vtheta,\Cov\}$, of the form: 
+In the numerical simulations that will be presented in the following sections we place ourselves in the \emph{parameter-based} \gls{PS} setting (see Section (\ref{sec:problem}) for details). We adopt Gaussian distributions as target and behavioural hyperpolicies $\nu_{\vxi}= \mathcal{N}(\vmu,\Cov)$, from which the policy parameters $\vtheta$ are drawn. In particular, we will adopt hyperpolicies $\nu_{\vxi}$, with hyperparameters $\vxi=\{\vtheta,\Cov\}$, where $\Cov$ is diagonal: 
 
 \begin{align}
 \nu_{\vxi}(\vtheta) & = \frac{1}{\sqrt{(2\pi)^m |\Cov |}}\exp\left(
@@ -16,7 +16,7 @@ In the numerical simulations that will be presented in the following sections we
 \end{align}
 
 This allows the use of a deterministic controller $\pi_{\vtheta}: \vtheta\in\Theta\subseteq\Reals^m$ for sampling the trajectories, that we define as $\pi_{\vtheta}(a|s)=\delta(a-\vtheta s)$. This parameter-based setting follows the one adopted in \gls{PGPE}, as described in (\ref{subsec:algorithms}). \\
-This distribution choice for our target and behavioural hyperpolicies allows a comfortable computation of the robust balance heuristic estimator $\wc{\mu}_t(\vx)$ defined in Equation (\ref{eq:wcmu}). Unfortunately, that is not all for the computation of the upper bound $B_t^{\epsilon}(\vx,\delta_t)$ (\ref{eq:optimistindex}) that we need to optimize in each iteration $t$ of \gls{OPTIMIST}.
+This distribution choice for our target and behavioural hyperpolicies allows a comfortable computation of the robust balance heuristic estimator $\wc{\mu}_t(\vx)$ defined in Equation (\ref{eq:wcmu}). Unfortunately, that is not enough for the computation of the upper bound $B_t^{\epsilon}(\vx,\delta_t)$ (\ref{eq:optimistindex}) that we need to optimize in each iteration $t$ of \gls{OPTIMIST}.
 
 \subsection{Divergence Between Gaussian Multivariate Distributions}
 
@@ -42,12 +42,12 @@ where $\Cov_{\alpha}=\alpha\Cov_Q+(1-\alpha)\Cov_P$ under the assumption that $\
 
 \subsection{Uniformly Bounded Rényi divergence} \label{subsec:boundrenyi}
 
-The other concern about the exponentiated \Renyi divergence between the target and the mixture of behavioural hyperpolicies is to make it compliant with Assumption (\ref{ass:boundrenyi}), \ie to make it uniformly bounded. Without this assumption, the results on \gls{OPTIMIST} regret (Theorems (\ref{th:regretdiscrete}),(\ref{th:regretcompact}) and (\ref{th:regretdiscretized})) are no more guaranteed. This assumption can be easily respected by careful hyperpolicy design. First, note that the results on the regret are provided for a compact continuous (or finite discrete) arm set, hence the maximum distance among the parameters is bounded. Additionally, we must ensure that the \Renyi divergence is bounded. As showed in Theorem (\ref{th:armonic}), it is enough that the divergence is finite between the target and one of the components of the mixture to guarantee a bound on the divergence between a target distribution and a mixture of behavioural distributions. Hence, we will focus on the constraints between behavioural/target pairs. As an example, for multivariate diagonal Gaussian distributions with fixed covariance Assumption (\ref{ass:boundrenyi}) is easily guaranteed. In fact, the \Renyi divergence is a continuous function of the mean parameter \cite{gil2013renyi} and a continuous function on a compact set is bounded. If the standard deviation (or covariance matrix) is also part of the parameter set, additional constraints are needed, as one can understand by examining Equation (\ref{eq:gaussianrenyi}). For $\epsilon=1$, the standard deviation $\sigma_P$ of the target distribution must not be larger than twice that of the behavioural ($\sigma_Q$) for the divergence to be finite. Hence, given a minimum $\sigma_{0} > 0$, it is enough to constrain the search within $[\sigma_0, 2*\sigma_0]$. We also suggest initializing the first behavioural distribution with $\sigma_Q=2*\sigma_0$, so that the algorithm will move towards smaller standard deviations. This will result in a less stochastic behaviour. Similar constraints can be defined for other kinds of policies \cite{gil2013renyi}. 
+The other concern about the exponentiated \Renyi divergence between the target and the mixture of behavioural hyperpolicies is to make it compliant with Assumption (\ref{ass:boundrenyi}), \ie uniformly bounded. Without this assumption, the results on \gls{OPTIMIST} regret (Theorems (\ref{th:regretdiscrete}),(\ref{th:regretcompact}) and (\ref{th:regretdiscretized})) are no more guaranteed. This assumption can be easily respected by careful hyperpolicy design. First, note that the results on the regret are provided for a compact continuous (or finite discrete) arm set, hence the maximum distance among the parameters is bounded. Additionally, we must ensure that the \Renyi divergence is bounded. As showed in Theorem (\ref{th:armonic}), it is enough that the divergence is finite between the target and one of the components of the mixture to guarantee a bound on the divergence between a target distribution and a mixture of behavioural distributions. Hence, we will focus on the constraints between behavioural/target pairs. As an example, for multivariate diagonal Gaussian distributions with fixed covariance Assumption (\ref{ass:boundrenyi}) is easily guaranteed. In fact, the \Renyi divergence is a continuous function of the mean parameter \cite{gil2013renyi} and a continuous function on a compact set is bounded. If the standard deviation (or covariance matrix) is also part of the parameter set, additional constraints are needed, as one can understand by examining Equation (\ref{eq:gaussianrenyi}). For $\epsilon=1$, the standard deviation $\sigma_P$ of the target distribution must not be larger than twice that of the behavioural ($\sigma_Q$) for the divergence to be finite. Hence, given a minimum $\sigma_{0} > 0$, it is enough to constrain the search within $[\sigma_0, 2\cdot\sigma_0]$. We also suggest initializing the first behavioural distribution with $\sigma_Q=2\cdot\sigma_0$, so that the algorithm will move towards smaller standard deviations. This will result in a less stochastic behaviour. Similar constraints can be defined for other kinds of policies \cite{gil2013renyi}. 
 
 
 \section{Linear Quadratic Gaussian Regulator}
 The goal of our numerical simulations on \gls{LQG} is twofold. First, we need a simple continuous control problem to understand the functioning of our algorithms. Second, we want to compare \gls{OPTIMIST} (Algorithm (\ref{alg:1})) with two classical \gls{MAB} algorithms presented in Chapter (\ref{ch:sota}): \gls{UCB}1 (\ref{sebsec:count&UCB}) and \gls{GPUCB} (\ref{alg:gpucb}), in the case of discrete parameter space $\Xi$.\\
-The \gls{LQG} problem \cite{peters2008reinforcement} is a continuous \gls{MDP} which represents a useful testing ground for control algorithms, mainly because of its simplicity. At each time-step $h$, the transition kernel and reward function are given by:
+The \gls{LQG} problem \cite{peters2008reinforcement} is a continuous state-action space \gls{MDP} that represents a useful testing ground for control algorithms, mainly because of its simplicity. At each time-step $h$, the transition kernel and reward function are given by:
 
 \begin{align}
 \boldsymbol{s}_{h+1}=\boldsymbol{A}\boldsymbol{s}_h+\boldsymbol{B}\boldsymbol{a}_h +\boldsymbol{\eta}_h\\
@@ -61,17 +61,17 @@ For implementation reasons, we consider the case in which the state space is lim
 As mentioned in the previous section, in all our experiments we employ diagonal Gaussian hyperpolicies. In this case the hyperpolicy is univariate $\nu_{\vxi} = \mathcal{N}(\mu, \sigma^2)$, where $\mu$ is the mean parameter to be learned and $\sigma$ can be either fixed or learnable as well. On the other hand, the policy $\pi_{\theta}$ adopted by the agent is a deterministic linear controller $a_h=\pi_{\theta}(s_h)=\theta\cdot s_h$, with $\theta\sim\nu_{\vxi}$. Since \gls{UCB}1 requires a positive return $r_t\in[0,1]$, we standardized the trajectory return $\Rew(\vxi_t)=\sum_{h=0}^{H-1}\gamma^h r_{h+1}$ associated to the arm $\xi_t$ pulled at iteration $t$: 
 
 \begin{align}
-r_t=\Rew(\vxi_t)/\Rew(\vxi^*),
+r_t=\Rew(\vxi_t)/\Rew_{max},
 \end{align}
 
-where $\vxi^*$ is the optimal arm and $\Rew(\vxi^*)$ is the maximum achievable cumulated return:
+where $\Rew_{max}$ is the maximum achievable cumulated return:
 
 \begin{align}
-\Rew(\vxi^*)
-&= \sum_{h=0}^{H-1}\gamma^h\cdot 1 = \frac{1-\gamma^h}{1-\gamma}.
+\Rew_{max}
+&= \sum_{h=0}^{H-1}\gamma^h\cdot 1 = \frac{1-\gamma^H}{1-\gamma}.
 \end{align}
  
-Each of these  All algorithms are run with the confidence schedule proposed in Theorem (\ref{th:regretdiscrete}), \ie $\delta_t = \frac{3\delta}{t^2\pi^2K}$, with $\delta=0.2$ (similar results have been obtained with different values of $\delta$). The parameters used in the \gls{LQG} experiments are summarized in Table (\ref{tab:LQGcoeff}).
+All algorithms are run with the confidence schedule proposed in Theorem (\ref{th:regretdiscrete}), \ie $\delta_t = \frac{3\delta}{t^2\pi^2K}$, with $\delta=0.2$ (similar results have been obtained with different values of $\delta$). The parameters used in the \gls{LQG} experiments are summarized in Table (\ref{tab:LQGcoeff}).
 
 
 \begin{table}[t!]
@@ -116,7 +116,7 @@ the \gls{LQG} experiment. Comparison between
 \label{fig:LQGoptimalgain}
 \end{figure}
 
-In order to benchmark \gls{OPTIMIST} with both \gls{UCB}1 and \gls{GPUCB} on a discrete set, we first consider the case in which the only learnable parameter of $\nu_{\vxi}$ is the gain $\mu$. To this end, we consider a uniform discretization of the interval $[-1,1]$ made of 100 arms (every arm is a possible choice of $\mu$). The hyperpolicy standard deviation is fixed to $\sigma=0.15$. We experimented with different values of $\sigma$ and this turned out to be a good choice for making the task noisy, but not too noisy to allow learning.
+In order to benchmark \gls{OPTIMIST} with both \gls{UCB}1 and \gls{GPUCB} on a discrete set, we first consider the case in which the only learnable parameter of $\nu_{\vxi}$ is the gain $\mu$. To this end, we consider a uniform discretization of the interval $[-1,1]$ made of 100 arms (every arm is a possible choice of $\mu$). The hyperpolicy standard deviation is fixed to $\sigma=0.15$. We experimented with different values of $\sigma$ and this turned out to be a good choice for making the task noisy, but not too noisy to prevent learning.
 
 
 In Figure (\ref{fig:LQGcomparison}), we show the cumulative regret of the three algorithms, averaged over 30 runs. We can see that our algorithm significantly outperforms \gls{UCB}1.
@@ -130,15 +130,15 @@ where $\lambda$ is a free parameter. However, as it often happens in control tas
 
 
 \subsection{Gain and standard deviation}
-In the second experiment on \gls{LQG}, we learn both the mean and the variance parameter of the Gaussian hyperpolicy: $\nu_{\vxi} = \mathcal{N}(\mu, \exp(2\sigma))$, where $\vxi=(\mu,\sigma)^T=(\xi_1,\xi_2)^T$. The parameters used in the experiment are the same as before, reported in Table (\ref{tab:LQGcoeff}).
-In Figure (\ref{fig:LQGcomparisonVar}), we show the cumulative regret averaged over 5 runs comparing \gls{OPTIMIST}, \gls{UCB}1 and \gls{GPUCB}. We see a trend similar to the case in which we learn only the mean parameter. While \gls{OPTIMIST} is able to exploit the structure of the arms induced by the fact that hyperpolicies share information, beating \gls{UCB}1, \gls{GPUCB} still displays a better performance. The wider confidence intervals are a direct consequence of the wider spectrum of variances adopted by the hyperpolicy, bringing to very different choices of policy parameters and, subsequently, very difference performance from one run to another.
+In the second experiment on \gls{LQG}, we learn both the mean and the variance parameter of the Gaussian hyperpolicy: $\nu_{\vxi} = \mathcal{N}(\mu, \exp(2\rho))$, where $\vxi=(\mu,\rho)^T=(\xi_1,\xi_2)^T$. The parameters used in the experiment are the same as before, reported in Table (\ref{tab:LQGcoeff}).
+In Figure (\ref{fig:LQGcomparisonVar}), we show the cumulative regret averaged over 5 runs comparing \gls{OPTIMIST}, \gls{UCB}1 and \gls{GPUCB}. We see a trend similar to the case in which we learn the mean parameter only. While \gls{OPTIMIST} is able to exploit the structure of the arms induced by the fact that hyperpolicies share information, beating \gls{UCB}1, \gls{GPUCB} still displays a better performance. The wider confidence intervals are a direct consequence of the wider spectrum of variances adopted by the hyperpolicy, bringing to very different choices of policy parameters and, subsequently, very difference performance from one run to another.
 
 \begin{figure*}[t!] 
 \centering
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Images/LQGcomparisonVar.pdf}
 \caption{Cumulative regret in
 the \gls{LQG} experiment, comparing
-\gls{OPTIMIST}, \gls{UCB}1 and \gls{GPUCB} when learning both the mean and the standard deviation hyperparameters only.
+\gls{OPTIMIST}, \gls{UCB}1 and \gls{GPUCB} when learning both the mean and the standard deviation hyperparameters.
 (30 runs, 95\% c.i.)} 
 \label{fig:LQGcomparisonVar} 
 \end{figure*}
@@ -150,7 +150,7 @@ the \gls{LQG} experiment, comparing
 \begin{figure*}[t!] 
 \centering
 \includegraphics[width=.6\textwidth,keepaspectratio]{Images/MC.png}
-\caption{Graphical representation of the Mountain Car problem.} 
+\caption{Graphical representation of the Mountain Car problem \cite{gym}.} 
 \label{fig:MC}
 \end{figure*} 
 

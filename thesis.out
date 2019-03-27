@@ -34,7 +34,7 @@
 \BOOKMARK [2][-]{subsection.3.2.1}{Undirected Exploration}{section.3.2}% 34
 \BOOKMARK [2][-]{subsection.3.2.2}{Count-based exploration and Intrinsic Motivation}{section.3.2}% 35
 \BOOKMARK [2][-]{subsection.3.2.3}{Posterior Sampling}{section.3.2}% 36
-\BOOKMARK [0][-]{chapter.4}{Optimistic Policy Optimization via Multiple Importance Sampling}{}% 37
+\BOOKMARK [0][-]{chapter.4}{Optimistic Policy Search via Multiple Importance Sampling}{}% 37
 \BOOKMARK [1][-]{section.4.1}{Robust Importance Sampling Estimation}{chapter.4}% 38
 \BOOKMARK [1][-]{section.4.2}{Problem Formalization}{chapter.4}% 39
 \BOOKMARK [1][-]{section.4.3}{Algorithms}{chapter.4}% 40

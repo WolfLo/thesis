@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  27 MAR 2019 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  27 MAR 2019 21:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2611,7 +2611,7 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 262.
  [14] [15]
-[16] <Images/ps_taxonomy.png, id=726, 1804.7425pt x 757.83125pt>
+[16] <Images/ps_taxonomy.png, id=727, 1804.7425pt x 757.83125pt>
 File: Images/ps_taxonomy.png Graphic file (type png)
 
 <use Images/ps_taxonomy.png>
@@ -2677,44 +2677,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 353--354
 Chapter 4.
 [48
 
-] [49] [50] [51] [52] [53] [54] [55] [56]) (./Chapters/5_experiments.tex
-[57]
+] [49] [50] [51] [52] [53] [54] [55]
+Overfull \hbox (26.46968pt too wide) in paragraph at lines 220--220
+[] 
+ []
+
+) (./Chapters/5_experiments.tex [56]
 Chapter 5.
-[58
+[57
 
 ]
 Overfull \hbox (0.26564pt too wide) in paragraph at lines 39--39
 [] 
  []
 
-[59] [60] [61] <Images/LQGcomparison.pdf, id=1526, 867.24pt x 361.35pt>
+[58] [59] [60] <Images/LQGcomparison.pdf, id=1523, 867.24pt x 361.35pt>
 File: Images/LQGcomparison.pdf Graphic file (type pdf)
 
 <use Images/LQGcomparison.pdf>
 Package pdftex.def Info: Images/LQGcomparison.pdf used on input line 95.
 (pdftex.def)             Requested size: 406.87505pt x 169.53127pt.
 
-<Images/LQG_GPUCB_mu.pdf, id=1535, 722.7pt x 505.89pt>
+<Images/LQG_GPUCB_mu.pdf, id=1532, 722.7pt x 505.89pt>
 File: Images/LQG_GPUCB_mu.pdf Graphic file (type pdf)
 
 <use Images/LQG_GPUCB_mu.pdf>
 Package pdftex.def Info: Images/LQG_GPUCB_mu.pdf used on input line 104.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
 
-<Images/LQG_OPTIMIST_mu.pdf, id=1536, 722.7pt x 505.89pt>
+<Images/LQG_OPTIMIST_mu.pdf, id=1533, 722.7pt x 505.89pt>
 File: Images/LQG_OPTIMIST_mu.pdf Graphic file (type pdf)
 
 <use Images/LQG_OPTIMIST_mu.pdf>
 Package pdftex.def Info: Images/LQG_OPTIMIST_mu.pdf used on input line 105.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
 
-<Images/LQG_optimal_gain.pdf, id=1543, 867.24pt x 361.35pt>
+<Images/LQG_optimal_gain.pdf, id=1540, 867.24pt x 361.35pt>
 File: Images/LQG_optimal_gain.pdf Graphic file (type pdf)
 
 <use Images/LQG_optimal_gain.pdf>
 Package pdftex.def Info: Images/LQG_optimal_gain.pdf used on input line 114.
 (pdftex.def)             Requested size: 305.1558pt x 127.14706pt.
- [62 <./Images/LQGcomparison.pdf>] [63 <./Images/LQG_GPUCB_mu.pdf> <./Images/LQ
+ [61 <./Images/LQGcomparison.pdf>] [62 <./Images/LQG_GPUCB_mu.pdf> <./Images/LQ
 G_OPTIMIST_mu.pdf
 
 pdfTeX warning: pdflatex (file ./Images/LQG_OPTIMIST_mu.pdf): PDF inclusion: mu
@@ -2723,14 +2727,14 @@ ltiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./Images/LQG_optimal_gain.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] <Images/LQGcomparisonVar.pdf, id=1647, 867.24pt x 361.35pt>
+>] <Images/LQGcomparisonVar.pdf, id=1645, 867.24pt x 361.35pt>
 File: Images/LQGcomparisonVar.pdf Graphic file (type pdf)
 
 <use Images/LQGcomparisonVar.pdf>
 Package pdftex.def Info: Images/LQGcomparisonVar.pdf used on input line 138.
 (pdftex.def)             Requested size: 406.87505pt x 169.53127pt.
 
-<Images/MC.png, id=1656, 1362.08875pt x 900.36375pt>
+<Images/MC.png, id=1654, 1362.08875pt x 900.36375pt>
 File: Images/MC.png Graphic file (type png)
  <use Images/MC.png>
 Package pdftex.def Info: Images/MC.png used on input line 152.
@@ -2742,55 +2746,55 @@ File: Images/MC_mu.pdf Graphic file (type pdf)
 Package pdftex.def Info: Images/MC_mu.pdf used on input line 172.
 (pdftex.def)             Requested size: 406.87505pt x 169.53127pt.
 
-[64] [65 <./Images/LQGcomparisonVar.pdf> <./Images/MC.png>] [66 <./Images/MC_mu
+[63] [64 <./Images/LQGcomparisonVar.pdf> <./Images/MC.png>] [65 <./Images/MC_mu
 .pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 187--189
 
  []
 
-[67] <Images/MCgainPGPE.pdf, id=1750, 722.7pt x 505.89pt>
+<Images/MCgainPGPE.pdf, id=1743, 722.7pt x 505.89pt>
 File: Images/MCgainPGPE.pdf Graphic file (type pdf)
 
 <use Images/MCgainPGPE.pdf>
 Package pdftex.def Info: Images/MCgainPGPE.pdf used on input line 194.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
 
-<Images/MCgainOPTIMIST.pdf, id=1751, 722.7pt x 505.89pt>
+<Images/MCgainOPTIMIST.pdf, id=1744, 722.7pt x 505.89pt>
 File: Images/MCgainOPTIMIST.pdf Graphic file (type pdf)
 
 <use Images/MCgainOPTIMIST.pdf>
 Package pdftex.def Info: Images/MCgainOPTIMIST.pdf used on input line 195.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
- [68 <./Images/MCgainPGPE.pdf> <./Images/MCgainOPTIMIST.pdf
+ [66] [67 <./Images/MCgainPGPE.pdf> <./Images/MCgainOPTIMIST.pdf
 
 pdfTeX warning: pdflatex (file ./Images/MCgainOPTIMIST.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
->] <Images/inverted_pendulum.png, id=1793, 763.85374pt x 173.64874pt>
+>] <Images/inverted_pendulum.png, id=1792, 763.85374pt x 173.64874pt>
 File: Images/inverted_pendulum.png Graphic file (type png)
 
 <use Images/inverted_pendulum.png>
 Package pdftex.def Info: Images/inverted_pendulum.png used on input line 237.
 (pdftex.def)             Requested size: 325.50076pt x 73.99713pt.
- [69 <./Images/inverted_pendulum.png>]
-[70] <Images/IP_mu_1.pdf, id=1824, 867.24pt x 361.35pt>
+ [68 <./Images/inverted_pendulum.png>]
+[69] <Images/IP_mu_1.pdf, id=1823, 867.24pt x 361.35pt>
 File: Images/IP_mu_1.pdf Graphic file (type pdf)
 
 <use Images/IP_mu_1.pdf>
 Package pdftex.def Info: Images/IP_mu_1.pdf used on input line 277.
 (pdftex.def)             Requested size: 406.87442pt x 169.53127pt.
- <Images/IPmise.pdf, id=1827, 722.7pt x 505.89pt>
+ <Images/IPmise.pdf, id=1826, 722.7pt x 505.89pt>
 File: Images/IPmise.pdf Graphic file (type pdf)
 
 <use Images/IPmise.pdf>
 Package pdftex.def Info: Images/IPmise.pdf used on input line 284.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
- <Images/IPbonus.pdf, id=1828, 722.7pt x 505.89pt>
+ <Images/IPbonus.pdf, id=1827, 722.7pt x 505.89pt>
 File: Images/IPbonus.pdf Graphic file (type pdf)
 
 <use Images/IPbonus.pdf>
 Package pdftex.def Info: Images/IPbonus.pdf used on input line 285.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
- [71] [72 <./Images/IP_mu_1.pdf> <./Images/IPmise.pdf
+ [70] [71 <./Images/IP_mu_1.pdf> <./Images/IPmise.pdf
 
 pdfTeX warning: pdflatex (file ./Images/IPmise.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
@@ -2798,13 +2802,13 @@ fs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./Images/IPbonus.pdf): PDF inclusion: multiple p
 dfs with page group included in a single page
->]) (./Chapters/6_conclusions.tex [73]
+>]) (./Chapters/6_conclusions.tex [72]
 Chapter 6.
-[74
+[73
 
-] [75]) [76] (./Appendix/A_proofs.tex
+] [74]) [75] (./Appendix/A_proofs.tex
 Appendix A.
-[77
+[76
 
 
 ]
@@ -2812,12 +2816,12 @@ Overfull \hbox (35.19218pt too wide) in paragraph at lines 37--37
 [] 
  []
 
-[78]
+[77]
 Overfull \hbox (27.57492pt too wide) in paragraph at lines 49--49
 [] 
  []
 
-[79] [80] [81]
+[78] [79] [80]
 Overfull \hbox (46.3188pt too wide) in paragraph at lines 89--89
 [] 
  []
@@ -2827,7 +2831,7 @@ Overfull \hbox (64.59209pt too wide) in paragraph at lines 96--96
 [] 
  []
 
-[82] [83]
+[81] [82]
 Overfull \hbox (10.87653pt too wide) in paragraph at lines 147--149
 \T1/lmr/m/n/12 (-20) where $\OML/lmm/m/it/12 ^^^\U/matha/m/n/12 p\OML/lmm/m/it/
 12 s\U/matha/m/n/12 q$ \T1/lmr/m/n/12 (-20) is a vec-tor of component-wise boun
@@ -2835,17 +2839,22 @@ ded state fea-tures, i.e., $[][] \U/matha/m/n/12 |\OML/cmm/b/it/12 ^^^\U/matha/
 m/n/12 p\OML/lmm/m/it/12 s\U/matha/m/n/12 q| ¤
  []
 
-[84] [85]
+[83] [84]
 Overfull \hbox (37.49931pt too wide) in paragraph at lines 192--192
 [] 
  []
 
-[86]
+
 Overfull \hbox (15.95924pt too wide) in paragraph at lines 230--230
 [] 
  []
 
-[87] [88]
+[85] [86]
+Overfull \hbox (26.46968pt too wide) in paragraph at lines 235--235
+[] 
+ []
+
+
 Overfull \hbox (37.49945pt too wide) in paragraph at lines 242--242
 [] 
  []
@@ -2855,19 +2864,30 @@ Overfull \hbox (21.43776pt too wide) in paragraph at lines 280--280
 [] 
  []
 
-[89]
+[87]
 Overfull \hbox (41.40572pt too wide) in paragraph at lines 280--282
 \T1/lmr/m/n/12 (-20) The proof is com-pleted by re-nam-ing $[]$
  []
 
-[90] [91] [92]) [93] (./thesis.bbl [94
+[88] [89] [90]) [91] (./thesis.bbl [92
 
 
-] [95]
+] [93]
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 142.
- [96] [97] [98] [99] [100] [101]
-[102] [103] [104] [105]) [106]
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 147.
+ [94]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 261.
+
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [95] [96] [97] [98] [99] [100]
+[101] [102] [103] [104]) [105]
 \openout6 = `thesis.acn'.
 
 Package glossaries Info: Writing glossary file thesis.acn on input line 86.
@@ -2877,18 +2897,18 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 86.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 86.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: C55D4D18486167CDABED383FA48620B8;4205.
+(rerunfilecheck)             Checksum: C4223E58447E694E651D6ECA1A9FA816;4199.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 42595 strings out of 493029
- 801286 string characters out of 6136234
- 1081043 words of memory out of 7999999
- 44251 multiletter control sequences out of 15000+600000
- 118803 words of font info for 278 fonts, out of 8000000 for 9000
+ 42639 strings out of 493029
+ 801958 string characters out of 6136234
+ 1080968 words of memory out of 7999999
+ 44292 multiletter control sequences out of 15000+600000
+ 119034 words of font info for 278 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,18n,77p,10443b,954s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
@@ -2913,19 +2933,19 @@ usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/mathabx-type1/matha12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ma
-thabx-type1/matha6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathab
-x-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-ty
-pe1/matha8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/
-mathb12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mat
-hx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
-m10.pfb>
-Output written on thesis.pdf (117 pages, 2474851 bytes).
+/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (116 pages, 2494566 bytes).
 PDF statistics:
- 2581 PDF objects out of 2984 (max. 8388607)
- 2348 compressed objects within 24 object streams
+ 2586 PDF objects out of 2984 (max. 8388607)
+ 2352 compressed objects within 24 object streams
  653 named destinations out of 1000 (max. 500000)
- 28728 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 29240 words of extra memory for PDF output out of 29859 (max. 10000000)
 

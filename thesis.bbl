@@ -130,6 +130,11 @@
   reinforcement learning.
 \newblock {\em Journal of Machine Learning Research 3}, Oct (2002), 213--231.
 
+\bibitem{gym}
+{\sc Brockman, G., Cheung, V., Pettersson, L., Schneider, J., Schulman, J.,
+  Tang, J., and Zaremba, W.}
+\newblock Openai gym, 2016.
+
 \bibitem{brockman2016openai}
 {\sc Brockman, G., Cheung, V., Pettersson, L., Schneider, J., Schulman, J.,
   Tang, J., and Zaremba, W.}
@@ -248,6 +253,12 @@
 \newblock A survey on policy search for robotics.
 \newblock {\em Foundations and Trends{\textregistered} in Robotics 2}, 1--2
   (2013), 1--142.
+
+\bibitem{baselines}
+{\sc Dhariwal, P., Hesse, C., Klimov, O., Nichol, A., Plappert, M., Radford,
+  A., Schulman, J., Sidor, S., Wu, Y., and Zhokhov, P.}
+\newblock Openai baselines.
+\newblock \url{https://github.com/openai/baselines}, 2017.
 
 \bibitem{dorato1995linear}
 {\sc Dorato, P., Abdallah, C.~T., Cerone, V., and Jacobson, D.~H.}

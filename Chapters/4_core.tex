@@ -1,18 +1,18 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Optimistic Policy Optimization via Multiple Importance Sampling} \label{ch:core}
+\chapter{Optimistic Policy Search via Multiple Importance Sampling} \label{ch:core}
 
-In this chapter we present the main theoretical contributions of this thesis project. In Section (\ref{sec:robust}), we extend Section (\ref{sec:mis}) to develop robust \gls{MIS} estimators that will play an essential role in the algorithms proposed. In Section (\ref{sec:problem}) we provide a formalization of the online policy optimization problem. The algorithms are presented in Section (\ref{sec:algo}) and analyzed in Section (\ref{sec:regret}). The proposed algorithms, called \gls{OPTIMIST} and \gls{OPTIMIST}2, are based on the \gls{OFU} principle and follows the \gls{UCB} strategy, both introduced in Section (\ref{sec:mab}) and covered with practical implementations in (\ref{sec:expinmab}). The idea is to leverage these techniques to deal with the problem of exploration in continuous-action \gls{RL}, whose solutions proposed so far have been largely heuristic, as we have seen in Chapter (\ref{ch:sota}). However, the solutions proposed here should not be interpreted as an application of the \gls{MAB} framework to \gls{PS} but rather as a way to formulate exploration in policy search as a \gls{MAB}-like problem
+In this chapter, we present the main theoretical contributions of this thesis project. In Section (\ref{sec:robust}), we extend Section (\ref{sec:mis}) to develop robust \gls{MIS} estimators that will play an essential role in the algorithms proposed. In Section (\ref{sec:problem}) we provide a formalization of the online policy optimization problem. The algorithms are presented in Section (\ref{sec:algo}) and analyzed in Section (\ref{sec:regret}). The proposed algorithms, called \gls{OPTIMIST} and \gls{OPTIMIST}2, are based on the \gls{OFU} principle and follows the \gls{UCB} strategy, both introduced in Section (\ref{sec:mab}) and covered with practical implementations in (\ref{sec:expinmab}). The idea is to leverage on these techniques to deal with the problem of exploration in continuous-action \gls{RL}, for which the solutions proposed so far have been largely heuristic, as we have seen in Chapter (\ref{ch:sota}). However, the solutions proposed here should not be interpreted as an application of the \gls{MAB} framework to \gls{PS} but rather as a way to formulate exploration in policy search as a \gls{MAB}-like problem
 
 
 \section{Robust Importance Sampling Estimation}\label{sec:robust}
-In this section, we discuss how to perform a robust importance weighting estimation. Recently it has been observed that, in many cases of interest, the plain estimator \eqref{eq:ise} presents problematic tail behaviors \cite{metelli2018policy}, preventing the use of exponential concentration inequalities. In fact, unless we require that $d_{\infty}(P \| \Phi)$ is finite, \ie that the importance weight have finite supremum, there always exists a value $\alpha>1$ such that $d_{\alpha}(P \| \Phi)=+\infty$. A common heuristic to address this problem consists in truncating the weight \cite{ionides2008truncated}:
+In this section, we discuss how to perform a robust importance weighting estimation. Recently, it has been observed that, in many cases of interest, the plain estimator \eqref{eq:ise} presents problematic tail behaviors \cite{metelli2018policy}, preventing the use of exponential concentration inequalities. In fact, unless we require that $d_{\infty}(P \| \Phi)$ is finite, \ie that the importance weight have finite supremum, there always exists a value $\alpha>1$ such that $d_{\alpha}(P \| \Phi)=+\infty$. A common heuristic to address this problem consists in truncating the weight \cite{ionides2008truncated}:
 \begin{align}\label{eq:truncatedise}
 	\widecheck{\mu}_{\text{IS}} = \frac{1}{N}\sum_{i=1}^{N} \min \left\{ M, {w}_{P/Q}(z_i) \right\} f(z_i),
 \end{align}
 where 
 % $\widecheck{w}_{P/Q}^M(z_i) = $ and $M_N$ 
-$M$ is a threshold to limit the magnitude of the importance weight. Similarly, for the multiple importance sampling case, restricting to the \gls{BH}, we have:
+$M>0$ is a threshold to limit the magnitude of the importance weight. Similarly, for the multiple importance sampling case, restricting to the \gls{BH}, we have:
 \begin{align}\label{eq:truncatedmise}
 	\widecheck{\mu}_{\text{BH}} =\frac{1}{N} \sum_{k=1}^K\sum_{i=1}^{N_k} \min \left\{M,  \frac{p(z_{ik})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{ik})} \right\} f(z_{ik}).
 \end{align}
@@ -32,7 +32,7 @@ Clearly, since we are changing the importance weights, we introduce a bias term,
 	where ${N=\sum_{k=1}^{K}N_k}$ is the total number of samples and ${\Phi=\sum_{k=1}^K\frac{N_k}{N}Q_k}$ is a finite mixture.
 \end{restatable}
 %
-It is worth noting that, by selecting $\epsilon=1$, equation~\eqref{eq:variancetruncated} reduces to Lemma~\ref{lem:misevarbound}, as the truncation operation can only reduce the variance. Clearly, the smaller we choose $M$, the larger the bias. Overall, we are interested in mining the joint contribution of bias and variance. Keeping $P$ and $\Phi$ fixed we observe that the bias depends only on $M$, whereas the variance depends on $M$ and on the number of samples $N$. Intuitively, we can allow larger truncation thresholds $M$ as the number of samples $N$ increases. The following result states that, when using an \textit{adaptive threshold} depending on $N$, we are able to reach exponential concentration.
+It is worth noting that, by selecting $\epsilon=1$, equation~\eqref{eq:variancetruncated} reduces to Lemma~\ref{lem:misevarbound}, as the truncation operation can only reduce the variance. Clearly, the smaller we choose $M$, the larger the bias. Overall, we are interested in mining the joint contribution of bias and variance. Keeping $P$ and $\Phi$ fixed we observe that the bias depends on $M$ only, whereas the variance depends on $M$ and on the number of samples $N$. Intuitively, we can allow larger truncation thresholds $M$ as the number of samples $N$ increases. The following result states that, when using an \textit{adaptive threshold} depending on $N$, we are able to reach exponential concentration.
 \begin{restatable}{theorem}{thrucatedconcentration}\label{lem:thrucatedconcentration}
 	Let $P$ and $\{ Q_k \}_{k=1}^N$ be probability measures on the measurable space $(\mathcal{Z},\mathcal{F})$ such that $P\ll Q_k$ and there exists $\epsilon \in (0,1]$ s.t. $d_{1+\epsilon}(P\|Q_k)<\infty$ for $k=1,\dots,K$. Let $f:\mathcal{Z}\to\Reals_{+}$ be a bounded non-negative function, \ie $\norm[\infty]{f}<\infty$. Let $\widecheck{\mu}_{\text{BH}}$ be the truncated balance heuristic estimator of $f$, as defined in (\ref{eq:truncatedmise}), using $N_k$ \iid samples from each $Q_k$. 
 	Let $M_N = \left( \frac{N d_{1+\epsilon}\left( P \| \Phi  \right)^{\epsilon} }{\log \frac{1}{\delta}} \right) ^{\frac{1}{1+\epsilon}}$, then with probability at least $1-\delta$:
@@ -59,11 +59,11 @@ Although we can evaluate $p_{\vx}$ for each $\vx\in\Xspace$, we can only observe
 This models precisely the online, episodic policy optimization problem. Within this problem formulation, we distinguish between two categories of policy optimization: \emph{action-based} and \emph{parameter-based} policy optimization. 
 
 \begin{itemize}
-\item In \emph{action-based} policy optimization, $\Xspace$ corresponds to the parameter space $\Theta$ of a class of stochastic policies ${\{\pi_{\vtheta}\mid\vtheta\in\Theta\}}$, $\mathcal{Z}$ to the set of possible trajectories, $p_{\vx}$ to the density $p_{\vtheta}$ over trajectories induced by policy $\pi_{\vtheta}$, and $f(z)$ to cumulated reward $\Rew(\tau)$.
-\item In \emph{parameter-based} policy optimization, $\Xspace$ corresponds to the hyperparameter space $\Xi$ of a class of stochastic hyperpolicies $\{\nu_{\vxi}\mid\vxi\in\Xi\}$, $\mathcal{Z}$ to the policy parameter space $\Theta$, $p_{\vx}$ to hyperpolicy $\nu_{\vxi}$, and $f(z)$ to performance $J(\vtheta)$.
+\item In \emph{action-based} policy optimization, $\Xspace$ corresponds to the parameter space $\Theta$ of a class of stochastic policies ${\{\pi_{\vtheta}\mid\vtheta\in\Theta\}}$; $\mathcal{Z}$ to the set of possible trajectories; $p_{\vx}$ to the density $p_{\vtheta}$ over trajectories induced by policy $\pi_{\vtheta}$; and $f(z)$ to cumulated reward $\Rew(\tau)$.
+\item In \emph{parameter-based} policy optimization, $\Xspace$ corresponds to the hyperparameter space $\Xi$ of a class of stochastic hyperpolicies $\{\nu_{\vxi}\mid\vxi\in\Xi\}$; $\mathcal{Z}$ to the set of possible trajectories collected with policy $\pi_{\vtheta}$, with $\vtheta\in\Theta\sim\nu_{\vxi}$; $p_{\vx}$ to hyperpolicy $\nu_{\vxi}$; and $f(z)$ to performance $J(\vtheta)$.
 \end{itemize}
  
-In both cases, each iteration corresponds to a single episode, and horizon $T$ is the total number of episodes (not to be confused with the trajectory horizon $H$). With reference to the standard \gls{PS} framework, the first category is closely related to standard \gls{PG} methods that perform a search in a parametric policy space by following the gradient of the utility function. The second, is more related to methods searching directly in the space of parameters like \gls{PGPE}. From now on, we will refer to (\ref{eq:theproblem}) simply as the policy optimization problem.
+In both cases, each iteration corresponds to a single episode, and horizon $T$ is the total number of episodes (not to be confused with the trajectory horizon $H$). With reference to the standard \gls{PS} framework, the first category is closely related to standard \gls{PG} methods that perform a search in a parametric policy space by following the gradient of the utility function. The second is more related to methods searching directly in the space of parameters like \gls{PGPE}. From now on, we will refer to (\ref{eq:theproblem}) simply as the policy optimization problem.
 
 \begin{remark}
 In abstract terms, (\ref{eq:theproblem}) is a sequential decision problem over a functional space of random variables, and may have applications beyond policy optimization.
@@ -112,10 +112,10 @@ First, we rephrase the optimization problem (\ref{alg:1}) in terms of \textit{re
 \begin{align}\label{eq:inregret}
 	\Delta_t = \mu(\vx^*) - \mu(\vx_t),
 \end{align}
-where $\vx^* = \arg\max_{\vx\in\Xspace}\mu(\vx)$. Let $\Reg(T) = \sum_{t=0}^T\Delta_t$ be the total regret, as in (\ref{def:regret}).
+where $\vx^* \in \arg\max_{\vx\in\Xspace}\mu(\vx)$. Let $\Reg(T) = \sum_{t=0}^T\Delta_t$ be the total regret, as in (\ref{def:regret}).
 As $\mu(\vx^*)$ is a constant, problem (\ref{eq:theproblem}) is trivially equivalent to:
 \begin{align}\label{eq:regret}
-	\min_{\vx_0,\dots,\vx_T\in\Xspace} \Reg(T).
+	\min_{\vx_0,\vx_1,\dots,\vx_T\in\Xspace} \Reg(T).
 \end{align}
 In the following, we will show that Algorithm (\ref{alg:1}) yields sublinear regret under some mild assumptions. The proofs combine techniques from \cite{srinivas2010gaussian} and \cite{bubeck2013bandits} and are reported in Appendix (\ref{app:proof}).
 First, we need the following assumption on the \Renyi divergence:
@@ -123,7 +123,7 @@ First, we need the following assumption on the \Renyi divergence:
 \begin{restatable}{assumption}{boundrenyi}\label{ass:boundrenyi}
 	For all $t=1,\dots,T$, the $(1+\epsilon)$-\Renyi divergence is uniformly bounded as:
 	\begin{align*}
-		\sup_{\vx_0,\vx_1,\dots,\vx_t\in\Xspace}d_{1+\epsilon}(p_{\vx_t}\|\Phi_t) = v_{\epsilon} < \infty,
+		\sup_{\vx_0,\vx_1,\dots,\vx_T\in\Xspace}d_{1+\epsilon}(p_{\vx_t}\|\Phi_t) = v_{\epsilon} < \infty,
 	\end{align*}
 	where $\Phi_t = \frac{1}{t}\sum_{k=0}^{t-1}p_{\vx_k}$,
 \end{restatable}
@@ -132,13 +132,12 @@ which can be easily enforced through careful policy (or hyperpolicy) design, as 
 
 \subsection{Discrete arm set}
 We start from the discrete case, where $|\mathcal{X}| = K \in \Naturals_{+}$.
-This setting is particularly convenient, as the optimization step can be trivially solved in time $\mathcal{O}(Kt)$ per iteration,\footnote{We consider the evaluation of pdf's, payoffs and \Renyi divergences in (\ref{eq:wcmu}) atomic, as it is heavily problem-dependent.} where $t$ is from evaluation of (\ref{eq:wcmu}) via clever caching. This sums up to total time $\mathcal{O}(KT^2)$. It is also of practical interest: even in applications where $\Xspace$ is naturally continuous (\eg robotics), the set of solutions that can be actually tried in practice may sometimes be constrained to a discrete, reasonably small set. In this simple setting, \gls{OPTIMIST} achieves $\wt{\mathcal{O}}(T^{\frac{1}{1+\epsilon}})$ regret:
+This setting is particularly convenient, as the optimization step can be trivially solved in time $\mathcal{O}(Kt)$ per iteration,\footnote{We consider the evaluation of pdf's, payoffs and \Renyi divergences in (\ref{eq:wcmu}) atomic, as its complexity is heavily problem-dependent.} where $t$ is from evaluation of (\ref{eq:wcmu}) via clever caching. This sums up to total time $\mathcal{O}(KT^2)$. This setting is also of practical interest: even in applications where $\Xspace$ is naturally continuous (\eg robotics), the set of solutions that can be actually tried in practice may sometimes be constrained to a discrete, reasonably small set. In this simple setting, \gls{OPTIMIST} achieves $\wt{\mathcal{O}}(T^{\frac{1}{1+\epsilon}})$ regret:
 
 \begin{restatable}{theorem}{regretdiscrete}\label{th:regretdiscrete}
 	Let $\Xspace$ be a discrete arm set with ${|\mathcal{X}| = K \in \Naturals_{+}}$. Under Assumption (\ref{ass:boundrenyi}), Algorithm (\ref{alg:1}) with confidence schedule $\delta_t = \frac{3\delta}{t^2\pi^2K}$ guarantees, with probability at least $1-\delta$:
 	\begin{align*}
-		&\Reg(T) \leq \Delta_0 \\
-		&\quad+ 	C
+		&\Reg(T) \leq \Delta_0 + C
 			T^{\frac{1}{1+\epsilon}}
 			\left[v_{\epsilon}
 			\left(2\log T + \log \frac{\pi^2K}{3\delta}\right)
@@ -170,7 +169,7 @@ This assumption is easily satisfied for policy optimization, as shown in the fol
 	in the action-based paradigm, and by:
 	\begin{align}\label{eq:lp2}
 		\sup_{\vxi\in\Xi}\Exp_{\vtheta\sim\rho_{\vxi}}
-		\left[\left|\nabla_{\vxi}\log\rho_{\vxi}(\vtheta)\right|\right] \leq \vu_2,
+		\left[\left|\nabla_{\vxi}\log\nu_{\vxi}(\vtheta)\right|\right] \leq \vu_2,
 	\end{align}
 	in the parameter-based paradigm, where $\vu_1$ and $\vu_2$ are $d$-dimensional vectors and the inequalities are component-wise.
 \end{restatable}
@@ -180,13 +179,11 @@ In the proof (Appendix (\ref{app:proof})), we show how to derive the correspondi
 \begin{restatable}{theorem}{regretcompact}\label{th:regretcompact}
 	Let $\Xspace$ be a $d$-dimensional compact arm set with $\Xspace \subseteq [-D,D]^d$. Under Assumptions (\ref{ass:boundrenyi}) and (\ref{ass:lipschitz}), Algorithm (\ref{alg:1}) with confidence schedule $\delta_t = \frac{6\delta}{\pi^2t^2(1+d^dt^{2d})}$ guarantees, with probability at least $1-\delta$:
 	\begin{align*}
-	&\Reg(T) \leq \Delta_0 \\
-	&\quad+ 	C
+	&\Reg(T) \leq \Delta_0 + C
 	T^{\frac{1}{1+\epsilon}}
 	\left[v_{\epsilon}
 	\left(2(d+1)\log T + d\log d + \log \frac{\pi^2}{3\delta}\right)
-	\right]^{\frac{\epsilon}{1+\epsilon}} \\
-	&\quad+ \frac{\pi^2LD}{6},
+	\right]^{\frac{\epsilon}{1+\epsilon}} + \frac{\pi^2LD}{6},
 	\end{align*}
 	where $C=(1+\epsilon)\left(2\sqrt{2}+\frac{5}{3}\right)\norm[\infty]{f}$, and $\Delta_0$ is the instantaneous regret of the initial arm $\vx_0$.
 \end{restatable}
@@ -216,8 +213,7 @@ When optimization over the infinite arm space $\Xspace$ is not feasible, Algorit
 	\begin{align*}
 	&\Reg(T) \leq \Delta_0  + C_1T^{\left(1-\frac{1}{\kappa}\right)}d
 	+ C_2
-	T^{\frac{1}{1+\epsilon}} %\,\cdot
-	\\&\quad\cdot\left[v_{\epsilon}
+	T^{\frac{1}{1+\epsilon}}\cdot\left[v_{\epsilon}
 	\left(\left(2+ \nicefrac{d}{\kappa}\right)\log T + d\log 2 + \log\frac{\pi^2}{3\delta}\right)\right]^{\frac{\epsilon}{1+\epsilon}},
 	\end{align*}
 	where $C_1=\frac{\kappa}{\kappa-1}LD$, $C_2=(1+\epsilon)\left(2\sqrt{2}+\frac{5}{3}\right)\norm[\infty]{f}$, and $\Delta_0$ is the instantaneous regret of the initial arm $\vx_0$.

@@ -35,27 +35,27 @@
 \contentsline {subsection}{\numberline {3.2.1}Undirected Exploration}{41}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Count-based exploration and Intrinsic Motivation}{42}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Posterior Sampling}{46}{subsection.3.2.3}
-\contentsline {chapter}{\numberline {4}Optimistic Policy Optimization via Multiple Importance Sampling}{48}{chapter.4}
+\contentsline {chapter}{\numberline {4}Optimistic Policy Search via Multiple Importance Sampling}{48}{chapter.4}
 \contentsline {section}{\numberline {4.1}Robust Importance Sampling Estimation}{48}{section.4.1}
 \contentsline {section}{\numberline {4.2}Problem Formalization}{50}{section.4.2}
 \contentsline {section}{\numberline {4.3}Algorithms}{52}{section.4.3}
 \contentsline {section}{\numberline {4.4}Regret Analysis}{53}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Discrete arm set}{54}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Compact arm set}{55}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}Compact arm set}{54}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Discretization}{56}{subsection.4.4.3}
-\contentsline {chapter}{\numberline {5}Numerical Simulations}{58}{chapter.5}
-\contentsline {section}{\numberline {5.1}Practical Aspects}{58}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Divergence Between Gaussian Multivariate Distributions}{59}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Uniformly Bounded R\IeC {\'e}nyi divergence}{60}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Linear Quadratic Gaussian Regulator}{61}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Gain only}{62}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Gain and standard deviation}{64}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Continuous Mountain Car}{65}{section.5.3}
-\contentsline {section}{\numberline {5.4}Inverted Pendulum}{69}{section.5.4}
-\contentsline {section}{\numberline {5.5}Action-based setting}{71}{section.5.5}
-\contentsline {chapter}{\numberline {6}Conclusions}{74}{chapter.6}
-\contentsline {section}{\numberline {6.1}Original Contributions}{74}{section.6.1}
-\contentsline {section}{\numberline {6.2}Limitations and future works}{75}{section.6.2}
-\contentsline {chapter}{Appendices}{77}{section*.24}
-\contentsline {chapter}{\numberline {A}Proofs}{77}{Appendix.1.A}
-\contentsline {chapter}{Bibliography}{94}{chapter*.25}
+\contentsline {chapter}{\numberline {5}Numerical Simulations}{57}{chapter.5}
+\contentsline {section}{\numberline {5.1}Practical Aspects}{57}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Divergence Between Gaussian Multivariate Distributions}{58}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Uniformly Bounded R\IeC {\'e}nyi divergence}{59}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Linear Quadratic Gaussian Regulator}{59}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Gain only}{61}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Gain and standard deviation}{63}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Continuous Mountain Car}{64}{section.5.3}
+\contentsline {section}{\numberline {5.4}Inverted Pendulum}{68}{section.5.4}
+\contentsline {section}{\numberline {5.5}Action-based setting}{70}{section.5.5}
+\contentsline {chapter}{\numberline {6}Conclusions}{73}{chapter.6}
+\contentsline {section}{\numberline {6.1}Original Contributions}{73}{section.6.1}
+\contentsline {section}{\numberline {6.2}Limitations and future works}{74}{section.6.2}
+\contentsline {chapter}{Appendices}{76}{section*.24}
+\contentsline {chapter}{\numberline {A}Proofs}{76}{Appendix.1.A}
+\contentsline {chapter}{Bibliography}{92}{chapter*.25}
