@@ -155,16 +155,16 @@ Let us start with the first inequality. Observing that all samples $z_{ik}$ are 
 	\end{align}
 	where inequalities are component-wise and (\ref{pp:14}) is by the substitution $x\gets \frac{a-\vtheta^T\vphi(s)}{\sigma}$. Even when $\sigma$ must be learned, proper parametrization (\eg $\sigma\propto\exp\{\vtheta\}$), together with the compactness of $\Theta$, allows to satisfy assumption (\ref{eq:lp1}).
 	
-	To show Lipschitz continuity for the parameter-based paradigm, it is enough to bound $\norm[\infty]{\nabla_{\vxi}\Exp_{\vtheta\sim\rho_{\vxi}}[J(\vtheta)]}$ under (\ref{eq:lp2}). For every $\vxi\in\Xi$:
+	To show Lipschitz continuity for the parameter-based paradigm, it is enough to bound $\norm[\infty]{\nabla_{\vxi}\Exp_{\vtheta\sim\nu_{\vxi}}[J(\vtheta)]}$ under (\ref{eq:lp2}). For every $\vxi\in\Xi$:
 	\begin{align}
-		\left|\nabla_{\vxi}\Exp_{\vtheta\sim\rho_{\vxi}}[J(\vtheta)]\right| &=
-		\left|\Exp_{\vtheta\sim\rho_{\vxi}}[\nabla_{\vxi}\log\rho_{\vxi}(\vtheta)J(\vtheta)]\right| \nonumber\\
-		&\leq \frac{\Rmax}{(1-\gamma)}\Exp_{\vtheta\sim\rho_{\vxi}}\left[\left|\nabla_{\vxi}\log\rho_{\vxi}(\vtheta)\right|\right] \label{pp:12} \\
+		\left|\nabla_{\vxi}\Exp_{\vtheta\sim\nu_{\vxi}}[J(\vtheta)]\right| &=
+		\left|\Exp_{\vtheta\sim\nu_{\vxi}}[\nabla_{\vxi}\log\nu_{\vxi}(\vtheta)J(\vtheta)]\right| \nonumber\\
+		&\leq \frac{\Rmax}{(1-\gamma)}\Exp_{\vtheta\sim\nu_{\vxi}}\left[\left|\nabla_{\vxi}\log\nu_{\vxi}(\vtheta)\right|\right] \label{pp:12} \\
 		&\leq \frac{\vu_2\Rmax}{(1-\gamma)} \label{pp:13},
 	\end{align}
 	where the inequalities are component-wise, (\ref{pp:12}) is from the trivial fact $J(\vtheta)\leq\frac{\Rmax}{1-\gamma}$, and (\ref{pp:13}) is from assumption (\ref{eq:lp2}).
 	It follows that $L=\frac{\norm[\infty]{\vu_2\Rmax}}{(1-\gamma)}$ is a valid Lipschitz constant under the $l_1$ norm.
-	 A Gaussian hyperpolicy $\rho_{\vxi}(\vtheta) = \mathcal{N}(\vxi,\mathrm{diag}(\boldsymbol{\sigma}))$ satisfies assumption (\ref{eq:lp2}) with $\vu_2 = \frac{2}{\sqrt{2\pi}\boldsymbol{\sigma}}$. The proof of this fact is analogous to that of (\ref{aux:5}). Even when $\boldsymbol{\sigma}$ must be learned, proper parametrization (\eg $\boldsymbol{\sigma}\propto\exp\{\vxi\}$), together with the compactness of $\Xi$, allows to satisfy assumption (\ref{eq:lp2}).
+	 A Gaussian hyperpolicy $\nu_{\vxi}(\vtheta) = \mathcal{N}(\vxi,\mathrm{diag}(\boldsymbol{\sigma}))$ satisfies assumption (\ref{eq:lp2}) with $\vu_2 = \frac{2}{\sqrt{2\pi}\boldsymbol{\sigma}}$. The proof of this fact is analogous to that of (\ref{aux:5}). Even when $\boldsymbol{\sigma}$ must be learned, proper parametrization (\eg $\boldsymbol{\sigma}\propto\exp\{\vxi\}$), together with the compactness of $\Xi$, allows to satisfy assumption (\ref{eq:lp2}).
 \end{proof}
 
 \regretcompact*

@@ -4,10 +4,10 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Environmental coefficients (left-side), task coefficients (center) and \gls {OPTIMIST} input parameters (right-side) for the \gls {LQG} experiments.\relax }}{61}{table.caption.10}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Task parameters (left side) and \gls {OPTIMIST} input parameters (right side) for the Continuous Mountain Car experiment.\relax }}{63}{table.caption.16}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Task parameters (left side) and \gls {OPTIMIST} input parameters (right side) for the Mountain Car experiment.\relax }}{67}{table.caption.19}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Task parameters (left side) and \gls {OPTIMIST} input parameters (right side) for the Inverted Pendulum experiment.\relax }}{68}{table.caption.21}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Environmental coefficients (left-side), task coefficients (center) and \gls {OPTIMIST} input parameters (right-side) for the \gls {LQG} experiments.\relax }}{63}{table.caption.9}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Task parameters (left side) and \gls {OPTIMIST} input parameters (right side) for the Continuous Mountain Car experiment.\relax }}{65}{table.caption.15}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Number of points in the discretized state space, following discretization schedule $\tau _t=\delimiter "4D72E50 t^{\frac {1}{\kappa }} \delimiter "5D73E54 $, where $d$ refers to the number of space dimensions and $k$ is a free-parameter.\relax }}{69}{table.caption.18}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Task parameters (left side) and \gls {OPTIMIST} input parameters (right side) for the Inverted Pendulum experiment.\relax }}{70}{table.caption.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

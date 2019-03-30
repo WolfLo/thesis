@@ -1,11 +1,11 @@
-\contentsline {algorithm}{\numberline {2.1}{\ignorespaces Explore-then-commit\relax }}{6}{algorithm.2.1}
-\contentsline {algorithm}{\numberline {2.2}{\ignorespaces Generic \gls {PG} algorithm\relax }}{21}{algorithm.2.2}
-\contentsline {algorithm}{\numberline {2.3}{\ignorespaces Episodic REINFORCE with component-wise optimal baseline.\relax }}{23}{algorithm.2.3}
-\contentsline {algorithm}{\numberline {2.4}{\ignorespaces Episodic \gls {PGPE}\relax }}{25}{algorithm.2.4}
-\contentsline {algorithm}{\numberline {3.1}{\ignorespaces \gls {UCB}($\delta $) algorithm\relax }}{33}{algorithm.3.1}
-\contentsline {algorithm}{\numberline {3.2}{\ignorespaces \gls {HOO} algorithm\relax }}{36}{algorithm.3.2}
-\contentsline {algorithm}{\numberline {3.3}{\ignorespaces \gls {TS} for Bernoulli MAB with Beta priors\relax }}{39}{algorithm.3.3}
-\contentsline {algorithm}{\numberline {3.4}{\ignorespaces \gls {GPUCB}\relax }}{40}{algorithm.3.4}
-\contentsline {algorithm}{\numberline {3.5}{\ignorespaces \gls {VIME}\relax }}{47}{algorithm.3.5}
-\contentsline {algorithm}{\numberline {4.1}{\ignorespaces \gls {OPTIMIST}\relax }}{53}{algorithm.4.1}
-\contentsline {algorithm}{\numberline {4.2}{\ignorespaces \gls {OPTIMIST}2\relax }}{56}{algorithm.4.2}
+\contentsline {algorithm}{\numberline {2.1}{\ignorespaces Explore-then-commit\relax }}{8}{algorithm.2.1}
+\contentsline {algorithm}{\numberline {2.2}{\ignorespaces Generic \gls {PG} algorithm\relax }}{23}{algorithm.2.2}
+\contentsline {algorithm}{\numberline {2.3}{\ignorespaces Episodic REINFORCE with component-wise optimal baseline.\relax }}{25}{algorithm.2.3}
+\contentsline {algorithm}{\numberline {2.4}{\ignorespaces Episodic \gls {PGPE}\relax }}{27}{algorithm.2.4}
+\contentsline {algorithm}{\numberline {3.1}{\ignorespaces \gls {UCB}($\delta $) algorithm\relax }}{35}{algorithm.3.1}
+\contentsline {algorithm}{\numberline {3.2}{\ignorespaces \gls {HOO} algorithm\relax }}{39}{algorithm.3.2}
+\contentsline {algorithm}{\numberline {3.3}{\ignorespaces \gls {TS} for Bernoulli MAB with Beta priors\relax }}{41}{algorithm.3.3}
+\contentsline {algorithm}{\numberline {3.4}{\ignorespaces \gls {GPUCB}\relax }}{42}{algorithm.3.4}
+\contentsline {algorithm}{\numberline {3.5}{\ignorespaces \gls {VIME}\relax }}{49}{algorithm.3.5}
+\contentsline {algorithm}{\numberline {4.1}{\ignorespaces \gls {OPTIMIST}\relax }}{55}{algorithm.4.1}
+\contentsline {algorithm}{\numberline {4.2}{\ignorespaces \gls {OPTIMIST}2\relax }}{58}{algorithm.4.2}

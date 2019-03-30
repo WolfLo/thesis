@@ -1,9 +1,9 @@
-\BOOKMARK [0][-]{chapter*.3}{List of Figures}{}% 1
-\BOOKMARK [0][-]{chapter*.4}{List of Tables}{}% 2
-\BOOKMARK [0][-]{chapter*.5}{List of Algorithms}{}% 3
-\BOOKMARK [0][-]{section*.6}{Acronyms}{}% 4
+\BOOKMARK [0][-]{chapter*.2}{List of Figures}{}% 1
+\BOOKMARK [0][-]{chapter*.3}{List of Tables}{}% 2
+\BOOKMARK [0][-]{chapter*.4}{List of Algorithms}{}% 3
+\BOOKMARK [0][-]{section*.5}{Acronyms}{}% 4
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 5
-\BOOKMARK [1][-]{section.1.1}{Challanges in RL}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.1}{Motivation and goal}{chapter.1}% 6
 \BOOKMARK [0][-]{chapter.2}{Preliminaries}{}% 7
 \BOOKMARK [1][-]{section.2.1}{Multi Armed Bandits}{chapter.2}% 8
 \BOOKMARK [2][-]{subsection.2.1.1}{Exploration and exploitation}{section.2.1}% 9
@@ -53,8 +53,8 @@
 \BOOKMARK [1][-]{section.5.4}{Inverted Pendulum}{chapter.5}% 53
 \BOOKMARK [1][-]{section.5.5}{Action-based setting}{chapter.5}% 54
 \BOOKMARK [0][-]{chapter.6}{Conclusions}{}% 55
-\BOOKMARK [1][-]{section.6.1}{Original Contributions}{chapter.6}% 56
+\BOOKMARK [1][-]{section.6.1}{Recapitulation}{chapter.6}% 56
 \BOOKMARK [1][-]{section.6.2}{Limitations and future works}{chapter.6}% 57
-\BOOKMARK [0][-]{section*.24}{Appendices}{}% 58
+\BOOKMARK [0][-]{section*.23}{Appendices}{}% 58
 \BOOKMARK [0][-]{Appendix.1.A}{Proofs}{}% 59
-\BOOKMARK [0][-]{chapter*.25}{Bibliography}{}% 60
+\BOOKMARK [0][-]{chapter*.24}{Bibliography}{}% 60

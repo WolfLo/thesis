@@ -1,61 +1,61 @@
 \select@language {english}
-\contentsline {chapter}{List of Figures}{vi}{chapter*.3}
-\contentsline {chapter}{List of Tables}{vii}{chapter*.4}
-\contentsline {chapter}{List of Algorithms}{viii}{chapter*.5}
-\contentsline {chapter}{Acronyms}{ix}{section*.6}
+\contentsline {chapter}{List of Figures}{vi}{chapter*.2}
+\contentsline {chapter}{List of Tables}{vii}{chapter*.3}
+\contentsline {chapter}{List of Algorithms}{viii}{chapter*.4}
+\contentsline {chapter}{Acronyms}{ix}{section*.5}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Challanges in RL}{1}{section.1.1}
-\contentsline {chapter}{\numberline {2}Preliminaries}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}Multi Armed Bandits}{2}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Exploration and exploitation}{4}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Stochastic Bandits With Finitely Many Arms}{5}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}$\mathcal {X}$-armed bandits}{6}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}Markov Decision Processes}{7}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Policies}{9}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Performance}{10}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Value functions}{11}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Reinforcement Learning}{12}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Problem formulation}{12}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Taxonomy}{13}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Policy Search}{16}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Overview}{16}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Policy gradient}{17}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Policy gradient estimation}{20}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}Algorithms}{22}{subsection.2.4.4}
-\contentsline {section}{\numberline {2.5}Multiple Importance Sampling}{26}{section.2.5}
-\contentsline {chapter}{\numberline {3}Exploration Techniques}{29}{chapter.3}
-\contentsline {section}{\numberline {3.1}Exploration in Multi Armed Bandits}{30}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Undirected Exploration}{30}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Count-based exploration and Upper Confidence Bound}{31}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Optimism in the Face of Uncertainty}{33}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4} Hierarchical Optimistic Optimization}{34}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Posterior Sampling}{37}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Gaussian Process Upper Confidence Bound}{38}{subsection.3.1.6}
-\contentsline {section}{\numberline {3.2}Exploration in Reinforcement Learning}{41}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Undirected Exploration}{41}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Count-based exploration and Intrinsic Motivation}{42}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Posterior Sampling}{46}{subsection.3.2.3}
-\contentsline {chapter}{\numberline {4}Optimistic Policy Search via Multiple Importance Sampling}{48}{chapter.4}
-\contentsline {section}{\numberline {4.1}Robust Importance Sampling Estimation}{48}{section.4.1}
-\contentsline {section}{\numberline {4.2}Problem Formalization}{50}{section.4.2}
-\contentsline {section}{\numberline {4.3}Algorithms}{52}{section.4.3}
-\contentsline {section}{\numberline {4.4}Regret Analysis}{53}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Discrete arm set}{54}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Compact arm set}{54}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Discretization}{56}{subsection.4.4.3}
-\contentsline {chapter}{\numberline {5}Numerical Simulations}{57}{chapter.5}
-\contentsline {section}{\numberline {5.1}Practical Aspects}{57}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Divergence Between Gaussian Multivariate Distributions}{58}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Uniformly Bounded R\IeC {\'e}nyi divergence}{59}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Linear Quadratic Gaussian Regulator}{59}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Gain only}{61}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Gain and standard deviation}{63}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Continuous Mountain Car}{64}{section.5.3}
-\contentsline {section}{\numberline {5.4}Inverted Pendulum}{68}{section.5.4}
-\contentsline {section}{\numberline {5.5}Action-based setting}{70}{section.5.5}
-\contentsline {chapter}{\numberline {6}Conclusions}{73}{chapter.6}
-\contentsline {section}{\numberline {6.1}Original Contributions}{73}{section.6.1}
-\contentsline {section}{\numberline {6.2}Limitations and future works}{74}{section.6.2}
-\contentsline {chapter}{Appendices}{76}{section*.24}
-\contentsline {chapter}{\numberline {A}Proofs}{76}{Appendix.1.A}
-\contentsline {chapter}{Bibliography}{92}{chapter*.25}
+\contentsline {section}{\numberline {1.1}Motivation and goal}{2}{section.1.1}
+\contentsline {chapter}{\numberline {2}Preliminaries}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Multi Armed Bandits}{4}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Exploration and exploitation}{6}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Stochastic Bandits With Finitely Many Arms}{7}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}$\mathcal {X}$-armed bandits}{8}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Markov Decision Processes}{9}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Policies}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Performance}{12}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Value functions}{13}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Reinforcement Learning}{14}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Problem formulation}{14}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Taxonomy}{15}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Policy Search}{18}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Overview}{18}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Policy gradient}{19}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Policy gradient estimation}{22}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Algorithms}{24}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}Multiple Importance Sampling}{27}{section.2.5}
+\contentsline {chapter}{\numberline {3}Exploration Techniques}{31}{chapter.3}
+\contentsline {section}{\numberline {3.1}Exploration in Multi Armed Bandits}{32}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Undirected Exploration}{32}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Count-based exploration and Upper Confidence Bound}{33}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Optimism in the Face of Uncertainty}{35}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4} Hierarchical Optimistic Optimization}{36}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Posterior Sampling}{39}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Gaussian Process Upper Confidence Bound}{41}{subsection.3.1.6}
+\contentsline {section}{\numberline {3.2}Exploration in Reinforcement Learning}{43}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Undirected Exploration}{43}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Count-based exploration and Intrinsic Motivation}{45}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Posterior Sampling}{48}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Optimistic Policy Search via Multiple Importance Sampling}{50}{chapter.4}
+\contentsline {section}{\numberline {4.1}Robust Importance Sampling Estimation}{50}{section.4.1}
+\contentsline {section}{\numberline {4.2}Problem Formalization}{52}{section.4.2}
+\contentsline {section}{\numberline {4.3}Algorithms}{54}{section.4.3}
+\contentsline {section}{\numberline {4.4}Regret Analysis}{55}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Discrete arm set}{56}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Compact arm set}{56}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Discretization}{58}{subsection.4.4.3}
+\contentsline {chapter}{\numberline {5}Numerical Simulations}{59}{chapter.5}
+\contentsline {section}{\numberline {5.1}Practical Aspects}{59}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Divergence Between Gaussian Multivariate Distributions}{60}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Uniformly Bounded R\IeC {\'e}nyi divergence}{61}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Linear Quadratic Gaussian Regulator}{61}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Gain only}{63}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Gain and standard deviation}{65}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Continuous Mountain Car}{66}{section.5.3}
+\contentsline {section}{\numberline {5.4}Inverted Pendulum}{70}{section.5.4}
+\contentsline {section}{\numberline {5.5}Action-based setting}{72}{section.5.5}
+\contentsline {chapter}{\numberline {6}Conclusions}{75}{chapter.6}
+\contentsline {section}{\numberline {6.1}Recapitulation}{75}{section.6.1}
+\contentsline {section}{\numberline {6.2}Limitations and future works}{76}{section.6.2}
+\contentsline {chapter}{Appendices}{78}{section*.23}
+\contentsline {chapter}{\numberline {A}Proofs}{78}{Appendix.1.A}
+\contentsline {chapter}{Bibliography}{93}{chapter*.24}
