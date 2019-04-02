@@ -211,7 +211,8 @@ When optimization over the infinite arm space $\Xspace$ is not feasible, Algorit
 \begin{restatable}{theorem}{regretdiscretized}\label{th:regretdiscretized}
 	Let $\Xspace$ be a $d$-dimensional compact arm set with $\Xspace \subseteq [-D,D]^d$. For any $\kappa\geq2$, under Assumptions (\ref{ass:boundrenyi}) and (\ref{ass:lipschitz}), Algorithm (\ref{alg:2}) with confidence schedule ${\delta_t = \frac{6\delta}{\pi^2t^2\left(1+\left\lceil t^{\nicefrac{1}{\kappa}}\right\rceil^d\right)}}$ and discretization schedule $\tau_t=\lceil t^{\frac{1}{\kappa}} \rceil$ guarantees, with probability at least $1-\delta$:
 	\begin{align*}
-	&\Reg(T) \leq \Delta_0  + C_1T^{\left(1-\frac{1}{\kappa}\right)}d
+	\MoveEqLeft\Reg(T) \notag\\
+	&\leq \Delta_0  + C_1T^{\left(1-\frac{1}{\kappa}\right)}d
 	+ C_2
 	T^{\frac{1}{1+\epsilon}}\cdot\left[v_{\epsilon}
 	\left(\left(2+ \nicefrac{d}{\kappa}\right)\log T + d\log 2 + \log\frac{\pi^2}{3\delta}\right)\right]^{\frac{\epsilon}{1+\epsilon}},

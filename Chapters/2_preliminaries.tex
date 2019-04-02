@@ -34,7 +34,7 @@ Regret(T) = \sum_{t=0}^T\Delta_t
 
 The quality of a certain policy is then given by the rate of growth of the regret as the horizon $T$ grows. A good learner achieves sub-linear regret, which means that $Regret(T) = o(T)$ or, equivalently, that $\lim_{T\to\infty}Regret(T)/T = 0$. For example, some state of the art policies for different bandit settings have regrets close to $O(\sqrt{T})$ or $O(\log(n))$ \cite{lattimore2019bandit}. The regret has two characteristics that make it a good performance metric. First, it supplies a degree of normalization because it is invariant under translation of rewards. Second, it represents the price paid by the learner for not knowing the true environment. Anyway, a crucial aspect for designing a sub-linear regret policy is to carefully balance the trade-off between exploration and exploitation that characterizes all bandits.
 
-\subsection{Exploration and exploitation} \label{eedilemma}
+\subsection{Exploration and Exploitation} \label{eedilemma}
 In order to maximize its cumulative reward, a bandit agent must prefer high-reward arms discovered in past rounds. But to discover such arms, it has to spend a certain amount of rounds trying arms that it has not selected before. In other words, the agent has to \emph{exploit} the most profitable actions revealed in the past, but it also has to \emph{explore} in order to make better action selections in the future. If the reward function is stochastic as in stationary stochastic bandits, even more resources should be dedicated to exploration, because one trial is not enough to have a good estimate of the expected reward of one arm.  In fact, the exploration-exploitation trade-off is a well known mechanism that goes back to psychology and it affects us all in our daily lives. Take, for example, a typical lunch break on a working day. Say that your favourite restaurant is right around the corner. If you go there every day (\emph{exploitation}), you will be confident of what you will get, but miss the chances of discovering an even better option. On the contrary, if you try new places all the time (\emph{exploration}), you are very likely going to eat unpleasant food from time to time. The sweet spot is usually in between these two extreme options and a crucial challenge for any bandit algorithm is to properly balance between exploration and exploitation. As we will see, this dilemma arises in \emph{reinforcement learning} too and will be at the very core of our discussion.
 \\ Now, we proceed by briefly sketching out two bandit settings that are of central interest to this work.
 
@@ -69,7 +69,7 @@ where $\Delta_i$ is the immediate regret of arm $i$ as defined in \ref{def:immed
 Evidently, if $m$ is large  the policy explores for too long and the first term will be eventually too large. On the other hand, if $m$ is too small, then the probability that the algorithm exploits the wrong arm will grow and the second term will become too large. Explore-then-commit is an evident case of undirected exploration: during the exploration phase, all the arms are pulled uniformly without leveraging any information that the agent collect in the process.\\
 In the next chapter, we will present various techniques that tackle the exploration problem in a more directed way.
 
-\subsection{$\mathcal{X}$-armed bandits} \label{sub:xarmedbandits}
+\subsection{$\mathcal{X}$-armed Bandits} \label{sub:xarmedbandits}
 Another stationary stochastic bandit setting interesting to our scope is the \emph{continuum-armed bandit} setting \cite{agrawal1995continuum}. Here, the arms are chosen from a subset of the real numbers $\mathcal{X}\in\Reals^{d_{\mathcal{X}}} $, hence, the action space is infinite. Moreover, the mean rewards are assumed to be a continuous function of the arms. An example of such bandits are continuous \emph{Lipschitz bandits} \cite{magureanu2014lipschitz}, where the expected reward is a Lipschitz function of the arm. This assumption is extremely useful because it implies that the information obtained by selecting one arm can be shared to its neighbouring arms. Thus, exploration can be made more efficient, and possibly directed, by exploiting the correlation between arms. Indeed, when the set of arms is infinite it is necessary to make some assumption on the correlation between arms. If arms can not share any information, learning become unfeasible. \emph{$\mathcal{X}$-armed bandits} \cite{bubeck2011x} are a further generalization of this setting where the set of arms, $\mathcal{X}$, is allowed to be a generic measurable space and the mean-payoff function is \emph{weak Lipschitz} with respect to a dissimilarity function that is known to the decision maker.
 
 
@@ -203,7 +203,7 @@ J(\pi)
 
 where $d^{\pi}(s) = \lim_{n\to\infty} Pr(s_h=s\mid s_0\sim\mu,\pi)$. In this work, we mostly adopt the first formulation of the performance utility function on episodic tasks, \ie tasks with an absorbing (terminal) state.
 
-\subsection{Value functions}
+\subsection{Value Functions}
 From the start state formulation of performance we can derive the value associated to a state $s$ by following  policy $\pi$, \ie the \emph{state-value function} $V^{\pi}(s):\Sspace\to\Reals$ defined recursively as:
 
 \begin{align}
@@ -240,7 +240,7 @@ Value functions are useful for evaluating the quality of a given policy or in or
 The most basic way to solve \gls{MDP}s is \emph{dynamic programming}, which simply consists in solving the Bellman equations presented in the previous chapter through a fixed-point iteration scheme. \emph{Value iteration} and \emph{Policy Iteration} are the most popular dynamic programming algorithms \cite{sutton2018reinforcement}, which provide the basic structure for most of the value-based reinforcement learning methods. However, these algorithms suffer of two major problems. First, they require knowledge of the \gls{MDP} transition kernel and of the reward function, which is not available in many real world problems. Second, the update involves an optimization with respect to all possible actions, which can be carried out efficiently only in the case of finite (small) action spaces. 
 \gls{RL} is a subfield of Machine Learning which aims at solving large-scale problems where the dynamics of the \gls{MDP} are not know, and thus dynamic programming algorithms can not be employed. 
 
-\subsection{Problem formulation}
+\subsection{Problem Formulation}
 \gls{RL} is a branch of machine learning that aims at building learning agents capable to behave in a stochastic and possibly unknown environment, where the only feedback consists of a scalar reward signal. In order to maximize the long-run reward, the agent must learn which state-action pairs are the most profitable by trial-and-error. Therefore, \gls{RL} algorithms can be seen as computational methods to solve \gls{MDP}s by directly interacting with the environment, for which a model may or may not be available. The \gls{RL} problem can be formulated as a stochastic optimization problem aiming at finding the optimal policy $\pi^{*}$:
 
 \begin{align}
@@ -306,7 +306,7 @@ A Variety of technique have been proposed in literature to solve the problem def
 
 
 
-\subsection{Policy gradient}
+\subsection{Policy Gradient}
 In the context of model-free \gls{PG}, the agent's behaviour is modelled as a differentiable parametric policy $\pi_{\vtheta}:\Sspace\to\Delta(\Aspace)$, independent of time (\emph{stationary}), such that the current action is drawn as $a_h\sim\pi_{\vtheta}(\cdot|s_h)=\pi(\cdot|s_h, \vtheta)$, where $\vtheta\in\Theta\subseteq\Reals^m$ are the policy parameters. The most simple parametrization one could think of is the linear one, where the policy only depends linearly on the policy parameters and the action is drawn deterministically:
 
 \begin{align}
@@ -407,7 +407,7 @@ We are now ready to present the general setup for policy gradient methods, showe
 	\end{algorithmic}
 \end{algorithm}
 
-\subsection{Policy gradient estimation}
+\subsection{Policy Gradient Estimation}
 As shown in the generic policy gradient algorithm, at each iteration an estimate of the policy gradient is required. Indeed, finding a good estimator is one of the main challenges of policy gradient methods. Since \emph{RL} aims at solving \gls{MDP}s  whose model is unknown to the agent, the sole mean to estimate the policy gradient is by leveraging on the experience collected, \ie the samples. Among several techniques proposed in the literature over the last years, the most prominent approaches to estimate the policy gradient from samples are \emph{Finite-Difference} and \emph{Likelihood Ratio} methods \cite{glynn1990likelihood}.
 
 \textbf{Finite differences}\\

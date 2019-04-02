@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  30 MAR 2019 23:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  1 APR 2019 20:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2130,11 +2130,11 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 )
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 65.
+less on input line 66.
 
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 67.
+less on input line 68.
 
 \c@theorem=\count327
 \c@lemma=\count328
@@ -2280,13 +2280,14 @@ s.callouts.code.tex)))
 zlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 197.
+Package hyperref Info: Option `colorlinks' set `true' on input line 198.
  (./Glossary/Glossary.tex))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (./thesis.aux)
+ (./thesis.aux
+(./Abstract/abstract.aux) (./Acknowledgements/acknowledgements.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -2429,39 +2430,61 @@ Package microtype Info: No adjustment of character kerning.
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+)
+(./Cover/cover.tex
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package epstopdf Info: Source file: <Cover/polimi.eps>
+(epstopdf)                    date: 2019-01-25 11:23:48
+(epstopdf)                    size: 618976 bytes
+(epstopdf)             Output file: <Cover/polimi-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-02-01 16:47:26
+(epstopdf)                    size: 57396 bytes
+(epstopdf)             Command: <repstopdf --outfile=Cover/polimi-eps-converted
+-to.pdf Cover/polimi.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
 
-\openout6 = `thesis.xdy'.
 
+pdfTeX warning: pdflatex (file ./Cover/polimi-eps-converted-to.pdf): PDF inclus
+ion: found PDF version <1.7>, but at most version <1.5> allowed
+<Cover/polimi-eps-converted-to.pdf, id=256, 98.3675pt x 89.33376pt>
+File: Cover/polimi-eps-converted-to.pdf Graphic file (type pdf)
 
-] (./thesis.toc
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 7.
+<use Cover/polimi-eps-converted-to.pdf>
+Package pdftex.def Info: Cover/polimi-eps-converted-to.pdf used on input line 1
+3.
+(pdftex.def)             Requested size: 113.81102pt x 103.35867pt.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 26.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 7.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 26.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 7.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 26.
+
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 7.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 26.
+
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 7.
+(Font)              <14.4> on input line 26.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 7.
+(Font)              <10> on input line 26.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 7.
-LaTeX Font Info:    Try loading font information for U+msa on input line 7.
+(Font)              <7> on input line 26.
+LaTeX Font Info:    Try loading font information for U+msa on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -2469,7 +2492,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 7.
+LaTeX Font Info:    Try loading font information for U+msb on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -2477,62 +2500,130 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 7.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 7.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 7.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 7.
- [2
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 26.
+ [1
 
-] [3])
+\openout6 = `thesis.xdy'.
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Cover/polimi-eps-convert
+ed-to.pdf>])
+\openout2 = `Abstract/abstract.aux'.
+
+
+(./Abstract/abstract.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 3.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
+ [1
+
+
+
+])pdfTeX warning (ext4): destination with the same identifier (name{page.i}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.28 \include{Acknowledgements/acknowledgements}
+                                                 [1
+
+]
+\openout2 = `Acknowledgements/acknowledgements.aux'.
+
+
+(./Acknowledgements/acknowledgements.texpdfTeX warning (ext4): destination with
+ the same identifier (name{page.i}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.12 \end{abstract}
+                    [1
+
+
+]) (./thesis.tocpdfTeX warning (ext4): destination with the same identifier (na
+me{page.i}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.22 ...ine {2.3.2}Taxonomy}{17}{subsection.2.3.2}
+                                                   [1
+\select@language{english}
+\@writefile{toc}{\select@language{english}}
+\@writefile{lof}{\select@language{english}}
+\@writefile{lot}{\select@language{english}}
+
+
+] [2])
 \tf@toc=\write9
 \openout9 = `thesis.toc'.
 
- [4]
-(./thesis.lof)
+ [3] (./thesis.lof
+Underfull \hbox (badness 5345) in paragraph at lines 14--14
+ [][] [][][]\T1/lmr/m/n/12 (+20) Graphical re-pre-sen-ta-tion of the Moun-tain 
+Car pro-blem 
+ []
+
+
+Underfull \hbox (badness 3646) in paragraph at lines 17--17
+ [][] [][][]\T1/lmr/m/n/12 (+20) Graphical re-pre-sen-ta-tion of the In-ver-ted
+ Pen-du-lum ta-sk 
+ []
+
+[4
+
+])
 \tf@lof=\write10
 \openout10 = `thesis.lof'.
 
- [5
-
-] [6] (./thesis.lot)
+ [5] (./thesis.lot)
 \tf@lot=\write11
 \openout11 = `thesis.lot'.
 
- [7
+ [6
 
 ] (./thesis.loa)
 \tf@loa=\write12
 \openout12 = `thesis.loa'.
 
- (./thesis.acr [8
+ (./thesis.acr [7
 
-]
-[9
+] [8
 
 
-]) [10] (./Chapters/1_introduction.tex
+]) [9]
+(./Chapters/1_introduction.tex
 Chapter 1.
-[1
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8 
+     [1
 
 
-] [2]) (./Chapters/2_preliminaries.tex [3]
+] [2] [3] [4]) (./Chapters/2_preliminaries.tex [5]
 Chapter 2.
-[4
+[6
 
 ]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 9.
- [5] [6]
+ [7] [8]
 LaTeX Font Info:    Try loading font information for U+dsrom on input line 45.
  (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
@@ -2542,16 +2633,7 @@ put line 51.
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
 t line 67.
 
-[7]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 72.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 72.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 72.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 72.
-
+[9]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 72.
@@ -2560,14 +2642,20 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 72.
 
-[8] [9] [10]
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 142--144
+[][]\T1/lmr/bx/n/12 Definition 2.2.1. []\T1/lmr/m/n/12 (+20) (Markov De-ci-sion
+ Pro-cess) \T1/lmr/m/it/12 (+20) A con-tin-u-ous [][]MDP[][]
+ []
+
+[11] [12]
 Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
  line 167.
-[11] [12] [13] [14] [15]
+[13] [14] [15] [16] [17]
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 262.
 
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
@@ -2575,40 +2663,61 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 262.
- [16]
-[17] [18] <Images/ps_taxonomy.png, id=772, 1804.7425pt x 757.83125pt>
+ [18]
+[19] [20] <Images/ps_taxonomy.png, id=867, 1804.7425pt x 757.83125pt>
 File: Images/ps_taxonomy.png Graphic file (type png)
 
 <use Images/ps_taxonomy.png>
 Package pdftex.def Info: Images/ps_taxonomy.png used on input line 303.
 (pdftex.def)             Requested size: 406.87569pt x 170.85158pt.
- [19 <./Images/ps_taxonomy.png>] [20] [21pdfTeX warning (ext4): destination wit
-h the same identifier (name{equation.2.4.21}) has been already used, duplicate 
-ignored
+ [21 <./Images/ps_taxonomy.png>] [22]pdfTeX warning (ext4): destination with th
+e same identifier (name{equation.2.4.21}) has been already used, duplicate igno
+red
+<to be read again> 
+                   \relax 
+l.351 \end{align}
+                  [23]
+Underfull \hbox (badness 1584) in paragraph at lines 391--393
+[]\T1/lmr/m/n/12 (+20) For more de-tails on the ad-van-tages of the nat-u-ral g
+ra-di-ent over the
+ []
 
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.378 
-      ] [22] [23] [24] [25] [26] [27] [28]
+[24] [25] [26] [27] [28] [29] [30]
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
 line 569.
- [29]) (./Chapters/3_sota.tex
-[30]
+ [31]) (./Chapters/3_sota.tex [32]
 Chapter 3.
-[31
+[33
 
-] [32] [33]
+] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+[]\T1/lmr/m/n/12 (+20) Such strat-egy is at the core of the cel-e-brated [][]UC
+B[][] al-go-rithm
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 39--40
+\T1/lmr/m/n/12 (+20) [[], [], []], that over-comes
+ []
+
+[35]
 Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
 put line 56.
- [34] [35] [36] [37]
+ [36]
+Underfull \hbox (badness 6284) in paragraph at lines 102--103
+[]\T1/lmr/m/n/12 (+20) However, rather than con-sid-er-ing 1-subgaussian noise,
+ Auer et al.
+ []
+
+[37] [38] [39]
 Package hyperref Info: bookmark level for unknown assumption defaults to 0 on i
 nput line 182.
- [38] [39]
+ [40] [41]
 Underfull \hbox (badness 10000) in paragraph at lines 239--241
 
  []
 
-[40] [41] [42] [43]
+[42] [43] [44] [45]
 Underfull \hbox (badness 10000) in paragraph at lines 306--309
 
  []
@@ -2619,136 +2728,154 @@ Underfull \hbox (badness 1173) in paragraph at lines 306--309
 ro-ceed now with
  []
 
+[46]
 
-LaTeX Warning: Reference `count&UCB' on page 44 undefined on input line 311.
+LaTeX Warning: Reference `count&UCB' on page 47 undefined on input line 311.
 
-[44] [45]
+
+Underfull \hbox (badness 1057) in paragraph at lines 311--314
+\T1/lmr/m/n/12 (+20) been adapted to large, non-tabular [][]RL[][] prob-lems . 
+A rel-e-vant ex-am-
+ []
+
+[47]
 Underfull \hbox (badness 10000) in paragraph at lines 343--345
 
  []
 
-[46]
+[48]
 Underfull \hbox (badness 10000) in paragraph at lines 353--354
 
  []
 
-[47]) (./Chapters/4_core.tex [48] [49]
+[49] [50]) (./Chapters/4_core.tex [51] [52]
 Chapter 4.
-[50
+[53
 
-] [51] [52] [53] [54] [55] [56] [57]
-Overfull \hbox (26.46968pt too wide) in paragraph at lines 220--220
+] [54] [55] [56] [57] [58] [59] [60]
+Overfull \hbox (1.00342pt too wide) in paragraph at lines 221--221
 [] 
  []
 
-) (./Chapters/5_experiments.tex [58]
+[61]) (./Chapters/5_experiments.tex [62]
 Chapter 5.
-[59
+[63
 
-] [60] [61] [62] <Images/LQGcomparison.pdf, id=1562, 867.24pt x 361.35pt>
+] [64] [65] [66] <Images/LQGcomparison.pdf, id=1659, 867.24pt x 361.35pt>
 File: Images/LQGcomparison.pdf Graphic file (type pdf)
 
 <use Images/LQGcomparison.pdf>
 Package pdftex.def Info: Images/LQGcomparison.pdf used on input line 95.
 (pdftex.def)             Requested size: 406.87505pt x 169.53127pt.
 
-<Images/LQG_GPUCB_mu.pdf, id=1571, 722.7pt x 505.89pt>
+<Images/LQG_GPUCB_mu.pdf, id=1668, 722.7pt x 505.89pt>
 File: Images/LQG_GPUCB_mu.pdf Graphic file (type pdf)
 
 <use Images/LQG_GPUCB_mu.pdf>
 Package pdftex.def Info: Images/LQG_GPUCB_mu.pdf used on input line 104.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
 
-<Images/LQG_OPTIMIST_mu.pdf, id=1572, 722.7pt x 505.89pt>
+<Images/LQG_OPTIMIST_mu.pdf, id=1669, 722.7pt x 505.89pt>
 File: Images/LQG_OPTIMIST_mu.pdf Graphic file (type pdf)
 
 <use Images/LQG_OPTIMIST_mu.pdf>
 Package pdftex.def Info: Images/LQG_OPTIMIST_mu.pdf used on input line 105.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
 
-<Images/LQG_optimal_gain.pdf, id=1579, 867.24pt x 361.35pt>
+<Images/LQG_optimal_gain.pdf, id=1676, 867.24pt x 361.35pt>
 File: Images/LQG_optimal_gain.pdf Graphic file (type pdf)
 
 <use Images/LQG_optimal_gain.pdf>
 Package pdftex.def Info: Images/LQG_optimal_gain.pdf used on input line 114.
 (pdftex.def)             Requested size: 305.1558pt x 127.14706pt.
- [63 <./Images/LQGcomparison.pdf>] [64 <./Images/LQG_GPUCB_mu.pdf> <./Images/LQ
-G_OPTIMIST_mu.pdf
+ [67 <./Images/LQGcomparison.pdf> <./Images/LQG_GPUCB_mu.pdf
+
+pdfTeX warning: pdflatex (file ./Images/LQG_GPUCB_mu.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+> <./Images/LQG_OPTIMIST_mu.pdf
 
 pdfTeX warning: pdflatex (file ./Images/LQG_OPTIMIST_mu.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
-> <./Images/LQG_optimal_gain.pdf
-
-pdfTeX warning: pdflatex (file ./Images/LQG_optimal_gain.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
->] <Images/LQGcomparisonVar.pdf, id=1684, 867.24pt x 361.35pt>
+>] [68 <./Images/LQG_optimal_gain.pdf>]
+<Images/LQGcomparisonVar.pdf, id=1779, 867.24pt x 361.35pt>
 File: Images/LQGcomparisonVar.pdf Graphic file (type pdf)
 
 <use Images/LQGcomparisonVar.pdf>
 Package pdftex.def Info: Images/LQGcomparisonVar.pdf used on input line 137.
 (pdftex.def)             Requested size: 406.87505pt x 169.53127pt.
 
-<Images/MC.png, id=1693, 1362.08875pt x 900.36375pt>
+<Images/MC.png, id=1788, 1362.08875pt x 900.36375pt>
 File: Images/MC.png Graphic file (type png)
  <use Images/MC.png>
 Package pdftex.def Info: Images/MC.png used on input line 151.
 (pdftex.def)             Requested size: 244.12712pt x 161.37155pt.
 
-<Images/MC_mu.pdf, id=1698, 867.24pt x 361.35pt>
+Underfull \hbox (badness 3428) in paragraph at lines 152--152
+[]\T1/lmr/m/n/12 (+20) Figure 5.5: |Graph-i-cal rep-re-sen-ta-tion of the Moun-
+tain Car prob-lem
+ []
+
+<Images/MC_mu.pdf, id=1793, 867.24pt x 361.35pt>
 File: Images/MC_mu.pdf Graphic file (type pdf)
  <use Images/MC_mu.pdf>
 Package pdftex.def Info: Images/MC_mu.pdf used on input line 171.
 (pdftex.def)             Requested size: 406.87505pt x 169.53127pt.
 
-[65] [66 <./Images/LQGcomparisonVar.pdf> <./Images/MC.png>] [67 <./Images/MC_mu
+[69] [70 <./Images/LQGcomparisonVar.pdf> <./Images/MC.png>] [71 <./Images/MC_mu
 .pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
 
-<Images/MCgainPGPE.pdf, id=1780, 722.7pt x 505.89pt>
+<Images/MCgainPGPE.pdf, id=1876, 722.7pt x 505.89pt>
 File: Images/MCgainPGPE.pdf Graphic file (type pdf)
 
 <use Images/MCgainPGPE.pdf>
 Package pdftex.def Info: Images/MCgainPGPE.pdf used on input line 193.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
 
-<Images/MCgainOPTIMIST.pdf, id=1781, 722.7pt x 505.89pt>
+<Images/MCgainOPTIMIST.pdf, id=1877, 722.7pt x 505.89pt>
 File: Images/MCgainOPTIMIST.pdf Graphic file (type pdf)
 
 <use Images/MCgainOPTIMIST.pdf>
 Package pdftex.def Info: Images/MCgainOPTIMIST.pdf used on input line 194.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
- [68] [69 <./Images/MCgainPGPE.pdf> <./Images/MCgainOPTIMIST.pdf
+ [72] [73 <./Images/MCgainPGPE.pdf> <./Images/MCgainOPTIMIST.pdf
 
 pdfTeX warning: pdflatex (file ./Images/MCgainOPTIMIST.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
->] <Images/inverted_pendulum.png, id=1828, 763.85374pt x 173.64874pt>
+>] <Images/inverted_pendulum.png, id=1924, 763.85374pt x 173.64874pt>
 File: Images/inverted_pendulum.png Graphic file (type png)
 
 <use Images/inverted_pendulum.png>
 Package pdftex.def Info: Images/inverted_pendulum.png used on input line 236.
 (pdftex.def)             Requested size: 325.50076pt x 73.99713pt.
- [70 <./Images/inverted_pendulum.png>]
-[71] <Images/IP_mu_1.pdf, id=1866, 867.24pt x 361.35pt>
-File: Images/IP_mu_1.pdf Graphic file (type pdf)
 
-<use Images/IP_mu_1.pdf>
+Underfull \hbox (badness 2573) in paragraph at lines 237--237
+[]\T1/lmr/m/n/12 (+20) Figure 5.8: |Graph-i-cal rep-re-sen-ta-tion of the In-ve
+rted Pen-du-lum task
+ []
+
+[74 <./Images/inverted_pendulum.png>] [75]
+<Images/IP_mu_1.pdf, id=1962, 867.24pt x 361.35pt>
+File: Images/IP_mu_1.pdf Graphic file (type pdf)
+ <use Images/IP_mu_1.pdf>
 Package pdftex.def Info: Images/IP_mu_1.pdf used on input line 276.
 (pdftex.def)             Requested size: 406.87442pt x 169.53127pt.
- <Images/IPmise.pdf, id=1869, 722.7pt x 505.89pt>
-File: Images/IPmise.pdf Graphic file (type pdf)
 
-<use Images/IPmise.pdf>
+<Images/IPmise.pdf, id=1965, 722.7pt x 505.89pt>
+File: Images/IPmise.pdf Graphic file (type pdf)
+ <use Images/IPmise.pdf>
 Package pdftex.def Info: Images/IPmise.pdf used on input line 283.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
- <Images/IPbonus.pdf, id=1870, 722.7pt x 505.89pt>
-File: Images/IPbonus.pdf Graphic file (type pdf)
 
-<use Images/IPbonus.pdf>
+<Images/IPbonus.pdf, id=1966, 722.7pt x 505.89pt>
+File: Images/IPbonus.pdf Graphic file (type pdf)
+ <use Images/IPbonus.pdf>
 Package pdftex.def Info: Images/IPbonus.pdf used on input line 284.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
- [72] [73 <./Images/IP_mu_1.pdf> <./Images/IPmise.pdf
+
+[76] [77 <./Images/IP_mu_1.pdf> <./Images/IPmise.pdf
 
 pdfTeX warning: pdflatex (file ./Images/IPmise.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
@@ -2756,118 +2883,89 @@ fs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./Images/IPbonus.pdf): PDF inclusion: multiple p
 dfs with page group included in a single page
->]) (./Chapters/6_conclusions.tex [74]
+>]) (./Chapters/6_conclusions.tex [78]
 Chapter 6.
-[75
+[79
 
-] [76]) [77] (./Appendix/A_proofs.tex
+] [80]) [81] (./Appendix/A_proofs.tex
 Appendix A.
-[78
+[82
 
 
-]
-Overfull \hbox (35.19218pt too wide) in paragraph at lines 37--37
-[] 
- []
-
-[79]
-Overfull \hbox (27.57492pt too wide) in paragraph at lines 49--49
-[] 
- []
-
-[80] [81]
-Overfull \hbox (46.3188pt too wide) in paragraph at lines 89--89
-[] 
- []
-
-
-Overfull \hbox (64.59209pt too wide) in paragraph at lines 96--96
-[] 
- []
-
-[82] [83]
-Underfull \hbox (badness 1142) in paragraph at lines 147--149
+] [83] [84] [85] [86] [87]
+Underfull \hbox (badness 1142) in paragraph at lines 152--154
 \T1/lmr/m/n/12 (+20) where $\OML/lmm/m/it/12 ^^^\U/matha/m/n/12 p\OML/lmm/m/it/
 12 s\U/matha/m/n/12 q$ \T1/lmr/m/n/12 (+20) is a vec-tor of component-wise boun
 ded state fea-tures, i.e.,
  []
 
-[84] [85]
-Overfull \hbox (37.49931pt too wide) in paragraph at lines 192--192
+[88] [89]
+Overfull \hbox (37.49931pt too wide) in paragraph at lines 197--197
 [] 
  []
 
-[86]
-Overfull \hbox (15.95924pt too wide) in paragraph at lines 230--230
+[90] [91]
+Overfull \hbox (1.00342pt too wide) in paragraph at lines 241--241
 [] 
  []
 
-[87]
-Overfull \hbox (26.46968pt too wide) in paragraph at lines 235--235
+[92]
+Overfull \hbox (21.43776pt too wide) in paragraph at lines 287--287
 [] 
  []
 
-
-Overfull \hbox (37.49945pt too wide) in paragraph at lines 242--242
-[] 
- []
-
-[88]
-Overfull \hbox (21.43776pt too wide) in paragraph at lines 280--280
-[] 
- []
-
-[89] [90] [91]) [92] (./thesis.bbl
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/lmr/m/sc/12'.
-(microtype)             Ignoring protrusion settings for this character.
-
-Overfull \hbox (0.55756pt too wide) in paragraph at lines 21--26
-\T1/lmr/m/it/12 (-20) Processing, ICASSP'98 (Cat. No. 98CH36181) \T1/lmr/m/n/12
- (-20) (1998), vol. 2, IEEE, pp. 1213--
- []
-
-[93
+[93] [94] [95]) [96] (./thesis.bbl [97
 
 
 ]
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 106.
- [94]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 171.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 114.
+ [98]
+Overfull \hbox (0.98468pt too wide) in paragraph at lines 123--126
+\T1/lmr/m/n/12 (-20) (2011).  X-armed bandits.  \T1/lmr/m/it/12 (-20) Journal o
+f Machine Learning Research\T1/lmr/m/n/12 (-20) , 12(May):1655--
+ []
 
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+
+Underfull \hbox (badness 1314) in paragraph at lines 158--161
+[]\T1/lmr/m/n/12 (+20) Dayan, P. and Hin-ton, G. E. (1997).  Us-ing
+ []
+
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 177.
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [95] [96] [97] [98]
-[99] [100]) [101]
+ [99] [100] [101] [102] [103] [104]
+[105]) [106]
 \openout6 = `thesis.acn'.
 
-Package glossaries Info: Writing glossary file thesis.acn on input line 85.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 85.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
- (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
+Package glossaries Info: Writing glossary file thesis.acn on input line 83.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 83.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
+ (./thesis.aux (./Abstract/abstract.aux)
+(./Acknowledgements/acknowledgements.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: D6ADEB1323C0E3157C9894BE47F8A4E1;4194.
+(rerunfilecheck)             Checksum: 04AE5E53E1DC2C8D2B84B126470DFE70;4318.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 42560 strings out of 493029
- 800317 string characters out of 6136234
- 1076737 words of memory out of 7999999
- 44275 multiletter control sequences out of 15000+600000
- 115960 words of font info for 276 fonts, out of 8000000 for 9000
+ 42577 strings out of 493029
+ 800758 string characters out of 6136234
+ 1090195 words of memory out of 7999999
+ 44291 multiletter control sequences out of 15000+600000
+ 116784 words of font info for 256 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,18n,77p,10443b,948s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,18n,77p,10443b,946s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{glo:ML} has been referenced but does not exist, r
 eplaced by a fixed one
 
@@ -2887,25 +2985,25 @@ blic/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
-2.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-mathabx-type1/matha12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
-habx-type1/matha6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx
--type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-typ
-e1/matha8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/m
-athb12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/math
-x10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb>
-Output written on thesis.pdf (111 pages, 2414852 bytes).
+2.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/l
+msy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (119 pages, 2505653 bytes).
 PDF statistics:
- 2538 PDF objects out of 2984 (max. 8388607)
- 2313 compressed objects within 24 object streams
- 610 named destinations out of 1000 (max. 500000)
- 28723 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 2645 PDF objects out of 2984 (max. 8388607)
+ 2408 compressed objects within 25 object streams
+ 621 named destinations out of 1000 (max. 500000)
+ 29256 words of extra memory for PDF output out of 29859 (max. 10000000)
 

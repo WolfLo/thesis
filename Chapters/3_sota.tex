@@ -28,7 +28,7 @@ Pr(i) = \frac{e^{\hat{\mu}_i \tau^{-1}}}{\sum_{a\in\mathcal{X}}e^{\hat{\mu}_{a}\
 Here $\tau$ is a gain factor, often called \emph{temperature}, which determines the amount of randomness in the action-selection procedure. With $\tau\to 0$, pure exploitation is approached, and with $\tau\to \infty$ the resulting distribution approaches the uniform distribution. \\
 In the rest of this section, we present some techniques of \emph{directed exploration}, which memorize knowledge about the learning process itself and utilize this knowledge to guide the exploration.
 
-\subsection{Count-based exploration and Upper Confidence Bound} \label{sebsec:count&UCB}
+\subsection{Count-based Exploration and Upper Confidence Bound} \label{sebsec:count&UCB}
 %pag107 of bandit algorithms
 Count-based exploration memorizes knowledge about the number of times $T_i(t)$ action $i$ has been visited up to time-step $t$, for all $i\in\mathcal{X}$. Strategies based on counting usually evaluate actions by a linear combination of an exploitation term and an exploration term, called the \emph{exploration bonus}, which is a (usually inverse) function of $T_i(t)$. Hence, action $x_t$ is selected in a deterministic fashion as:
 
@@ -307,7 +307,7 @@ from which they derive the soft Bellman equation. The authors build upon this no
 One year later, the same authors of \emph{Soft Q-learning} \cite{haarnoja2017reinforcement} proposed a powerful extension named \emph{Soft Actor-Critic} \cite{haarnoja2018soft}, which combined off-policy updates with a stable stochastic actor-critic formulation.  \\\\
 Following the same pattern adopted for \gls{MAB}s, we proceed now with presenting some techniques that deals with the exploration challange in a more directed way, \ie by leveraging on relevant information collected during the learning process to lead exploration more effectively.
 
-\subsection{Count-based exploration and Intrinsic Motivation}
+\subsection{Count-based Exploration and Intrinsic Motivation}
 The classic, theoretically-justified \gls{MAB}s exploration methods based on counting state-action visitations and turning this count into a bonus reward have been introduced in (\ref{count&UCB}). Taking inspiration from the \gls{MAB} literature, many similar count-based algorithms have been designed for tabular \gls{RL}. It is the case of the notorious $E^3$ algorithm \cite{kearns2002near}, and two other popular \emph{optimist} algorithms: $R_{max}$ \cite{brafman2002r} and \emph{UCRL} \cite{auer2007logarithmic}. 
 In recent works \cite{bellemare2016unifying, tang2017exploration, ostrovski2017count, choshen2018dora}, they have also been adapted to large, non-tabular \gls{RL} problems . A relevant example is that of Bellamare et al. \cite{bellemare2016unifying}, later developed in \cite{ostrovski2017count}, which proposes a novel algorithm for deriving a \emph{pseudo-count} from an arbitrary density model.
 Let $\rho$ be a density model on a finite space $\Xspace$ and $\rho_n(x)$ the probability assigned by the model to $x$ after being trained on a sequence of stated $x_1,x_2,\dots,x_n\in\Xspace$. Assume $\rho_n(x)>0$ for all $x,n$. The \emph{recording probability} $\rho_n'(x)$ is then the probability the model would assign to $x$ one more time. The \emph{prediciton gain} of $\rho$ is:

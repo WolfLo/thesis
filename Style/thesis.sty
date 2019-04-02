@@ -51,6 +51,7 @@
 
 
 % Paragraph and line spacing
+\setlength\parindent{0pt}
 \setlength{\parskip}{0.6em}
 \renewcommand{\baselinestretch}{1.2}
 \allowdisplaybreaks[4]
@@ -202,7 +203,8 @@
   keepspaces=true,
 }
 
-% Abstract Environment
+
+%%% Abstract Environment
 \newcommand\abstractname{Abstract}  %%% here
 \makeatletter
 \if@titlepage
@@ -229,7 +231,6 @@
       {\if@twocolumn\else\endquotation\fi}
 \fi
 \makeatother
-
 
 % Glossary
 \input{Glossary/Glossary}

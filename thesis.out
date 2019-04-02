@@ -1,60 +1,62 @@
-\BOOKMARK [0][-]{chapter*.2}{List of Figures}{}% 1
-\BOOKMARK [0][-]{chapter*.3}{List of Tables}{}% 2
-\BOOKMARK [0][-]{chapter*.4}{List of Algorithms}{}% 3
-\BOOKMARK [0][-]{section*.5}{Acronyms}{}% 4
+\BOOKMARK [0][-]{chapter*.3}{List of Figures}{}% 1
+\BOOKMARK [0][-]{chapter*.4}{List of Tables}{}% 2
+\BOOKMARK [0][-]{chapter*.5}{List of Algorithms}{}% 3
+\BOOKMARK [0][-]{section*.6}{Acronyms}{}% 4
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 5
-\BOOKMARK [1][-]{section.1.1}{Motivation and goal}{chapter.1}% 6
-\BOOKMARK [0][-]{chapter.2}{Preliminaries}{}% 7
-\BOOKMARK [1][-]{section.2.1}{Multi Armed Bandits}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.1.1}{Exploration and exploitation}{section.2.1}% 9
-\BOOKMARK [2][-]{subsection.2.1.2}{Stochastic Bandits With Finitely Many Arms}{section.2.1}% 10
-\BOOKMARK [2][-]{subsection.2.1.3}{X-armed bandits}{section.2.1}% 11
-\BOOKMARK [1][-]{section.2.2}{Markov Decision Processes}{chapter.2}% 12
-\BOOKMARK [2][-]{subsection.2.2.1}{Policies}{section.2.2}% 13
-\BOOKMARK [2][-]{subsection.2.2.2}{Performance}{section.2.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.3}{Value functions}{section.2.2}% 15
-\BOOKMARK [1][-]{section.2.3}{Reinforcement Learning}{chapter.2}% 16
-\BOOKMARK [2][-]{subsection.2.3.1}{Problem formulation}{section.2.3}% 17
-\BOOKMARK [2][-]{subsection.2.3.2}{Taxonomy}{section.2.3}% 18
-\BOOKMARK [1][-]{section.2.4}{Policy Search}{chapter.2}% 19
-\BOOKMARK [2][-]{subsection.2.4.1}{Overview}{section.2.4}% 20
-\BOOKMARK [2][-]{subsection.2.4.2}{Policy gradient}{section.2.4}% 21
-\BOOKMARK [2][-]{subsection.2.4.3}{Policy gradient estimation}{section.2.4}% 22
-\BOOKMARK [2][-]{subsection.2.4.4}{Algorithms}{section.2.4}% 23
-\BOOKMARK [1][-]{section.2.5}{Multiple Importance Sampling}{chapter.2}% 24
-\BOOKMARK [0][-]{chapter.3}{Exploration Techniques}{}% 25
-\BOOKMARK [1][-]{section.3.1}{Exploration in Multi Armed Bandits}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.1.1}{Undirected Exploration}{section.3.1}% 27
-\BOOKMARK [2][-]{subsection.3.1.2}{Count-based exploration and Upper Confidence Bound}{section.3.1}% 28
-\BOOKMARK [2][-]{subsection.3.1.3}{Optimism in the Face of Uncertainty}{section.3.1}% 29
-\BOOKMARK [2][-]{subsection.3.1.4}{ Hierarchical Optimistic Optimization}{section.3.1}% 30
-\BOOKMARK [2][-]{subsection.3.1.5}{Posterior Sampling}{section.3.1}% 31
-\BOOKMARK [2][-]{subsection.3.1.6}{Gaussian Process Upper Confidence Bound}{section.3.1}% 32
-\BOOKMARK [1][-]{section.3.2}{Exploration in Reinforcement Learning}{chapter.3}% 33
-\BOOKMARK [2][-]{subsection.3.2.1}{Undirected Exploration}{section.3.2}% 34
-\BOOKMARK [2][-]{subsection.3.2.2}{Count-based exploration and Intrinsic Motivation}{section.3.2}% 35
-\BOOKMARK [2][-]{subsection.3.2.3}{Posterior Sampling}{section.3.2}% 36
-\BOOKMARK [0][-]{chapter.4}{Optimistic Policy Search via Multiple Importance Sampling}{}% 37
-\BOOKMARK [1][-]{section.4.1}{Robust Importance Sampling Estimation}{chapter.4}% 38
-\BOOKMARK [1][-]{section.4.2}{Problem Formalization}{chapter.4}% 39
-\BOOKMARK [1][-]{section.4.3}{Algorithms}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.4}{Regret Analysis}{chapter.4}% 41
-\BOOKMARK [2][-]{subsection.4.4.1}{Discrete arm set}{section.4.4}% 42
-\BOOKMARK [2][-]{subsection.4.4.2}{Compact arm set}{section.4.4}% 43
-\BOOKMARK [2][-]{subsection.4.4.3}{Discretization}{section.4.4}% 44
-\BOOKMARK [0][-]{chapter.5}{Numerical Simulations}{}% 45
-\BOOKMARK [1][-]{section.5.1}{Practical Aspects}{chapter.5}% 46
-\BOOKMARK [2][-]{subsection.5.1.1}{Divergence Between Gaussian Multivariate Distributions}{section.5.1}% 47
-\BOOKMARK [2][-]{subsection.5.1.2}{Uniformly Bounded R\351nyi divergence}{section.5.1}% 48
-\BOOKMARK [1][-]{section.5.2}{Linear Quadratic Gaussian Regulator}{chapter.5}% 49
-\BOOKMARK [2][-]{subsection.5.2.1}{Gain only}{section.5.2}% 50
-\BOOKMARK [2][-]{subsection.5.2.2}{Gain and standard deviation}{section.5.2}% 51
-\BOOKMARK [1][-]{section.5.3}{Continuous Mountain Car}{chapter.5}% 52
-\BOOKMARK [1][-]{section.5.4}{Inverted Pendulum}{chapter.5}% 53
-\BOOKMARK [1][-]{section.5.5}{Action-based setting}{chapter.5}% 54
-\BOOKMARK [0][-]{chapter.6}{Conclusions}{}% 55
-\BOOKMARK [1][-]{section.6.1}{Recapitulation}{chapter.6}% 56
-\BOOKMARK [1][-]{section.6.2}{Limitations and future works}{chapter.6}% 57
-\BOOKMARK [0][-]{section*.23}{Appendices}{}% 58
-\BOOKMARK [0][-]{Appendix.1.A}{Proofs}{}% 59
-\BOOKMARK [0][-]{chapter*.24}{Bibliography}{}% 60
+\BOOKMARK [1][-]{section.1.1}{Motivation and Goal}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.2}{Original Contributions}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.3}{Overview}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{Preliminaries}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Multi Armed Bandits}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.1.1}{Exploration and Exploitation}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.2}{Stochastic Bandits With Finitely Many Arms}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.3}{X-armed Bandits}{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{Markov Decision Processes}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.1}{Policies}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.2}{Performance}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.3}{Value Functions}{section.2.2}% 17
+\BOOKMARK [1][-]{section.2.3}{Reinforcement Learning}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.3.1}{Problem Formulation}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.2}{Taxonomy}{section.2.3}% 20
+\BOOKMARK [1][-]{section.2.4}{Policy Search}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.4.1}{Overview}{section.2.4}% 22
+\BOOKMARK [2][-]{subsection.2.4.2}{Policy Gradient}{section.2.4}% 23
+\BOOKMARK [2][-]{subsection.2.4.3}{Policy Gradient Estimation}{section.2.4}% 24
+\BOOKMARK [2][-]{subsection.2.4.4}{Algorithms}{section.2.4}% 25
+\BOOKMARK [1][-]{section.2.5}{Multiple Importance Sampling}{chapter.2}% 26
+\BOOKMARK [0][-]{chapter.3}{Exploration Techniques}{}% 27
+\BOOKMARK [1][-]{section.3.1}{Exploration in Multi Armed Bandits}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.1.1}{Undirected Exploration}{section.3.1}% 29
+\BOOKMARK [2][-]{subsection.3.1.2}{Count-based Exploration and Upper Confidence Bound}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.3}{Optimism in the Face of Uncertainty}{section.3.1}% 31
+\BOOKMARK [2][-]{subsection.3.1.4}{ Hierarchical Optimistic Optimization}{section.3.1}% 32
+\BOOKMARK [2][-]{subsection.3.1.5}{Posterior Sampling}{section.3.1}% 33
+\BOOKMARK [2][-]{subsection.3.1.6}{Gaussian Process Upper Confidence Bound}{section.3.1}% 34
+\BOOKMARK [1][-]{section.3.2}{Exploration in Reinforcement Learning}{chapter.3}% 35
+\BOOKMARK [2][-]{subsection.3.2.1}{Undirected Exploration}{section.3.2}% 36
+\BOOKMARK [2][-]{subsection.3.2.2}{Count-based Exploration and Intrinsic Motivation}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.3}{Posterior Sampling}{section.3.2}% 38
+\BOOKMARK [0][-]{chapter.4}{Optimistic Policy Search via Multiple Importance Sampling}{}% 39
+\BOOKMARK [1][-]{section.4.1}{Robust Importance Sampling Estimation}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.2}{Problem Formalization}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.3}{Algorithms}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.4}{Regret Analysis}{chapter.4}% 43
+\BOOKMARK [2][-]{subsection.4.4.1}{Discrete arm set}{section.4.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.2}{Compact arm set}{section.4.4}% 45
+\BOOKMARK [2][-]{subsection.4.4.3}{Discretization}{section.4.4}% 46
+\BOOKMARK [0][-]{chapter.5}{Numerical Simulations}{}% 47
+\BOOKMARK [1][-]{section.5.1}{Practical Aspects}{chapter.5}% 48
+\BOOKMARK [2][-]{subsection.5.1.1}{Divergence Between Gaussian Multivariate Distributions}{section.5.1}% 49
+\BOOKMARK [2][-]{subsection.5.1.2}{Uniformly Bounded R\351nyi divergence}{section.5.1}% 50
+\BOOKMARK [1][-]{section.5.2}{Linear Quadratic Gaussian Regulator}{chapter.5}% 51
+\BOOKMARK [2][-]{subsection.5.2.1}{Gain only}{section.5.2}% 52
+\BOOKMARK [2][-]{subsection.5.2.2}{Gain and standard deviation}{section.5.2}% 53
+\BOOKMARK [1][-]{section.5.3}{Continuous Mountain Car}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.4}{Inverted Pendulum}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.5}{Action-based setting}{chapter.5}% 56
+\BOOKMARK [0][-]{chapter.6}{Conclusions}{}% 57
+\BOOKMARK [1][-]{section.6.1}{Recapitulation}{chapter.6}% 58
+\BOOKMARK [1][-]{section.6.2}{Limitations and Future Works}{chapter.6}% 59
+\BOOKMARK [0][-]{section*.24}{Appendices}{}% 60
+\BOOKMARK [0][-]{Appendix.1.A}{Proofs}{}% 61
+\BOOKMARK [0][-]{chapter*.25}{Bibliography}{}% 62

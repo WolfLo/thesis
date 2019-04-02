@@ -1,599 +1,601 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{}
 
-\bibitem{agrawal1995continuum}
-{\sc Agrawal, R.}
+\bibitem[Agrawal, 1995a]{agrawal1995continuum}
+Agrawal, R. (1995a).
 \newblock The continuum-armed bandit problem.
-\newblock {\em SIAM Journal on Control and Optimization 33}, 6 (1995),
-  1926--1951.
+\newblock {\em SIAM Journal on Control and Optimization}, 33(6):1926--1951.
 
-\bibitem{agrawal2013further}
-{\sc Agrawal, S., and Goyal, N.}
+\bibitem[Agrawal, 1995b]{agrawal1995sample}
+Agrawal, R. (1995b).
+\newblock Sample mean based index policies by o (log n) regret for the
+  multi-armed bandit problem.
+\newblock {\em Advances in Applied Probability}, 27(4):1054--1078.
+
+\bibitem[Agrawal and Goyal, 2013]{agrawal2013further}
+Agrawal, S. and Goyal, N. (2013).
 \newblock Further optimal regret bounds for thompson sampling.
-\newblock In {\em Artificial intelligence and statistics\/} (2013),
-  pp.~99--107.
+\newblock In {\em Artificial intelligence and statistics}, pages 99--107.
 
-\bibitem{amari1998natural2}
-{\sc Amari, S.-I.}
+\bibitem[Amari, 1998]{amari1998natural2}
+Amari, S.-I. (1998).
 \newblock Natural gradient works efficiently in learning.
-\newblock {\em Neural computation 10}, 2 (1998), 251--276.
+\newblock {\em Neural computation}, 10(2):251--276.
 
-\bibitem{amari1998natural1}
-{\sc Amari, S.-I., and Douglas, S.~C.}
+\bibitem[Amari and Douglas, 1998]{amari1998natural1}
+Amari, S.-I. and Douglas, S.~C. (1998).
 \newblock Why natural gradient?
 \newblock In {\em Proceedings of the 1998 IEEE International Conference on
-  Acoustics, Speech and Signal Processing, ICASSP'98 (Cat. No. 98CH36181)\/}
-  (1998), vol.~2, IEEE, pp.~1213--1216.
+  Acoustics, Speech and Signal Processing, ICASSP'98 (Cat. No. 98CH36181)},
+  volume~2, pages 1213--1216. IEEE.
 
-\bibitem{antos2008fitted}
-{\sc Antos, A., Szepesv{\'a}ri, C., and Munos, R.}
+\bibitem[Antos et~al., 2008]{antos2008fitted}
+Antos, A., Szepesv{\'a}ri, C., and Munos, R. (2008).
 \newblock Fitted q-iteration in continuous action-space mdps.
-\newblock In {\em Advances in neural information processing systems\/} (2008),
-  pp.~9--16.
+\newblock In {\em Advances in neural information processing systems}, pages
+  9--16.
 
-\bibitem{auer2002finite}
-{\sc Auer, P., Cesa-Bianchi, N., and Fischer, P.}
+\bibitem[Auer, 2002]{auer2002using}
+Auer, P. (2002).
+\newblock Using confidence bounds for exploitation-exploration trade-offs.
+\newblock {\em Journal of Machine Learning Research}, 3(Nov):397--422.
+
+\bibitem[Auer et~al., 2002]{auer2002finite}
+Auer, P., Cesa-Bianchi, N., and Fischer, P. (2002).
 \newblock Finite-time analysis of the multiarmed bandit problem.
-\newblock {\em Machine learning 47}, 2-3 (2002), 235--256.
+\newblock {\em Machine learning}, 47(2-3):235--256.
 
-\bibitem{auer2007logarithmic}
-{\sc Auer, P., and Ortner, R.}
+\bibitem[Auer and Ortner, 2007]{auer2007logarithmic}
+Auer, P. and Ortner, R. (2007).
 \newblock Logarithmic online regret bounds for undiscounted reinforcement
   learning.
-\newblock In {\em Advances in Neural Information Processing Systems\/} (2007),
-  pp.~49--56.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  49--56.
 
-\bibitem{auer2010ucb}
-{\sc Auer, P., and Ortner, R.}
+\bibitem[Auer and Ortner, 2010]{auer2010ucb}
+Auer, P. and Ortner, R. (2010).
 \newblock Ucb revisited: Improved regret bounds for the stochastic multi-armed
   bandit problem.
-\newblock {\em Periodica Mathematica Hungarica 61}, 1-2 (2010), 55--65.
+\newblock {\em Periodica Mathematica Hungarica}, 61(1-2):55--65.
 
-\bibitem{baird1993advantage}
-{\sc Baird~III, L.~C.}
+\bibitem[Baird~III, 1993]{baird1993advantage}
+Baird~III, L.~C. (1993).
 \newblock Advantage updating.
-\newblock Tech. rep., WRIGHT LAB WRIGHT-PATTERSON AFB OH, 1993.
+\newblock Technical report, WRIGHT LAB WRIGHT-PATTERSON AFB OH.
 
-\bibitem{baxter2001infinite}
-{\sc Baxter, J., and Bartlett, P.~L.}
+\bibitem[Baxter and Bartlett, 2001]{baxter2001infinite}
+Baxter, J. and Bartlett, P.~L. (2001).
 \newblock Infinite-horizon policy-gradient estimation.
-\newblock {\em Journal of Artificial Intelligence Research 15\/} (2001),
-  319--350.
+\newblock {\em Journal of Artificial Intelligence Research}, 15:319--350.
 
-\bibitem{bellemare2016unifying}
-{\sc Bellemare, M., Srinivasan, S., Ostrovski, G., Schaul, T., Saxton, D., and
-  Munos, R.}
+\bibitem[Bellemare et~al., 2016]{bellemare2016unifying}
+Bellemare, M., Srinivasan, S., Ostrovski, G., Schaul, T., Saxton, D., and
+  Munos, R. (2016).
 \newblock Unifying count-based exploration and intrinsic motivation.
-\newblock In {\em Advances in Neural Information Processing Systems\/} (2016),
-  pp.~1471--1479.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  1471--1479.
 
-\bibitem{blei2017variational}
-{\sc Blei, D.~M., Kucukelbir, A., and McAuliffe, J.~D.}
+\bibitem[Blei et~al., 2017]{blei2017variational}
+Blei, D.~M., Kucukelbir, A., and McAuliffe, J.~D. (2017).
 \newblock Variational inference: A review for statisticians.
-\newblock {\em Journal of the American Statistical Association 112}, 518
-  (2017), 859--877.
+\newblock {\em Journal of the American Statistical Association},
+  112(518):859--877.
 
-\bibitem{blundell2015weight}
-{\sc Blundell, C., Cornebise, J., Kavukcuoglu, K., and Wierstra, D.}
+\bibitem[Blundell et~al., 2015]{blundell2015weight}
+Blundell, C., Cornebise, J., Kavukcuoglu, K., and Wierstra, D. (2015).
 \newblock Weight uncertainty in neural networks.
-\newblock {\em arXiv preprint arXiv:1505.05424\/} (2015).
+\newblock {\em arXiv preprint arXiv:1505.05424}.
 
-\bibitem{boucheron2013concentration}
-{\sc Boucheron, S., Lugosi, G., and Massart, P.}
+\bibitem[Boucheron et~al., 2013]{boucheron2013concentration}
+Boucheron, S., Lugosi, G., and Massart, P. (2013).
 \newblock {\em Concentration inequalities: A nonasymptotic theory of
   independence}.
-\newblock Oxford university press, 2013.
+\newblock Oxford university press.
 
-\bibitem{brafman2002r}
-{\sc Brafman, R.~I., and Tennenholtz, M.}
+\bibitem[Brafman and Tennenholtz, 2002]{brafman2002r}
+Brafman, R.~I. and Tennenholtz, M. (2002).
 \newblock R-max-a general polynomial time algorithm for near-optimal
   reinforcement learning.
-\newblock {\em Journal of Machine Learning Research 3}, Oct (2002), 213--231.
+\newblock {\em Journal of Machine Learning Research}, 3(Oct):213--231.
 
-\bibitem{gym}
-{\sc Brockman, G., Cheung, V., Pettersson, L., Schneider, J., Schulman, J.,
-  Tang, J., and Zaremba, W.}
-\newblock Openai gym, 2016.
+\bibitem[Brockman et~al., 2016a]{gym}
+Brockman, G., Cheung, V., Pettersson, L., Schneider, J., Schulman, J., Tang,
+  J., and Zaremba, W. (2016a).
+\newblock Openai gym.
 
-\bibitem{brockman2016openai}
-{\sc Brockman, G., Cheung, V., Pettersson, L., Schneider, J., Schulman, J.,
-  Tang, J., and Zaremba, W.}
-\newblock Openai gym, 2016.
+\bibitem[Brockman et~al., 2016b]{brockman2016openai}
+Brockman, G., Cheung, V., Pettersson, L., Schneider, J., Schulman, J., Tang,
+  J., and Zaremba, W. (2016b).
+\newblock Openai gym.
 
-\bibitem{bubeck2012regret}
-{\sc Bubeck, S., Cesa-Bianchi, N., et~al.}
+\bibitem[Bubeck et~al., 2012]{bubeck2012regret}
+Bubeck, S., Cesa-Bianchi, N., et~al. (2012).
 \newblock Regret analysis of stochastic and nonstochastic multi-armed bandit
   problems.
-\newblock {\em Foundations and Trends{\textregistered} in Machine Learning 5},
-  1 (2012), 1--122.
+\newblock {\em Foundations and Trends{\textregistered} in Machine Learning},
+  5(1):1--122.
 
-\bibitem{bubeck2013bandits}
-{\sc Bubeck, S., Cesa-Bianchi, N., and Lugosi, G.}
+\bibitem[Bubeck et~al., 2013]{bubeck2013bandits}
+Bubeck, S., Cesa-Bianchi, N., and Lugosi, G. (2013).
 \newblock Bandits with heavy tail.
-\newblock {\em IEEE Transactions on Information Theory 59}, 11 (2013),
-  7711--7717.
+\newblock {\em IEEE Transactions on Information Theory}, 59(11):7711--7717.
 
-\bibitem{bubeck2011x}
-{\sc Bubeck, S., Munos, R., Stoltz, G., and Szepesv{\'a}ri, C.}
+\bibitem[Bubeck et~al., 2011]{bubeck2011x}
+Bubeck, S., Munos, R., Stoltz, G., and Szepesv{\'a}ri, C. (2011).
 \newblock X-armed bandits.
-\newblock {\em Journal of Machine Learning Research 12}, May (2011),
-  1655--1695.
+\newblock {\em Journal of Machine Learning Research}, 12(May):1655--1695.
 
-\bibitem{cesa2017boltzmann}
-{\sc Cesa-Bianchi, N., Gentile, C., Lugosi, G., and Neu, G.}
+\bibitem[Cesa-Bianchi et~al., 2017]{cesa2017boltzmann}
+Cesa-Bianchi, N., Gentile, C., Lugosi, G., and Neu, G. (2017).
 \newblock Boltzmann exploration done right.
-\newblock In {\em Advances in Neural Information Processing Systems\/} (2017),
-  pp.~6284--6293.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  6284--6293.
 
-\bibitem{chentanez2005intrinsically}
-{\sc Chentanez, N., Barto, A.~G., and Singh, S.~P.}
+\bibitem[Chentanez et~al., 2005]{chentanez2005intrinsically}
+Chentanez, N., Barto, A.~G., and Singh, S.~P. (2005).
 \newblock Intrinsically motivated reinforcement learning.
-\newblock In {\em Advances in neural information processing systems\/} (2005),
-  pp.~1281--1288.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1281--1288.
 
-\bibitem{choshen2018dora}
-{\sc Choshen, L., Fox, L., and Loewenstein, Y.}
+\bibitem[Choshen et~al., 2018]{choshen2018dora}
+Choshen, L., Fox, L., and Loewenstein, Y. (2018).
 \newblock Dora the explorer: Directed outreaching reinforcement
   action-selection.
-\newblock {\em arXiv preprint arXiv:1804.04012\/} (2018).
+\newblock {\em arXiv preprint arXiv:1804.04012}.
 
-\bibitem{cochran2007sampling}
-{\sc Cochran, W.~G.}
+\bibitem[Cochran, 2007]{cochran2007sampling}
+Cochran, W.~G. (2007).
 \newblock {\em Sampling techniques}.
-\newblock John Wiley \& Sons, 2007.
+\newblock John Wiley \& Sons.
 
-\bibitem{cortes2010learning}
-{\sc Cortes, C., Mansour, Y., and Mohri, M.}
+\bibitem[Cortes et~al., 2010]{cortes2010learning}
+Cortes, C., Mansour, Y., and Mohri, M. (2010).
 \newblock Learning bounds for importance weighting.
-\newblock In {\em Advances in Neural Information Processing Systems 23}, J.~D.
-  Lafferty, C.~K.~I. Williams, J.~Shawe-Taylor, R.~S. Zemel, and A.~Culotta,
-  Eds. Curran Associates, Inc., 2010, pp.~442--450.
+\newblock In Lafferty, J.~D., Williams, C. K.~I., Shawe-Taylor, J., Zemel,
+  R.~S., and Culotta, A., editors, {\em Advances in Neural Information
+  Processing Systems 23}, pages 442--450. Curran Associates, Inc.
 
-\bibitem{dayan1997using}
-{\sc Dayan, P., and Hinton, G.~E.}
+\bibitem[Dayan and Hinton, 1997]{dayan1997using}
+Dayan, P. and Hinton, G.~E. (1997).
 \newblock Using expectation-maximization for reinforcement learning.
-\newblock {\em Neural Computation 9}, 2 (1997), 271--278.
+\newblock {\em Neural Computation}, 9(2):271--278.
 
-\bibitem{degris2012off}
-{\sc Degris, T., White, M., and Sutton, R.~S.}
+\bibitem[Degris et~al., 2012]{degris2012off}
+Degris, T., White, M., and Sutton, R.~S. (2012).
 \newblock Off-policy actor-critic.
-\newblock {\em arXiv preprint arXiv:1205.4839\/} (2012).
+\newblock {\em arXiv preprint arXiv:1205.4839}.
 
-\bibitem{deisenroth2013survey}
-{\sc Deisenroth, M.~P., Neumann, G., Peters, J., et~al.}
+\bibitem[Deisenroth et~al., 2013]{deisenroth2013survey}
+Deisenroth, M.~P., Neumann, G., Peters, J., et~al. (2013).
 \newblock A survey on policy search for robotics.
-\newblock {\em Foundations and Trends{\textregistered} in Robotics 2}, 1--2
-  (2013), 1--142.
+\newblock {\em Foundations and Trends{\textregistered} in Robotics},
+  2(1--2):1--142.
 
-\bibitem{baselines}
-{\sc Dhariwal, P., Hesse, C., Klimov, O., Nichol, A., Plappert, M., Radford,
-  A., Schulman, J., Sidor, S., Wu, Y., and Zhokhov, P.}
+\bibitem[Dhariwal et~al., 2017]{baselines}
+Dhariwal, P., Hesse, C., Klimov, O., Nichol, A., Plappert, M., Radford, A.,
+  Schulman, J., Sidor, S., Wu, Y., and Zhokhov, P. (2017).
 \newblock Openai baselines.
-\newblock \url{https://github.com/openai/baselines}, 2017.
+\newblock \url{https://github.com/openai/baselines}.
 
-\bibitem{dorato1995linear}
-{\sc Dorato, P., Abdallah, C.~T., Cerone, V., and Jacobson, D.~H.}
+\bibitem[Dorato et~al., 1995]{dorato1995linear}
+Dorato, P., Abdallah, C.~T., Cerone, V., and Jacobson, D.~H. (1995).
 \newblock {\em Linear-quadratic control: an introduction}.
-\newblock Prentice Hall Englewood Cliffs, NJ, 1995.
+\newblock Prentice Hall Englewood Cliffs, NJ.
 
-\bibitem{duan2016benchmarking}
-{\sc Duan, Y., Chen, X., Houthooft, R., Schulman, J., and Abbeel, P.}
+\bibitem[Duan et~al., 2016]{duan2016benchmarking}
+Duan, Y., Chen, X., Houthooft, R., Schulman, J., and Abbeel, P. (2016).
 \newblock Benchmarking deep reinforcement learning for continuous control.
-\newblock In {\em International Conference on Machine Learning\/} (2016),
-  pp.~1329--1338.
+\newblock In {\em International Conference on Machine Learning}, pages
+  1329--1338.
 
-\bibitem{espeholt2018impala}
-{\sc Espeholt, L., Soyer, H., Munos, R., Simonyan, K., Mnih, V., Ward, T.,
-  Doron, Y., Firoiu, V., Harley, T., Dunning, I., Legg, S., and Kavukcuoglu,
-  K.}
+\bibitem[Espeholt et~al., 2018]{espeholt2018impala}
+Espeholt, L., Soyer, H., Munos, R., Simonyan, K., Mnih, V., Ward, T., Doron,
+  Y., Firoiu, V., Harley, T., Dunning, I., Legg, S., and Kavukcuoglu, K.
+  (2018).
 \newblock {IMPALA:} scalable distributed deep-rl with importance weighted
   actor-learner architectures.
 \newblock In {\em Proceedings of the 35th International Conference on Machine
   Learning, {ICML} 2018, Stockholmsm{\"{a}}ssan, Stockholm, Sweden, July 10-15,
-  2018\/} (2018), pp.~1406--1415.
+  2018}, pages 1406--1415.
 
-\bibitem{garivier2011kl}
-{\sc Garivier, A., and Capp{\'e}, O.}
+\bibitem[Garivier and Capp{\'e}, 2011]{garivier2011kl}
+Garivier, A. and Capp{\'e}, O. (2011).
 \newblock The kl-ucb algorithm for bounded stochastic bandits and beyond.
 \newblock In {\em Proceedings of the 24th annual conference on learning
-  theory\/} (2011), pp.~359--376.
+  theory}, pages 359--376.
 
-\bibitem{gil2013renyi}
-{\sc Gil, M., Alajaji, F., and Linder, T.}
+\bibitem[Gil et~al., 2013]{gil2013renyi}
+Gil, M., Alajaji, F., and Linder, T. (2013).
 \newblock R{\'e}nyi divergence measures for commonly used univariate continuous
   distributions.
-\newblock {\em Information Sciences 249\/} (2013), 124--131.
+\newblock {\em Information Sciences}, 249:124--131.
 
-\bibitem{glynn1990likelihood}
-{\sc Glynn, P.~W.}
+\bibitem[Glynn, 1990]{glynn1990likelihood}
+Glynn, P.~W. (1990).
 \newblock Likelihood ratio gradient estimation for stochastic systems.
-\newblock {\em Communications of the ACM 33}, 10 (1990), 75--84.
+\newblock {\em Communications of the ACM}, 33(10):75--84.
 
-\bibitem{goodfellow2016deep}
-{\sc Goodfellow, I., Bengio, Y., and Courville, A.}
+\bibitem[Goodfellow et~al., 2016]{goodfellow2016deep}
+Goodfellow, I., Bengio, Y., and Courville, A. (2016).
 \newblock {\em Deep learning}.
-\newblock MIT press, 2016.
+\newblock MIT press.
 
-\bibitem{grondman2012survey}
-{\sc Grondman, I., Busoniu, L., Lopes, G.~A., and Babuska, R.}
+\bibitem[Grondman et~al., 2012]{grondman2012survey}
+Grondman, I., Busoniu, L., Lopes, G.~A., and Babuska, R. (2012).
 \newblock A survey of actor-critic reinforcement learning: Standard and natural
   policy gradients.
 \newblock {\em IEEE Transactions on Systems, Man, and Cybernetics, Part C
-  (Applications and Reviews) 42}, 6 (2012), 1291--1307.
+  (Applications and Reviews)}, 42(6):1291--1307.
 
-\bibitem{haarnoja2017reinforcement}
-{\sc Haarnoja, T., Tang, H., Abbeel, P., and Levine, S.}
+\bibitem[Haarnoja et~al., 2017]{haarnoja2017reinforcement}
+Haarnoja, T., Tang, H., Abbeel, P., and Levine, S. (2017).
 \newblock Reinforcement learning with deep energy-based policies.
 \newblock In {\em Proceedings of the 34th International Conference on Machine
-  Learning, {ICML} 2017, Sydney, NSW, Australia, 6-11 August 2017\/} (2017),
-  pp.~1352--1361.
+  Learning, {ICML} 2017, Sydney, NSW, Australia, 6-11 August 2017}, pages
+  1352--1361.
 
-\bibitem{haarnoja2018soft}
-{\sc Haarnoja, T., Zhou, A., Abbeel, P., and Levine, S.}
+\bibitem[Haarnoja et~al., 2018]{haarnoja2018soft}
+Haarnoja, T., Zhou, A., Abbeel, P., and Levine, S. (2018).
 \newblock Soft actor-critic: Off-policy maximum entropy deep reinforcement
   learning with a stochastic actor.
 \newblock In {\em Proceedings of the 35th International Conference on Machine
   Learning, {ICML} 2018, Stockholmsm{\"{a}}ssan, Stockholm, Sweden, July 10-15,
-  2018\/} (2018), pp.~1856--1865.
+  2018}, pages 1856--1865.
 
-\bibitem{hershey2007approximating}
-{\sc Hershey, J.~R., and Olsen, P.~A.}
+\bibitem[Hershey and Olsen, 2007]{hershey2007approximating}
+Hershey, J.~R. and Olsen, P.~A. (2007).
 \newblock Approximating the kullback leibler divergence between gaussian
   mixture models.
 \newblock In {\em Acoustics, Speech and Signal Processing, 2007. ICASSP 2007.
-  IEEE International Conference on\/} (2007), vol.~4, IEEE, pp.~IV--317.
+  IEEE International Conference on}, volume~4, pages IV--317. IEEE.
 
-\bibitem{houthooft2016vime}
-{\sc Houthooft, R., Chen, X., Duan, Y., Schulman, J., De~Turck, F., and Abbeel,
-  P.}
+\bibitem[Houthooft et~al., 2016]{houthooft2016vime}
+Houthooft, R., Chen, X., Duan, Y., Schulman, J., De~Turck, F., and Abbeel, P.
+  (2016).
 \newblock Vime: Variational information maximizing exploration.
-\newblock In {\em Advances in Neural Information Processing Systems\/} (2016),
-  pp.~1109--1117.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  1109--1117.
 
-\bibitem{ionides2008truncated}
-{\sc Ionides, E.~L.}
+\bibitem[Ionides, 2008]{ionides2008truncated}
+Ionides, E.~L. (2008).
 \newblock Truncated importance sampling.
-\newblock {\em Journal of Computational and Graphical Statistics 17}, 2 (2008),
-  295--311.
+\newblock {\em Journal of Computational and Graphical Statistics},
+  17(2):295--311.
 
-\bibitem{kearns2002near}
-{\sc Kearns, M., and Singh, S.}
+\bibitem[Kearns and Singh, 2002]{kearns2002near}
+Kearns, M. and Singh, S. (2002).
 \newblock Near-optimal reinforcement learning in polynomial time.
-\newblock {\em Machine learning 49}, 2-3 (2002), 209--232.
+\newblock {\em Machine learning}, 49(2-3):209--232.
 
-\bibitem{kimura1999efficient}
-{\sc Kimura, H.}
+\bibitem[Kimura, 1999]{kimura1999efficient}
+Kimura, H. (1999).
 \newblock Efficient non-linear control by combining q-learning with local
   linear controllers.
 \newblock In {\em Proceedings of the 16th International Conference on Machine
-  Learning\/} (1999), pp.~210--219.
+  Learning}, pages 210--219.
 
-\bibitem{kleinberg2008multi}
-{\sc Kleinberg, R., Slivkins, A., and Upfal, E.}
+\bibitem[Kleinberg et~al., 2008]{kleinberg2008multi}
+Kleinberg, R., Slivkins, A., and Upfal, E. (2008).
 \newblock Multi-armed bandits in metric spaces.
 \newblock In {\em Proceedings of the fortieth annual ACM symposium on Theory of
-  computing\/} (2008), ACM, pp.~681--690.
+  computing}, pages 681--690. ACM.
 
-\bibitem{kleinberg2013bandits}
-{\sc Kleinberg, R., Slivkins, A., and Upfal, E.}
+\bibitem[Kleinberg et~al., 2013]{kleinberg2013bandits}
+Kleinberg, R., Slivkins, A., and Upfal, E. (2013).
 \newblock Bandits and experts in metric spaces.
-\newblock {\em arXiv preprint arXiv:1312.1277\/} (2013).
+\newblock {\em arXiv preprint arXiv:1312.1277}.
 
-\bibitem{kleinberg2005nearly}
-{\sc Kleinberg, R.~D.}
+\bibitem[Kleinberg, 2005]{kleinberg2005nearly}
+Kleinberg, R.~D. (2005).
 \newblock Nearly tight bounds for the continuum-armed bandit problem.
-\newblock In {\em Advances in Neural Information Processing Systems\/} (2005),
-  pp.~697--704.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  697--704.
 
-\bibitem{kober2009policy}
-{\sc Kober, J., and Peters, J.~R.}
+\bibitem[Kober and Peters, 2009]{kober2009policy}
+Kober, J. and Peters, J.~R. (2009).
 \newblock Policy search for motor primitives in robotics.
-\newblock In {\em Advances in neural information processing systems\/} (2009),
-  pp.~849--856.
+\newblock In {\em Advances in neural information processing systems}, pages
+  849--856.
 
-\bibitem{kong1992note}
-{\sc Kong, A.}
+\bibitem[Kong, 1992]{kong1992note}
+Kong, A. (1992).
 \newblock A note on importance sampling using standardized weights.
-\newblock {\em University of Chicago, Dept. of Statistics, Tech. Rep 348\/}
-  (1992).
+\newblock {\em University of Chicago, Dept. of Statistics, Tech. Rep}, 348.
 
-\bibitem{kupcsik2013data}
-{\sc Kupcsik, A.~G., Deisenroth, M.~P., Peters, J., and Neumann, G.}
+\bibitem[Kupcsik et~al., 2013]{kupcsik2013data}
+Kupcsik, A.~G., Deisenroth, M.~P., Peters, J., and Neumann, G. (2013).
 \newblock Data-efficient generalization of robot skills with contextual policy
   search.
-\newblock In {\em Twenty-Seventh AAAI Conference on Artificial Intelligence\/}
-  (2013).
+\newblock In {\em Twenty-Seventh AAAI Conference on Artificial Intelligence}.
 
-\bibitem{lai1985asymptotically}
-{\sc Lai, T.~L., and Robbins, H.}
+\bibitem[Lai and Robbins, 1985]{lai1985asymptotically}
+Lai, T.~L. and Robbins, H. (1985).
 \newblock Asymptotically efficient adaptive allocation rules.
-\newblock {\em Advances in applied mathematics 6}, 1 (1985), 4--22.
+\newblock {\em Advances in applied mathematics}, 6(1):4--22.
 
-\bibitem{lange2012batch}
-{\sc Lange, S., Gabel, T., and Riedmiller, M.}
+\bibitem[Lange et~al., 2012]{lange2012batch}
+Lange, S., Gabel, T., and Riedmiller, M. (2012).
 \newblock Batch reinforcement learning.
-\newblock In {\em Reinforcement learning}. Springer, 2012, pp.~45--73.
+\newblock In {\em Reinforcement learning}, pages 45--73. Springer.
 
-\bibitem{lattimore2019bandit}
-{\sc Lattimore, T., and Szepesv\'{a}ri, C.}
+\bibitem[Lattimore and Szepesv\'{a}ri, 2019]{lattimore2019bandit}
+Lattimore, T. and Szepesv\'{a}ri, C. (2019).
 \newblock {\em Bandit Algorithms}.
-\newblock Cambridge University Press (preprint), 2019.
+\newblock Cambridge University Press (preprint).
 
-\bibitem{lopes2012exploration}
-{\sc Lopes, M., Lang, T., Toussaint, M., and Oudeyer, P.-Y.}
+\bibitem[Lopes et~al., 2012]{lopes2012exploration}
+Lopes, M., Lang, T., Toussaint, M., and Oudeyer, P.-Y. (2012).
 \newblock Exploration in model-based reinforcement learning by empirically
   estimating learning progress.
-\newblock In {\em Advances in Neural Information Processing Systems\/} (2012),
-  pp.~206--214.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  206--214.
 
-\bibitem{magureanu2014lipschitz}
-{\sc Magureanu, S., Combes, R., and Proutiere, A.}
+\bibitem[Magureanu et~al., 2014]{magureanu2014lipschitz}
+Magureanu, S., Combes, R., and Proutiere, A. (2014).
 \newblock Lipschitz bandits: Regret lower bounds and optimal algorithms.
-\newblock {\em arXiv preprint arXiv:1405.4758\/} (2014).
+\newblock {\em arXiv preprint arXiv:1405.4758}.
 
-\bibitem{martino2017effective}
-{\sc Martino, L., Elvira, V., and Louzada, F.}
+\bibitem[Martino et~al., 2017]{martino2017effective}
+Martino, L., Elvira, V., and Louzada, F. (2017).
 \newblock Effective sample size for importance sampling based on discrepancy
   measures.
-\newblock {\em Signal Processing 131\/} (2017), 386--401.
+\newblock {\em Signal Processing}, 131:386--401.
 
-\bibitem{metelli2018policy}
-{\sc Metelli, A.~M., Papini, M., Faccio, F., and Restelli, M.}
+\bibitem[Metelli et~al., 2018]{metelli2018policy}
+Metelli, A.~M., Papini, M., Faccio, F., and Restelli, M. (2018).
 \newblock Policy optimization via importance sampling.
-\newblock In {\em Advances in Neural Information Processing Systems\/} (2018),
-  pp.~5447--5459.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  5447--5459.
 
-\bibitem{mnih2016asynchronous}
-{\sc Mnih, V., Badia, A.~P., Mirza, M., Graves, A., Lillicrap, T.~P., Harley,
-  T., Silver, D., and Kavukcuoglu, K.}
+\bibitem[Mnih et~al., 2016]{mnih2016asynchronous}
+Mnih, V., Badia, A.~P., Mirza, M., Graves, A., Lillicrap, T.~P., Harley, T.,
+  Silver, D., and Kavukcuoglu, K. (2016).
 \newblock Asynchronous methods for deep reinforcement learning.
 \newblock In {\em Proceedings of the 33nd International Conference on Machine
-  Learning, {ICML} 2016, New York City, NY, USA, June 19-24, 2016\/} (2016),
-  pp.~1928--1937.
+  Learning, {ICML} 2016, New York City, NY, USA, June 19-24, 2016}, pages
+  1928--1937.
 
-\bibitem{more1994line}
-{\sc Mor{\'e}, J.~J., and Thuente, D.~J.}
+\bibitem[Mor{\'e} and Thuente, 1994]{more1994line}
+Mor{\'e}, J.~J. and Thuente, D.~J. (1994).
 \newblock Line search algorithms with guaranteed sufficient decrease.
-\newblock {\em ACM Transactions on Mathematical Software (TOMS) 20}, 3 (1994),
-  286--307.
+\newblock {\em ACM Transactions on Mathematical Software (TOMS)},
+  20(3):286--307.
 
-\bibitem{oord2016pixel}
-{\sc Oord, A. v.~d., Kalchbrenner, N., and Kavukcuoglu, K.}
+\bibitem[Oord et~al., 2016]{oord2016pixel}
+Oord, A. v.~d., Kalchbrenner, N., and Kavukcuoglu, K. (2016).
 \newblock Pixel recurrent neural networks.
-\newblock {\em arXiv preprint arXiv:1601.06759\/} (2016).
+\newblock {\em arXiv preprint arXiv:1601.06759}.
 
-\bibitem{osband2016deep}
-{\sc Osband, I., Blundell, C., Pritzel, A., and Van~Roy, B.}
+\bibitem[Osband et~al., 2016]{osband2016deep}
+Osband, I., Blundell, C., Pritzel, A., and Van~Roy, B. (2016).
 \newblock Deep exploration via bootstrapped dqn.
-\newblock In {\em Advances in neural information processing systems\/} (2016),
-  pp.~4026--4034.
+\newblock In {\em Advances in neural information processing systems}, pages
+  4026--4034.
 
-\bibitem{osband2013more}
-{\sc Osband, I., Russo, D., and Roy, B.~V.}
+\bibitem[Osband et~al., 2013]{osband2013more}
+Osband, I., Russo, D., and Roy, B.~V. (2013).
 \newblock (more) efficient reinforcement learning via posterior sampling.
 \newblock In {\em Advances in Neural Information Processing Systems 26: 27th
   Annual Conference on Neural Information Processing Systems 2013. Proceedings
-  of a meeting held December 5-8, 2013, Lake Tahoe, Nevada, United States.\/}
-  (2013), pp.~3003--3011.
+  of a meeting held December 5-8, 2013, Lake Tahoe, Nevada, United States.},
+  pages 3003--3011.
 
-\bibitem{osband2015bootstrapped}
-{\sc Osband, I., and Van~Roy, B.}
+\bibitem[Osband and Van~Roy, 2015]{osband2015bootstrapped}
+Osband, I. and Van~Roy, B. (2015).
 \newblock Bootstrapped thompson sampling and deep exploration.
-\newblock {\em arXiv preprint arXiv:1507.00300\/} (2015).
+\newblock {\em arXiv preprint arXiv:1507.00300}.
 
-\bibitem{osband2017posterior}
-{\sc Osband, I., and Van~Roy, B.}
+\bibitem[Osband and Van~Roy, 2017]{osband2017posterior}
+Osband, I. and Van~Roy, B. (2017).
 \newblock Why is posterior sampling better than optimism for reinforcement
   learning?
 \newblock In {\em Proceedings of the 34th International Conference on Machine
-  Learning-Volume 70\/} (2017), JMLR. org, pp.~2701--2710.
+  Learning-Volume 70}, pages 2701--2710. JMLR. org.
 
-\bibitem{ostrovski2017count}
-{\sc Ostrovski, G., Bellemare, M.~G., van~den Oord, A., and Munos, R.}
+\bibitem[Ostrovski et~al., 2017]{ostrovski2017count}
+Ostrovski, G., Bellemare, M.~G., van~den Oord, A., and Munos, R. (2017).
 \newblock Count-based exploration with neural density models.
 \newblock In {\em Proceedings of the 34th International Conference on Machine
-  Learning-Volume 70\/} (2017), JMLR. org, pp.~2721--2730.
+  Learning-Volume 70}, pages 2721--2730. JMLR. org.
 
-\bibitem{oudeyer2007intrinsic}
-{\sc Oudeyer, P.-Y., Kaplan, F., and Hafner, V.~V.}
+\bibitem[Oudeyer et~al., 2007]{oudeyer2007intrinsic}
+Oudeyer, P.-Y., Kaplan, F., and Hafner, V.~V. (2007).
 \newblock Intrinsic motivation systems for autonomous mental development.
-\newblock {\em IEEE transactions on evolutionary computation 11}, 2 (2007),
-  265--286.
+\newblock {\em IEEE transactions on evolutionary computation}, 11(2):265--286.
 
-\bibitem{mcbook}
-{\sc Owen, A.~B.}
+\bibitem[Owen, 2013]{mcbook}
+Owen, A.~B. (2013).
 \newblock {\em Monte Carlo theory, methods and examples}.
-\newblock 2013.
 
-\bibitem{peters2008reinforcement}
-{\sc Peters, J., and Schaal, S.}
+\bibitem[Peters and Schaal, 2008]{peters2008reinforcement}
+Peters, J. and Schaal, S. (2008).
 \newblock Reinforcement learning of motor skills with policy gradients.
-\newblock {\em Neural networks 21}, 4 (2008), 682--697.
+\newblock {\em Neural networks}, 21(4):682--697.
 
-\bibitem{puterman2014markov}
-{\sc Puterman, M.~L.}
+\bibitem[Puterman, 2014]{puterman2014markov}
+Puterman, M.~L. (2014).
 \newblock {\em Markov decision processes: discrete stochastic dynamic
   programming}.
-\newblock John Wiley \& Sons, 2014.
+\newblock John Wiley \& Sons.
 
-\bibitem{renyi1961measures}
-{\sc R{\'{e}}nyi, A.}
+\bibitem[R{\'{e}}nyi, 1961]{renyi1961measures}
+R{\'{e}}nyi, A. (1961).
 \newblock On measures of entropy and information.
-\newblock Tech. rep., Hungarian Academy of Sciences Budapest Hungary, 1961.
+\newblock Technical report, Hungarian Academy of Sciences Budapest Hungary.
 
-\bibitem{rummery1994line}
-{\sc Rummery, G.~A., and Niranjan, M.}
-\newblock {\em On-line Q-learning using connectionist systems}, vol.~37.
+\bibitem[Rummery and Niranjan, 1994]{rummery1994line}
+Rummery, G.~A. and Niranjan, M. (1994).
+\newblock {\em On-line Q-learning using connectionist systems}, volume~37.
 \newblock University of Cambridge, Department of Engineering Cambridge,
-  England, 1994.
+  England.
 
-\bibitem{russo2013eluder}
-{\sc Russo, D., and Van~Roy, B.}
+\bibitem[Russo and Van~Roy, 2013]{russo2013eluder}
+Russo, D. and Van~Roy, B. (2013).
 \newblock Eluder dimension and the sample complexity of optimistic exploration.
-\newblock In {\em Advances in Neural Information Processing Systems\/} (2013),
-  pp.~2256--2264.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  2256--2264.
 
-\bibitem{russo2018tutorial}
-{\sc Russo, D.~J., Van~Roy, B., Kazerouni, A., Osband, I., Wen, Z., et~al.}
+\bibitem[Russo et~al., 2018]{russo2018tutorial}
+Russo, D.~J., Van~Roy, B., Kazerouni, A., Osband, I., Wen, Z., et~al. (2018).
 \newblock A tutorial on thompson sampling.
-\newblock {\em Foundations and Trends{\textregistered} in Machine Learning 11},
-  1 (2018), 1--96.
+\newblock {\em Foundations and Trends{\textregistered} in Machine Learning},
+  11(1):1--96.
 
-\bibitem{sallans2004reinforcement}
-{\sc Sallans, B., and Hinton, G.~E.}
+\bibitem[Sallans and Hinton, 2004]{sallans2004reinforcement}
+Sallans, B. and Hinton, G.~E. (2004).
 \newblock Reinforcement learning with factored states and actions.
-\newblock {\em Journal of Machine Learning Research 5}, Aug (2004), 1063--1088.
+\newblock {\em Journal of Machine Learning Research}, 5(Aug):1063--1088.
 
-\bibitem{schmidhuber1991possibility}
-{\sc Schmidhuber, J.}
+\bibitem[Schmidhuber, 1991]{schmidhuber1991possibility}
+Schmidhuber, J. (1991).
 \newblock A possibility for implementing curiosity and boredom in
   model-building neural controllers.
 \newblock In {\em Proc. of the international conference on simulation of
-  adaptive behavior: From animals to animats\/} (1991), pp.~222--227.
+  adaptive behavior: From animals to animats}, pages 222--227.
 
-\bibitem{schulman2015trust}
-{\sc Schulman, J., Levine, S., Abbeel, P., Jordan, M., and Moritz, P.}
+\bibitem[Schulman et~al., 2015]{schulman2015trust}
+Schulman, J., Levine, S., Abbeel, P., Jordan, M., and Moritz, P. (2015).
 \newblock Trust region policy optimization.
-\newblock In {\em International Conference on Machine Learning\/} (2015),
-  pp.~1889--1897.
+\newblock In {\em International Conference on Machine Learning}, pages
+  1889--1897.
 
-\bibitem{scott2015multivariate}
-{\sc Scott, D.~W.}
+\bibitem[Scott, 2015]{scott2015multivariate}
+Scott, D.~W. (2015).
 \newblock {\em Multivariate density estimation: theory, practice, and
   visualization}.
-\newblock John Wiley \& Sons, 2015.
+\newblock John Wiley \& Sons.
 
-\bibitem{sehnke2008policy}
-{\sc Sehnke, F., Osendorfer, C., R{\"u}ckstie{\ss}, T., Graves, A., Peters, J.,
-  and Schmidhuber, J.}
+\bibitem[Sehnke et~al., 2008]{sehnke2008policy}
+Sehnke, F., Osendorfer, C., R{\"u}ckstie{\ss}, T., Graves, A., Peters, J., and
+  Schmidhuber, J. (2008).
 \newblock Policy gradients with parameter-based exploration for control.
-\newblock In {\em International Conference on Artificial Neural Networks\/}
-  (2008), Springer, pp.~387--396.
+\newblock In {\em International Conference on Artificial Neural Networks},
+  pages 387--396. Springer.
 
-\bibitem{sehnke2010parameter}
-{\sc Sehnke, F., Osendorfer, C., R{\"u}ckstie{\ss}, T., Graves, A., Peters, J.,
-  and Schmidhuber, J.}
+\bibitem[Sehnke et~al., 2010]{sehnke2010parameter}
+Sehnke, F., Osendorfer, C., R{\"u}ckstie{\ss}, T., Graves, A., Peters, J., and
+  Schmidhuber, J. (2010).
 \newblock Parameter-exploring policy gradients.
-\newblock {\em Neural Networks 23}, 4 (2010), 551--559.
+\newblock {\em Neural Networks}, 23(4):551--559.
 
-\bibitem{silver2014deterministic}
-{\sc Silver, D., Lever, G., Heess, N., Degris, T., Wierstra, D., and
-  Riedmiller, M.}
+\bibitem[Silver et~al., 2014]{silver2014deterministic}
+Silver, D., Lever, G., Heess, N., Degris, T., Wierstra, D., and Riedmiller, M.
+  (2014).
 \newblock Deterministic policy gradient algorithms.
-\newblock In {\em ICML\/} (2014).
+\newblock In {\em ICML}.
 
-\bibitem{srinivas2010gaussian}
-{\sc Srinivas, N., Krause, A., Kakade, S., and Seeger, M.}
+\bibitem[Srinivas et~al., 2010]{srinivas2010gaussian}
+Srinivas, N., Krause, A., Kakade, S., and Seeger, M. (2010).
 \newblock Gaussian process optimization in the bandit setting: No regret and
   experimental design.
-\newblock In {\em Proceedings of the 27th International Conference on Machine
-  Learning (ICML-10)\/} (Haifa, Israel, June 2010), J.~F{\"u}rnkranz and
-  T.~Joachims, Eds., Omnipress, pp.~1015--1022.
+\newblock In F{\"u}rnkranz, J. and Joachims, T., editors, {\em Proceedings of
+  the 27th International Conference on Machine Learning (ICML-10)}, pages
+  1015--1022, Haifa, Israel. Omnipress.
 
-\bibitem{still2012information}
-{\sc Still, S., and Precup, D.}
+\bibitem[Still and Precup, 2012]{still2012information}
+Still, S. and Precup, D. (2012).
 \newblock An information-theoretic approach to curiosity-driven reinforcement
   learning.
-\newblock {\em Theory in Biosciences 131}, 3 (2012), 139--148.
+\newblock {\em Theory in Biosciences}, 131(3):139--148.
 
-\bibitem{strens2000bayesian}
-{\sc Strens, M.}
+\bibitem[Strens, 2000]{strens2000bayesian}
+Strens, M. (2000).
 \newblock A bayesian framework for reinforcement learning.
-\newblock In {\em ICML\/} (2000), vol.~2000, pp.~943--950.
+\newblock In {\em ICML}, volume 2000, pages 943--950.
 
-\bibitem{sutton1988learning}
-{\sc Sutton, R.~S.}
+\bibitem[Sutton, 1988]{sutton1988learning}
+Sutton, R.~S. (1988).
 \newblock Learning to predict by the methods of temporal differences.
-\newblock {\em Machine learning 3}, 1 (1988), 9--44.
+\newblock {\em Machine learning}, 3(1):9--44.
 
-\bibitem{sutton1991dyna}
-{\sc Sutton, R.~S.}
+\bibitem[Sutton, 1991]{sutton1991dyna}
+Sutton, R.~S. (1991).
 \newblock Dyna, an integrated architecture for learning, planning, and
   reacting.
-\newblock {\em ACM SIGART Bulletin 2}, 4 (1991), 160--163.
+\newblock {\em ACM SIGART Bulletin}, 2(4):160--163.
 
-\bibitem{sutton2018reinforcement}
-{\sc Sutton, R.~S., and Barto, A.~G.}
+\bibitem[Sutton and Barto, 2018]{sutton2018reinforcement}
+Sutton, R.~S. and Barto, A.~G. (2018).
 \newblock {\em Reinforcement learning: An introduction}.
-\newblock MIT press, 2018.
+\newblock MIT press.
 
-\bibitem{sutton2000policy}
-{\sc Sutton, R.~S., McAllester, D.~A., Singh, S.~P., and Mansour, Y.}
+\bibitem[Sutton et~al., 2000]{sutton2000policy}
+Sutton, R.~S., McAllester, D.~A., Singh, S.~P., and Mansour, Y. (2000).
 \newblock Policy gradient methods for reinforcement learning with function
   approximation.
-\newblock In {\em Advances in neural information processing systems\/} (2000),
-  pp.~1057--1063.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1057--1063.
 
-\bibitem{tang2017exploration}
-{\sc Tang, H., Houthooft, R., Foote, D., Stooke, A., Chen, O.~X., Duan, Y.,
-  Schulman, J., DeTurck, F., and Abbeel, P.}
+\bibitem[Tang et~al., 2017]{tang2017exploration}
+Tang, H., Houthooft, R., Foote, D., Stooke, A., Chen, O.~X., Duan, Y.,
+  Schulman, J., DeTurck, F., and Abbeel, P. (2017).
 \newblock \# exploration: A study of count-based exploration for deep
   reinforcement learning.
-\newblock In {\em Advances in neural information processing systems\/} (2017),
-  pp.~2753--2762.
+\newblock In {\em Advances in neural information processing systems}, pages
+  2753--2762.
 
-\bibitem{thompson1933likelihood}
-{\sc Thompson, W.~R.}
+\bibitem[Thompson, 1933]{thompson1933likelihood}
+Thompson, W.~R. (1933).
 \newblock On the likelihood that one unknown probability exceeds another in
   view of the evidence of two samples.
-\newblock {\em Biometrika 25}, 3/4 (1933), 285--294.
+\newblock {\em Biometrika}, 25(3/4):285--294.
 
-\bibitem{thrun1992efficient}
-{\sc Thrun, S.~B.}
+\bibitem[Thrun, 1992]{thrun1992efficient}
+Thrun, S.~B. (1992).
 \newblock Efficient exploration in reinforcement learning.
 
-\bibitem{tornio2006variational}
-{\sc Tornio, M., and Raiko, T.}
+\bibitem[Tornio and Raiko, 2006]{tornio2006variational}
+Tornio, M. and Raiko, T. (2006).
 \newblock Variational bayesian approach for nonlinear identification and
   control.
 \newblock In {\em Proc. of the IFAC Workshop on Nonlinear Model Predictive
-  Control for Fast Systems, NMPC FS06\/} (2006), Citeseer, pp.~41--46.
+  Control for Fast Systems, NMPC FS06}, pages 41--46. Citeseer.
 
-\bibitem{veach_optimally_1995}
-{\sc Veach, E., and Guibas, L.~J.}
+\bibitem[Veach and Guibas, 1995]{veach_optimally_1995}
+Veach, E. and Guibas, L.~J. (1995).
 \newblock Optimally combining sampling techniques for {Monte} {Carlo}
   rendering.
 \newblock In {\em Proceedings of the 22nd annual conference on Computer
-  graphics and interactive techniques - SIGGRAPH '95\/} (1995), ACM Press,
-  pp.~419--428.
+  graphics and interactive techniques - SIGGRAPH '95}, pages 419--428. ACM
+  Press.
 
-\bibitem{watkins1989learning}
-{\sc Watkins, C. J. C.~H.}
+\bibitem[Watkins, 1989]{watkins1989learning}
+Watkins, C. J. C.~H. (1989).
 \newblock {\em Learning from delayed rewards}.
-\newblock PhD thesis, King's College, Cambridge, 1989.
+\newblock PhD thesis, King's College, Cambridge.
 
-\bibitem{wawrzynski2005intensive}
-{\sc Wawrzy{\'n}ski, P.}
+\bibitem[Wawrzy{\'n}ski, 2005]{wawrzynski2005intensive}
+Wawrzy{\'n}ski, P. (2005).
 \newblock {\em Intensive reinforcement learning}.
 \newblock PhD thesis, Institute of Control and Computation Engineering,
-  Supervisor: Andrzej Pacut,, 2005.
+  Supervisor: Andrzej Pacut,.
 
-\bibitem{whitehead1991study}
-{\sc Whitehead, S.~D., and Ballard, D.~H.}
+\bibitem[Whitehead and Ballard, 1991]{whitehead1991study}
+Whitehead, S.~D. and Ballard, D.~H. (1991).
 \newblock {\em A study of cooperative mechanisms for faster reinforcement
   learning}.
 \newblock University of Rochester, Department of Computer Science Rochester,
-  NY, 1991.
+  NY.
 
-\bibitem{williams2006gaussian}
-{\sc Williams, C.~K., and Rasmussen, C.~E.}
-\newblock {\em Gaussian processes for machine learning}, vol.~2.
-\newblock MIT Press Cambridge, MA, 2006.
+\bibitem[Williams and Rasmussen, 2006]{williams2006gaussian}
+Williams, C.~K. and Rasmussen, C.~E. (2006).
+\newblock {\em Gaussian processes for machine learning}, volume~2.
+\newblock MIT Press Cambridge, MA.
 
-\bibitem{williams1992simple}
-{\sc Williams, R.~J.}
+\bibitem[Williams, 1992]{williams1992simple}
+Williams, R.~J. (1992).
 \newblock Simple statistical gradient-following algorithms for connectionist
   reinforcement learning.
-\newblock {\em Machine learning 8}, 3-4 (1992), 229--256.
+\newblock {\em Machine learning}, 8(3-4):229--256.
 
-\bibitem{zhao2011analysis}
-{\sc Zhao, T., Hachiya, H., Niu, G., and Sugiyama, M.}
+\bibitem[Zhao et~al., 2011]{zhao2011analysis}
+Zhao, T., Hachiya, H., Niu, G., and Sugiyama, M. (2011).
 \newblock Analysis and improvement of policy gradient estimation.
-\newblock In {\em Advances in Neural Information Processing Systems\/} (2011),
-  pp.~262--270.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  262--270.
 
-\bibitem{ziebart2008maximum}
-{\sc Ziebart, B.~D., Maas, A.~L., Bagnell, J.~A., and Dey, A.~K.}
+\bibitem[Ziebart et~al., 2008]{ziebart2008maximum}
+Ziebart, B.~D., Maas, A.~L., Bagnell, J.~A., and Dey, A.~K. (2008).
 \newblock Maximum entropy inverse reinforcement learning.
-\newblock In {\em Aaai\/} (2008), vol.~8, Chicago, IL, USA, pp.~1433--1438.
+\newblock In {\em Aaai}, volume~8, pages 1433--1438. Chicago, IL, USA.
 
 \end{thebibliography}

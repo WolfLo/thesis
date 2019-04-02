@@ -1,13 +1,12 @@
 \begin{abstract}
-
-\noindent
-\emph{Keywords:}
+Reinforcement Learning (RL) is a Machine Learning area that aims at building autonomous agents capable of learning to solve sequential decision problems, such as automation control or robotics tasks. The learning process consists of a sequence of interactions between the agent and the environment, in the presence of a quantitative reward. The goal of the agent is to maximize a performance metric by learning a suitable policy (strategy). This objective entails a critical aspect of the learning process: the balance between the exploration of the environment, which enables the discovery of new profitable actions, and the exploitation of the most rewarding actions already learned.
+In this thesis, we address the exploration-exploitation trade-off in Policy Search (PS), an effective approach to RL for solving control tasks with continuous state-action spaces. PS explicitly models policies as stochastic parametric functions and directly optimizes performance against policy parameters. We design an innovative formulation of the Policy Search problem as a suitable Multi Armed Bandit (MAB) problem. The MAB problem is equivalent to an RL problem in which the environment has a single state and the actions available to the agent are called arms. In our formulation, the arm set is the policy parameter space. This allows us to easily transfer some theoretically sound methods of the MAB literature to the PS setting. We propose a novel class of algorithms that exploit the problem structure to effectively explore the parameter space, and we provide theoretical guarantees on their regret \wrt the optimal policy. Specifically, we prove that the regret is bounded by $\widetilde{\mathcal{O}}(\sqrt{T})$ for both discrete and continuous parameter spaces. Finally, we evaluate our algorithms on tasks of varying difficulty, benchmarking them with existing MAB and RL algorithms.
 \end{abstract}
 
-\begin{otherlanguage}{italian}
-\begin{abstract}
+%\begin{otherlanguage}{italian}
+%\begin{abstract}
 
-\noindent
-\emph{Parole chiave:} 
-\end{abstract}
-\end{otherlanguage}
+%\noindent
+%\emph{Parole chiave:} 
+%\end{abstract}
+%\end{otherlanguage}

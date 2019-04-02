@@ -1,50 +1,52 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
-The style file: acm.bst
+A level-1 auxiliary file: Abstract/abstract.aux
+A level-1 auxiliary file: Acknowledgements/acknowledgements.aux
+The style file: apalike.bst
 Database file #1: Bibliography/bibliography.bib
 Warning--empty publisher in mcbook
 Warning--empty journal in thrun1992efficient
 Warning--can't use both volume and number fields in williams2006gaussian
-You've used 99 entries,
-            2253 wiz_defined-function locations,
-            1042 strings with 20698 characters,
-and the built_in function-call counts, 38347 in all, are:
-= -- 3757
-> -- 1728
-< -- 0
-+ -- 718
-- -- 609
-* -- 2833
-:= -- 5876
-add.period$ -- 296
-call.type$ -- 99
-change.case$ -- 583
-chr.to.int$ -- 0
-cite$ -- 102
-duplicate$ -- 1558
-empty$ -- 3118
-format.name$ -- 609
-if$ -- 8220
-int.to.chr$ -- 0
-int.to.str$ -- 99
-missing$ -- 104
-newline$ -- 495
-num.names$ -- 202
-pop$ -- 732
+You've used 101 entries,
+            1935 wiz_defined-function locations,
+            998 strings with 20795 characters,
+and the built_in function-call counts, 46071 in all, are:
+= -- 4633
+> -- 1819
+< -- 95
++ -- 635
+- -- 613
+* -- 3661
+:= -- 7534
+add.period$ -- 311
+call.type$ -- 101
+change.case$ -- 793
+chr.to.int$ -- 99
+cite$ -- 104
+duplicate$ -- 1926
+empty$ -- 3271
+format.name$ -- 766
+if$ -- 9422
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 106
+newline$ -- 504
+num.names$ -- 307
+pop$ -- 866
 preamble$ -- 1
-purify$ -- 496
+purify$ -- 805
 quote$ -- 0
-skip$ -- 1121
+skip$ -- 1513
 stack$ -- 0
-substring$ -- 2603
-swap$ -- 536
-text.length$ -- 0
+substring$ -- 3386
+swap$ -- 481
+text.length$ -- 45
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 372
+type$ -- 582
 warning$ -- 3
-while$ -- 377
-width$ -- 101
-write$ -- 999
+while$ -- 385
+width$ -- 0
+write$ -- 1301
 (There were 3 warnings)

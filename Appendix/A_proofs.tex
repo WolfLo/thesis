@@ -23,9 +23,11 @@
 \truncatedbias*
 \begin{proof}
 Let us start with the bias term. The first inequality $0 \le \mu - \Exp_{z_{ik} \simiid Q_k} [\widecheck{\mu}_{\text{BH}}]$ derives from the fact that $\widehat{\mu}_{\text{BH}} \ge \widecheck{\mu}_{\text{BH}}$, being $f(z) \ge 0$ for all $z$ and observing that $\widehat{\mu}$ is unbiased, \ie $\Exp_{z_{ik} \simiid Q_k}[\widehat{\mu}_{\text{BH}}]=\mu$. For the second inequality, let us consider the following derivation:
+
     \begin{align}
-    \mu - \Exp_{x_i \sim q_i} [\widecheck{\mu}]&  = \Exp_{z_{ik} \simiid Q_k}[\widehat{\mu}_{\text{BH}}] - \Exp_{z_{ik} \simiid Q_k} [\widecheck{\mu}_{\text{BH}}] \notag \\
-    & =  \frac{1}{N} \sum_{k=1}^K\sum_{i=1}^{N_k} \Exp_{z_{ik} \sim Q_k} \left[  f(z_{ik}) \left( \frac{p(z_{ik})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{ik})} - \min \left\{ M,  \frac{p(z_{ik})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{ik})} \right\} \right) \right]\\    
+    \MoveEqLeft\mu - \Exp_{x_i \sim q_i} [\widecheck{\mu}]\notag\\
+    &  = \Exp_{z_{ik} \simiid Q_k}[\widehat{\mu}_{\text{BH}}] - \Exp_{z_{ik} \simiid Q_k} [\widecheck{\mu}_{\text{BH}}] \notag \\
+    & =  \frac{1}{N} \sum_{k=1}^K\sum_{i=1}^{N_k} \Exp_{z_{ik} \sim Q_k} \bigg[  f(z_{ik}) \bigg( \frac{p(z_{ik})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{ik})} - \min \left\{ M,  \frac{p(z_{ik})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{ik})} \right\} \bigg) \bigg]\\    
 %    & =   \sum_{k=1}^K \frac{N_k}{N} \Exp_{z_{1k} \sim Q_k} \left[  f(z_{1k}) \left( \frac{p(z_{1k})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{1k})} - \min \left\{ M,  \frac{p(z_{1k})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{1k})} \right\} \right) \right] \\
 %     & = \Exp_{z \sim \Phi} \left[  f(z) \left( \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} - \min \left\{ M,  \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \right\} \right) \right]\\
     & =  \Exp_{z \sim \Phi} \left[  f(z) \left(  \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} - M  \right) \mathds{1}_{\left\{ \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \ge M \right\} } \right] \label{p:truncatedbias1}\\
@@ -38,14 +40,15 @@ Let us start with the bias term. The first inequality $0 \le \mu - \Exp_{z_{ik} 
     where \eqref{p:truncatedbias1} is an application of equation \eqref{eq:expectationdecomposition}, \eqref{p:truncatedbias2} derives from recalling that $M\ge 0$ and \eqref{p:truncatedbias3} is obtained by observing that $ x^{-\epsilon} \mathds{1}_{\left\{ x \ge M \right\} }$ is either $0$ and thus the bound holds or at most $M^{-\epsilon}$.
     For the variance the argument is similar:
     \begin{align}
-    \Var_{z_{ik} \simiid Q_k} [\widecheck{\mu}_{\text{BH}}]&  = \Var_{z_{ik} \simiid Q_k} \left[ \frac{1}{N} \sum_{k=1}^K \sum_{i=1}^{N_k}  f(z_{ki}) \min \left\{ M, \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right\} \right] \notag\\
+    \MoveEqLeft\Var_{z_{ik} \simiid Q_k} [\widecheck{\mu}_{\text{BH}}]\notag\\
+    &  = \Var_{z_{ik} \simiid Q_k} \left[ \frac{1}{N} \sum_{k=1}^K \sum_{i=1}^{N_k}  f(z_{ki}) \min \left\{ M, \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right\} \right] \notag\\
     & = \frac{1}{N^2} \sum_{k=1}^K \sum_{i=1}^{N_k} \Var_{z_{ik} \sim Q_k} \left[   f(z_{ki}) \min \left\{ M, \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right\} \right] \notag\\
     & \le \frac{1}{N^2} \sum_{k=1}^K \sum_{i=1}^{N_k} \Exp_{z_{ik} \sim Q_k} \left[   \left( f(z_{ki})  \min \left\{ M, \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right\} \right)^2 \right]\notag\\
     & \le \|f\|_{\infty} \frac{1}{N^2} \sum_{k=1}^K \sum_{i=1}^{N_k} \Exp_{z_{ik} \sim Q_k} \left[   \left( \min \left\{ M, \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right\} \right)^2 \right]\notag\\
     & = \|f\|_{\infty}^2 \frac{1}{N} \Exp_{z \sim \Phi} \left[ \min \left\{ M, \frac{p(z)}{\sum_{j=1}^n \frac{N_j}{N} q_j(z)} \right\}^2 \right] \label{p:truncatedbias4}\\
     & = \|f\|_{\infty}^2 \frac{1}{N} \Exp_{z \sim \Phi} \left[ \min \left\{ M, \frac{p(z)}{\sum_{j=1}^n \frac{N_j}{N} q_j(z)} \right\}^{1+\epsilon} \min \left\{ M, \frac{p(z)}{\sum_{j=1}^n \frac{N_j}{N} q_j(z)} \right\}^{1-\epsilon}  \right]\notag\\
     & \le \|f\|_{\infty}^2 \frac{1}{N} \Exp_{z \sim \Phi} \left[ \left( \frac{p(z)}{\sum_{j=1}^n \frac{N_j}{N} q_j(z)} \right)^{1+\epsilon}  \right] M^{1-\epsilon} \label{p:truncatedbias5}\\
-    &= \|f\|_{\infty}^2 M^{1-\epsilon} \frac{d_{1+\epsilon}(P\|\Phi)^{\epsilon}}{N} ,\notag\\
+    &= \|f\|_{\infty}^2 M^{1-\epsilon} \frac{d_{1+\epsilon}(P\|\Phi)^{\epsilon}}{N} ,\notag
     \end{align}
     where \eqref{p:truncatedbias4}  is again an application of equation \eqref{eq:expectationdecomposition} and \ref{p:truncatedbias5} derives from observing that $\min\{x,y\} \le x$ and also $\min\{x,y\} \le y$.
 \end{proof}
@@ -82,14 +85,16 @@ Let us start with the first inequality. Observing that all samples $z_{ik}$ are 
 	\end{align}
 	Indeed:
 	\begin{align}
-		\Prob\left(\bigcap_{k=1}^{K}\bigcap_{t=1}^T\left[\wc{\mu_t}(\vx_k) - \mu(\vx_k) \leq c^{-}\beta_t(\vx_k)\right]\right) &=1-\Prob\left(\bigcup_{k=1}^{K}\bigcup_{t=1}^T\left[\wc{\mu_t}(\vx_k) - \mu(\vx_k) > c^{-}\beta_t(\vx_k)\right]\right)\nonumber\\
+		\MoveEqLeft\Prob\left(\bigcap_{k=1}^{K}\bigcap_{t=1}^T\left[\wc{\mu_t}(\vx_k) - \mu(\vx_k) \leq c^{-}\beta_t(\vx_k)\right]\right) \notag\\
+		&=1-\Prob\left(\bigcup_{k=1}^{K}\bigcup_{t=1}^T\big[\wc{\mu_t}(\vx_k) - \mu(\vx_k) > c^{-}\beta_t(\vx_k)\big]\right)\nonumber\\
 		&\geq 1-K\sum_{t=1}^{T}\Prob\left(\wc{\mu_t}(\vx_1) - \mu(\vx_1) > c^{-}\beta_t(\vx_1)\right) \label{pp:1}\\
 		& \geq 1 - K\sum_{t=1}^{T}\delta_t\label{pp:2}\\
 		& \geq 1 - \frac{\delta}{2},\label{pp:3}
 	\end{align}
 	where (\ref{pp:1}) is from a double union bound (over time and over the finite elements of $\Xspace$), (\ref{pp:2}) is from Theorem \ref{lem:thrucatedconcentration}, and (\ref{pp:3}) is by hypothesis on $\delta_t$ and $\sum_{t=1}^{T}\frac{1}{t^2}\leq\sum_{t=1}^{\infty}\frac{1}{t^2} = \frac{\pi^2}{6}$. Similarly:
 	\begin{align*}
-		\Prob\left(\bigcap_{k=1}^{K}\bigcap_{t=1}^T\left[\wc{\mu_t}(\vx_k) - \mu(\vx_k) \geq -c^{+}\beta_t(\vx_k)\right]\right) &=1-\Prob\left(\bigcup_{k=1}^{K}\bigcup_{t=1}^T\left[\wc{\mu_t}(\vx_k) - \mu(\vx_k) < -c^{+}\beta_t(\vx_k)\right]\right)\nonumber\\
+		\MoveEqLeft\Prob\left(\bigcap_{k=1}^{K}\bigcap_{t=1}^T\left[\wc{\mu_t}(\vx_k) - \mu(\vx_k) \geq -c^{+}\beta_t(\vx_k)\right]\right) \notag\\
+		&=1-\Prob\left(\bigcup_{k=1}^{K}\bigcup_{t=1}^T\left[\wc{\mu_t}(\vx_k) - \mu(\vx_k) < -c^{+}\beta_t(\vx_k)\right]\right)\nonumber\\
 		&\geq 1-K\sum_{t=1}^{T}\Prob\left(\wc{\mu_t}(\vx_1) - \mu(\vx_1) < -c^{+}\beta_t(\vx_1)\right)\\
 		&\geq 1 - K\sum_{t=1}^{T}\delta_t\\
 		 &\geq 1 - \frac{\delta}{2}.
@@ -202,7 +207,8 @@ Let us start with the first inequality. Observing that all samples $z_{ik}$ are 
 	
 	Finally, we can bound the regret. With probability at least $1-\delta$:
 	\begin{align}
-		\Reg(T) &\leq \Delta_0 + \sum_{t=1}^{T}\Delta_t \nonumber\\
+		\MoveEqLeft\Reg(T) \notag\\
+		&\leq \Delta_0 + \sum_{t=1}^{T}\Delta_t \nonumber\\
 		&\leq \Delta_0 + (c^{+}+c^{-})\sum_{t=1}^{T}\beta_t(\vx_t) + LDd\sum_{t=1}^{T}\frac{1}{\tau_t} \label{pp:17}\\
 		&\leq (c^{+}+c^{-})\sum_{t=1}^{T}\beta_t(x_t) + \frac{\pi^2LD}{6} \label{pp:18}\\
 		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{\log\frac{1}{\delta_t}}{t}\right)^{\frac{\epsilon}{1+\epsilon}} + \frac{\pi^2LD}{6} \label{pp:19}\\
@@ -236,10 +242,11 @@ Let us start with the first inequality. Observing that all samples $z_{ik}$ are 
 \begin{proof}
 	The proof follows the one of Theorem \ref{th:regretcompact} up to (\ref{aux:9}), except from the fact that the discretization is actually performed by the algorithm. That is, with probability at least $1-\sum_{t=1}^{T}\delta_t(1+\tau_t^d)$:
 	\begin{align}
-		&\wc{\mu}_t(\vx_t) - \mu(\vx_t) \leq c^{-}\beta_t(\vx_t) &\text{and}\nonumber\\
-		&\mu(\vx^*) - \wc{\mu}_t([\vx^*]_t) \leq c^{+}\beta_t([\vx^*]_t) + \frac{LDd}{\tau_t}
-		&\text{for $t=1,\dots,T$ and every $\vx^*\in\arg\max_{\vx\in\Xspace}\mu(\vx)$.}\label{aux:11}
+		\MoveEqLeft\wc{\mu}_t(\vx_t) - \mu(\vx_t) \leq c^{-}\beta_t(\vx_t)\quad\text{and}\quad\mu(\vx^*) - \wc{\mu}_t([\vx^*]_t)
+		\leq c^{+}\beta_t([\vx^*]_t) + \frac{LDd}{\tau_t}\label{aux:11}\\
+		&\text{}\notag
 	\end{align}
+	for $t=1,\dots,T$ and every $\vx^*\in\arg\max_{\vx\in\Xspace}\mu(\vx)$.
 	This is enough to bound the instantaneous regret. With probability at least $1-\sum_{t=1}^{T}\delta_t(1+\tau_t^d)$:
 	\begin{align}
 		\Delta_t = \mu(\vx^*) - \mu(\vx_t) 
