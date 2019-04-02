@@ -82,8 +82,10 @@ Blei, D.~M., Kucukelbir, A., and McAuliffe, J.~D. (2017).
 
 \bibitem[Blundell et~al., 2015]{blundell2015weight}
 Blundell, C., Cornebise, J., Kavukcuoglu, K., and Wierstra, D. (2015).
-\newblock Weight uncertainty in neural networks.
-\newblock {\em arXiv preprint arXiv:1505.05424}.
+\newblock Weight uncertainty in neural network.
+\newblock In Bach, F. and Blei, D., editors, {\em Proceedings of the 32nd
+  International Conference on Machine Learning}, volume~37 of {\em Proceedings
+  of Machine Learning Research}, pages 1613--1622, Lille, France. PMLR.
 
 \bibitem[Boucheron et~al., 2013]{boucheron2013concentration}
 Boucheron, S., Lugosi, G., and Massart, P. (2013).
@@ -97,14 +99,9 @@ Brafman, R.~I. and Tennenholtz, M. (2002).
   reinforcement learning.
 \newblock {\em Journal of Machine Learning Research}, 3(Oct):213--231.
 
-\bibitem[Brockman et~al., 2016a]{gym}
+\bibitem[Brockman et~al., 2016]{brockman2016openai}
 Brockman, G., Cheung, V., Pettersson, L., Schneider, J., Schulman, J., Tang,
-  J., and Zaremba, W. (2016a).
-\newblock Openai gym.
-
-\bibitem[Brockman et~al., 2016b]{brockman2016openai}
-Brockman, G., Cheung, V., Pettersson, L., Schneider, J., Schulman, J., Tang,
-  J., and Zaremba, W. (2016b).
+  J., and Zaremba, W. (2016).
 \newblock Openai gym.
 
 \bibitem[Bubeck et~al., 2012]{bubeck2012regret}
@@ -139,8 +136,8 @@ Chentanez, N., Barto, A.~G., and Singh, S.~P. (2005).
 \bibitem[Choshen et~al., 2018]{choshen2018dora}
 Choshen, L., Fox, L., and Loewenstein, Y. (2018).
 \newblock Dora the explorer: Directed outreaching reinforcement
-  action-selection.
-\newblock {\em arXiv preprint arXiv:1804.04012}.
+  action-selection. poster.
+\newblock In {\em International Conference on Learning Representations}.
 
 \bibitem[Cochran, 2007]{cochran2007sampling}
 Cochran, W.~G. (2007).
@@ -162,7 +159,7 @@ Dayan, P. and Hinton, G.~E. (1997).
 \bibitem[Degris et~al., 2012]{degris2012off}
 Degris, T., White, M., and Sutton, R.~S. (2012).
 \newblock Off-policy actor-critic.
-\newblock {\em arXiv preprint arXiv:1205.4839}.
+\newblock {\em CoRR}, abs/1205.4839.
 
 \bibitem[Deisenroth et~al., 2013]{deisenroth2013survey}
 Deisenroth, M.~P., Neumann, G., Peters, J., et~al. (2013).
@@ -282,7 +279,7 @@ Kleinberg, R., Slivkins, A., and Upfal, E. (2008).
 \bibitem[Kleinberg et~al., 2013]{kleinberg2013bandits}
 Kleinberg, R., Slivkins, A., and Upfal, E. (2013).
 \newblock Bandits and experts in metric spaces.
-\newblock {\em arXiv preprint arXiv:1312.1277}.
+\newblock {\em CoRR}, abs/1312.1277.
 
 \bibitem[Kleinberg, 2005]{kleinberg2005nearly}
 Kleinberg, R.~D. (2005).
@@ -330,9 +327,9 @@ Lopes, M., Lang, T., Toussaint, M., and Oudeyer, P.-Y. (2012).
   206--214.
 
 \bibitem[Magureanu et~al., 2014]{magureanu2014lipschitz}
-Magureanu, S., Combes, R., and Proutiere, A. (2014).
+Magureanu, S., Combes, R., and Prouti{\`{e}}re, A. (2014).
 \newblock Lipschitz bandits: Regret lower bounds and optimal algorithms.
-\newblock {\em arXiv preprint arXiv:1405.4758}.
+\newblock {\em CoRR}, abs/1405.4758.
 
 \bibitem[Martino et~al., 2017]{martino2017effective}
 Martino, L., Elvira, V., and Louzada, F. (2017).
@@ -361,9 +358,12 @@ Mor{\'e}, J.~J. and Thuente, D.~J. (1994).
   20(3):286--307.
 
 \bibitem[Oord et~al., 2016]{oord2016pixel}
-Oord, A. v.~d., Kalchbrenner, N., and Kavukcuoglu, K. (2016).
+Oord, A.~V., Kalchbrenner, N., and Kavukcuoglu, K. (2016).
 \newblock Pixel recurrent neural networks.
-\newblock {\em arXiv preprint arXiv:1601.06759}.
+\newblock In Balcan, M.~F. and Weinberger, K.~Q., editors, {\em Proceedings of
+  The 33rd International Conference on Machine Learning}, volume~48 of {\em
+  Proceedings of Machine Learning Research}, pages 1747--1756, New York, New
+  York, USA. PMLR.
 
 \bibitem[Osband et~al., 2016]{osband2016deep}
 Osband, I., Blundell, C., Pritzel, A., and Van~Roy, B. (2016).
@@ -542,6 +542,7 @@ Thompson, W.~R. (1933).
 \bibitem[Thrun, 1992]{thrun1992efficient}
 Thrun, S.~B. (1992).
 \newblock Efficient exploration in reinforcement learning.
+\newblock Technical report, Pittsburgh, PA, USA.
 
 \bibitem[Tornio and Raiko, 2006]{tornio2006variational}
 Tornio, M. and Raiko, T. (2006).

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  1 APR 2019 20:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  2 APR 2019 16:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2752,7 +2752,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 353--354
 Chapter 4.
 [53
 
-] [54] [55] [56] [57] [58] [59] [60]
+] [54] [55] [56] [57] [58]
+Underfull \hbox (badness 1048) in paragraph at lines 119--129
+\T1/lmr/m/n/12 (+20) In the fol-low-ing, we will show that Al-go-rithm [][]4.1[
+][] yields sub-lin-ear re-
+ []
+
+[59] [60]
 Overfull \hbox (1.00342pt too wide) in paragraph at lines 221--221
 [] 
  []
@@ -2827,14 +2833,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
 
-<Images/MCgainPGPE.pdf, id=1876, 722.7pt x 505.89pt>
+<Images/MCgainPGPE.pdf, id=1875, 722.7pt x 505.89pt>
 File: Images/MCgainPGPE.pdf Graphic file (type pdf)
 
 <use Images/MCgainPGPE.pdf>
 Package pdftex.def Info: Images/MCgainPGPE.pdf used on input line 193.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
 
-<Images/MCgainOPTIMIST.pdf, id=1877, 722.7pt x 505.89pt>
+<Images/MCgainOPTIMIST.pdf, id=1876, 722.7pt x 505.89pt>
 File: Images/MCgainOPTIMIST.pdf Graphic file (type pdf)
 
 <use Images/MCgainOPTIMIST.pdf>
@@ -2844,7 +2850,7 @@ Package pdftex.def Info: Images/MCgainOPTIMIST.pdf used on input line 194.
 
 pdfTeX warning: pdflatex (file ./Images/MCgainOPTIMIST.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
->] <Images/inverted_pendulum.png, id=1924, 763.85374pt x 173.64874pt>
+>] <Images/inverted_pendulum.png, id=1923, 763.85374pt x 173.64874pt>
 File: Images/inverted_pendulum.png Graphic file (type png)
 
 <use Images/inverted_pendulum.png>
@@ -2857,19 +2863,19 @@ rted Pen-du-lum task
  []
 
 [74 <./Images/inverted_pendulum.png>] [75]
-<Images/IP_mu_1.pdf, id=1962, 867.24pt x 361.35pt>
+<Images/IP_mu_1.pdf, id=1961, 867.24pt x 361.35pt>
 File: Images/IP_mu_1.pdf Graphic file (type pdf)
  <use Images/IP_mu_1.pdf>
 Package pdftex.def Info: Images/IP_mu_1.pdf used on input line 276.
 (pdftex.def)             Requested size: 406.87442pt x 169.53127pt.
 
-<Images/IPmise.pdf, id=1965, 722.7pt x 505.89pt>
+<Images/IPmise.pdf, id=1964, 722.7pt x 505.89pt>
 File: Images/IPmise.pdf Graphic file (type pdf)
  <use Images/IPmise.pdf>
 Package pdftex.def Info: Images/IPmise.pdf used on input line 283.
 (pdftex.def)             Requested size: 203.43721pt x 142.40471pt.
 
-<Images/IPbonus.pdf, id=1966, 722.7pt x 505.89pt>
+<Images/IPbonus.pdf, id=1965, 722.7pt x 505.89pt>
 File: Images/IPbonus.pdf Graphic file (type pdf)
  <use Images/IPbonus.pdf>
 Package pdftex.def Info: Images/IPbonus.pdf used on input line 284.
@@ -2919,19 +2925,19 @@ Overfull \hbox (21.43776pt too wide) in paragraph at lines 287--287
 
 ]
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 114.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 111.
  [98]
-Overfull \hbox (0.98468pt too wide) in paragraph at lines 123--126
+Overfull \hbox (0.98468pt too wide) in paragraph at lines 120--123
 \T1/lmr/m/n/12 (-20) (2011).  X-armed bandits.  \T1/lmr/m/it/12 (-20) Journal o
 f Machine Learning Research\T1/lmr/m/n/12 (-20) , 12(May):1655--
  []
 
 
-Underfull \hbox (badness 1314) in paragraph at lines 158--161
+Underfull \hbox (badness 1314) in paragraph at lines 155--158
 []\T1/lmr/m/n/12 (+20) Dayan, P. and Hin-ton, G. E. (1997).  Us-ing
  []
 
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 177.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 174.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2959,10 +2965,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 42577 strings out of 493029
- 800758 string characters out of 6136234
- 1090195 words of memory out of 7999999
- 44291 multiletter control sequences out of 15000+600000
+ 42575 strings out of 493029
+ 800745 string characters out of 6136234
+ 1090157 words of memory out of 7999999
+ 44290 multiletter control sequences out of 15000+600000
  116784 words of font info for 256 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,18n,77p,10443b,946s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3000,10 +3006,10 @@ hare/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/share
 live/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (119 pages, 2505653 bytes).
+Output written on thesis.pdf (119 pages, 2505541 bytes).
 PDF statistics:
- 2645 PDF objects out of 2984 (max. 8388607)
- 2408 compressed objects within 25 object streams
- 621 named destinations out of 1000 (max. 500000)
+ 2644 PDF objects out of 2984 (max. 8388607)
+ 2407 compressed objects within 25 object streams
+ 620 named destinations out of 1000 (max. 500000)
  29256 words of extra memory for PDF output out of 29859 (max. 10000000)
 

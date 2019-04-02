@@ -6,47 +6,47 @@ A level-1 auxiliary file: Acknowledgements/acknowledgements.aux
 The style file: apalike.bst
 Database file #1: Bibliography/bibliography.bib
 Warning--empty publisher in mcbook
-Warning--empty journal in thrun1992efficient
+Warning--empty institution in thrun1992efficient
 Warning--can't use both volume and number fields in williams2006gaussian
-You've used 101 entries,
+You've used 100 entries,
             1935 wiz_defined-function locations,
-            998 strings with 20795 characters,
-and the built_in function-call counts, 46071 in all, are:
-= -- 4633
-> -- 1819
-< -- 95
-+ -- 635
-- -- 613
-* -- 3661
-:= -- 7534
-add.period$ -- 311
-call.type$ -- 101
-change.case$ -- 793
+            1010 strings with 21111 characters,
+and the built_in function-call counts, 46338 in all, are:
+= -- 4678
+> -- 1797
+< -- 99
++ -- 624
+- -- 603
+* -- 3681
+:= -- 7526
+add.period$ -- 312
+call.type$ -- 100
+change.case$ -- 782
 chr.to.int$ -- 99
-cite$ -- 104
-duplicate$ -- 1926
-empty$ -- 3271
-format.name$ -- 766
-if$ -- 9422
-int.to.chr$ -- 3
+cite$ -- 103
+duplicate$ -- 1953
+empty$ -- 3317
+format.name$ -- 755
+if$ -- 9526
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 106
-newline$ -- 504
-num.names$ -- 307
-pop$ -- 866
+missing$ -- 105
+newline$ -- 501
+num.names$ -- 308
+pop$ -- 853
 preamble$ -- 1
-purify$ -- 805
+purify$ -- 793
 quote$ -- 0
-skip$ -- 1513
+skip$ -- 1535
 stack$ -- 0
-substring$ -- 3386
-swap$ -- 481
-text.length$ -- 45
+substring$ -- 3454
+swap$ -- 507
+text.length$ -- 49
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 582
+type$ -- 576
 warning$ -- 3
-while$ -- 385
+while$ -- 391
 width$ -- 0
-write$ -- 1301
+write$ -- 1305
 (There were 3 warnings)
