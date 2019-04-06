@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: Abstract/abstract.aux
+A level-1 auxiliary file: Acknowledgements/acknowledgements.aux
+The style file: apalike.bst
+Database file #1: Bibliography/bibliography.bib
+Warning--empty publisher in mcbook
+Warning--empty institution in thrun1992efficient
+Warning--can't use both volume and number fields in williams2006gaussian
+You've used 100 entries,
+            1935 wiz_defined-function locations,
+            1010 strings with 21111 characters,
+and the built_in function-call counts, 46338 in all, are:
+= -- 4678
+> -- 1797
+< -- 99
++ -- 624
+- -- 603
+* -- 3681
+:= -- 7526
+add.period$ -- 312
+call.type$ -- 100
+change.case$ -- 782
+chr.to.int$ -- 99
+cite$ -- 103
+duplicate$ -- 1953
+empty$ -- 3317
+format.name$ -- 755
+if$ -- 9526
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 105
+newline$ -- 501
+num.names$ -- 308
+pop$ -- 853
+preamble$ -- 1
+purify$ -- 793
+quote$ -- 0
+skip$ -- 1535
+stack$ -- 0
+substring$ -- 3454
+swap$ -- 507
+text.length$ -- 49
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 576
+warning$ -- 3
+while$ -- 391
+width$ -- 0
+write$ -- 1305
+(There were 3 warnings)

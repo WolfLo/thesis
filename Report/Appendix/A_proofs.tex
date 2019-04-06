@@ -1,0 +1,355 @@
+\chapter{Proofs} \label{app:proof}
+
+\misevarbound*
+%
+\begin{proof}
+	The proof is similar to Lemma 4.1 of \cite{metelli2018policy}:
+    \begin{align}
+    \Var_{z_{ik} \simiid Q_k} [\widehat{\mu}_{\text{BH}}]&  = \Var_{z_{ik} \simiid Q_k} \left[ \frac{1}{N} \sum_{k=1}^K \sum_{i=1}^{N_k}  f(z_{ki})\frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right] \notag \\
+    & = \frac{1}{N^2} \sum_{k=1}^K \sum_{i=1}^{N_k} \Var_{z_{ik} \sim Q_k} \left[   f(z_{ki}) \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right] \label{p:misevarboundline2} \\
+    & \le \frac{1}{N^2} \sum_{k=1}^K \sum_{i=1}^{N_k} \Exp_{z_{ik} \sim Q_k} \left[   \left( f(z_{ki})   \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right)^2 \right] \notag\\
+    & \le \|f\|_{\infty} \frac{1}{N^2} \sum_{k=1}^K \sum_{i=1}^{N_k} \Exp_{z_{ik} \sim Q_k} \left[   \left( \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right)^2 \right]  \notag\\
+    & = \|f\|_{\infty}^2 \frac{1}{N} \Exp_{z \sim \Phi} \left[ \left(\frac{p(z)}{\sum_{j=1}^n \frac{N_j}{N} q_j(z)} \right)^2 \right] \label{p:misevarboundline5}\\
+    &= \|f\|_{\infty}^2 \frac{d_{2}(P\|\Phi)}{N},  \notag
+    \end{align}
+    where \eqref{p:misevarboundline2} follows from the independence of the $z_{ik}$ and \eqref{p:misevarboundline5} is obtained by the definition of $\Phi$ and observing that for an arbitrary function $g$:
+    \begin{equation}
+    \label{eq:expectationdecomposition}
+    	\frac{1}{N} \sum_{k=1}^K \sum_{i=1}^{N_k} \Exp_{z_{ik} \sim Q_k}[g(z_{ik})] =  \sum_{k=1}^K \frac{N_k}{N} \Exp_{z_{1k} \sim Q_k}[g(z_{1k})] = \Exp_{z \sim \Phi}[g(z)].
+    \end{equation}
+\end{proof}
+
+
+\truncatedbias*
+\begin{proof}
+Let us start with the bias term. The first inequality $0 \le \mu - \Exp_{z_{ik} \simiid Q_k} [\widecheck{\mu}_{\text{BH}}]$ derives from the fact that $\widehat{\mu}_{\text{BH}} \ge \widecheck{\mu}_{\text{BH}}$, being $f(z) \ge 0$ for all $z$ and observing that $\widehat{\mu}$ is unbiased, \ie $\Exp_{z_{ik} \simiid Q_k}[\widehat{\mu}_{\text{BH}}]=\mu$. For the second inequality, let us consider the following derivation:
+
+    \begin{align}
+    \MoveEqLeft\mu - \Exp_{x_i \sim q_i} [\widecheck{\mu}]\notag\\
+    &  = \Exp_{z_{ik} \simiid Q_k}[\widehat{\mu}_{\text{BH}}] - \Exp_{z_{ik} \simiid Q_k} [\widecheck{\mu}_{\text{BH}}] \notag \\
+    & =  \frac{1}{N} \sum_{k=1}^K\sum_{i=1}^{N_k} \Exp_{z_{ik} \sim Q_k} \bigg[  f(z_{ik}) \bigg( \frac{p(z_{ik})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{ik})} - \min \left\{ M,  \frac{p(z_{ik})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{ik})} \right\} \bigg) \bigg]\\    
+%    & =   \sum_{k=1}^K \frac{N_k}{N} \Exp_{z_{1k} \sim Q_k} \left[  f(z_{1k}) \left( \frac{p(z_{1k})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{1k})} - \min \left\{ M,  \frac{p(z_{1k})}{\sum_{j=1}^K \frac{N_j}{N} q_j(z_{1k})} \right\} \right) \right] \\
+%     & = \Exp_{z \sim \Phi} \left[  f(z) \left( \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} - \min \left\{ M,  \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \right\} \right) \right]\\
+    & =  \Exp_{z \sim \Phi} \left[  f(z) \left(  \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} - M  \right) \mathds{1}_{\left\{ \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \ge M \right\} } \right] \label{p:truncatedbias1}\\
+    & \le \Exp_{z \sim \Phi} \left[  f(z) \left(  \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \right) \mathds{1}_{\left\{ \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \ge M \right\} } \right] \label{p:truncatedbias2}\\
+    & \le \|f\|_{\infty} \Exp_{z \sim \Phi} \left[  \left(  \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \right) \mathds{1}_{\left\{ \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \ge M \right\} } \right] \notag\\
+    & \le \|f\|_{\infty} \Exp_{z \sim \Phi} \left[  \left(  \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \right)^{1+\epsilon} \left(  \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \right)^{-\epsilon} \mathds{1}_{\left\{ \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \ge M \right\} } \right] \notag\\
+    & \le \|f\|_{\infty} \Exp_{z \sim \Phi} \left[  \left(  \frac{p(z)}{\sum_{j=1}^K \frac{N_j}{N} q_j(z)} \right)^{1+\epsilon} \right] M^{-\epsilon} \label{p:truncatedbias3}\\
+        & = \|f\|_{\infty} d_{1+\epsilon}(P \| \Phi)^{\epsilon}  M^{-\epsilon},\notag
+    \end{align}
+    where \eqref{p:truncatedbias1} is an application of Equation \ref{eq:expectationdecomposition}, \eqref{p:truncatedbias2} derives from recalling that $M\ge 0$ and \eqref{p:truncatedbias3} is obtained by observing that $ x^{-\epsilon} \mathds{1}_{\left\{ x \ge M \right\} }$ is either $0$ and thus the bound holds or at most $M^{-\epsilon}$.
+    For the variance the argument is similar:
+    \begin{align}
+    \MoveEqLeft\Var_{z_{ik} \simiid Q_k} [\widecheck{\mu}_{\text{BH}}]\notag\\
+    &  = \Var_{z_{ik} \simiid Q_k} \left[ \frac{1}{N} \sum_{k=1}^K \sum_{i=1}^{N_k}  f(z_{ki}) \min \left\{ M, \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right\} \right] \notag\\
+    & = \frac{1}{N^2} \sum_{k=1}^K \sum_{i=1}^{N_k} \Var_{z_{ik} \sim Q_k} \left[   f(z_{ki}) \min \left\{ M, \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right\} \right] \notag\\
+    & \le \frac{1}{N^2} \sum_{k=1}^K \sum_{i=1}^{N_k} \Exp_{z_{ik} \sim Q_k} \left[   \left( f(z_{ki})  \min \left\{ M, \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right\} \right)^2 \right]\notag\\
+    & \le \|f\|_{\infty} \frac{1}{N^2} \sum_{k=1}^K \sum_{i=1}^{N_k} \Exp_{z_{ik} \sim Q_k} \left[   \left( \min \left\{ M, \frac{p(z_{ki})}{\sum_{j=1}^n \frac{N_j}{N} q_j(z_{ki})} \right\} \right)^2 \right]\notag\\
+    & = \|f\|_{\infty}^2 \frac{1}{N} \Exp_{z \sim \Phi} \left[ \min \left\{ M, \frac{p(z)}{\sum_{j=1}^n \frac{N_j}{N} q_j(z)} \right\}^2 \right] \label{p:truncatedbias4}\\
+    & = \|f\|_{\infty}^2 \frac{1}{N} \Exp_{z \sim \Phi} \left[ \min \left\{ M, \frac{p(z)}{\sum_{j=1}^n \frac{N_j}{N} q_j(z)} \right\}^{1+\epsilon} \min \left\{ M, \frac{p(z)}{\sum_{j=1}^n \frac{N_j}{N} q_j(z)} \right\}^{1-\epsilon}  \right]\notag\\
+    & \le \|f\|_{\infty}^2 \frac{1}{N} \Exp_{z \sim \Phi} \left[ \left( \frac{p(z)}{\sum_{j=1}^n \frac{N_j}{N} q_j(z)} \right)^{1+\epsilon}  \right] M^{1-\epsilon} \label{p:truncatedbias5}\\
+    &= \|f\|_{\infty}^2 M^{1-\epsilon} \frac{d_{1+\epsilon}(P\|\Phi)^{\epsilon}}{N} ,\notag
+    \end{align}
+    where \eqref{p:truncatedbias4}  is again an application of Equation \ref{eq:expectationdecomposition} and \ref{p:truncatedbias5} derives from observing that $\min\{x,y\} \le x$ and also $\min\{x,y\} \le y$.
+\end{proof}
+
+\thrucatedconcentration*
+
+\begin{proof}
+Let us start with the first inequality. Observing that all samples $z_{ik}$ are independent and that $\widecheck{\mu}_{\text{BH}} \le M \|f\|_{\infty}$, we can state using Bernstein inequality \cite{boucheron2013concentration} that with probability at least $1-\delta$ we have:
+    \begin{align}
+         \widecheck{\mu}_{\text{BH}} & \le \Exp_{z_{ik} \sim Q_k} [\widecheck{\mu}_{\text{BH}}] + \sqrt{2 \Var_{z_{ik} \simiid Q_k}[\widecheck{\mu}_{\text{BH}}] \log \frac{1}{\delta}} +\|f\|_{\infty}  \frac{M  \log \frac{1}{\delta}}{3N} \notag \\
+         & \le \mu + \|f\|_{\infty} \sqrt{\frac{2 M^{1-\epsilon} d_{1+\epsilon}\left( P \| \Phi \right)^{\epsilon} \log  \frac{1}{\delta} }{N}} +\|f\|_{\infty} \frac{M \log \frac{1}{\delta}}{3N} \label{p:thrucatedconcentration1}\\
+       & = \mu + \|f\|_{\infty}\left(\sqrt{2} + \frac{1}{3} \right)  \left(\frac{d_{1+\epsilon}\left( P \| \Phi  \right) \log  \frac{1}{\delta}  }{N} \right)^{\frac{\epsilon}{1+\epsilon}} \label{p:thrucatedconcentration2},
+    \end{align}
+    where \eqref{p:thrucatedconcentration1} is obtained by substituting the variance with its bound \eqref{eq:variancetruncated} and \eqref{p:thrucatedconcentration2} is from the choice of $M$.
+    For the second inequality we just need to consider additionally the bias.
+    \begin{align}
+         \widecheck{\mu}_{\text{BH}} & \ge  \Exp_{z_{ik} \sim Q_k} [\widecheck{\mu}_{\text{BH}}] - \sqrt{2 \Var_{z_{ik} \simiid Q_k}[\widecheck{\mu}_{\text{BH}}] \log \frac{1}{\delta}} -\|f\|_{\infty}  \frac{M  \log \frac{1}{\delta}}{3N} \notag\\
+         & = \mu - \left(\mu - \Exp_{z_{ik} \sim Q_k} [\widecheck{\mu}_{\text{BH}}] \right) -\sqrt{2 \Var_{z_{ik} \simiid Q_k}[\widecheck{\mu}_{\text{BH}}] \log \frac{1}{\delta}} -\|f\|_{\infty}  \frac{M  \log \frac{1}{\delta}}{3N}  \notag\\
+          & \ge \mu - \|f\|_{\infty} M^{-\epsilon} d_{1+\epsilon}\left( P \| \Phi \right)^{\epsilon} - \|f\|_{\infty}\left(\sqrt{2} + \frac{1}{3} \right)  \left(\frac{d_{1+\epsilon}\left( P \| \Phi  \right) \log  \frac{1}{\delta}  }{N} \right)^{\frac{\epsilon}{1+\epsilon}} \label{p:thrucatedconcentration3}\\
+          & = \mu - \|f\|_{\infty} \left(\sqrt{2} + \frac{4}{3} \right) \left(\frac{d_{1+\epsilon}\left( P \| \Phi  \right) \log  \frac{1}{\delta}  }{N} \right)^{\frac{\epsilon}{1+\epsilon}}, \notag\\
+    \end{align}
+    where \eqref{p:thrucatedconcentration3} comes from substituting the bias with its bound \eqref{eq:biastruncated}.
+\end{proof}
+
+%Finite arm set
+\regretdiscrete*
+%
+\begin{proof}
+	Fix an $\epsilon>0$.
+	To ease the notation, let $c^{-}\coloneqq \norm[\infty]{f}\left(\sqrt{2}+\frac{1}{3}\right)$, $c^{+}\coloneqq \norm[\infty]{f}\left(\sqrt{2}+\frac{4}{3}\right)$, and $\beta_t(\vx) \coloneqq \left(\frac{d_{1+\epsilon}(p_{\vx}\|\Phi_t)\log\frac{1}{\delta_t}}{t}\right)^{\frac{\epsilon}{1+\epsilon}}$.
+	We start by showing that, with probability at least $1-\delta$:
+	\begin{align}\label{aux:1}
+		&-c^{+}\beta_t({\vx})\leq \wc{\mu_t}(\vx) - \mu(\vx) \leq c^{-}\beta_t(\vx) & \text{for all $\vx\in\Xspace$ and $t=1,\dots,T$}.
+	\end{align}
+	Indeed:
+	\begin{align}
+		\MoveEqLeft\Prob\left(\bigcap_{k=1}^{K}\bigcap_{t=1}^T\left[\wc{\mu_t}(\vx_k) - \mu(\vx_k) \leq c^{-}\beta_t(\vx_k)\right]\right) \notag\\
+		&=1-\Prob\left(\bigcup_{k=1}^{K}\bigcup_{t=1}^T\big[\wc{\mu_t}(\vx_k) - \mu(\vx_k) > c^{-}\beta_t(\vx_k)\big]\right)\nonumber\\
+		&\geq 1-K\sum_{t=1}^{T}\Prob\left(\wc{\mu_t}(\vx_1) - \mu(\vx_1) > c^{-}\beta_t(\vx_1)\right) \label{pp:1}\\
+		& \geq 1 - K\sum_{t=1}^{T}\delta_t\label{pp:2}\\
+		& \geq 1 - \frac{\delta}{2},\label{pp:3}
+	\end{align}
+	where (\ref{pp:1}) is from a double union bound (over time and over the finite elements of $\Xspace$), (\ref{pp:2}) is from Theorem \ref{lem:thrucatedconcentration}, and (\ref{pp:3}) is by hypothesis on $\delta_t$ and $\sum_{t=1}^{T}\frac{1}{t^2}\leq\sum_{t=1}^{\infty}\frac{1}{t^2} = \frac{\pi^2}{6}$. Similarly:
+	\begin{align*}
+		\MoveEqLeft\Prob\left(\bigcap_{k=1}^{K}\bigcap_{t=1}^T\left[\wc{\mu_t}(\vx_k) - \mu(\vx_k) \geq -c^{+}\beta_t(\vx_k)\right]\right) \notag\\
+		&=1-\Prob\left(\bigcup_{k=1}^{K}\bigcup_{t=1}^T\left[\wc{\mu_t}(\vx_k) - \mu(\vx_k) < -c^{+}\beta_t(\vx_k)\right]\right)\nonumber\\
+		&\geq 1-K\sum_{t=1}^{T}\Prob\left(\wc{\mu_t}(\vx_1) - \mu(\vx_1) < -c^{+}\beta_t(\vx_1)\right)\\
+		&\geq 1 - K\sum_{t=1}^{T}\delta_t\\
+		 &\geq 1 - \frac{\delta}{2}.
+	\end{align*}
+	Hence, by union bound over the two inequalities, (\ref{aux:1}) holds with probability at least $1-\delta$.
+	This allows to lower bound the instantaneous regret with the same probability:
+	\begin{align}
+		\Delta_t &= \mu(\vx^*) - \mu(\vx) \leq 
+		\wc{\mu_t}(\vx^*) + c^{+}\beta_t(\vx^*) - \mu(\vx_t) \label{pp:4}\\
+		&\leq \wc{\mu_t}(\vx_t) + c^{+}\beta_t(\vx_t) - \mu(\vx_t) \label{pp:5}\\
+		&\leq (c^{-} + c^{+})\beta(\vx_t) & \text{for all $t=1,\dots,T$}\label{aux:2}, 
+	\end{align}
+	where (\ref{pp:4}) and (\ref{aux:2}) are from (\ref{aux:1}), while (\ref{pp:5}) is by hypothesis, as $\vx_t=\arg\max_{\vx\in\Xspace}(\wc{\mu_t}(\vx) + c^{+}\beta_t(\vx))$.
+	Note that the union bound over the elements of $\Xspace$ in (\ref{aux:1}) was necessary for (\ref{pp:4}) as the optimal arm $\vx^*$ may not be unique.
+	Finally, with probability at least $1-\delta$:
+	\begin{align}
+		\Reg(T) &= \sum_{t=0}^{T}\Delta_t \nonumber\\
+		&= \Delta_0  + \sum_{t=1}^{T}\Delta_t \nonumber\\
+		&\leq \Delta_0  + (c^{+}+c^{-})\sum_{t=1}^{T}\beta_t(\vx_t) \label{pp:6}\\
+		&\leq \Delta_0  + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{\log\frac{1}{\delta_t}}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \label{pp:7}\\
+		&=\Delta_0  + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{2\log t + \log\frac{\pi^2K}{3\delta}}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \label{pp:8}\\
+		&\leq \Delta_0  + (c^{+}+c^{-})\left[v_{\epsilon}\left(2\log T + \log\frac{\pi^2K}{3\delta}\right)\right]^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}t^{-\frac{\epsilon}{1+\epsilon}} \nonumber\\
+		&\leq \Delta_0  + (c^{+}+c^{-})\left[v_{\epsilon}\left(2\log T + \log\frac{\pi^2K}{3\delta}\right)\right]^{\frac{\epsilon}{1+\epsilon}}(1+\epsilon)T^{\frac{1}{1+\epsilon}} \label{pp:9},
+	\end{align}
+	where (\ref{pp:6}) is from (\ref{aux:2}) and holds with probability no less than $1-\delta$, (\ref{pp:7}) is from Assumption \ref{ass:boundrenyi}, (\ref{pp:8}) is by definition of $\delta_t$, and (\ref{pp:9}) is from: 
+	\begin{align}\label{aux:3}
+		&\sum_{t=1}^{T}t^{-\alpha} \leq \int_{1}^{T+1}t^{-\alpha}\de t
+		= \frac{1}{1-\alpha}\left((T+1)^{1-\alpha} - 1\right) \leq \frac{T^{1-\alpha}}{1-\alpha} &\text{for all $0<\alpha<1$},
+	\end{align}
+	with $\alpha=\frac{\epsilon}{1+\epsilon}$.
+	The proof is completed by renaming $C\gets (1+\epsilon)(c^{+}+c^{-}) = (1+\epsilon)(2\sqrt{2} + \frac{5}{3})\norm[\infty]{f}$.
+\end{proof}
+
+%Compact case
+\lipschitzpol*
+\begin{proof}
+	We consider the infinite-horizon case ($H=\infty,\gamma<1$), as the finite-horizon case is \wlg under mild assumptions.
+	To show Lipschitz continuity in the action-based paradigm, it is enough to bound $\norm[\infty]{\nabla_{\vtheta}J}$ under (\ref{eq:lp1}). From the Policy Gradient Theorem \cite{sutton2000policy}:
+	\begin{align}\label{aux:4}
+		\nabla_{\vtheta}J(\vtheta) = \frac{1}{1-\gamma}\Exp_{\substack{s\sim \rho_{\vtheta}
+		\\a\sim\pi_{\vtheta}}}\left[\nabla_{\vtheta}\log\pi_{\vtheta}(a|s)Q_{\vtheta}(s,a)\right],
+	\end{align}
+	where $\rho_{\vtheta}$ is the discounted state-occupancy measure under policy $\pi_{\vtheta}$ and $Q_{\vtheta}$ is the action-value function \cite{sutton2000policy}, modeling the reward that can be obtained starting from state $s$, taking action $a$ and following $\pi_{\vtheta}$ thereafter.
+	From (\ref{aux:4}), for every $\vtheta\in\Theta$:
+	\begin{align}
+		|\nabla_{\vtheta}J(\vtheta)| 
+		&\leq \frac{\Rmax}{(1-\gamma)^2}\Exp_{\substack{s\sim \rho_{\vtheta}\\a\sim\pi_{\vtheta}}}\left[|\nabla_{\vtheta}\log\pi_{\vtheta}(s,a)|\right] \label{pp:10}\\
+		&\leq \frac{\Rmax}{(1-\gamma)^2}\sup_{s\in\Sspace}\Exp_{a\sim\pi_{\vtheta}}\left[|\nabla_{\vtheta}\log\pi_{\vtheta}(s,a)|\right] \nonumber\\
+		& = \frac{\vu_1\Rmax}{(1-\gamma)^2}, \label{pp:11}
+	\end{align}
+	where the inequalities are component-wise, (\ref{pp:10}) is from the trivial fact $\norm[\infty]{Q_{\vtheta}}\leq\frac{\Rmax}{(1-\gamma)}$, and (\ref{pp:11}) is from assumption (\ref{eq:lp1}). It follows that $L=\frac{\norm[\infty]{\vu_1}\Rmax}{(1-\gamma)^2}$ is a valid Lipschitz constant under the $l_1$ norm.
+	The commonly used Gaussian policy:
+	\begin{align}\label{eq:gauss}
+		\pi_{\vtheta}(a|s) = \mathcal{N}(\vtheta^T\vphi(s),\sigma^2)  = \frac{1}{\sqrt{2\pi}\sigma}\exp\left\{-\frac{1}{2}\left(\frac{a-\vtheta^T\vphi(s)}{\sigma}\right)^2\right\},
+	\end{align}
+	where $\phi(s)$ is a vector of component-wise bounded state features, \ie $\sup_{s\in\Sspace}|\vphi(s)|\leq \vphi_{\max}$, satisfies assumption (\ref{eq:lp1}):
+	\begin{align}
+		\Exp_{a\sim\pi_{\vtheta}}\left[\left|\nabla_{\vtheta}\log\pi_{\vtheta}(a|s)\right|\right] 
+		&=\Exp_{a\sim\pi_{\vtheta}}\left[\frac{|\vphi(s)(a-\vtheta^T\vphi(s))|}{\sigma^2}\right] \nonumber\\
+		&\leq \frac{|\vphi(s)|}{\sigma}\Exp_{a\sim\pi_{\vtheta}}\left[\left|\frac{a-\vtheta^T\vphi(s)}{\sigma}\right|\right] \nonumber\\
+		&\leq \frac{|\vphi(s)|}{\sqrt{2\pi}\sigma}\int_{\Reals} e^{-x^2}|x|\de x \label{pp:14}\\
+		& \leq  \frac{2\vphi_{\max}}{\sqrt{2\pi}\sigma}\coloneqq \vu_1, \label{aux:5}
+	\end{align}
+	where inequalities are component-wise and (\ref{pp:14}) is by the substitution $x\gets \frac{a-\vtheta^T\vphi(s)}{\sigma}$. Even when $\sigma$ must be learned, proper parametrization (\eg $\sigma\propto\exp\{\vtheta\}$), together with the compactness of $\Theta$, allows to satisfy assumption (\ref{eq:lp1}).
+	
+	To show Lipschitz continuity for the parameter-based paradigm, it is enough to bound $\norm[\infty]{\nabla_{\vxi}\Exp_{\vtheta\sim\nu_{\vxi}}[J(\vtheta)]}$ under (\ref{eq:lp2}). For every $\vxi\in\Xi$:
+	\begin{align}
+		\left|\nabla_{\vxi}\Exp_{\vtheta\sim\nu_{\vxi}}[J(\vtheta)]\right| &=
+		\left|\Exp_{\vtheta\sim\nu_{\vxi}}[\nabla_{\vxi}\log\nu_{\vxi}(\vtheta)J(\vtheta)]\right| \nonumber\\
+		&\leq \frac{\Rmax}{(1-\gamma)}\Exp_{\vtheta\sim\nu_{\vxi}}\left[\left|\nabla_{\vxi}\log\nu_{\vxi}(\vtheta)\right|\right] \label{pp:12} \\
+		&\leq \frac{\vu_2\Rmax}{(1-\gamma)} \label{pp:13},
+	\end{align}
+	where the inequalities are component-wise, (\ref{pp:12}) is from the trivial fact $J(\vtheta)\leq\frac{\Rmax}{1-\gamma}$, and (\ref{pp:13}) is from assumption (\ref{eq:lp2}).
+	It follows that $L=\frac{\norm[\infty]{\vu_2\Rmax}}{(1-\gamma)}$ is a valid Lipschitz constant under the $l_1$ norm.
+	 A Gaussian hyperpolicy $\nu_{\vxi}(\vtheta) = \mathcal{N}(\vxi,\mathrm{diag}(\boldsymbol{\sigma}))$ satisfies assumption (\ref{eq:lp2}) with $\vu_2 = \frac{2}{\sqrt{2\pi}\boldsymbol{\sigma}}$. The proof of this fact is analogous to that of (\ref{aux:5}). Even when $\boldsymbol{\sigma}$ must be learned, proper parametrization (\eg $\boldsymbol{\sigma}\propto\exp\{\vxi\}$), together with the compactness of $\Xi$, allows to satisfy assumption (\ref{eq:lp2}).
+\end{proof}
+
+\regretcompact*
+\begin{proof}
+	Fix an $\epsilon>0$. Let $c^{-}$, $c^{+}$ and $\beta_t(\vx)$ be defined as in the proof of Theorem \ref{th:regretdiscrete}.
+	The finite cardinality of $\Xspace$ allowed to perform a union bound over the arms that was crucial for the proof of Theorem \ref{th:regretdiscrete}. We cannot do the same here as $\Xspace$ has infinite cardinality. To overcome this problem, we follow the line of reasoning proposed by \cite{srinivas2010gaussian}. First, we can say something about the arms that are actually selected by the algorithm, which are finite. From Theorem \ref{lem:thrucatedconcentration}, by a union bound over $t=1,\dots,T$, we have that, with probability at least $1-\sum_{t=1}^T\delta_t$:
+	\begin{align}\label{aux:6}
+		&\wc{\mu_t}(\vx_t) - \mu(\vx_t) \leq c^{-}\beta_t(\vx_t) &\text{for all $t=1,\dots,T$}.
+	\end{align}
+	
+	We also need a specular inequality for the optimal arm. Unfortunately, we cannot assume there exists a unique optimal arm $\vx^*$.\footnote{Instead, $\mu(\vx^*$) is always unique.} Even worse, a dense set of optimal arms may exist. To overcome this problem, we introduce, \textit{only for the purposes of the proof}, a discretization of the arm space. Let $\wt{\Xspace}_t$ be a $d$-dimensional regular grid of $\tau_t^d$ vertexes, where $(\tau_t\in\Naturals_{+})_{t=1}^T$ is a discretization schedule. Let $[\vx]_t$ be the closest vertex to $\vx$ in $\wt{\Xspace}_t$. From Assumption \ref{ass:lipschitz}:
+	\begin{align}\label{aux:7}
+		&|\mu(\vx) - \mu([\vx]_t)| \leq L\norm[1]{\vx - [\vx]_t} \leq \frac{LDd}{\tau_t},
+	\end{align}
+	as each voxel of the grid has side $\frac{2D}{\tau_t}$ and no point can be further from a vertex than $d$ half-sides according to the $l_1$ norm. Now fix a $t\geq1$ and an optimal arm $\vx^*$. With probability at least $1-\delta_t$:
+	\begin{align}
+		\mu(\vx^*) - \wc{\mu}_t([\vx^*]_t) 
+		&= \mu(\vx^*) - \mu([\vx^*]_t) + \mu([\vx^*]_t) - \wc{\mu}_t([\vx^*]_t)  \nonumber\\
+		&\leq \mu([\vx^*]_t) - \wc{\mu}_t([\vx^*]_t) + |\mu(\vx^*) - \mu([\vx^*]_t)| \nonumber\\
+		&\leq c^{+}\beta_t([\vx^*]_t) + \frac{LDd}{\tau_t}, \label{aux:8}
+	\end{align}
+	where the inequality (\ref{aux:8}) is from Theorem \ref{lem:thrucatedconcentration} and (\ref{aux:7}). Since any voxel may contain an optimal arm, we must perform a union bound over the $\lceil\tau\rceil^d$ vertexes of $\wt{\Xspace}_t$, and a subsequent one over $t,\dots,T$. Hence, with probability at least $1-\sum_{t=1}^{T}\tau_t^d\delta_t$:
+	\begin{align}\label{aux:9}
+		&\mu(\vx^*) - \wc{\mu}_t([\vx^*]_t) \leq c^{+}\beta_t([\vx^*]_t) + \frac{LDd}{\tau_t} &\text{for $t=1,\dots,T$, $\forall\vx^*\in\arg\max_{\vx\in\Xspace}\mu(\vx)$}.
+	\end{align}
+	
+	We can now proceed to bound the instantaneous regret. With probability at least $1-\sum_{t=1}^T\delta_t(1+\tau_t^d)$:
+	\begin{align}
+	\Delta_t = \mu(\vx^*) - \mu(\vx_t) &\leq 
+	\wc{\mu_t}([\vx^*]_t) + c^{+}\beta_t([\vx^*]_t) + \frac{LDd}{\tau_t} - \mu(\vx_t) \label{pp:15}\\
+	&\leq \wc{\mu_t}(\vx_t) + c^{+}\beta_t(\vx_t) + \frac{LDd}{\tau_t} - \mu(\vx_t) \label{pp:16}\\
+		&\leq (c^{+}+c^{-})\beta_t(\vx_t) + \frac{LDd}{\tau_t}, \label{aux:10}
+	\end{align}
+	where (\ref{pp:15}) is from (\ref{aux:9}) and holds with probability at least $1-\sum_{t=1}^{T}\tau_t^d\delta_t$, (\ref{pp:16}) is by hypothesis, as $\vx_t=\arg\max_{\vx\in\Xspace}(\wc{\mu_t}(\vx) + c^{+}\beta_t(\vx))$, and (\ref{aux:10}) is from (\ref{aux:7}) and holds with probability at least $1-\sum_{t=1}^{T}\delta_t$. Hence, (\ref{aux:10}) holds with probability no less than $1-\sum_{t=1}^{T}\tau_t^d\delta_t - \sum_{t=1}^{T}\delta_t = 1 - \sum_{t=1}^T\delta_t(1+\tau_t^d)$. Let us pick as a discretization schedule $\tau_t = dt^2$. This has no impact whatsoever on the algorithm, as the discretization is only hypothetical. With this $\tau_t$ and the confidence schedule proposed in the statement of the theorem, it is easy to verify that (\ref{aux:10}) holds with probability at least $1-\delta$.
+	
+	Finally, we can bound the regret. With probability at least $1-\delta$:
+	\begin{align}
+		\MoveEqLeft\Reg(T) \notag\\
+		&\leq \Delta_0 + \sum_{t=1}^{T}\Delta_t \nonumber\\
+		&\leq \Delta_0 + (c^{+}+c^{-})\sum_{t=1}^{T}\beta_t(\vx_t) + LDd\sum_{t=1}^{T}\frac{1}{\tau_t} \label{pp:17}\\
+		&\leq (c^{+}+c^{-})\sum_{t=1}^{T}\beta_t(x_t) + \frac{\pi^2LD}{6} \label{pp:18}\\
+		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{\log\frac{1}{\delta_t}}{t}\right)^{\frac{\epsilon}{1+\epsilon}} + \frac{\pi^2LD}{6} \label{pp:19}\\
+		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
+			\log (1+d^dt^{2d}) + 2\log t + \log\frac{\pi^2}{6\delta}
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\pi^2LD}{6} \label{pp:20}\\
+		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
+		\log (2d^dt^{2d}) + 2\log t + \log\frac{\pi^2}{6\delta}
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\pi^2LD}{6} \label{pp:21}\\
+		&= \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
+		2(d+1)\log t + d\log d + \log\frac{\pi^2}{3\delta}
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\pi^2LD}{6} \nonumber\\
+		&\leq \Delta_0 + (c^{+}+c^{-})\left[v_{\epsilon}\left(
+			2(d+1)\log T + d\log d + \log\frac{\pi^2}{3\delta}
+		\right)\right]^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}
+		t^{-\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\pi^2LD}{6} 	\nonumber\\
+		&\leq \Delta_0 + (c^{+}+c^{-})\left[v_{\epsilon}\left(
+		2(d+1)\log T + d\log d + \log\frac{\pi^2}{3\delta}
+		\right)\right]^{\frac{\epsilon}{1+\epsilon}}(1+\epsilon)T^{\frac{1}{1+\epsilon}} \\
+		&\qquad + \frac{\pi^2LD}{6}, 	\label{pp:22}
+	\end{align}
+	where (\ref{pp:17}) is from (\ref{aux:10}) and holds with probability at least $1-\delta$, (\ref{pp:18}) is from the choice of $\tau_t$ and $\sum_{t=1}^{T}t^{-2}\leq\sum_{t=1}^{\infty}t^{-2} = \frac{\pi^2}{6}$, (\ref{pp:19}) is from Assumption \ref{ass:boundrenyi}, (\ref{pp:20}) is from the choice of $\delta_t$, (\ref{pp:21}) is from $\log(1+x)\leq\log(2x)$, which holds for every $x\geq 1$, and (\ref{pp:22}) is from  (\ref{aux:3}) with $\alpha=\frac{\epsilon}{1+\epsilon}$. 
+	The proof is completed by renaming $C\gets (1+\epsilon)(c^{+}+c^{-}) = (1+\epsilon)(2\sqrt{2} + \frac{5}{3})\norm[\infty]{f}$.
+\end{proof}
+
+\regretdiscretized*
+\begin{proof}
+	The proof follows the one of Theorem \ref{th:regretcompact} up to (\ref{aux:9}), except from the fact that the discretization is actually performed by the algorithm. That is, with probability at least $1-\sum_{t=1}^{T}\delta_t(1+\tau_t^d)$:
+	\begin{align}
+		\MoveEqLeft\wc{\mu}_t(\vx_t) - \mu(\vx_t) \leq c^{-}\beta_t(\vx_t)\quad\text{and}\quad\mu(\vx^*) - \wc{\mu}_t([\vx^*]_t)
+		\leq c^{+}\beta_t([\vx^*]_t) + \frac{LDd}{\tau_t}\label{aux:11}\\
+		&\text{}\notag
+	\end{align}
+	for $t=1,\dots,T$ and every $\vx^*\in\arg\max_{\vx\in\Xspace}\mu(\vx)$.
+	This is enough to bound the instantaneous regret. With probability at least $1-\sum_{t=1}^{T}\delta_t(1+\tau_t^d)$:
+	\begin{align}
+		\Delta_t = \mu(\vx^*) - \mu(\vx_t) 
+		&\leq \wc{\mu}_t([\vx^*]_t) + c^{+}\beta_t([\vx^*]_t) + \frac{LDd}{\tau_t} - \mu(\vx_t) \label{pp:23}\\
+		&\leq \wc{\mu}_t(\vx_t) + c^{+}\beta_t(\vx_t) + \frac{LDd}{\tau_t} - \mu(\vx_t) \label{pp:24}\\
+		&\leq (c^{+}+c^{-})\beta_t(\vx_t) + \frac{LDd}{\tau_t}, \label{aux:12}
+	\end{align}
+	where (\ref{pp:22}) and (\ref{pp:24}) are from (\ref{aux:11}) and hold simultaneously with probability at least $1-\sum_{t=1}^{T}\delta_t(1+\tau_t^d)$, and (\ref{pp:23}) is by hypothesis, as $\vx_t = \arg\max_{\vx\in\wt{\Xspace}_t}(\wc{\mu}_t(\vx) + c^{+}\beta_t(\vx)$. Note that the latter is true only by virtue of the fact that both $[\vx^*]_t$ and $\vx_t$ belong to $\wt{\Xspace}_t$, as the optimization step of Algorithm \ref{alg:2} is restricted to~$\wt{\Xspace}_t$.
+	
+	Finally, we can bound the regret. With probability at least $1-\delta$:
+	\begin{align}
+		\Reg(T) &= \Delta_0 + \sum_{t=1}^{T}\Delta_t \nonumber\\
+		&\leq \Delta_0 +(c^{+}+c^{-})\sum_{t=1}^{T}\beta_t(\vx_t) + LDd\sum_{t=1}^{T}\frac{1}{\tau_t} \label{pp:25}\\
+		&\leq \Delta_0 +(c^{+}+c^{-})\sum_{t=1}^{T}\beta_t(\vx_t) + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:26}\\
+		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{\log\frac{1}{\delta_t}}{t}\right)^{\frac{\epsilon}{1+\epsilon}} + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:27}\\
+		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
+			2\log t + \log\left(1+\left\lceil t^{\frac{1}{\kappa}}\right\rceil^d\right) + \log\frac{\pi^2}{6\delta}
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:28}\\
+		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
+		2\log t + d\log \left(t^{\frac{1}{\kappa}}+1\right) + \log\frac{\pi^2}{3\delta}
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:29}\\
+		&\leq \Delta_0 + (c^{+}+c^{-})v_{\epsilon}^{\frac{\epsilon}{1+\epsilon}}\sum_{t=1}^{T}\left(\frac{
+		\left(2+ \frac{d}{\kappa}\right)\log t + d\log 2 + \log\frac{\pi^2}{3\delta}
+		}{t}\right)^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad + \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d\label{pp:30}\\
+		&\leq \Delta_0 + (c^{+}+c^{-})\left[v_{\epsilon}
+		\left(
+		\left(2+ \frac{d}{\kappa}\right)\log T + d\log 2 + \log\frac{\pi^2}{3\delta}
+		\right)\right]^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad \cdot\sum_{t=1}^{T}t^{-\frac{\epsilon}{1+\epsilon}}+ \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d, \nonumber\\
+		&\leq \Delta_0 + (c^{+}+c^{-})\left[v_{\epsilon}
+		\left(
+		\left(2+ \frac{d}{\kappa}\right)\log T + d\log 2 + \log\frac{\pi^2}{3\delta}
+		\right)\right]^{\frac{\epsilon}{1+\epsilon}} \\
+		&\qquad \cdot(1+\epsilon)T^{\frac{1}{1+\epsilon}}+ \frac{\kappa }{\kappa-1}LDT^{\left(1-\frac{1}{\kappa}\right)}d, \nonumber\\
+	\end{align}
+	where (\ref{pp:25}) is from (\ref{aux:12}) and holds with probability at least $1-\delta$ with the proposed $\delta_t$ and $\tau_t$, (\ref{pp:26}) is from the proposed $\tau_t$ and (\ref{aux:3}) with $\alpha=\nicefrac{1}{\kappa}$,  (\ref{pp:27}) is from Assumption \ref{ass:boundrenyi}, (\ref{pp:28}) is from the proposed $\delta_t$, (\ref{pp:29}) and (\ref{pp:30}) are from the fact $\log(x+1)\leq\log(2x)$ for $x\geq 1$, and (\ref{pp:30}) is from (\ref{aux:3}) with $\alpha=\frac{\epsilon}{1+\epsilon}$. The proof is completed by renaming ${C_1\gets(1+\epsilon)(c^{+}+c^{-})\norm[\infty]{f} = (1+\epsilon)(2\sqrt{2}+\frac{5}{3})\norm[\infty]{f}}$ and $C_2\gets\frac{\kappa}{\kappa-1}LD$.
+\end{proof}
+
+%%
+\begin{lemma}
+	Let $\Psi = \sum_{l=1}^L \zeta_l P_l$ and $\Phi = \sum_{k=1}^K \beta_k Q_k$, with $\zeta_l \in [0,1]$, $\sum_{l=1}^L \zeta_l =1$, $\beta_k \in [0,1]$ and $\sum_{k=1}^K \beta_k =1$, be two finite mixtures of the probability measures $\{P_l\}_{l=1}^L$ and $\{Q_k\}_{k=1}^K$ respectively. Let $\{ \psi_{ij} \}_{\substack{i=1,2,...,L \\ j=1,2,...,K}}$ and $\{ \phi_{ij} \}_{\substack{i=1,2,...,L \\ j=1,2,...,K}}$ be two sets of variational parameters s.t. $\phi_{ij} \ge 0$, $\psi_{ij} \ge 0$, $\sum_{k=1}^K \phi_{ij}=\zeta_l$ and $\sum_{l=1}^L \psi_{ij}=\beta_k$. Then, for any $\alpha \ge 1$, it holds that: 
+     \begin{equation*}
+        d_{\alpha} (\Psi \| \Phi)^{\alpha-1} \le \sum_{l=1}^L \sum_{k=1}^K \phi_{lk}^\alpha \psi_{lk}^{1-\alpha} d_{\alpha} (P_l \| Q_k)^{\alpha-1}.
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+The proof follows the idea of the variational bound for the KL-divergence proposed in \cite{hershey2007approximating}. Using the variational parameters we can express the two mixtures as:
+\begin{align*}
+    & \Psi = \sum_{l=1}^L \sum_{k=1}^K \phi_{lk} P_l,\\
+    & \Phi = \sum_{l=1}^L \sum_{k=1}^K \psi_{lk} Q_k.
+\end{align*}
+    We use the convexity of the $d_{\alpha}$ and we apply Jensen inequality:
+    \begin{align}
+        d_{\alpha}(\Psi \| \Phi)^{\alpha-1} & = \int \left( \frac{\Psi}{\Phi} \right)^{\alpha} \mathrm{d}\Phi \notag\\
+        & = \int \left( \sum_{l=1}^L \sum_{k=1}^K \frac{\phi_{lk} P_l}{\psi_{lk} Q_k} \frac{\psi_{lk} Q_k}{\Phi} \right)^{\alpha} \mathrm{d}\Phi \notag \\
+        & \le \int \sum_{l=1}^L \sum_{k=1}^K \frac{\psi_{lk} Q_k}{\Phi} \left(  \frac{\phi_{lk} P_l}{\psi_{lk} Q_k}  \right)^{\alpha} \mathrm{d}\Phi \label{eq:strangeBound}\\
+        & = \sum_{i=1}^n \sum_{j=1}^m \phi_{lk}^{\alpha} \psi_{lk}^{1-\alpha}  \int \left( \frac{P_l}{Q_k}  \right)^{\alpha} \mathrm{d}Q_k \notag \\
+        & = \sum_{i=1}^n \sum_{j=1}^m \phi_{lk}^{\alpha} \psi_{lk}^{1-\alpha}  d_{\alpha}(P_l \| Q_k)^{\alpha-1}, \notag
+    \end{align}
+    where \eqref{eq:strangeBound} is obtained by Jensen inequality observing that $\frac{\psi_{lk} Q_k}{\Phi}$ is a distribution over $\{1,...,L\} \times \{1,...,K\}$.
+\end{proof}
+
+We now consider the case in which $f$ has just one mixture component, \ie $n = 1$. In this case, we have that $\sum_{i=1}^n \psi_{ij}= \psi_j = b_j$, therefore the result reduces to:
+\begin{equation}
+     d_{\alpha} (f \| g)^{\alpha-1} \le  \sum_{j=1}^m \phi_{j}^\alpha b_{j}^{1-\alpha} d_{\alpha} (f \| g_j)^{\alpha-1}.
+\end{equation}
+We can now minimize the bound over the $\phi_j$, subject to $\sum_{j=1}^m \phi_j = 1$, we get the following result.
+
+\armonic*
+\begin{proof}
+We now consider the case in which $\Psi$ has just one mixture component, \ie $L = 1$ and we abbreviate $\Psi = P$. In this case, we have that $\sum_{l=1}^L \psi_{kl}= \psi_k = \beta_k$, therefore the result reduces to:
+\begin{equation}
+     d_{\alpha} (P \| \Phi)^{\alpha-1} \le  \sum_{k=1}^K \phi_{k}^\alpha \beta_{k}^{1-\alpha} d_{\alpha} (P \| Q_k)^{\alpha-1}.
+\end{equation}
+We can now minimize the bound over the $\phi_k$, subject to $\sum_{k=1}^K \phi_k = 1$. We use the Lagrange multipliers.
+    \begin{equation*}
+        \mathcal{L}(\{\phi_k\}_{k=1,2,...,K}, \lambda) = \sum_{k=1}^K \phi_{k}^\alpha \beta_{k}^{1-\alpha} d_{\alpha} (P \| Q_k)^{\alpha-1} - \lambda \left( \sum_{k=1}^K \phi_k -1 \right)
+    \end{equation*}
+    We take the partial derivatives \wrt the $\phi_k$ and the Lagrange multiplier $\lambda$.
+    \begin{align*}
+        \frac{\partial \mathcal{L}}{\partial \phi_k} = \alpha \phi_k^{\alpha-1} \beta_j^{1-\alpha} d_{\alpha}(P \| Q_k)^{\alpha-1} - \lambda = 0 \implies \phi_k = \frac{\lambda^{\frac{1}{\alpha-1}}  \beta_j}{\alpha^{\frac{1}{\alpha-1}} d_{\alpha}(P \| Q_k)}.
+    \end{align*}
+    We now replace the expression of $\phi_k$ into the constraint.
+    \begin{align*}
+        \sum_{j=1}^K \phi_k = \frac{\lambda^\frac{1}{\alpha-1}}{\alpha^\frac{1}{\alpha-1}}  \sum_{k=1}^L \frac{ \beta_k}{ d_{\alpha}(P \| Q_k)} = 1 \implies \lambda = \frac{\alpha}{\left( \sum_{k=1}^K \frac{ \beta_k}{ d_{\alpha}(P \| Q_k)}\right)^{{\alpha-1}}}.
+    \end{align*}
+    And finally we get the expression for $\phi_k$:
+    \begin{equation}
+        \phi_k = \frac{\frac{\beta_k}{d_{\alpha}(P \| Q_k)}} {\sum_{h=1}^K \frac{ \beta_h}{ d_{\alpha}(P \| Q_h)}}.
+    \end{equation}
+    We can now compute the bound value:
+    \begin{align*}
+        \sum_{k=1}^K \phi_{k}^\alpha \beta_{k}^{1-\alpha} d_{\alpha} (P \| Q_k)^{\alpha-1} & = \sum_{k=1}^K \frac{\frac{\beta_k^{\alpha}}{d_{\alpha}(P \| Q_k)^{\alpha}}} {\left(\sum_{h=1}^K \frac{ \beta_h}{ d_{\alpha}(P \| Q_h)}\right)^{\alpha}} \beta_{k}^{1-\alpha} d_{\alpha} (P \| Q_k)^{\alpha-1} \\
+        & = \frac{ \sum_{k=1}^K \frac{\beta_k}{d_{\alpha}(P \| Q_k)} }{\left(\sum_{h=1}^K \frac{ \beta_h}{ d_{\alpha}(P \| Q_h)}\right)^{\alpha}} \\
+        & = \frac{1} {\left(\sum_{k=1}^K \frac{ \beta_k}{ d_{\alpha}(P \| Q_k)}\right)^{\alpha-1}}.
+    \end{align*}
+    As a consequence the bound becomes:
+    \begin{equation*}
+        d_{\alpha}(P \| \Phi)^{\alpha-1} \le  \frac{1} {\left(\sum_{k=1}^K \frac{\beta_k}{ d_{\alpha}(P \| Q_k)}\right)^{\alpha-1}} \implies  d_{\alpha}(P \| \Phi) \le \frac{1} {\sum_{k=1}^K \frac{ \beta_k}{ d_{\alpha}(P \| Q_k)}},
+    \end{equation*}
+    which is the weighted harmonic mean of the exponentiated divergences.
+\end{proof}
