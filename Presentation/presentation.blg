@@ -1,51 +1,59 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: presentation.aux
 The style file: apalike.bst
-Illegal, another \bibstyle command---line 112 of file presentation.aux
+Illegal, another \bibstyle command---line 174 of file presentation.aux
  : \bibstyle
  :          {acm}
 I'm skipping whatever remains of this command
-Database file #1: Bibliography/bibliography_reduced.bib
-You've used 4 entries,
+Database file #1: Bibliography/bibliography.bib
+Warning--empty year in masooddiversity
+Warning--empty journal in masooddiversity
+Warning--empty publisher in mcbook_2013
+Warning--empty publisher in mcbook
+Warning--empty institution in thrun1992efficient
+Warning--can't use both volume and number fields in williams2006gaussian
+Warning--empty year in yupure
+Warning--empty booktitle in yupure
+You've used 142 entries,
             1935 wiz_defined-function locations,
-            495 strings with 4346 characters,
-and the built_in function-call counts, 1409 in all, are:
-= -- 134
-> -- 61
-< -- 4
-+ -- 20
-- -- 20
-* -- 116
-:= -- 262
-add.period$ -- 12
-call.type$ -- 4
-change.case$ -- 28
-chr.to.int$ -- 4
-cite$ -- 4
-duplicate$ -- 53
-empty$ -- 91
-format.name$ -- 28
-if$ -- 264
-int.to.chr$ -- 1
+            1196 strings with 27840 characters,
+and the built_in function-call counts, 66163 in all, are:
+= -- 6717
+> -- 2483
+< -- 147
++ -- 852
+- -- 825
+* -- 5191
+:= -- 10618
+add.period$ -- 442
+call.type$ -- 142
+change.case$ -- 1095
+chr.to.int$ -- 139
+cite$ -- 150
+duplicate$ -- 2870
+empty$ -- 4799
+format.name$ -- 1053
+if$ -- 13720
+int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 4
-newline$ -- 23
-num.names$ -- 12
-pop$ -- 26
+missing$ -- 142
+newline$ -- 702
+num.names$ -- 442
+pop$ -- 1251
 preamble$ -- 1
-purify$ -- 30
+purify$ -- 1113
 quote$ -- 0
-skip$ -- 43
+skip$ -- 2231
 stack$ -- 0
-substring$ -- 73
-swap$ -- 5
-text.length$ -- 1
+substring$ -- 4952
+swap$ -- 776
+text.length$ -- 76
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 22
-warning$ -- 0
-while$ -- 10
+type$ -- 826
+warning$ -- 8
+while$ -- 558
 width$ -- 0
-write$ -- 53
+write$ -- 1838
 (There was 1 error message)

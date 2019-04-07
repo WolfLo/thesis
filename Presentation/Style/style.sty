@@ -40,19 +40,20 @@
 % changes the colors of your current slide theme.
 
 %\usecolortheme{albatross}
-\usecolortheme{beaver}
+%\usecolortheme{beaver}
 %\usecolortheme{beetle}
 %\usecolortheme{crane}
 %\usecolortheme{dolphin}
 %\usecolortheme{dove}
 %\usecolortheme{fly}
-%\usecolortheme{lily}
 %\usecolortheme{orchid}
 %\usecolortheme{rose}
 %\usecolortheme{seagull}
 %\usecolortheme{seahorse}
 %\usecolortheme{whale}
 %\usecolortheme{wolverine}
+
+\usecolortheme{spruce}
 }
 
 \setbeamertemplate{section in toc}[sections numbered]
@@ -61,7 +62,7 @@
 \setbeamertemplate{footline}[frame number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
-\setbeamertemplate{blocks}[rounded][shadow=True]
+\setbeamertemplate{blocks}[rounded][shadow=False]
 
 \usepackage[]{xcolor}
 \usepackage[english]{babel}
@@ -74,6 +75,8 @@
 \usepackage{algpseudocode}
 \usepackage{caption}
 \usepackage{hyperref}
+
+\usepackage{BeamerColor}
 
 % Tikz settings
 \tikzstyle{block} = [rectangle, draw, 
@@ -98,20 +101,35 @@
 \definecolor{IndianRed}{RGB}{178,34,34}
 \definecolor{LightCoral}{RGB}{250,160,122}
 \definecolor{MistyRose}{RGB}{255,245,238}
+\definecolor{MyLightGreen}{RGB}{179,200,188}
 
-\setbeamercolor{section in toc}{fg=DarkGray}
-\setbeamercolor{subsection in toc}{fg=DimGray}
-\setbeamercolor{normal text}{fg=DarkGray}
-\setbeamercolor{title}{bg=Gainsboro,fg=SteelBlue}
-\setbeamercolor{frametitle}{bg=Gainsboro,fg=SteelBlue}
-\setbeamercolor{block title}{bg=Gainsboro,fg=SteelBlue}
-\setbeamercolor{block body}{bg=WhiteSmoke, fg=DarkGray}
-\setbeamercolor{block title alerted}{bg=Blue,fg=WhiteSmoke}
-\setbeamercolor{block body alerted}{bg=WhiteSmoke, fg=DarkGray}
-\setbeamercolor*{enumerate item}{fg=SteelBlue}
-\setbeamercolor{bibliography entry author}{fg=SteelBlue}
-\setbeamercolor{bibliography entry title}{fg=DarkGray} 
-\setbeamercolor{bibliography entry location}{fg=DimGray} 
+%\setbeamercolor{section in toc}{fg=DarkGray}
+%\setbeamercolor{subsection in toc}{fg=DimGray}
+%\setbeamercolor{normal text}{fg=DarkGray}
+%\setbeamercolor{title}{bg=Gainsboro,fg=SteelBlue}
+%\setbeamercolor{frametitle}{bg=Gainsboro,fg=SteelBlue}
+%\setbeamercolor{block title}{bg=Gainsboro,fg=SteelBlue}
+%\setbeamercolor{block body}{bg=WhiteSmoke, fg=DarkGray}
+%\setbeamercolor{block title alerted}{bg=Blue,fg=WhiteSmoke}
+%\setbeamercolor{block body alerted}{bg=WhiteSmoke, fg=DarkGray}
+%\setbeamercolor*{enumerate item}{fg=SteelBlue}
+%\setbeamercolor{bibliography entry author}{fg=SteelBlue}
+%\setbeamercolor{bibliography entry title}{fg=DarkGray} 
+%\setbeamercolor{bibliography entry location}{fg=DimGray} 
+
+\setbeamercolor{section in toc}{fg=chartreuse4}
+%\setbeamercolor{subsection in toc}{fg=DimGray}
+%\setbeamercolor{normal text}{fg=DarkGray}
+%\setbeamercolor{title}{bg=Gainsboro,fg=SteelBlue}
+%\setbeamercolor{frametitle}{bg=Gainsboro,fg=SteelBlue}
+%\setbeamercolor{block title}{bg=Gainsboro,fg=SteelBlue}
+%\setbeamercolor{block body}{bg=WhiteSmoke, fg=DarkGray}
+%\setbeamercolor{block title alerted}{bg=Blue,fg=WhiteSmoke}
+%\setbeamercolor{block body alerted}{bg=WhiteSmoke, fg=DarkGray}
+%\setbeamercolor*{enumerate item}{fg=text}
+%\setbeamercolor{bibliography entry author}{fg=SteelBlue}
+%\setbeamercolor{bibliography entry title}{fg=DarkGray} 
+%\setbeamercolor{bibliography entry location}{fg=DimGray} 
 
 
 %------------------------------------------------------------------------------
@@ -164,7 +182,6 @@
 \DeclareMathOperator*{\argsup}{arg\,sup}
 \DeclareMathOperator*{\arginf}{arg\,inf}
 \DeclareMathOperator*{\Sh}{Sh}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \renewcommand{\vec}[1]{\mathbf{#1}}
 \newcommand{\ind}[1]{\mathbbm{1}_{#1}}
 \newcommand{\R}{\mathbb{R}}
@@ -181,8 +198,6 @@
 \newcommand{\calK}{\mathcal{K}}
 \newcommand{\E}[2][]{\mathbb{E}_{#1}\left[ #2 \right]}
 \renewcommand{\P}[2][]{\mathbb{P}_{#1}\left( #2 \right)}
-\newcommand{\Var}[2][]{\operatorname{Var}_{#1}\left( #2 \right)}
-\newcommand{\Cov}[2][]{\operatorname{Cov}_{#1}\left( #2 \right)}
 
 \newcommand{\pardev}[2]{\frac{\partial #1}{\partial #2}}
 
@@ -195,3 +210,77 @@
   columns=fullflexible,
   keepspaces=true,
 }
+
+
+% User-defined commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Utils
+\newcommand{\todol}[1]{\todo[inline]{#1}}
+
+%Text
+\RequirePackage{xspace}
+\DeclareRobustCommand{\eg}{e.g.,\@\xspace}
+\DeclareRobustCommand{\ie}{i.e.,\@\xspace}
+\DeclareRobustCommand{\wrt}{w.r.t.\@\xspace}
+\DeclareRobustCommand{\iid}{i.i.d.\@\xspace}
+\DeclareRobustCommand{\wlg}{w.l.o.g.\@\xspace}
+\DeclareRobustCommand{\cf}{cf.\@\xspace}
+
+%Decoration
+\newcommand{\wh}[1]{\widehat{#1}}
+\newcommand{\wc}[1]{\widecheck{#1}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\newcommand{\vphi}{\boldsymbol{\phi}}
+\newcommand{\vu}{\boldsymbol{u}}
+\newcommand{\vx}{\boldsymbol{x}}
+\newcommand{\vomega}{\boldsymbol{\omega}}
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\newcommand{\sigmai}{\sigma_{i}}
+\newcommand{\thetai}{\theta_{i}}
+\newcommand{\mui}{\mu_{i}}
+
+%Math
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\Naturals}{\mathbb{N}}
+\newcommand{\de}{\mathrm{d}}
+\newcommand{\Xspace}{\mathcal{X}}
+\newcommand{\Tau}{\mathcal{T}}
+\newcommand{\Renyi}{R\'{e}nyi }
+\newcommand{\simiid}{\stackrel{\text{iid}}{\sim}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Exp}{\mathop{\mathbb{E}}}
+\newcommand{\Var}{\mathop{\mathbb{V}\mathrm{ar}}}
+\newcommand{\Expu}[1]{\underset{#1}{\mathbb{E}}}
+\newcommand{\Varu}[1]{\underset{#1}{\mathbb{V}\mathrm{ar}}}
+\newcommand{\norm}[2][]{\left\|#2\right\|_{#1}}
+\newcommand{\myExp}[1]{\mathop{\mathbb{E}\left[{#1}\right]}}
+\newcommand{\myExpu}[2]{\underset{#1}{\mathbb{E}}\left[{#2}\right]}
+\newcommand{\Cov}{\boldsymbol{\Sigma}}
+
+
+%RL
+\newcommand{\Sspace}{\mathcal{S}}
+\newcommand{\Aspace}{\mathcal{A}}
+\newcommand{\Tran}{\mathcal{P}}
+\newcommand{\Rew}{\mathcal{R}}
+\newcommand{\Rmax}{R_{\max}}
+\newcommand{\init}{\mu}
+\newcommand{\Task}{\mathcal{M}}
+\newcommand{\policyT}{\pi_{\boldsymbol{\theta}'}}
+\newcommand{\policyB}[1]{\pi_{\boldsymbol{\theta}_{#1}}}
+\newcommand{\params}[2]{\boldsymbol{\theta}_{#1}^{#2}}
+
+%Bandit
+\newcommand{\Reg}{\textit{Regret}}
+
+%Specific macros
+\newcommand{\muo}{\hat{\mu}_{\omega}}
+\newcommand{\mua}{\hat{\mu}_{\alpha}}
+\newcommand{\muab}{\hat{\mu}_{\alpha,\beta}}
+\newcommand{\muabopt}{\hat{\mu}_{\alpha,\beta^{opt}}}
+\DeclareRobustCommand{\algoname}{OPTIMIST\@\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
