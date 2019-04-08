@@ -48,20 +48,43 @@
 \end{frame}
 
 \begin{frame}{Policy Search Formulation}
+
 	\onslide<1->{%
-	\textbf{Parametric policy}
+	\textbf{Cumulative return of a trajectory $\tau$:}
+		\begin{equation*}
+		\Rew(\tau) = \sum_{h=0}^{H-1}\gamma^hr_{h+1},\text{ with } \tau=[s_0,a_0,s_1,a_1,\dots,s_{H-1},a_{H-1}]
+		\end{equation*}
+	}
+
+	\onslide<2->{%
+	\textbf{Parametric policy:}
 		\begin{equation*}
 		\pi_{\vtheta}:\Sspace\to\Delta(\Aspace),\text{ \ie \,}\pi_{\vtheta}(a|s) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2}\left(\frac{a-\vtheta^T\phi(s)}{\sigma}\right)^2\right)
 		\end{equation*}
 	}
 	
-	\onslide<2->{%
-	\textbf{Objective}
+	\onslide<3->{%
+	\textbf{Performance:}
 		\begin{equation*}
-\vtheta^* = \arg \max_{\vtheta\in\Theta}J(\vtheta).
+		\mu(\vtheta) = \Exp_{\tau\sim p_{\vtheta}}[\Rew(\tau)],\text{ where } p_{\vtheta} \text{ is the \textbf{distribution over trajectories} } \tau\in\Tau\text { induced by } \pi_{\vtheta}
+		\end{equation*}
+	}
+
+	
+	\onslide<4->{%
+	\textbf{Objective:}
+		\begin{equation*}
+\vtheta^* = \arg \max_{\vtheta\in\Theta}\mu(\vtheta).
 \end{equation*}
 	}
 	
+\end{frame}
+
+\begin{frame}{Exploration VS Exploitation}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{Images/exp_exp}
+	\end{figure}
 \end{frame}
 
 %\begin{frame}{Taxonomy of RL Algorithms}

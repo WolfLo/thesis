@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  7 APR 2019 13:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  8 APR 2019 16:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1097,12 +1097,11 @@ LaTeX Info: Redefining \includegraphics on input line 37.
 \c@lstlisting=\count195
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- (./presentation.nav) <Images/polimi_name.png, id=21, 803.0pt x 501.875pt>
-File: Images/polimi_name.png Graphic file (type png)
-
-<use Images/polimi_name.png>
-Package pdftex.def Info: Images/polimi_name.png used on input line 45.
-(pdftex.def)             Requested size: 159.333pt x 99.58444pt.
+ (./presentation.nav) <Images/polimi.png, id=29, 666.49pt x 489.83pt>
+File: Images/polimi.png Graphic file (type png)
+ <use Images/polimi.png>
+Package pdftex.def Info: Images/polimi.png used on input line 45.
+(pdftex.def)             Requested size: 119.50279pt x 87.82178pt.
 LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1120,14 +1119,11 @@ line 45.
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-Overfull \vbox (0.4013pt too high) detected at line 45
- []
-
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/polimi_name.png>]
- (./Sections/0_introduction.tex
-<Images/atlas.jpg, id=33, 640.3925pt x 353.32pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/polimi.png>]
+(./Sections/0_introduction.tex
+<Images/atlas.jpg, id=41, 640.3925pt x 353.32pt>
 File: Images/atlas.jpg Graphic file (type jpg)
  <use Images/atlas.jpg>
 Package pdftex.def Info: Images/atlas.jpg used on input line 7.
@@ -1139,7 +1135,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 
 [2
 
- <./Images/atlas.jpg>] <Images/stocks.jpg, id=40, 855.195pt x 481.8pt>
+ <./Images/atlas.jpg>] <Images/stocks.jpg, id=48, 855.195pt x 481.8pt>
 File: Images/stocks.jpg Graphic file (type jpg)
 
 <use Images/stocks.jpg>
@@ -1148,7 +1144,7 @@ Package pdftex.def Info: Images/stocks.jpg used on input line 17.
  [3
 
  <./Images/stocks.jpg>]
-<Images/uber.jpeg, id=46, 1304.875pt x 651.43375pt>
+<Images/uber.jpeg, id=54, 1304.875pt x 651.43375pt>
 File: Images/uber.jpeg Graphic file (type jpg)
  <use Images/uber.jpeg>
 Package pdftex.def Info: Images/uber.jpeg used on input line 24.
@@ -1160,14 +1156,14 @@ Package pdftex.def Info: Images/uber.jpeg used on input line 24.
 (./presentation.toc) [5
 
 ]
-<Images/environment.png, id=58, 590.205pt x 579.16376pt>
+<Images/environment.png, id=70, 590.205pt x 579.16376pt>
 File: Images/environment.png Graphic file (type png)
 
 <use Images/environment.png>
 Package pdftex.def Info: Images/environment.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 83.76007pt.
 
-<Images/agent.png, id=59, 587.19376pt x 560.0925pt>
+<Images/agent.png, id=71, 587.19376pt x 560.0925pt>
 File: Images/agent.png Graphic file (type png)
  <use Images/agent.png>
 Package pdftex.def Info: Images/agent.png used on input line 48.
@@ -1271,11 +1267,101 @@ Package pdftex.def Info: Images/agent.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 81.41217pt.
  [14
 
-] [15
+]
+Overfull \hbox (11.87018pt too wide) detected at line 81
+\OML/cmm/m/it/10.95 ^^V\OT1/cmss/m/n/10.95 ([]) = [][\OMS/cmsy/m/n/10.95 R\OT1/
+cmss/m/n/10.95 (\OML/cmm/m/it/10.95 ^^\\OT1/cmss/m/n/10.95 )]\OML/cmm/m/it/10.9
+5 ; []\OT1/mathkerncmss/m/sl/10.95 p[][]\OML/cmm/m/it/10.95 ^^\ \OMS/cmsy/m/n/1
+0.95 2 T[]\OML/cmm/m/it/10.95 ^^Y[]
+ []
 
-] [16
 
-]) [17
+Overfull \vbox (11.1496pt too high) detected at line 81
+ []
+
+[15
+
+]
+Overfull \hbox (11.87018pt too wide) detected at line 81
+\OML/cmm/m/it/10.95 ^^V\OT1/cmss/m/n/10.95 ([]) = [][\OMS/cmsy/m/n/10.95 R\OT1/
+cmss/m/n/10.95 (\OML/cmm/m/it/10.95 ^^\\OT1/cmss/m/n/10.95 )]\OML/cmm/m/it/10.9
+5 ; []\OT1/mathkerncmss/m/sl/10.95 p[][]\OML/cmm/m/it/10.95 ^^\ \OMS/cmsy/m/n/1
+0.95 2 T[]\OML/cmm/m/it/10.95 ^^Y[]
+ []
+
+
+Overfull \vbox (11.1496pt too high) detected at line 81
+ []
+
+[16
+
+]
+Overfull \hbox (11.87018pt too wide) detected at line 81
+\OML/cmm/m/it/10.95 ^^V\OT1/cmss/m/n/10.95 ([]) = [][\OMS/cmsy/m/n/10.95 R\OT1/
+cmss/m/n/10.95 (\OML/cmm/m/it/10.95 ^^\\OT1/cmss/m/n/10.95 )]\OML/cmm/m/it/10.9
+5 ; []\OT1/mathkerncmss/m/sl/10.95 p[][]\OML/cmm/m/it/10.95 ^^\ \OMS/cmsy/m/n/1
+0.95 2 T[]\OML/cmm/m/it/10.95 ^^Y[]
+ []
+
+
+Overfull \vbox (11.1496pt too high) detected at line 81
+ []
+
+[17
+
+]
+Overfull \hbox (11.87018pt too wide) detected at line 81
+\OML/cmm/m/it/10.95 ^^V\OT1/cmss/m/n/10.95 ([]) = [][\OMS/cmsy/m/n/10.95 R\OT1/
+cmss/m/n/10.95 (\OML/cmm/m/it/10.95 ^^\\OT1/cmss/m/n/10.95 )]\OML/cmm/m/it/10.9
+5 ; []\OT1/mathkerncmss/m/sl/10.95 p[][]\OML/cmm/m/it/10.95 ^^\ \OMS/cmsy/m/n/1
+0.95 2 T[]\OML/cmm/m/it/10.95 ^^Y[]
+ []
+
+
+Overfull \vbox (11.1496pt too high) detected at line 81
+ []
+
+[18
+
+] <Images/exp_exp.png, id=155, 698.61pt x 423.5825pt>
+File: Images/exp_exp.png Graphic file (type png)
+
+<use Images/exp_exp.png>
+Package pdftex.def Info: Images/exp_exp.png used on input line 88.
+(pdftex.def)             Requested size: 278.83578pt x 169.06158pt.
+ [19
+
+ <./Images/exp_exp.png>]) (./Sections/2_sota.tex
+(./presentation.toc) [20
+
+] [21
+
+] [22
+
+] [23
+
+] [24
+
+] [25
+
+]) (./Sections/3_optimist.tex
+(./presentation.toc) [26
+
+] [27
+
+] [28
+
+] [29
+
+] [30
+
+] [31
+
+] [32
+
+] [33
+
+]) [34
 
 ]
 \c@finalframe=\count196
@@ -1297,7 +1383,7 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 Overfull \vbox (7380.62636pt too high) detected at line 89
  []
 
-[18
+[35
 
  </usr/share/texlive/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1315,7 +1401,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: B45CE11B4C86AEF5C7FAB60F03828F21;108.
+(rerunfilecheck)             Checksum: 5C100DB79F34E2B15C8C912009779A8D;214.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1327,32 +1413,36 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
  ) 
 Here is how much of TeX's memory you used:
- 24007 strings out of 493029
- 461703 string characters out of 6136234
- 711036 words of memory out of 7999999
- 26817 multiletter control sequences out of 15000+600000
- 24122 words of font info for 82 fonts, out of 8000000 for 9000
+ 24176 strings out of 493029
+ 465399 string characters out of 6136234
+ 719697 words of memory out of 7999999
+ 26937 multiletter control sequences out of 15000+600000
+ 25162 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,11n,63p,392b,870s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on presentation.pdf (18 pages, 628791 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentation.pdf (35 pages, 874840 bytes).
 PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
- 331 compressed objects within 4 object streams
- 182 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 521 PDF objects out of 1000 (max. 8388607)
+ 440 compressed objects within 5 object streams
+ 218 named destinations out of 1000 (max. 500000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
