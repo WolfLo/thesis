@@ -18,29 +18,29 @@
 		}
 		
 		\onslide<4->{%
-		\draw [->, line width=5pt, MyLightGreen, opacity=0.7] (Environment) to [bend right=35] (Agent);
+		\draw [->, line width=5pt, MyOrange, opacity=0.7] (Environment) to [bend right=35] (Agent);
 		\node at (0, 2.5) {\Large State $s_h$};
 		}
 		
 		\onslide<5|handout:0>{%
-		\node[draw=MyLightGreen, opacity=0.7, circle, line width=3pt, minimum size=1cm] at (-4, -2) {};
+		\node[draw=MyOrange, opacity=0.7, circle, line width=3pt, minimum size=1cm] at (-4, -2) {};
 		}
 		
 		\onslide<6->{%
-		\draw [->, line width=5pt, MyLightGreen, opacity=0.7] (Agent) to [bend right=35] (Environment);
+		\draw [->, line width=5pt, MyOrange, opacity=0.7] (Agent) to [bend right=35] (Environment);
 		\node at (0, -2.5) {\Large Action $a_h$};
 		}
 		
 		\onslide<7|handout:0>{%
-		\node[draw=MyLightGreen, opacity=0.7, circle, line width=3pt, minimum size=1cm] at (3.56, -2) {};	
+		\node[draw=MyOrange, opacity=0.7, circle, line width=3pt, minimum size=1cm] at (3.56, -2) {};	
 		}
 		
 		\onslide<8|handout:0>{%
-		\node[draw=MyLightGreen, opacity=0.7, circle, line width=3pt, minimum size=1cm] at (4.42, -2) {};	
+		\node[draw=MyOrange, opacity=0.7, circle, line width=3pt, minimum size=1cm] at (4.42, -2) {};	
 		}
 					
 		\onslide<9->{%
-		\draw [->, line width=5pt, MyLightGreen, opacity=0.7] (Environment) to (Agent);
+		\draw [->, line width=5pt, MyOrange, opacity=0.7] (Environment) to (Agent);
 		\node at (0, 0.5) {\Large Reward $r_{h+1}$};
 		}		
 	\end{tikzpicture}
@@ -78,13 +78,6 @@
 \end{equation*}
 	}
 	
-\end{frame}
-
-\begin{frame}{Exploration VS Exploitation}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{Images/exp_exp}
-	\end{figure}
 \end{frame}
 
 %\begin{frame}{Taxonomy of RL Algorithms}

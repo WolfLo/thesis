@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  9 APR 2019 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  9 APR 2019 20:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1212,11 +1212,17 @@ LaTeX Font Info:    Redeclaring math symbol \braceru on input line 909.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 944.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 946.
 ))
-(./BeamerColor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/units/nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip60
+\L@UnitsRaiseTextstyle=\skip61
+\L@UnitsRaiseScriptstyle=\skip62
+) (./BeamerColor.sty
 Package: BeamerColor 08/01/2008
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
-)) (./presentation.aux)
+))
+(./presentation.aux)
 \openout1 = `presentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
@@ -1397,7 +1403,7 @@ LaTeX Info: Redefining \includegraphics on input line 37.
 \c@lstlisting=\count199
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- (./presentation.nav) <Images/polimi.png, id=33, 666.49pt x 489.83pt>
+ (./presentation.nav) <Images/polimi.png, id=41, 666.49pt x 489.83pt>
 File: Images/polimi.png Graphic file (type png)
  <use Images/polimi.png>
 Package pdftex.def Info: Images/polimi.png used on input line 45.
@@ -1423,67 +1429,98 @@ thkerncmss.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/polimi.png>]
 (./Sections/0_introduction.tex
-<Images/atlas.jpg, id=45, 640.3925pt x 353.32pt>
-File: Images/atlas.jpg Graphic file (type jpg)
- <use Images/atlas.jpg>
-Package pdftex.def Info: Images/atlas.jpg used on input line 7.
-(pdftex.def)             Requested size: 278.83578pt x 153.8439pt.
+<Images/exp_exp.png, id=53, 698.61pt x 423.5825pt>
+File: Images/exp_exp.png Graphic file (type png)
+ <use Images/exp_exp.png>
+Package pdftex.def Info: Images/exp_exp.png used on input line 6.
+(pdftex.def)             Requested size: 278.83578pt x 169.06158pt.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 7.
+(Font)              size <5> substituted on input line 6.
 
 [2
 
- <./Images/atlas.jpg>] <Images/stocks.jpg, id=52, 855.195pt x 481.8pt>
-File: Images/stocks.jpg Graphic file (type jpg)
+ <./Images/exp_exp.png>]
+<Images/self_driving_car.png, id=61, 1254.6875pt x 825.0825pt>
+File: Images/self_driving_car.png Graphic file (type png)
 
-<use Images/stocks.jpg>
-Package pdftex.def Info: Images/stocks.jpg used on input line 17.
-(pdftex.def)             Requested size: 278.83578pt x 157.09041pt.
+<use Images/self_driving_car.png>
+Package pdftex.def Info: Images/self_driving_car.png used on input line 38.
+(pdftex.def)             Requested size: 159.333pt x 104.77171pt.
+
+<Images/portfolio_investment.png, id=62, 853.1875pt x 817.0525pt>
+File: Images/portfolio_investment.png Graphic file (type png)
+
+<use Images/portfolio_investment.png>
+Package pdftex.def Info: Images/portfolio_investment.png used on input line 38.
+
+(pdftex.def)             Requested size: 79.66649pt x 76.2868pt.
+
+<Images/robotics.png, id=63, 512.91624pt x 766.865pt>
+File: Images/robotics.png Graphic file (type png)
+
+<use Images/robotics.png>
+Package pdftex.def Info: Images/robotics.png used on input line 38.
+(pdftex.def)             Requested size: 97.59422pt x 145.90479pt.
  [3
 
- <./Images/stocks.jpg>]
-<Images/uber.jpeg, id=58, 1304.875pt x 651.43375pt>
-File: Images/uber.jpeg Graphic file (type jpg)
- <use Images/uber.jpeg>
-Package pdftex.def Info: Images/uber.jpeg used on input line 24.
-(pdftex.def)             Requested size: 278.83578pt x 139.20067pt.
+ <./Images/self_driving_car.png> <./Images/portfolio_investment.png> <./Images/
+robotics.png>]
+File: Images/self_driving_car.png Graphic file (type png)
+ <use Images/self_driving_car.png>
+Package pdftex.def Info: Images/self_driving_car.png used on input line 38.
+(pdftex.def)             Requested size: 159.333pt x 104.77171pt.
+File: Images/portfolio_investment.png Graphic file (type png)
 
-[4
+<use Images/portfolio_investment.png>
+Package pdftex.def Info: Images/portfolio_investment.png used on input line 38.
 
- <./Images/uber.jpeg>]) (./Sections/1_basics_of_reinforcement_learning.tex
-(./presentation.toc) [5
+(pdftex.def)             Requested size: 79.66649pt x 76.2868pt.
+File: Images/robotics.png Graphic file (type png)
+ <use Images/robotics.png>
+Package pdftex.def Info: Images/robotics.png used on input line 38.
+(pdftex.def)             Requested size: 97.59422pt x 145.90479pt.
+ [4
 
 ]
-<Images/environment.png, id=76, 590.205pt x 579.16376pt>
-File: Images/environment.png Graphic file (type png)
+File: Images/self_driving_car.png Graphic file (type png)
 
-<use Images/environment.png>
-Package pdftex.def Info: Images/environment.png used on input line 48.
-(pdftex.def)             Requested size: 85.35826pt x 83.76007pt.
+<use Images/self_driving_car.png>
+Package pdftex.def Info: Images/self_driving_car.png used on input line 38.
+(pdftex.def)             Requested size: 159.333pt x 104.77171pt.
+File: Images/portfolio_investment.png Graphic file (type png)
+ <use Images/portfolio_investment.png>
+Package pdftex.def Info: Images/portfolio_investment.png used on input line 38.
 
-<Images/agent.png, id=77, 587.19376pt x 560.0925pt>
-File: Images/agent.png Graphic file (type png)
- <use Images/agent.png>
-Package pdftex.def Info: Images/agent.png used on input line 48.
-(pdftex.def)             Requested size: 85.35826pt x 81.41217pt.
+(pdftex.def)             Requested size: 79.66649pt x 76.2868pt.
+File: Images/robotics.png Graphic file (type png)
 
+<use Images/robotics.png>
+Package pdftex.def Info: Images/robotics.png used on input line 38.
+(pdftex.def)             Requested size: 97.59422pt x 145.90479pt.
+ [5
+
+])
+(./Sections/1_basics_of_reinforcement_learning.tex (./presentation.toc)
 [6
 
- <./Images/environment.png> <./Images/agent.png>]
+] <Images/environment.png, id=98, 590.205pt x 579.16376pt>
 File: Images/environment.png Graphic file (type png)
 
 <use Images/environment.png>
 Package pdftex.def Info: Images/environment.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 83.76007pt.
+
+<Images/agent.png, id=99, 587.19376pt x 560.0925pt>
 File: Images/agent.png Graphic file (type png)
  <use Images/agent.png>
 Package pdftex.def Info: Images/agent.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 81.41217pt.
- [7
 
-]
+[7
+
+ <./Images/environment.png> <./Images/agent.png>]
 File: Images/environment.png Graphic file (type png)
 
 <use Images/environment.png>
@@ -1568,18 +1605,16 @@ Package pdftex.def Info: Images/agent.png used on input line 48.
  [14
 
 ]
-Overfull \hbox (11.55461pt too wide) detected at line 81
-\OML/cmm/m/it/10.95 ^^V\U/matha/m/n/10.95 p[]q ^^P []r\OMS/cmsy/m/n/10.95 R\U/m
-atha/m/n/10.95 p\OML/cmm/m/it/10.95 ^^\\U/matha/m/n/10.95 qs\OML/cmm/m/it/10.95
- ; []\OT1/mathkerncmss/m/sl/10.95 p[][]\OML/cmm/m/it/10.95 ^^\ \U/matha/m/n/10.
-95 P \OMS/cmsy/m/n/10.95 T[]\OML/cmm/m/it/10.95 ^^Y[]
- []
+File: Images/environment.png Graphic file (type png)
 
-
-Overfull \vbox (10.05457pt too high) detected at line 81
- []
-
-[15
+<use Images/environment.png>
+Package pdftex.def Info: Images/environment.png used on input line 48.
+(pdftex.def)             Requested size: 85.35826pt x 83.76007pt.
+File: Images/agent.png Graphic file (type png)
+ <use Images/agent.png>
+Package pdftex.def Info: Images/agent.png used on input line 48.
+(pdftex.def)             Requested size: 85.35826pt x 81.41217pt.
+ [15
 
 ]
 Overfull \hbox (11.55461pt too wide) detected at line 81
@@ -1623,16 +1658,21 @@ Overfull \vbox (10.05457pt too high) detected at line 81
 
 [18
 
-] <Images/exp_exp.png, id=162, 698.61pt x 423.5825pt>
-File: Images/exp_exp.png Graphic file (type png)
+]
+Overfull \hbox (11.55461pt too wide) detected at line 81
+\OML/cmm/m/it/10.95 ^^V\U/matha/m/n/10.95 p[]q ^^P []r\OMS/cmsy/m/n/10.95 R\U/m
+atha/m/n/10.95 p\OML/cmm/m/it/10.95 ^^\\U/matha/m/n/10.95 qs\OML/cmm/m/it/10.95
+ ; []\OT1/mathkerncmss/m/sl/10.95 p[][]\OML/cmm/m/it/10.95 ^^\ \U/matha/m/n/10.
+95 P \OMS/cmsy/m/n/10.95 T[]\OML/cmm/m/it/10.95 ^^Y[]
+ []
 
-<use Images/exp_exp.png>
-Package pdftex.def Info: Images/exp_exp.png used on input line 88.
-(pdftex.def)             Requested size: 278.83578pt x 169.06158pt.
- [19
 
- <./Images/exp_exp.png>]) (./Sections/2_sota.tex
-(./presentation.toc) [20
+Overfull \vbox (10.05457pt too high) detected at line 81
+ []
+
+[19
+
+]) (./Sections/2_sota.tex (./presentation.toc) [20
 
 ] [21
 
@@ -1642,10 +1682,10 @@ Package pdftex.def Info: Images/exp_exp.png used on input line 88.
 
 ] [24
 
-] [25
+]
+[25
 
-]) (./Sections/3_pf.tex
-(./presentation.toc) [26
+]) (./Sections/3_pf.tex (./presentation.toc) [26
 
 ] [27
 
@@ -1655,12 +1695,12 @@ Package pdftex.def Info: Images/exp_exp.png used on input line 88.
 
 ] [30
 
-] [31
+]
+[31
 
 ] [32
 
-]
-<Images/mabomber.png, id=247, 486.81876pt x 486.81876pt>
+] <Images/mabomber.png, id=266, 486.81876pt x 486.81876pt>
 File: Images/mabomber.png Graphic file (type png)
 
 <use Images/mabomber.png>
@@ -1702,66 +1742,161 @@ Package pdftex.def Info: Images/mabomber.png used on input line 62.
 (./Sections/4_optimist.tex (./presentation.toc) [38
 
 ]
-Overfull \vbox (29.13396pt too high) detected at line 59
+Overfull \vbox (32.65724pt too high) detected at line 53
  []
 
 [39
 
 ]
-Overfull \vbox (29.13396pt too high) detected at line 59
+Overfull \vbox (32.65724pt too high) detected at line 53
  []
 
 [40
 
 ]
-Overfull \vbox (29.13396pt too high) detected at line 59
+Overfull \vbox (32.65724pt too high) detected at line 53
  []
 
 [41
 
 ]
-Overfull \vbox (29.13396pt too high) detected at line 59
+Overfull \vbox (32.65724pt too high) detected at line 53
  []
 
 [42
 
 ]
-Overfull \vbox (29.13396pt too high) detected at line 59
+Overfull \vbox (32.65724pt too high) detected at line 53
  []
 
 [43
 
 ]
-Overfull \vbox (29.13396pt too high) detected at line 59
+Overfull \vbox (32.65724pt too high) detected at line 53
  []
 
 [44
 
 ]
-Overfull \vbox (29.13396pt too high) detected at line 59
+Overfull \vbox (32.65724pt too high) detected at line 53
  []
 
 [45
 
 ]
-Overfull \vbox (29.13396pt too high) detected at line 59
+Overfull \vbox (32.65724pt too high) detected at line 53
  []
 
 [46
 
 ]
-Overfull \vbox (29.13396pt too high) detected at line 59
+Overfull \vbox (32.65724pt too high) detected at line 53
  []
 
 [47
 
 ]
-Overfull \vbox (29.13396pt too high) detected at line 59
+Overfull \vbox (32.65724pt too high) detected at line 53
  []
 
 [48
 
-]) [49
+] [49
+
+] [50
+
+] <Images/bound.png, id=372, 578.16pt x 361.35pt>
+File: Images/bound.png Graphic file (type png)
+
+<use Images/bound.png>
+Package pdftex.def Info: Images/bound.png used on input line 84.
+(pdftex.def)             Requested size: 278.83578pt x 174.26758pt.
+ [51
+
+ <./Images/bound.png>]
+
+LaTeX Warning: Reference `ass:boundrenyi' on page 52 undefined on input line 99
+.
+
+[52
+
+]
+
+LaTeX Warning: Reference `ass:boundrenyi' on page 53 undefined on input line 11
+3.
+
+
+LaTeX Warning: Reference `ass:lipschitz' on page 53 undefined on input line 113
+.
+
+[53
+
+]) (./Sections/5_experiments.tex (./presentation.toc) [54
+
+]
+<Images/LQGcomparison.pdf, id=409, 867.24pt x 361.35pt>
+File: Images/LQGcomparison.pdf Graphic file (type pdf)
+
+<use Images/LQGcomparison.pdf>
+Package pdftex.def Info: Images/LQGcomparison.pdf used on input line 10.
+(pdftex.def)             Requested size: 278.83578pt x 116.18022pt.
+ [55
+
+ <./Images/LQGcomparison.pdf>]
+<Images/MC_mu.pdf, id=428, 867.24pt x 361.35pt>
+File: Images/MC_mu.pdf Graphic file (type pdf)
+ <use Images/MC_mu.pdf>
+Package pdftex.def Info: Images/MC_mu.pdf used on input line 17.
+(pdftex.def)             Requested size: 278.83578pt x 116.18022pt.
+ [56
+
+ <./Images/MC_mu.pdf>] <Images/MCgainPGPE.pdf, id=447, 722.7pt x 505.89pt>
+File: Images/MCgainPGPE.pdf Graphic file (type pdf)
+
+<use Images/MCgainPGPE.pdf>
+Package pdftex.def Info: Images/MCgainPGPE.pdf used on input line 31.
+(pdftex.def)             Requested size: 199.1693pt x 139.41736pt.
+
+<Images/MCgainOPTIMIST.pdf, id=448, 722.7pt x 505.89pt>
+File: Images/MCgainOPTIMIST.pdf Graphic file (type pdf)
+
+<use Images/MCgainOPTIMIST.pdf>
+Package pdftex.def Info: Images/MCgainOPTIMIST.pdf used on input line 31.
+(pdftex.def)             Requested size: 199.1693pt x 139.41736pt.
+ [57
+
+ <./Images/MCgainPGPE.pdf> <./Images/MCgainOPTIMIST.pdf
+
+pdfTeX warning: pdflatex (file ./Images/MCgainOPTIMIST.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+>]) (./Sections/6_conclusions.tex (./presentation.toc) [58
+
+] [59
+
+] [60
+
+] [61
+
+]
+[62
+
+] [63
+
+] [64
+
+] [65
+
+] [66
+
+] [67
+
+] [68
+
+] [69
+
+] [70
+
+]) [71
 
 ]
 \c@finalframe=\count266
@@ -1779,10 +1914,10 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead on input line 141.
 
 )
-Overfull \vbox (7380.62636pt too high) detected at line 90
+Overfull \vbox (7380.62636pt too high) detected at line 91
  []
 
-[50
+[72
 
  </usr/share/texlive/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1794,13 +1929,13 @@ Overfull \vbox (7380.62636pt too high) detected at line 90
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
 (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 517CB6E5F23B75A80DC2EEA3E7F69F74;270.
+(rerunfilecheck)             Checksum: EDC5663BC49FA3E8BB378E114ADCBF59;362.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1809,43 +1944,58 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
  ) 
 Here is how much of TeX's memory you used:
- 25008 strings out of 493029
- 477951 string characters out of 6136234
- 728786 words of memory out of 7999999
- 27711 multiletter control sequences out of 15000+600000
- 34886 words of font info for 114 fonts, out of 8000000 for 9000
+ 25242 strings out of 493029
+ 482254 string characters out of 6136234
+ 730939 words of memory out of 7999999
+ 27877 multiletter control sequences out of 15000+600000
+ 36402 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,17n,63p,392b,1164s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/mathabx-type1/mathb8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (50 pages, 1230955 bytes).
+ 58i,17n,63p,498b,1164s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{ass:lipschitz} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{ass:boundrenyi} has been referenced but does not ex
+ist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/mathabx-type1/matha6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ma
+thabx-type1/matha8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathab
+x-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-t
+ype1/mathb8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1
+/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfso1000.pfb>
+Output written on presentation.pdf (72 pages, 2629933 bytes).
 PDF statistics:
- 636 PDF objects out of 1000 (max. 8388607)
- 533 compressed objects within 6 object streams
- 249 named destinations out of 1000 (max. 500000)
- 129 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 862 PDF objects out of 1000 (max. 8388607)
+ 723 compressed objects within 8 object streams
+ 299 named destinations out of 1000 (max. 500000)
+ 170 words of extra memory for PDF output out of 10000 (max. 10000000)
 
