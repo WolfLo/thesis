@@ -1,0 +1,59 @@
+\section{OPTIMIST}
+
+\begin{frame}{Optimistic Policy opTImization via MIS
+with Truncation}
+
+\begin{algorithm}[H]
+	\caption{OPTIMIST}
+	\begin{algorithmic}[1]
+	\onslide<+->\State {\bfseries Input:} initial parameters $\vtheta_0$, confidence schedule $(\delta_t)_{t=1}^T$, order ${\epsilon\in(0,1]}$
+	\onslide<+->\State Draw trajectory $\tau_0\sim p_{\vtheta_0}$ and observe return $\Rew(\tau_0)$
+	\onslide<+->\For{$t=1,\dots,T$}
+		\onslide<+->\State Select arm $\vtheta_t = \arg\max_{\vtheta\in\Theta}B_t^{\epsilon}(\vtheta,\delta_t)$
+		\onslide<+->\State Draw trajectory $\tau_t\sim p_{\vtheta_t}$ and observe return $\Rew(\tau_t)$
+	\EndFor
+	\end{algorithmic}
+\end{algorithm}
+
+\onslide<+->
+\begin{equation*}
+	\tikz[baseline]{\node[anchor=base] (t1) {$\mu(\vtheta)\leq B_t^{\epsilon}(\vtheta,\delta_t)$};}
+	= 
+	\tikz[baseline]{\node[anchor=base] (t2) {$\wc{\mu}^{MIS}_t(\vtheta)$};}
+	+
+	\tikz[baseline]{\node[anchor=base] (t3) {$\norm[\infty]{f}\left(\sqrt{2}+\frac{4}{3}\right)\left(\frac{
+	\tikz[baseline]{\node[anchor=base] (t4) {$d_{1+\epsilon}(p_{\vtheta_t}\|\Phi_{t})$};}\log\frac{1}{\delta_t}}{t}\right)^{\frac{\epsilon}{1+\epsilon}}$};}
+\end{equation*}
+
+\onslide<+|handout:0>{
+\begin{tikzpicture}[overlay]
+		\node[draw=MyOrange, opacity=0.7, line width=3pt, minimum width=3cm, minimum height=1.5cm, label=\textcolor{MyOrange}{Upper Confidence Bound}] at (t1) {};
+\end{tikzpicture}
+}
+
+
+\onslide<+|handout:0>{
+\begin{tikzpicture}[overlay]
+		\node[draw=MyOrange, opacity=0.7, line width=3pt, minimum width=1.5cm, minimum height=1.3cm, label=\textcolor{MyOrange}{Truncated Multiple Importance Sampling Estimator}] at (t2) {};
+\end{tikzpicture}
+}
+
+\onslide<+->{
+\begin{tikzpicture}[overlay]
+		\node[draw=MyOrange, opacity=0.7, line width=3pt, minimum width=7.3cm, minimum height=1.8cm, label=\textcolor{MyOrange}{Exploration Bonus}] at (t3) {};
+\end{tikzpicture}
+}
+
+\onslide<+|handout:0>{
+\begin{tikzpicture}[overlay]
+		\node[draw=MyLightGreen, opacity=0.7, line width=1.5pt, minimum width=2.2cm, minimum height=0.8cm] at (t4) {};
+\end{tikzpicture}
+}
+
+%\onslide<+|handout:0>{
+%\begin{tikzpicture}[overlay]
+%	\draw (t1) rectangle (1,2);
+%\end{tikzpicture}
+%}
+
+\end{frame}

@@ -1,6 +1,6 @@
-\section{OPTIMIST}
+\section{Problem Formalization}
 
-\begin{frame}{Problem Formulation}
+\begin{frame}{Problem Formalization}
 
 \onslide<+->\begin{block}{Decision Set or Arms Set}
 The parameter space $\Theta\subseteq\Reals^d$.
@@ -9,16 +9,15 @@ The parameter space $\Theta\subseteq\Reals^d$.
 \onslide<+->\begin{block}{Procedure}
 At every decision step $t\in[0,1,2,\dots,T]$:
 	\begin{enumerate}
-			\item<+-> \textbf{Select} an arm $\vtheta_t\in\Theta$;
-			\item<+-> \textbf{Sample} a trajectory $\tau_t\in\Tau$ by following $\pi_{\vtheta_t}$;
-			\item<+-> \textbf{Observe} the cumulative return $\Rew(\tau_t)$.
+			\item<+-|alert@+> \textbf{Select} an arm $\vtheta_t\in\Theta$;
+			\item<+-|alert@+> \textbf{Sample} a trajectory $\tau_t\in\Tau$ by following $\pi_{\vtheta_t}$;
+			\item<+-|alert@+> \textbf{Observe} the cumulative return $\Rew(\tau_t)$.
 		\end{enumerate}
 \end{block}
 
 \onslide<+->\begin{block}{Goal}
-\begin{itemize}
-\item \textbf{Minimize} $Regret(T) = \sum_{t=0}^{T}\mu(\vtheta^*)-\mu(\vtheta_t)$, where $\vtheta^*=\arg\max_{\vtheta\in\Theta}\mu(\vtheta)$
-\end{itemize}
+
+\textbf{Minimize} $Regret(T) = \sum_{t=0}^{T}\mu(\vtheta^*)-\mu(\vtheta_t)$, where $\vtheta^*=\arg\max_{\vtheta\in\Theta}\mu(\vtheta)$
 \end{block}
 
 %\onslide<+->\begin{block}{Goal}
@@ -31,13 +30,37 @@ At every decision step $t\in[0,1,2,\dots,T]$:
 \end{frame}
 
 
-\begin{frame}{Regret}
+\begin{frame}{Problem Formulation}
 
-\onslide<+->\begin{block}{Decision Set or Arms Set}
-The parameter space $\Theta\subseteq\Reals^d$.
-\end{block}
+	\begin{columns}
+	\begin{column}{0.4\textwidth}
+	  \begin{center}
+	     \includegraphics<+->[width=1\textwidth]{Images/mabomber}
+	     \end{center}
+%	    \quad Multi \hspace{0.80cm} Armed \hspace{0.70cm} Bandits
+	\end{column}
+
+	\begin{column}{0.6\textwidth}
+	\begin{block}{Multi Armed Bandits}
+	    \begin{itemize}
+	    \item<+-|alert@+> Simpler framework;
+	    \item<+-|alert@+> Share the exploration-exploitation tradeoff;
+	    \item<+-|alert@+> Ample literature available;
+	    \end{itemize}
+	 \end{block}
+	 
+	 \onslide<+->{	
+	\begin{block}{Desideratum}
+	 \textbf{sub-linear} $Regret(T)\Leftrightarrow \lim_{T\to\infty}Regret(T)/T=0$
+	 \\~\\
+	 E.g. $Regret(T)=\mathcal{O}(\log T)$
+	\end{block}
+	}
+	\end{column}
+	\end{columns}
 
 \end{frame}
+
 
 %	\onslide<2->{
 %	\textbf{Rewards}: portfolio log-return with transaction costs

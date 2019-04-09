@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  7 APR 2019 19:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.2.18)  9 APR 2019 11:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2280,14 +2280,17 @@ s.callouts.code.tex)))
 zlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 198.
- (./Glossary/Glossary.tex))
+
+Package hyperref Warning: Unexpected value for option `hidelinks'
+(hyperref)                is ignored on input line 200.
+
+(./Glossary/Glossary.tex))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (./thesis.aux
-(./Abstract/abstract.aux) (./Acknowledgements/acknowledgements.aux))
+ (./thesis.aux (./Abstract/abstract.aux)
+(./Acknowledgements/acknowledgements.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -2398,7 +2401,7 @@ Package caption Info: End \AtBeginDocument code.
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count343
 \AtBeginShipoutBox=\box113
-Package hyperref Info: Link coloring ON on input line 8.
+Package hyperref Info: Link coloring OFF on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -2574,14 +2577,14 @@ l.22 ...ine {2.3.2}Taxonomy}{17}{subsection.2.3.2}
 
  [3] (./thesis.lof
 Underfull \hbox (badness 5345) in paragraph at lines 14--14
- [][] [][][]\T1/lmr/m/n/12 (+20) Graphical re-pre-sen-ta-tion of the Moun-tain 
-Car pro-blem 
+ [][] [][]\T1/lmr/m/n/12 (+20) Graphical re-pre-sen-ta-tion of the Moun-tain Ca
+r pro-blem 
  []
 
 
 Underfull \hbox (badness 3646) in paragraph at lines 17--17
- [][] [][][]\T1/lmr/m/n/12 (+20) Graphical re-pre-sen-ta-tion of the In-ver-ted
- Pen-du-lum ta-sk 
+ [][] [][]\T1/lmr/m/n/12 (+20) Graphical re-pre-sen-ta-tion of the In-ver-ted P
+en-du-lum ta-sk 
  []
 
 [4
@@ -2645,7 +2648,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 [10]
 Underfull \hbox (badness 10000) in paragraph at lines 142--144
 [][]\T1/lmr/bx/n/12 Definition 2.2.1. []\T1/lmr/m/n/12 (+20) (Markov De-ci-sion
- Pro-cess) \T1/lmr/m/it/12 (+20) A con-tin-u-ous [][]MDP[][]
+ Pro-cess) \T1/lmr/m/it/12 (+20) A con-tin-u-ous []MDP[]
  []
 
 [11] [12]
@@ -2691,8 +2694,8 @@ Chapter 3.
 
 ] [34]
 Underfull \hbox (badness 10000) in paragraph at lines 39--40
-[]\T1/lmr/m/n/12 (+20) Such strat-egy is at the core of the cel-e-brated [][]UC
-B[][] al-go-rithm
+[]\T1/lmr/m/n/12 (+20) Such strat-egy is at the core of the cel-e-brated []UCB[
+] al-go-rithm
  []
 
 
@@ -2724,14 +2727,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 306--309
 
 
 Underfull \hbox (badness 1173) in paragraph at lines 306--309
-\T1/lmr/m/n/12 (+20) Following the same pat-tern adopted for [][]MAB[][]s, we p
-ro-ceed now with
+\T1/lmr/m/n/12 (+20) Following the same pat-tern adopted for []MAB[]s, we pro-c
+eed now with
  []
 
 [46]
 Underfull \hbox (badness 1057) in paragraph at lines 311--314
-\T1/lmr/m/n/12 (+20) been adapted to large, non-tabular [][]RL[][] prob-lems . 
-A rel-e-vant ex-am-
+\T1/lmr/m/n/12 (+20) been adapted to large, non-tabular []RL[] prob-lems . A re
+l-e-vant ex-am-
  []
 
 [47]
@@ -2750,8 +2753,8 @@ Chapter 4.
 
 ] [54] [55] [56] [57] [58]
 Underfull \hbox (badness 1048) in paragraph at lines 119--129
-\T1/lmr/m/n/12 (+20) In the fol-low-ing, we will show that Al-go-rithm [][]4.1[
-][] yields sub-lin-ear re-
+\T1/lmr/m/n/12 (+20) In the fol-low-ing, we will show that Al-go-rithm []4.1[] 
+yields sub-lin-ear re-
  []
 
 [59] [60]
@@ -2947,10 +2950,10 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 04AE5E53E1DC2C8D2B84B126470DFE70;4318.
  ) 
 Here is how much of TeX's memory you used:
- 42576 strings out of 493029
- 800758 string characters out of 6136234
- 1090134 words of memory out of 7999999
- 44289 multiletter control sequences out of 15000+600000
+ 42574 strings out of 493029
+ 800731 string characters out of 6136234
+ 1086821 words of memory out of 7999999
+ 44287 multiletter control sequences out of 15000+600000
  116913 words of font info for 257 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,18n,77p,10443b,946s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2988,7 +2991,7 @@ hare/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/share
 live/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (119 pages, 2505743 bytes).
+Output written on thesis.pdf (119 pages, 2498890 bytes).
 PDF statistics:
  2646 PDF objects out of 2984 (max. 8388607)
  2409 compressed objects within 25 object streams
