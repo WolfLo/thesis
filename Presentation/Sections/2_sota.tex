@@ -4,11 +4,11 @@
 \begin{frame}{Exploration in Policy Search}
 	
 	\begin{block}{Undirected exploration}
-	Generate actions based on randomness, without any knowledge of the learning process.
+	Explore actions based on randomness, without any knowledge of the learning process.
 
 	\begin{itemize}[noitemsep,topsep=0pt]
-		\item<+(1)-> Ex1: by adopting stochastic policies.
-		\item<+(1)-> Ex2: by augmenting rewards with the entropy of the policy: 
+		\item<+(1)-|alert@+(1)> E.g.1: by adopting stochastic policies \cite{deisenroth2013survey}.
+		\item<+(1)-|alert@+(1)> E.g.2: by augmenting rewards with the entropy of the policy \cite{haarnoja2018soft}: 
 		\begin{equation*}
 		\Rew(\tau) = \sum_{h=0}^{H-1}\gamma^hr_{h+1} + \mathcal{H}(\pi_{\vtheta}(\cdot|s_h)).
 		\end{equation*}
@@ -19,7 +19,7 @@
 	\begin{block}{Directed exploration}
 	Leverage on the knowledge acquired during learning.
 		\begin{itemize}
-		\item<+(1)-> Count-based techniques.
+		\item<+(1)|alert@+(1)-> E.g.: Count-based techniques \cite{bellemare2016unifying}.
 		\end{itemize}
 	\end{block}
 	}

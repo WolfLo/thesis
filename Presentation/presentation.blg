@@ -2,58 +2,45 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: presentation.aux
 The style file: apalike.bst
-Illegal, another \bibstyle command---line 174 of file presentation.aux
- : \bibstyle
- :          {acm}
-I'm skipping whatever remains of this command
 Database file #1: Bibliography/bibliography.bib
-Warning--empty year in masooddiversity
-Warning--empty journal in masooddiversity
-Warning--empty publisher in mcbook_2013
-Warning--empty publisher in mcbook
-Warning--empty institution in thrun1992efficient
-Warning--can't use both volume and number fields in williams2006gaussian
-Warning--empty year in yupure
-Warning--empty booktitle in yupure
-You've used 142 entries,
+You've used 7 entries,
             1935 wiz_defined-function locations,
-            1196 strings with 27840 characters,
-and the built_in function-call counts, 66163 in all, are:
-= -- 6717
-> -- 2483
-< -- 147
-+ -- 852
-- -- 825
-* -- 5191
-:= -- 10618
-add.period$ -- 442
-call.type$ -- 142
-change.case$ -- 1095
-chr.to.int$ -- 139
-cite$ -- 150
-duplicate$ -- 2870
-empty$ -- 4799
-format.name$ -- 1053
-if$ -- 13720
-int.to.chr$ -- 4
+            517 strings with 5152 characters,
+and the built_in function-call counts, 3505 in all, are:
+= -- 347
+> -- 154
+< -- 5
++ -- 54
+- -- 52
+* -- 281
+:= -- 570
+add.period$ -- 22
+call.type$ -- 7
+change.case$ -- 57
+chr.to.int$ -- 7
+cite$ -- 7
+duplicate$ -- 143
+empty$ -- 243
+format.name$ -- 63
+if$ -- 720
+int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 142
-newline$ -- 702
-num.names$ -- 442
-pop$ -- 1251
+missing$ -- 9
+newline$ -- 38
+num.names$ -- 23
+pop$ -- 69
 preamble$ -- 1
-purify$ -- 1113
+purify$ -- 59
 quote$ -- 0
-skip$ -- 2231
+skip$ -- 115
 stack$ -- 0
-substring$ -- 4952
-swap$ -- 776
-text.length$ -- 76
+substring$ -- 256
+swap$ -- 40
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 826
-warning$ -- 8
-while$ -- 558
+type$ -- 38
+warning$ -- 0
+while$ -- 28
 width$ -- 0
-write$ -- 1838
-(There was 1 error message)
+write$ -- 93

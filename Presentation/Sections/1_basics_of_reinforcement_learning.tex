@@ -5,41 +5,46 @@
 \begin{figure}[t]
 	\centering
 	\begin{tikzpicture}[node distance = 6em, auto, thick]
-		\onslide<2->{%
+		\onslide<1->{%
 			\node at (4, 0) (Environment) {\includegraphics[width=3cm]{Images/environment}};
 			\node at (4, 2) {\LARGE Environment};
-			\node at (4, -2) {\LARGE $\calP$, $\calR$};
+			\node at (4, -2) {\LARGE $\calP$};
 		}
 		
-		\onslide<3->{%
+		\onslide<2->{%
 			\node at (-4, 0) (Agent) {\includegraphics[width=3cm]{Images/agent}};
 			\node at (-4, 2) {\LARGE Agent};
 			\node at (-4, -2) {\LARGE $\pi$};
 		}
 		
-		\onslide<4->{%
+		\onslide<3-5>{%
 		\draw [->, line width=5pt, MyOrange, opacity=0.7] (Environment) to [bend right=35] (Agent);
 		\node at (0, 2.5) {\Large State $s_h$};
 		}
 		
-		\onslide<5|handout:0>{%
+		\onslide<4|handout:0>{%
 		\node[draw=MyOrange, opacity=0.7, circle, line width=3pt, minimum size=1cm] at (-4, -2) {};
 		}
 		
-		\onslide<6->{%
+		\onslide<5->{%
 		\draw [->, line width=5pt, MyOrange, opacity=0.7] (Agent) to [bend right=35] (Environment);
 		\node at (0, -2.5) {\Large Action $a_h$};
 		}
 		
-		\onslide<7|handout:0>{%
-		\node[draw=MyOrange, opacity=0.7, circle, line width=3pt, minimum size=1cm] at (3.56, -2) {};	
+		\onslide<6|handout:0>{%
+		\node[draw=MyOrange, opacity=0.7, circle, line width=3pt, minimum size=1cm] at (4, -2) {};	
+		}
+
+		\onslide<6->{%
+		\draw [->, line width=5pt, MyOrange, opacity=0.7] (Environment) to [bend right=35] (Agent);
+		\node at (0, 2.5) {\Large State $s_{h+1}$};
 		}
 		
-		\onslide<8|handout:0>{%
-		\node[draw=MyOrange, opacity=0.7, circle, line width=3pt, minimum size=1cm] at (4.42, -2) {};	
-		}
+%		\onslide<8|handout:0>{%
+%		\node[draw=MyOrange, opacity=0.7, circle, line width=3pt, minimum size=1cm] at (4.42, -2) {};	
+%		}
 					
-		\onslide<9->{%
+		\onslide<7->{%
 		\draw [->, line width=5pt, MyOrange, opacity=0.7] (Environment) to (Agent);
 		\node at (0, 0.5) {\Large Reward $r_{h+1}$};
 		}		
@@ -50,26 +55,26 @@
 \begin{frame}{Policy Search Formulation}
 
 	\onslide<1->{%
-	\textbf{Cumulative return of a trajectory $\tau$:}
+	\textbf{Parametric policy:}
 		\begin{equation*}
-		\Rew(\tau) = \sum_{h=0}^{H-1}\gamma^hr_{h+1},\text{ with } \tau=[s_0,a_0,s_1,a_1,\dots,s_{H-1},a_{H-1}]
+		\pi_{\vtheta}:\Sspace\to\Delta(\Aspace) \qquad \text{ E.g.: } \pi_{\vtheta}(a|s) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2}\left(\frac{a-\vtheta^Ts}{\sigma}\right)^2\right)
 		\end{equation*}
 	}
 
 	\onslide<2->{%
-	\textbf{Parametric policy:}
+	\textbf{Return of a trajectory $\tau$:}
 		\begin{equation*}
-		\pi_{\vtheta}:\Sspace\to\Delta(\Aspace),\text{ \ie \,}\pi_{\vtheta}(a|s) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2}\left(\frac{a-\vtheta^T\phi(s)}{\sigma}\right)^2\right)
+		\Rew(\tau) = \sum_{h=0}^{H-1}\gamma^hr_{h+1},\text{ with } \tau=[s_0,a_0,s_1,a_1,\dots,s_{H-1},a_{H-1},s_H]
 		\end{equation*}
 	}
+	
 	
 	\onslide<3->{%
 	\textbf{Performance:}
 		\begin{equation*}
-		\mu(\vtheta) = \Exp_{\tau\sim p_{\vtheta}}[\Rew(\tau)],\text{ where } p_{\vtheta} \text{ is the \textbf{distribution over trajectories} } \tau\in\Tau\text { induced by } \pi_{\vtheta}
+		\mu(\vtheta) = \Exp_{\tau\sim \pi_{\vtheta}}[\Rew(\tau)]
 		\end{equation*}
 	}
-
 	
 	\onslide<4->{%
 	\textbf{Objective:}

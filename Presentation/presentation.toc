@@ -1,8 +1,8 @@
 \beamer@endinputifotherversion {3.36pt}
 \select@language {english}
-\beamer@sectionintoc {1}{Basics of Reinforcement Learning}{6}{0}{1}
+\beamer@sectionintoc {1}{Basics of Reinforcement Learning}{8}{0}{1}
 \beamer@sectionintoc {2}{Exploration in Policy Search}{20}{0}{2}
 \beamer@sectionintoc {3}{Problem Formalization}{26}{0}{3}
-\beamer@sectionintoc {4}{OPTIMIST}{38}{0}{4}
-\beamer@sectionintoc {5}{Experiments}{54}{0}{5}
-\beamer@sectionintoc {6}{Conclusions}{58}{0}{6}
+\beamer@sectionintoc {4}{OPTIMIST}{37}{0}{4}
+\beamer@sectionintoc {5}{Experiments}{50}{0}{5}
+\beamer@sectionintoc {6}{Conclusions}{56}{0}{6}
